@@ -7,6 +7,8 @@
 body { overflow-x: hidden; overflow-y: auto; }
 #preloader { display:none; }
 #page { animation:none; }
+/* Intrinsic attributes reserve space; CSS must scale both dimensions together. */
+.quiet-media[width][height] { height:auto; }
 #project .quiet-media:not(.media-arrived) { background:#eee; }
 #project .dark-mode-usecase .quiet-media:not(.media-arrived) { background:#353538; }
 #project .media-arrived { animation:media-reveal .18s ease-out; }
