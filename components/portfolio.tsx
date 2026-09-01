@@ -3,6 +3,18 @@
 
 import { createElement, useEffect, useRef, useState, type ReactNode, type MouseEvent, type SyntheticEvent } from 'react';
 import original from '@/app/data/original.json';
+import mediaSizes from '@/app/data/media-sizes.json';
+
+const imageSizes:Record<string,{width:number;height:number}>=mediaSizes;
+function MediaImage({attributes}:{attributes:Record<string,unknown>}) {
+  const [arrived,setArrived]=useState(false);
+  const ref=useRef<HTMLImageElement>(null);
+  useEffect(()=>{if(ref.current?.complete)setArrived(true);},[]);
+  const src=typeof attributes.src==='string'?attributes.src:'';
+  return createElement('img',{...imageSizes[src],...attributes,ref,
+    className:`${typeof attributes.className==='string'?attributes.className:''} quiet-media ${arrived?'media-arrived':''}`,
+    onLoad:()=>setArrived(true),onError:()=>setArrived(true)});
+}
 
 type ContentNode = string | {tag:string; props:Record<string,unknown>; children:ContentNode[]};
 const content = original as unknown as {home:ContentNode;projects:{slug:string;title:string;css:string;tree:ContentNode[]}[]};
@@ -28,12 +40,11 @@ function render(node:ContentNode, key:string):ReactNode {
   if (tag === 'a' && String(props.href).includes('twitter.com')) props['aria-label']='Twitter';
   if (tag === 'a' && String(props.href).includes('medium.com')) props['aria-label']='Medium';
   if (tag === 'textarea') { props.defaultValue=node.children.filter(x=>typeof x==='string').join(''); return createElement(tag,props); }
+  if (tag === 'img') { const {key:unusedKey,...attributes}=props; return <MediaImage key={key} attributes={attributes} />; }
   return voidTags.has(tag) ? createElement(tag, props) : createElement(tag, props, node.children.map((child,i)=>render(child,`${key}.${i}`)));
 }
 
 export function Portfolio({initialSlug=null}:{initialSlug?:string|null}) {
-  const [loading,setLoading]=useState(true);
-  const [showLoader,setShowLoader]=useState(true);
   const [slug,setSlug]=useState<string|null>(initialSlug);
   const [menuOpen,setMenuOpen]=useState(false);
   const [navVisible,setNavVisible]=useState(false);
@@ -48,13 +59,6 @@ export function Portfolio({initialSlug=null}:{initialSlug?:string|null}) {
   const previous=content.projects[(index+9)%10];
   const next=content.projects[(index+1)%10];
 
-  useEffect(()=>{
-    const started=performance.now();
-    const finish=()=>window.setTimeout(()=>setLoading(false),Math.max(0,500-(performance.now()-started)));
-    if(document.readyState==='complete')finish(); else window.addEventListener('load',finish,{once:true});
-    return ()=>window.removeEventListener('load',finish);
-  },[]);
-  useEffect(()=>{if(!loading){const timer=window.setTimeout(()=>setShowLoader(false),450);return()=>window.clearTimeout(timer);}},[loading]);
   useEffect(()=>{
     const update=()=>setNavVisible(window.scrollY >= window.innerHeight-60);
     window.addEventListener('scroll',update,{passive:true}); update();
@@ -93,10 +97,6 @@ export function Portfolio({initialSlug=null}:{initialSlug?:string|null}) {
     setFormMessage('The preview does not send messages yet. Please email curtis@curtis.is directly.');
   }
   return <div className={`portfolio-root ${menuOpen?'menu-open':''} ${navVisible?'nav-visible':''}`} onClick={onClick} onSubmit={onSubmit} onKeyDown={e=>{if(e.key==='Escape'&&!lightbox&&slug)navigate(null);}}>
-    {showLoader&&<div className={`site-loader ${loading?'':'is-complete'}`} role="status" aria-label="Loading curtis.is">
-      <div className="loader-pattern" aria-hidden="true" />
-      <div className="loader-mark"><span>curtis.is</span><i aria-hidden="true" /></div>
-    </div>}
     <div className="home-surface" hidden={Boolean(project)}>{render(content.home,'home')}
       {formMessage&&<output className="form-status">{formMessage}</output>}
     </div>

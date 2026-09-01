@@ -1,0 +1,338 @@
+{
+  "/portfolio/card-tr-720x540@2x.png": {
+    "width": 1440,
+    "height": 1080
+  },
+  "/portfolio/cards-cont@2x.png": {
+    "width": 1440,
+    "height": 1080
+  },
+  "/portfolio/card-refresh@2x.png": {
+    "width": 1440,
+    "height": 1080
+  },
+  "/portfolio/cards-or-optimized@2x.png": {
+    "width": 1440,
+    "height": 1080
+  },
+  "/portfolio/cards-720x540-op@2x.png": {
+    "width": 1440,
+    "height": 1080
+  },
+  "/portfolio/work1-720x540.png": {
+    "width": 720,
+    "height": 540
+  },
+  "/portfolio/card-cj-marketplace@2x.png": {
+    "width": 1440,
+    "height": 1080
+  },
+  "/portfolio/cards-jw-ipad-app-optimized.png": {
+    "width": 720,
+    "height": 540
+  },
+  "/portfolio/card-safehd-optimized.png": {
+    "width": 720,
+    "height": 540
+  },
+  "/portfolio/card-lbs@2x.png": {
+    "width": 1440,
+    "height": 1080
+  },
+  "/case-studies/tr-cover@2x.png": {
+    "width": 4740,
+    "height": 2260
+  },
+  "/case-studies/tr-categories-3.png": {
+    "width": 1312,
+    "height": 360
+  },
+  "/case-studies/tr-healthcare-persona-board@2x.png": {
+    "width": 4096,
+    "height": 2204
+  },
+  "/case-studies/tr-logistics-journey-map@2x.png": {
+    "width": 3674,
+    "height": 1482
+  },
+  "/case-studies/tr-healthcare-customer-ia@2x.png": {
+    "width": 4123,
+    "height": 1996
+  },
+  "/case-studies/tr-insights-dash2x.png": {
+    "width": 3056,
+    "height": 1934
+  },
+  "/case-studies/tr-asset-list-filtering@2x.png": {
+    "width": 2900,
+    "height": 2176
+  },
+  "/case-studies/tr-sensor-details@2x.png": {
+    "width": 2880,
+    "height": 3140
+  },
+  "/case-studies/tr-escalation-rules@2x.png": {
+    "width": 2880,
+    "height": 2580
+  },
+  "/case-studies/nlp-role.png": {
+    "width": 2786,
+    "height": 1435
+  },
+  "/case-studies/contrast-hero.png": {
+    "width": 2370,
+    "height": 804
+  },
+  "/case-studies/classic contrast dashboard.png": {
+    "width": 2045,
+    "height": 1144
+  },
+  "/case-studies/classic contrast vuln list.png": {
+    "width": 2048,
+    "height": 1226
+  },
+  "/case-studies/cont-persona-ciso.png": {
+    "width": 1240,
+    "height": 1804
+  },
+  "/case-studies/cont-persona-soc.png": {
+    "width": 1235,
+    "height": 1657
+  },
+  "/case-studies/cont-persona-deveng.png": {
+    "width": 1234,
+    "height": 1642
+  },
+  "/case-studies/Insights Phase 1.png": {
+    "width": 1920,
+    "height": 1798
+  },
+  "/case-studies/cont-phase3-insights.png": {
+    "width": 1920,
+    "height": 2885
+  },
+  "/case-studies/cont-incident-detail.png": {
+    "width": 4322,
+    "height": 7220
+  },
+  "/case-studies/cont-issue-remediation.png": {
+    "width": 1920,
+    "height": 1834
+  },
+  "/case-studies/contrast-press.png": {
+    "width": 4058,
+    "height": 1807
+  },
+  "/case-studies/cj-refresh-hero-atmos@2x.png": {
+    "width": 3324,
+    "height": 1346
+  },
+  "/case-studies/jasper-legacy@2x.png": {
+    "width": 2732,
+    "height": 1536
+  },
+  "/case-studies/jasper-persona-cc-sp@2x.png": {
+    "width": 2718,
+    "height": 2416
+  },
+  "/case-studies/cj-analytics-persona-luu@2x.png": {
+    "width": 4000,
+    "height": 3948
+  },
+  "/case-studies/cj-analytics-persona-humphrey@2x.png": {
+    "width": 4000,
+    "height": 3990
+  },
+  "/case-studies/jasper-refresh-sitemap@2x.png": {
+    "width": 2732,
+    "height": 564
+  },
+  "/case-studies/dt photo team affinity@2x.png": {
+    "width": 3840,
+    "height": 2560
+  },
+  "/case-studies/jasper-design-system@2x.png": {
+    "width": 4000,
+    "height": 1685
+  },
+  "/case-studies/cj-analytics-overview-tesla@2x.png": {
+    "width": 2732,
+    "height": 2242
+  },
+  "/case-studies/cj-analytics-details-tesla@2x.png": {
+    "width": 2732,
+    "height": 2272
+  },
+  "/case-studies/jasper-refresh-feedback@2x.png": {
+    "width": 2732,
+    "height": 2242
+  },
+  "/case-studies/cj-feedback-origin@2x.png": {
+    "width": 2732,
+    "height": 1554
+  },
+  "/case-studies/refresh-rating@2x.png": {
+    "width": 2732,
+    "height": 1554
+  },
+  "/case-studies/provided-v-prompted@2x.png": {
+    "width": 2732,
+    "height": 1554
+  },
+  "/case-studies/cj-types-of-feedback@2x.png": {
+    "width": 2732,
+    "height": 1538
+  },
+  "/case-studies/managing-bugs-flow@2x.png": {
+    "width": 2732,
+    "height": 1558
+  },
+  "/case-studies/or-atmosphere-optimized@2x.jpg": {
+    "width": 3324,
+    "height": 1792
+  },
+  "/case-studies/or-operations@2x.png": {
+    "width": 2880,
+    "height": 2048
+  },
+  "/case-studies/or-styleguide@2x.png": {
+    "width": 3642,
+    "height": 2013
+  },
+  "/case-studies/or-styleguide2@2x.png": {
+    "width": 3642,
+    "height": 2023
+  },
+  "/case-studies/or-maps@2x.png": {
+    "width": 2880,
+    "height": 1906
+  },
+  "/case-studies/or asset list@2x.png": {
+    "width": 2880,
+    "height": 1752
+  },
+  "/case-studies/or aws accounts@2x.png": {
+    "width": 2880,
+    "height": 1620
+  },
+  "/case-studies/or-tour-glify.gif": {
+    "width": 1450,
+    "height": 974
+  },
+  "/case-studies/op-nutrition@2x.png": {
+    "width": 4740,
+    "height": 2906
+  },
+  "/case-studies/op x y z@2x.png": {
+    "width": 3126,
+    "height": 2552
+  },
+  "/case-studies/op-robot-lg@2x.png": {
+    "width": 2000,
+    "height": 2000
+  },
+  "/case-studies/robot 1@2x.png": {
+    "width": 2802,
+    "height": 2118
+  },
+  "/case-studies/robot 2@2x.png": {
+    "width": 2802,
+    "height": 2118
+  },
+  "/case-studies/robot 4@2x.png": {
+    "width": 2802,
+    "height": 2118
+  },
+  "/case-studies/mood board@2x.png": {
+    "width": 2382,
+    "height": 1980
+  },
+  "/case-studies/op-admin-dash@2x.png": {
+    "width": 2880,
+    "height": 1866
+  },
+  "/case-studies/op-validation-queue@2x.png": {
+    "width": 2882,
+    "height": 1938
+  },
+  "/case-studies/op-recipe-ingred@2x.png": {
+    "width": 2880,
+    "height": 2066
+  },
+  "/case-studies/j-webapp-composition@2x.png": {
+    "width": 4740,
+    "height": 3648
+  },
+  "/case-studies/jasper-iphone-interview-sample@2x.png": {
+    "width": 2732,
+    "height": 2672
+  },
+  "/case-studies/jasper-iphone-dt@2x.png": {
+    "width": 2732,
+    "height": 2276
+  },
+  "/case-studies/cj-marketplace-hero@2x.png": {
+    "width": 3324,
+    "height": 1630
+  },
+  "/case-studies/marketplace-interview@2x.png": {
+    "width": 2732,
+    "height": 4016
+  },
+  "/case-studies/jasper-mp-designthinking@2x.png": {
+    "width": 2732,
+    "height": 2030
+  },
+  "/case-studies/jasper-mp-process2@2x.png": {
+    "width": 3840,
+    "height": 2560
+  },
+  "/case-studies/cj-marketplace-architecture@2x.png": {
+    "width": 2732,
+    "height": 1718
+  },
+  "/case-studies/cj-marketplace-ent-store@2x.png": {
+    "width": 2732,
+    "height": 3224
+  },
+  "/case-studies/cj-marketplace-ent-detail-trail-accepted@2x.png": {
+    "width": 2732,
+    "height": 1538
+  },
+  "/case-studies/cj-ipad-hero@2x.png": {
+    "width": 3840,
+    "height": 1818
+  },
+  "/case-studies/cj-ipad-open@2x.png": {
+    "width": 3174,
+    "height": 2268
+  },
+  "/case-studies/sh-2370x1930@2x.png": {
+    "width": 4740,
+    "height": 3654
+  },
+  "/case-studies/safehold-survey-screens@2x.png": {
+    "width": 2732,
+    "height": 2076
+  },
+  "/case-studies/safehold-survey-results@2x.png": {
+    "width": 2732,
+    "height": 2430
+  },
+  "/case-studies/sh-agency@2x.png": {
+    "width": 2732,
+    "height": 1868
+  },
+  "/case-studies/sh-felix-persona@2x.png": {
+    "width": 2812,
+    "height": 4650
+  },
+  "/case-studies/cj-lbs-hero@2x.png": {
+    "width": 4190,
+    "height": 1990
+  },
+  "/case-studies/cj-lbs-dash@2x.png": {
+    "width": 3344,
+    "height": 3094
+  }
+}

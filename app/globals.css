@@ -6,13 +6,11 @@
 
 body { overflow-x: hidden; overflow-y: auto; }
 #preloader { display:none; }
-.site-loader { position:fixed; inset:0; z-index:9999; display:grid; place-items:center; overflow:hidden; background:#1a1a1a; opacity:1; visibility:visible; transition:opacity .4s ease,visibility .4s ease; }
-.site-loader.is-complete { opacity:0; visibility:hidden; pointer-events:none; }
-.loader-pattern { position:absolute; inset:-20%; opacity:.2; background-image:linear-gradient(135deg,transparent 46%,#f4594e 47%,#f4594e 50%,transparent 51%),linear-gradient(45deg,transparent 46%,#f4594e 47%,#f4594e 50%,transparent 51%); background-size:72px 72px; animation:loader-drift 2.4s linear infinite; mask-image:radial-gradient(circle at center,#000 5%,transparent 70%); }
-.loader-mark { position:relative; display:grid; justify-items:center; gap:18px; color:#fff; font:700 24px/1 'Lato',sans-serif; letter-spacing:.01em; }
-.loader-mark i { width:26px; height:26px; border-right:4px solid #f4594e; border-bottom:4px solid #f4594e; transform:rotate(45deg); animation:loader-pulse 1s ease-in-out infinite; }
-@keyframes loader-drift { to { transform:translate(72px,72px); } }
-@keyframes loader-pulse { 0%,100% { opacity:.35; transform:translateY(-4px) rotate(45deg); } 50% { opacity:1; transform:translateY(4px) rotate(45deg); } }
+#page { animation:none; }
+#project .quiet-media:not(.media-arrived) { background:#eee; }
+#project .dark-mode-usecase .quiet-media:not(.media-arrived) { background:#353538; }
+#project .media-arrived { animation:media-reveal .18s ease-out; }
+@keyframes media-reveal { from { opacity:.7; } to { opacity:1; } }
 .portfolio-root,.home-surface { height:100%; }
 [hidden] { display:none !important; }
 #header { position:relative; height:100vh; background-size:cover; }
@@ -41,4 +39,4 @@ section { scroll-margin-top:52px; }
   .menu-open #top-navigation ul { display:block; }
   #top-navigation li { display:block; }
 }
-@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } .site-loader.is-complete{display:none;} }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
