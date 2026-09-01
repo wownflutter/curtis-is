@@ -4,7 +4,11 @@
 @import url('/original/css/styles.css');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Inter:wght@200;300;400;500;600&display=swap');
 
-body { overflow-x: hidden; overflow-y: auto; }
+/* Keep the original edge-to-edge presentation without exposing browser chrome. */
+html { scrollbar-width:none; }
+html::-webkit-scrollbar { display:none; width:0; height:0; }
+body { overflow-x:clip; overflow-y:auto; }
+@supports not (overflow:clip) { body { overflow-x:hidden; } }
 #preloader { display:none; }
 #page { animation:none; }
 /* Intrinsic attributes reserve space; CSS must scale both dimensions together. */
