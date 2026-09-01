@@ -62,7 +62,7 @@ export function Portfolio({initialSlug=null}:{initialSlug?:string|null}) {
   useEffect(()=>{
     const update=()=>setNavVisible(window.scrollY >= window.innerHeight-60);
     window.addEventListener('scroll',update,{passive:true}); update();
-    const pop=()=>{setSlug(content.projects.some(p=>`/${p.slug}`===location.pathname)?location.pathname.slice(1):null);};
+    const pop=()=>{const pathSlug=location.pathname.replace(/^\/+|\/+$/g,'');setSlug(content.projects.some(p=>p.slug===pathSlug)?pathSlug:null);};
     window.addEventListener('popstate',pop);
     return ()=>{window.removeEventListener('scroll',update);window.removeEventListener('popstate',pop);};
   },[]);
