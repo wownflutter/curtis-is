@@ -20,6 +20,8 @@ a.work { display:block; color:inherit; }
 #previous-project:hover + #previous-project-name,
 #next-project:hover + #next-project-name { opacity:1; }
 :focus-visible { outline:2px solid #f4594e; outline-offset:4px; }
+#explore a:focus { outline:none; }
+#explore a:focus-visible { outline:2px solid #f4594e; outline-offset:4px; }
 section { scroll-margin-top:52px; }
 .form-status { padding:20px; text-align:center; background:#f2f2f2; }
 .image-lightbox { border:0; padding:15px; max-width:94vw; max-height:94vh; background:white; }
