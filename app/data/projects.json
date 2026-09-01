@@ -1,0 +1,1669 @@
+[
+  {
+    "slug": "work-1",
+    "browserTitle": "Control Center IoT Data Consumption Dashboard",
+    "title": "Connecting the world",
+    "hero": "tr-cover@2x.png",
+    "heroAlt": "Stealth Startup",
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "Connecting the world"
+      },
+      {
+        "type": "heading",
+        "text": "The Opportunity"
+      },
+      {
+        "type": "paragraph",
+        "text": "The introduction of new innovative and disruptive technologies is always a big draw for product designers. These opportunities often bring \"Greenfield\" thinking to go-to-market strategies, which mirror iterative product design strategies. A stealth startup here in the Bay Area asked me to join them in their quest to create the \"Operating System for the Connected World.\""
+      },
+      {
+        "type": "paragraph",
+        "text": "Addressable market categories:"
+      },
+      {
+        "type": "image",
+        "source": "tr-categories-3.png",
+        "alt": "Addressable Market Categories"
+      },
+      {
+        "type": "paragraph",
+        "text": "I was their first product designer and later scaled the design team to meet customer demands with the velocity and quality experience required."
+      },
+      {
+        "type": "heading",
+        "text": "Global Deployed Sensors"
+      },
+      {
+        "type": "paragraph",
+        "text": "Their cornerstone product was an adhesive tape that acts as a sensor, detecting location, light, humidity, temperature, and vibration. As tapes, they support highly versatile deployment for sticking to equipment, infrastructure, and cargo. This is key for tracking global valuable assets in the supply chain, to provide trackable intelligence, spatial relationships, geographic data, healthcare asset management, defense, and other category partners. The sensor tapes are networked in a mesh with industry standard plugs and gateways. They are mobile and can be expeditiously installed in almost any infrastructure or asset."
+      },
+      {
+        "type": "paragraph",
+        "text": "Your browser doesn't support HTML5 video."
+      },
+      {
+        "type": "heading",
+        "text": "Discovery for a Multi-tenant Platform"
+      },
+      {
+        "type": "paragraph",
+        "text": "With the wide variety of category deployments, the discovery interviews helped reduce design and engineering debt. Prior to the existence of a product design team, all the design work was led by engineering, with very limited data collection. Discovery was based on passing comments and requests."
+      },
+      {
+        "type": "paragraph",
+        "text": "My product design team set out to bring very lean customer discovery into the fold. We began with scheduled 1:1 Zoom interviews to engage cross-category operations managers. They knew what they wanted to see in delivered sensory intelligence but were often not as confident with workers a few levels down who would be involved in the deployment user journey - cargo handlers, floor staff nurses, warehouse managers, procurement officers. We needed to conduct sample discovery interviews with each of these roles to generate personas. We recorded this discovery in Google Docs to make it shareable within the product team."
+      },
+      {
+        "type": "paragraph",
+        "text": "Example Healthcare Floor Staff Persona board:"
+      },
+      {
+        "type": "image",
+        "source": "tr-healthcare-persona-board@2x.png",
+        "alt": "Floor Nurse Persona"
+      },
+      {
+        "type": "heading",
+        "text": "The User Journey"
+      },
+      {
+        "type": "paragraph",
+        "text": "The designers began to map out each main role's user journey and then vetted their friction/pain points. Often we learned about disparate technology platforms, error-filled APIs, communication friction, and siloed visibility. As discovery agents, we analyzed each issue and looked for trends and patterns to incorporate into a connected, multi-tenant platform."
+      },
+      {
+        "type": "paragraph",
+        "text": "Addressable use cases from our discovery synthesis across categories:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Here are early whiteboard exercises translated to Miro of the two main channels we initially researched: Logistics (airline cargo) and Healthcare (tracking of people and equipment)."
+      },
+      {
+        "type": "paragraph",
+        "text": "Logistics Customer Journey Map: View PDF"
+      },
+      {
+        "type": "image",
+        "source": "tr-logistics-journey-map@2x.png",
+        "alt": "Asset Details"
+      },
+      {
+        "type": "paragraph",
+        "text": "Healthcare Information Architecture: View PDF"
+      },
+      {
+        "type": "image",
+        "source": "tr-healthcare-customer-ia@2x.png",
+        "alt": "Asset Details"
+      },
+      {
+        "type": "heading",
+        "text": "Considerations for a Multi-tenant Design System"
+      },
+      {
+        "type": "paragraph",
+        "text": "Our design system was shaped by user discovery, opposition research, and material design aesthetics. This process helped us create a design system that caters to the diverse audience of our product, spanning various categories such as healthcare, air cargo, border security, and fleet management. To achieve this, we needed a multi-tenant supporting design system."
+      },
+      {
+        "type": "paragraph",
+        "text": "Our approach had to be modular, scalable, and flexible to effectively address design and engineering challenges. This design system plays a crucial role in guiding developers as they integrate each element into Storybook, ensuring rapid deployment. Additionally, the color palette underwent careful scrutiny to prevent scope creep and to maintain support for accessibility. Notably, approximately 50% of our customers operate in industrial sectors like oil, gas, cargo, and fleet management. For these users, we crafted straightforward, meaningful components that uphold a clear and unambiguous taxonomy, complemented by intuitive visual cues."
+      },
+      {
+        "type": "paragraph",
+        "text": "We meticulously reviewed this design system alongside our development and engineering counterparts. We presented a live case study, transitioning from Figma to functioning software. Valuable feedback was sought from the team, leading to iterative improvements. Our refinement process involved enhanced labeling and segmentation of broader groups into specific modules."
+      },
+      {
+        "type": "paragraph",
+        "text": "Sample screens of the Design System:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Your browser doesn't support HTML5 video."
+      },
+      {
+        "type": "heading",
+        "text": "Example screens of key use cases"
+      },
+      {
+        "type": "paragraph",
+        "text": "For each category, the SaaS platform would control views for each role through login credentials. Even the initial insights of a dashboard would be customized for the user role."
+      },
+      {
+        "type": "image",
+        "source": "tr-insights-dash2x.png",
+        "alt": "Dashboard"
+      },
+      {
+        "type": "paragraph",
+        "text": "Side sheet appears for asset filtering. This allows for immediate reference of filter criteria without the burden of persistant management without the burden of cognitive overload."
+      },
+      {
+        "type": "image",
+        "source": "tr-asset-list-filtering@2x.png",
+        "alt": "Asset List Filtered"
+      },
+      {
+        "type": "paragraph",
+        "text": "The Details of Assets/Devices display graphic visualizations depicting trends for all pertinent sensory data, alongside the asset's location and other interconnected sensors within its network mesh."
+      },
+      {
+        "type": "image",
+        "source": "tr-sensor-details@2x.png",
+        "alt": "Asset Details"
+      },
+      {
+        "type": "heading",
+        "text": "Escalations trigger rules to bring critical visibility to the user"
+      },
+      {
+        "type": "paragraph",
+        "text": "Initially, users of our platform will be equipped with a predefined set of rules that govern asset alerts. These alerts are activated through rule escalations. Our platform facilitates convenient management and customization of these rules, allowing them to be tailored to accommodate various scenarios. We design these rules using a global progressive disclosure pattern, enabling a seamless cascading of influence from parent to child elements."
+      },
+      {
+        "type": "image",
+        "source": "tr-escalation-rules@2x.png",
+        "alt": "Asset Details"
+      },
+      {
+        "type": "heading",
+        "text": "Identify early trend patterns through Machine Learning for proactive case management"
+      },
+      {
+        "type": "paragraph",
+        "text": "One of the pain points from our user interviews was the amount of cognitive load and subsequent actions our customers had to take to address triage and case management. Users felt that the escalations that required their attention more often fit into specific \"buckets\" or patterns. Late, missing, mislabeled, incorrect locations and team member miscommunications were the main alerts that required socialization."
+      },
+      {
+        "type": "heading",
+        "text": "User Testing leading to greater intuitive user experience"
+      },
+      {
+        "type": "paragraph",
+        "text": "Based on these findings, we designed prototypes and A/B tests to determine the effectiveness of alert messaging. The audience of these messages, the designated author, follow-up and activity log were all features we considered. From these exercises we pursued a northstar approach and trained machine learning models to suggest the replay that our user most likely would add to a real-time activity stream. The user experience pulls this ML generated messaging from the backend with a \"loading\" skeleton appearing and acting as a signifier for the fetched real-time triage message. If a user agrees with the recommended message they can commit to it and the feed is updated. This new message will automatically include a support ticket, asset number that is the subject of the case, and the recipients of the message."
+      },
+      {
+        "type": "paragraph",
+        "text": "Your browser doesn't support HTML5 video."
+      },
+      {
+        "type": "heading",
+        "text": "Success Metrics"
+      },
+      {
+        "type": "paragraph",
+        "text": "We measured success through User Engagement, comparing pre to post launch (after 30 days). Users rated this new pattern of pre-populated use case notification streams with a 63% increase in engagement.."
+      },
+      {
+        "type": "paragraph",
+        "text": "We used google analytics and contextual interviews to analyze these metrics."
+      },
+      {
+        "type": "heading",
+        "text": "Mobile Applications for Find My Asset"
+      },
+      {
+        "type": "paragraph",
+        "text": "Our users also used our mobile iOS and Android applications, Find My Asset. These apps were available to our customers for those whose roles were directly involved on the ground in searching for an asset's location. The beacon design used Bluetooth to first approximate the general area of the target asset and then switch to High Precision mode when within 200 feet of the target."
+      },
+      {
+        "type": "paragraph",
+        "text": "We initially designed this application for air cargo, with a network mesh of RFID, so that we could correlate area maps to specific longitude and latitude. However, healthcare and other asset tracking use cases soon joined this application."
+      },
+      {
+        "type": "paragraph",
+        "text": "Your browser doesn't support HTML5 video."
+      },
+      {
+        "type": "heading",
+        "text": "Employing Natural Language Processing (NLP) to further support our users in healthcare"
+      },
+      {
+        "type": "paragraph",
+        "text": "We found out healthcare customers to be excited in their exploration of forward technologies. In their user journeys, social media apps were used, frequent personal texting, photography and even music were not uncommon apps running live on the same device. We build some prototypes to test the use of NLP to expedite the hospital staff's exploring and adopting of language and voice controls. We tested some live software versions with these customers and, once the microphone proved to be reliable, was adopted."
+      },
+      {
+        "type": "paragraph",
+        "text": "The Floor Nurse role frequently harnessed the NLP feature, particularly given their frequent one-handed use of gloves and the demand for multitasking. The incorporation of voice-activated commands and multi-modal request protocols consistently yielded immediate value. This value heavily depended on generative AI, utilizing its capacity to learn from prior requests and adeptly apply that knowledge to understand new contexts."
+      },
+      {
+        "type": "paragraph",
+        "text": "We continue to measure the NLP utilization and improve its accuracy with the Healthcare taxonomy. Ultimately, our deployed AI agents will use LLMs and tools/skills to autonomously execute complex tasks. NLP is now rolling out to our more industrial customers."
+      },
+      {
+        "type": "paragraph",
+        "text": "While NLP was rolled out for our healthcare customers, first. It has been Logistics customers who have shown the strongest adoption to date. Specially those in cargo handling found speaking into their mobile device to expedite their requests. 24% of total requests by cargo handling personel executed voice commands measured 30 days after introduction.. We did hold promotional campaigns and promotions for the NLP features, which were well-received by our customers."
+      },
+      {
+        "type": "paragraph",
+        "text": "Your browser doesn't support HTML5 video."
+      },
+      {
+        "type": "image",
+        "source": "nlp-role.png",
+        "alt": "NLP engine"
+      },
+      {
+        "type": "heading",
+        "text": "Agile Roadmap"
+      },
+      {
+        "type": "paragraph",
+        "text": "Iterations and customer meetings were held several times a week as the designers followed an agile process. Often, big logistics companies had their own design teams, which we found were somewhat slower compared to our startup. We utilized this velocity gap to engage in more discovery and post-sprint user interviews. The live software was continuously iterating on a weekly basis."
+      },
+      {
+        "type": "paragraph",
+        "text": "We invited our logistics partners into our Miro board to brainstorm. We would often populate the boards with our earlier discovery insights for review and debate. This demonstrated that our design team valued input from them and their customers and aimed to address corner cases."
+      },
+      {
+        "type": "paragraph",
+        "text": "While we often brainstormed wonderful features, our engineers were quite busy, so these requests had to be prioritized for future implementation. The product design team attended all product and FAE (Field Application Engineer) meetings to ensure that any feedback informed the designs. As an engineering-driven startup, it took perseverance and the establishment of trust to deliver the best user experience possible."
+      },
+      {
+        "type": "heading",
+        "text": "Testing Our Hypotheses and Iterating Based on Data"
+      },
+      {
+        "type": "paragraph",
+        "text": "We were encouraged by the involvement of our design partners. Each partner felt that my design team was actively inviting critique, criticism, and challenges to our proposed designs. Both the web and mobile applications were made available early as live software to our design partners. The mobile app builds had the most impact with our field users. We even went as far as hiding assets within the customer's infrastructure and having the user attempt to use the app to find the beacon tape attached to an asset. Our materials were tested and evolved almost daily."
+      },
+      {
+        "type": "paragraph",
+        "text": "Metrics were recorded as a baseline for testing performance. Users were asked both qualitative and quantitative questions. We synthesized the findings, derived a forward roadmap with prioritization, and added them to our roadmap."
+      },
+      {
+        "type": "paragraph",
+        "text": "As of the time of this writing, we continue to evolve our solution. We have air freight, healthcare, border security, trucking, and fleet customers all using our product, web platform, and mobile app."
+      }
+    ]
+  },
+  {
+    "slug": "work-2",
+    "browserTitle": "Contrast Security - Introduction of Application Detection and Response",
+    "title": "Transforming Security Workflows with NorthStar and AI Agents",
+    "hero": "contrast-hero.png",
+    "heroAlt": "Rethought, Redesigned and Relaunched IoT Control Center",
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "Transforming Security Workflows with NorthStar and AI Agents"
+      },
+      {
+        "type": "paragraph",
+        "text": "When I joined Contrast, the application security experience was fragmented across product lines, inconsistent in interaction design, and reactive in nature. Customers — from enterprise CISOs to individual developers — were navigating a maze of disconnected workflows. There was no single place to understand risk posture, no shared language across roles, and no UI that instilled confidence or momentum."
+      },
+      {
+        "type": "paragraph",
+        "text": "NorthStar was intentionally designed as an agentic system, not a passive dashboard. The goal was to operationalize AI in a way that accelerated human decision-making while preserving trust, accountability, and control."
+      },
+      {
+        "type": "heading",
+        "text": "Here are some screens of the platform experience I inherited:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Contrast old dashboard"
+      },
+      {
+        "type": "image",
+        "source": "classic contrast dashboard.png",
+        "alt": "Contrast Classic Dashboard"
+      },
+      {
+        "type": "paragraph",
+        "text": "Contrast old vulnerabilities inventory"
+      },
+      {
+        "type": "image",
+        "source": "classic contrast vuln list.png",
+        "alt": "Contrast Classic Vulnerabilities list"
+      },
+      {
+        "type": "heading",
+        "text": "Reframing the past and promoting the Northstar"
+      },
+      {
+        "type": "paragraph",
+        "text": "The NorthStar initiative began as a simple request from leadership: \"Advance our SOC-focused capabilities while seamlessly integrating and sustaining the IAST feature set.\" As the user experience director, I saw this as a call to craft a cohesive ADR (Application Detection and Response) narrative and connect the workflows of CISOs, SOC teams, and developers — aligning them around shared context, clearer signals, and a more actionable security experience."
+      },
+      {
+        "type": "heading",
+        "text": "Grounding the vision in research"
+      },
+      {
+        "type": "paragraph",
+        "text": "To ensure that NorthStar wasn't just a UI facelift, I led a rigorous discovery process. We conducted interviews across key user roles: CISOs, SOC analysts, developers, DevOps engineers, Enterprise Security Engineers, Security Reliability Engineers(SREs) and program managers. We found that in cybersecurity, often different labelled roles shared some of the same JTBD (Jobs-to-be done). So, careful mapping of user journey goals and painpoints were vetted for affinity and focus."
+      },
+      {
+        "type": "paragraph",
+        "text": "AI agents were event-driven, not prompt-driven. They activated based on runtime exploit signals, anomaly detection, confidence thresholds, and changes in blast radius or asset sensitivity."
+      },
+      {
+        "type": "paragraph",
+        "text": "With this, there was the role guidance of their core focus:"
+      },
+      {
+        "type": "paragraph",
+        "text": "We brought our customers through application exercises, user testing and design thinking. From Tree-testing and card sorting to A/B testing and contextual user interviews."
+      },
+      {
+        "type": "paragraph",
+        "text": "We synthesized these insights into role-based personas and workflows, capturing the tension between visibility and actionability — especially where security and development overlapped."
+      },
+      {
+        "type": "image",
+        "source": "cont-persona-ciso.png",
+        "alt": "CISO"
+      },
+      {
+        "type": "image",
+        "source": "cont-persona-soc.png",
+        "alt": "SOC"
+      },
+      {
+        "type": "image",
+        "source": "cont-persona-deveng.png",
+        "alt": "Dev/Eng"
+      },
+      {
+        "type": "paragraph",
+        "text": "“I don't need every detail — I need to know what's real, what's urgent, and if my teams are moving on it.” — Security Operations Center Analyst, Citibank"
+      },
+      {
+        "type": "heading",
+        "text": "From insights to experience strategy"
+      },
+      {
+        "type": "paragraph",
+        "text": "Research supported a set of NorthStar design principles:"
+      },
+      {
+        "type": "paragraph",
+        "text": "We began with storyboarding to align stakeholders. These boards illustrated moments like a CISO seeing risk drop over time, a DevOps engineer triaging an exploit in the Trace Graph, or a program manager tracking remediation progress."
+      },
+      {
+        "type": "heading",
+        "text": "Figma to Storybook for frontend (FE) developers"
+      },
+      {
+        "type": "paragraph",
+        "text": "We built the design system in Figma, tested it for accessibility and usability, and delivered it in Storybook to enable scalable, flexible implementation across our global platform."
+      },
+      {
+        "type": "paragraph",
+        "text": "Design System samples (Slide show)"
+      },
+      {
+        "type": "paragraph",
+        "text": "Your browser doesn't support HTML5 video."
+      },
+      {
+        "type": "heading",
+        "text": "Designing the NorthStar experience"
+      },
+      {
+        "type": "paragraph",
+        "text": "The core of the NorthStar UX became a dashboard that brought together real-time insights, fix velocity, exploitability context, and system signals — all in one unified view. Unlike traditional dashboards that emphasize breadth, NorthStar focused on signal over noise, pushing only what matters for each role."
+      },
+      {
+        "type": "paragraph",
+        "text": "Unlike traditional dashboards that emphasize breadth, NorthStar focused on signal over noise, using intelligent triage and role-specific prioritization powered by internal AI agents."
+      },
+      {
+        "type": "paragraph",
+        "text": "\"Before producing any output, agents assembled runtime traces, asset dependencies, historical exploit behavior, and policy constraints so users could clearly understand what the agent knew and why it was reasoning a certain way.\" - SAP"
+      },
+      {
+        "type": "paragraph",
+        "text": "The dashboard became the executive's home base — a visual contract of \"what's at risk and what can be done about it.\""
+      },
+      {
+        "type": "paragraph",
+        "text": "Northstar Insights - Phase 1"
+      },
+      {
+        "type": "image",
+        "source": "Insights Phase 1.png",
+        "alt": "Insights Phase 1"
+      },
+      {
+        "type": "paragraph",
+        "text": "Northstar Insights - Phase 2"
+      },
+      {
+        "type": "image",
+        "source": "cont-phase3-insights.png",
+        "alt": "Insights Phase 3"
+      },
+      {
+        "type": "heading",
+        "text": "Operational Clarity for SOC and Engineering"
+      },
+      {
+        "type": "paragraph",
+        "text": "We also redesigned the Incident Detail and Issue Detail screens — not just as UI improvements, but as critical bridges between automated insight and human response."
+      },
+      {
+        "type": "paragraph",
+        "text": "Here is an Incident detail page including associated issues and attack trace graph. The SOC analyst now has visibility into the blast radius and recommended actions."
+      },
+      {
+        "type": "paragraph",
+        "text": "This is where AI agents directly engaged the user:"
+      },
+      {
+        "type": "image",
+        "source": "cont-incident-detail.png",
+        "alt": "Incident Detail"
+      },
+      {
+        "type": "heading",
+        "text": "AI Remediation That Developers Can Trust"
+      },
+      {
+        "type": "paragraph",
+        "text": "Once actions were taken, the system logged agent recommendations, human decisions, and outcomes. This enabled SOC review, compliance, and organizational learning."
+      },
+      {
+        "type": "paragraph",
+        "text": "This empowered developers to trust automation while staying in control — a critical element of effective human/agent collaboration."
+      },
+      {
+        "type": "image",
+        "source": "cont-issue-remediation.png",
+        "alt": "AI How to Fix"
+      },
+      {
+        "type": "heading",
+        "text": "The Explorer Graph: Visualizing agent insights in context"
+      },
+      {
+        "type": "paragraph",
+        "text": "Meanwhile, in the Explorer, our visual attack trace graph, was reimagined to support security investigation. It became an interactive canvas for understanding attacker behavior and exploit paths."
+      },
+      {
+        "type": "paragraph",
+        "text": "Here, AI agents helped:"
+      },
+      {
+        "type": "paragraph",
+        "text": "We employed user testing feedback and synthesis to determine that a reactive \"table view\" would accompany the graph and allow the user to better manage their related assets from their focused application, server, library, etc."
+      },
+      {
+        "type": "paragraph",
+        "text": "A reactive table view was added to complement the graph — giving users the ability to toggle between AI inferences and raw telemetry, reinforcing transparency and trust."
+      },
+      {
+        "type": "paragraph",
+        "text": "With a stripped down UI and rebuilt GUI to emphasize flow and causal understanding — not just raw logs."
+      },
+      {
+        "type": "paragraph",
+        "text": "Explorer graph and asset details"
+      },
+      {
+        "type": "paragraph",
+        "text": "Slide show"
+      },
+      {
+        "type": "paragraph",
+        "text": "Your browser doesn't support HTML5 video."
+      },
+      {
+        "type": "heading",
+        "text": "Impact"
+      },
+      {
+        "type": "paragraph",
+        "text": "The NorthStar work didn't just win internal praise — it reshaped customer perception and adoption. Field sales began using the dashboard in demos with enterprise CISOs. Program managers reported faster remediation tracking. And internal engineering teams finally aligned around a common UX language."
+      },
+      {
+        "type": "image",
+        "source": "contrast-press.png",
+        "alt": "Press"
+      },
+      {
+        "type": "heading",
+        "text": "Results"
+      },
+      {
+        "type": "paragraph",
+        "text": "To validate the impact of the redesigned experience, we instrumented tracking using DataDog (event logging, interaction flows) and Google Analytics (navigation patterns, drop-off rates). This allowed us to measure before-and-after performance and capture user behavior across key workflows."
+      },
+      {
+        "type": "paragraph",
+        "text": "What the data revealed:"
+      },
+      {
+        "type": "paragraph",
+        "text": "This work ultimately became the foundation for a platform-wide shift toward role-aligned, user-centered experiences across the Contrast Security platform."
+      },
+      {
+        "type": "heading",
+        "text": "My role"
+      },
+      {
+        "type": "paragraph",
+        "text": "I served as the UX lead throughout — from research through execution (Hands-on):"
+      },
+      {
+        "type": "heading",
+        "text": "Northstar reflections"
+      },
+      {
+        "type": "paragraph",
+        "text": "This agentic structure reduced triage time without increasing risk, improved remediation velocity without sacrificing trust, and aligned CISOs, SOC teams, and developers around shared signals and actions. AI became a reliable collaborator, not an unpredictable authority."
+      }
+    ]
+  },
+  {
+    "slug": "work-3",
+    "browserTitle": "Jasper IoT Control Center - Rethought, Redesigned and Relaunched",
+    "title": "The Jasper IoT Control Center -Rediscovered, redesigned and relaunched leading to 1.48B acquisition",
+    "hero": "cj-refresh-hero-atmos@2x.png",
+    "heroAlt": "Rethought, Redesigned and Relaunched IoT Control Center",
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "The Jasper IoT Control Center -Rediscovered, redesigned and relaunched leading to 1.48B acquisition"
+      },
+      {
+        "type": "heading",
+        "text": "Leading the Jasper IoT Product Design Team"
+      },
+      {
+        "type": "paragraph",
+        "text": "I became part of the Jasper team as the founding product designer and later scaled the team."
+      },
+      {
+        "type": "paragraph",
+        "text": "The CEO was actively receiving feedback from the field, as well as the sales and customer teams, indicating that the user experience required attention to enhance sales and drive wider adoption. By the time I joined Jasper, it was already 5 years old."
+      },
+      {
+        "type": "paragraph",
+        "text": "Initially, I was the first product design hire, assuming the role of Principal Lead Designer (Employee #89). All prior user experience efforts had come from the CEO, PM, and Engineering leads, who modified out-of-the-box (OOTB) framework solutions based on subjective hypotheses."
+      },
+      {
+        "type": "heading",
+        "text": "Necessity for a redesign: Customer and data supported urgency"
+      },
+      {
+        "type": "paragraph",
+        "text": "Here is the homepage of the original Jasper IoT SaaS platform:"
+      },
+      {
+        "type": "image",
+        "source": "jasper-legacy@2x.png",
+        "alt": "Legacy Jasper home screen"
+      },
+      {
+        "type": "heading",
+        "text": "An opportunity for product innovation supported through Discovery"
+      },
+      {
+        "type": "paragraph",
+        "text": "As previously mentioned, Jasper was a startup filled with smart Product Managers and Engineers tasked with bringing a SaaS device management, performance, and diagnostics platform to market. The overall success of its offering to telecom customers provided a confident path to a successful revenue stream."
+      },
+      {
+        "type": "paragraph",
+        "text": "Jasper was agile, reliable, and fast company, akin to the \"salesforce.com\" of device management and M2M."
+      },
+      {
+        "type": "paragraph",
+        "text": "As I was assigned the task of providing the next major version, expectations for vastly improved UX design grew. A direct sync with our marketing efforts and sales was imperative."
+      },
+      {
+        "type": "heading",
+        "text": "Research made simple with enthusiastic customers!"
+      },
+      {
+        "type": "paragraph",
+        "text": "My product design team and I began interviewing our users/customers with a \"Mind-map\" approach to gain Greenfield insights. We aimed to let the customer steer as much of the conversation as possible, using design thinking exercises to generate reliable user personas from these results."
+      },
+      {
+        "type": "paragraph",
+        "text": "Most customers fell into Service Provider or Enterprise categories, then Admin or Financial Admin roles. The Financial Admin role had access to the management console for Billing and Orders, which was a significant responsibility. The regular Admin often worked through onboarding people/employees and devices, provisioning devices into the system inventory, performance management, automation rules deployment, and spotlight/diagnostics."
+      },
+      {
+        "type": "heading",
+        "text": "Heuristic Evaluation"
+      },
+      {
+        "type": "paragraph",
+        "text": "First, we performed a general heuristic user experience evaluation. Then, we began to determine the relevant metrics to measure pre and post improvements based on discovery."
+      },
+      {
+        "type": "paragraph",
+        "text": "The existing SaaS platform user experience exhibited:"
+      },
+      {
+        "type": "heading",
+        "text": "Design Thinking Exercises"
+      },
+      {
+        "type": "paragraph",
+        "text": "We interviewed our service provider and enterprise customers, using those results as content for our design thinking exercises. From these initial exercises, we solidified our personas."
+      },
+      {
+        "type": "paragraph",
+        "text": "Here are some samples of the many discovery interviews and resulting personas we developed:"
+      },
+      {
+        "type": "image",
+        "source": "jasper-persona-cc-sp@2x.png",
+        "alt": "Service Provider Persona"
+      },
+      {
+        "type": "image",
+        "source": "cj-analytics-persona-luu@2x.png",
+        "alt": "Sample Persona"
+      },
+      {
+        "type": "image",
+        "source": "cj-analytics-persona-humphrey@2x.png",
+        "alt": "Sample Persona"
+      },
+      {
+        "type": "heading",
+        "text": "User Journeys informing updated Workflow Touchpoints"
+      },
+      {
+        "type": "paragraph",
+        "text": "We ran our personas through their user journeys, synthesizing the results into reliable roles. We employed these workflows, demonstrating them in architectural flows and rudimentary wireframes. These processes presented options to generate the user's critical path. This allowed us to propose a navigation architecture for the improved platform."
+      },
+      {
+        "type": "paragraph",
+        "text": "We used Tree-testing to evaluate the main category options of the user path. Similar to card sortin, subjects determined which category titles and actions made sense in their routines. We assessed which categories were relevant to their new user journey and which should be eliminated, merged or reconfigured. This exercise proved interesting, as many PMs felt the features they championed deserved promotion above others, even though these categories often confused the user or were unimportant to their business."
+      },
+      {
+        "type": "paragraph",
+        "text": "Taking user input into account, Product Design made confident determinations based on the data we were synthesizing. Despite the complexity, our new website architecture significantly improved and became more reliable for our users."
+      },
+      {
+        "type": "paragraph",
+        "text": "Scroll right and left to witness the complexity of this platform architecture redesign PDF"
+      },
+      {
+        "type": "image",
+        "source": "jasper-refresh-sitemap@2x.png",
+        "alt": "Refresh Sitemap"
+      },
+      {
+        "type": "paragraph",
+        "text": "Photo: Product design team working out Affinity exercise as we analyze use case outcome journeys."
+      },
+      {
+        "type": "image",
+        "source": "dt photo team affinity@2x.png",
+        "alt": "Affinity workflow"
+      },
+      {
+        "type": "heading",
+        "text": "The Design System"
+      },
+      {
+        "type": "paragraph",
+        "text": "Our UI component library was inspired by the simplicity of Material Design, resulting in a cohesive look-and-feel, WCAG compliance and user validation. Our Design System now covered all instances of functionality, enabling Product Design to better communicate application design to Engineering, PM, and QA. These components are globally adopted, contemporary, tested, and documented in a shared platform."
+      },
+      {
+        "type": "paragraph",
+        "text": "Here's a glimpse of one section of the Design System, providing specifications for Masthead and branding:"
+      },
+      {
+        "type": "image",
+        "source": "jasper-design-system@2x.png",
+        "alt": "Design System"
+      },
+      {
+        "type": "heading",
+        "text": "Three Stages in the Launch of what we named the RefreshUI version of Jasper IoT Control Center"
+      },
+      {
+        "type": "paragraph",
+        "text": "Our Jasper customers had now lived years with their current platform experience and we were about to introduce a new way to consume data synthesis and IoT management. Legacy functionality was being replaced by a contemporary, mission-guided, user experience. Old habits of navigation were now rethought and presented in clean, direct Material Design patterns which would require minimal, if any, training."
+      },
+      {
+        "type": "paragraph",
+        "text": "Refresh Preview (3 months): of the transition we offered a \"Refresh Preview\" of the new experience. This was a 6 step tour of the UI highlighting key features which were all based on our synthesized user needs. It also supported dialogues of rollout dates and a tone of anticipation."
+      },
+      {
+        "type": "paragraph",
+        "text": "Beta Release Internal: Launched at the same time as the Preview. Here we released the new build to design partners and internal teams. We had regular cadance of feedback, to vet, prioritize and track."
+      },
+      {
+        "type": "paragraph",
+        "text": "Final Release of RefreshUI (after 6 months): The product design team launched the new Refresh experience after 6 months of announcements, product tours, and in-product intercepts that introduced users to these upgrades and changes."
+      },
+      {
+        "type": "paragraph",
+        "text": "After over 10 years of experiencing the old UI, Refresh was met with both accolades and anxiety. All to be expected with any rollout of a complex multi-tenant SaaS platform, specially one so critical to IoT customers bottom line."
+      },
+      {
+        "type": "paragraph",
+        "text": "Like many SaaS platforms with significant user bases, Jasper followed a similar pattern in handling feedback. Typically, initial responses to major changes focus on identifying bugs or pointing out perceived friction in the user experience. Users who quickly located their content and experienced immediate value in their roles often skipped expressing feedback, opting instead to seamlessly continue their journey on their \"happy path.\""
+      },
+      {
+        "type": "heading",
+        "text": "New Homepage: Critical, Relevant and Customizable Analytics"
+      },
+      {
+        "type": "paragraph",
+        "text": "The biggest change introduced by the RefreshUI rollout was the new role customized dashboard with relevant metrics and trends. The data display was derrived from our discovery synthesis after speaking to over a hundred users. These design partners participated in the A/B testing, prototype contextual interviews, and tree-testing. This was a welcomed new experience, which when compared to the original homepage the users had high appreciation."
+      },
+      {
+        "type": "paragraph",
+        "text": "Metrics collected after 30 days post-launch:"
+      },
+      {
+        "type": "image",
+        "source": "cj-analytics-overview-tesla@2x.png",
+        "alt": "Service Provider Persona"
+      },
+      {
+        "type": "heading",
+        "text": "Introduction of Machine Learning Supported \"Recommendation Engine\""
+      },
+      {
+        "type": "paragraph",
+        "text": "Using machine learning to analyze usage trends, we are now able to employ predictive analytics when seeing a trend leading to a potential anomaly, often an overage. These overages can be short-lived, yet spike usage to have penalty costs associated to cover the service. With this, we now present a static intercept banner at the top of the users main homepage alerting to the potential overage. This solution is part of a pattern called a \"Recommentation Engine.\" The Recommendation displays the current anomaly detected and a pre-authored automation rule which will temporarily raise the limit of usage until the spike subsides."
+      },
+      {
+        "type": "paragraph",
+        "text": "We further provide our users with the opportunity to see a predictive graph demonstrating how the \"recommendation\" would avoid substantial overage costs. This builds confidence in our application and protects our users with a proactive solution."
+      },
+      {
+        "type": "paragraph",
+        "text": "The notification intercept provides opportunities to:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Metrics collected after 30 days post launch:"
+      },
+      {
+        "type": "image",
+        "source": "cj-analytics-details-tesla@2x.png",
+        "alt": "Recommendation Engine"
+      },
+      {
+        "type": "heading",
+        "text": "Soliciting Direct Feedback from the User"
+      },
+      {
+        "type": "paragraph",
+        "text": "While most users find providing feedback only a necessity when faced with friction, we deployed a simple experience intercept dialog to ask for an overall rating from the user and their comments."
+      },
+      {
+        "type": "paragraph",
+        "text": "These intercepts were available both involuntarily at the end of a Beta Preview Tour and also under \"Help\" accessed from the masthead. Any submitted feedback and/or rating was collected automatically in data tables for synthesis by product, design, QA, development, engineering and support. Then, tracked through jira for expeditious triage based on prioritization."
+      },
+      {
+        "type": "image",
+        "source": "jasper-refresh-feedback@2x.png",
+        "alt": "Refresh Feedback"
+      },
+      {
+        "type": "paragraph",
+        "text": "Importantly, our sales team loved the new look and workflows. They shared stories from their customers about how satisfied they were with the user experience."
+      },
+      {
+        "type": "paragraph",
+        "text": "Here are a couple of slides we used to report on the performance of the new RefreshUI rollout and our in-product feedback:"
+      },
+      {
+        "type": "image",
+        "source": "cj-feedback-origin@2x.png",
+        "alt": "Redesign Feedback"
+      },
+      {
+        "type": "image",
+        "source": "refresh-rating@2x.png",
+        "alt": "Redesign Rating"
+      },
+      {
+        "type": "image",
+        "source": "provided-v-prompted@2x.png",
+        "alt": "Prompted or not"
+      },
+      {
+        "type": "image",
+        "source": "cj-types-of-feedback@2x.png",
+        "alt": "Types of Feedback"
+      },
+      {
+        "type": "paragraph",
+        "text": "And, a plan to address the bugs reported to my product design team:"
+      },
+      {
+        "type": "image",
+        "source": "managing-bugs-flow@2x.png",
+        "alt": "Addressing bugs workflow"
+      },
+      {
+        "type": "heading",
+        "text": "Success and Validation"
+      },
+      {
+        "type": "paragraph",
+        "text": "While the RefreshUI was successful, we continued to monitor our platform and microservices performance through analytics. The Control Center is a real-time, results driven, complex, observerability SaaS platform. With our global telcom operator customers and their thousands of enterprise customers, we are providing a critical management, at scale, with the required flexibiility for success."
+      },
+      {
+        "type": "paragraph",
+        "text": "While we have many supported microservices, numerous others in the roadmap require constant user experience research, testing, and validation."
+      },
+      {
+        "type": "paragraph",
+        "text": "The Cisco acquisition focused on the Jasper IoT Control Center, and its features are the benchmark for IoT at Cisco."
+      }
+    ]
+  },
+  {
+    "slug": "work-4",
+    "browserTitle": "Data Security Startup",
+    "title": "Cloud Data Security Startup",
+    "hero": "or-atmosphere-optimized@2x.jpg",
+    "heroAlt": "Reimaging Data Security",
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "Cloud Data Security Startup"
+      },
+      {
+        "type": "heading",
+        "text": "This is all about protecting your data in the cloud"
+      },
+      {
+        "type": "paragraph",
+        "text": "As a nimble startup comprised of a team of 25 individuals, we collaborated on multiple fronts to drive product adoption and foster growth. Open Raven, a trusted cloud data security company, provided a comprehensive suite of services tailored to the discovery, classification, monitoring, and protection of sensitive data. Our expertise revolved around safeguarding data residing within the robust infrastructure of the Amazon Web Services (AWS) cloud, leveraging its powerful management tools to ensure maximum security measures."
+      },
+      {
+        "type": "paragraph",
+        "text": "AWS is a vast and intricate ecosystem, encompassing numerous assets. However, employing conventional management methods can often result in inadequately configured data, leaving it vulnerable to attacks. To comply with regulations such as HIPAA and GDPR, Personally Identifiable Information (PII) must be securely stored. Open Raven offers an innovative solution, enabling customers to effortlessly identify their data within the AWS cloud."
+      },
+      {
+        "type": "paragraph",
+        "text": "With Open Raven, users can conduct comprehensive analysis, manage incidents, perform triage, and receive timely notifications, all while benefiting from a highly brand-centric experience. By leveraging Open Raven, businesses can ensure the safety and security of their valuable data."
+      },
+      {
+        "type": "heading",
+        "text": "Research through user interviews and resulting synthesis"
+      },
+      {
+        "type": "paragraph",
+        "text": "As the Head of UX, the discovery phase of user-experience design was paramount to the product design direction. The UX team sourced both CISOs (Chief Security Officers) and Data Security analysts to participate in interview sessions where we followed a macro-to-micro discovery process. These interviews provided the raw materials for the resulting synthesis, identifying common usage patterns and behaviors."
+      },
+      {
+        "type": "paragraph",
+        "text": "Here are some of the initial sample questions asked of our security professionals:"
+      },
+      {
+        "type": "image",
+        "source": "or-operations@2x.png",
+        "alt": "Operations"
+      },
+      {
+        "type": "heading",
+        "text": "The Process, in brief"
+      },
+      {
+        "type": "paragraph",
+        "text": "These user interviews are ongoing and, as a startup, are conducted simultaneously with the design of other platform features. Initial iterative wireframes are generated based on educated assumptions of user behavior. However, patterns emerged early, and the user journey began to manifest itself, informing our designs. During the interview sessions, we delved deeper into participants' actual platform interactions. We presented strategically designed UI/UX comps, assigned tasks, and gathered feedback. We then prompted participants to share their innovative ideas for improvements."
+      },
+      {
+        "type": "paragraph",
+        "text": "UX initiated A/B testing within a limited scope to gain insights into functionality and perception. Our platform presents multiple data views, and its specificity can be intricate for users. The designed user experience demands precision and intuitive execution. These intricate user actions need to be as clear as possible, devoid of ambiguity."
+      },
+      {
+        "type": "heading",
+        "text": "The Design System"
+      },
+      {
+        "type": "paragraph",
+        "text": "The UX team has successfully developed a robust design system that ensures consistency, scalability, and flexibility within the SaaS platform. Drawing inspiration from Material Design, renowned for supporting usability best practices, we meticulously modeled our components and interactions. By incorporating \"consumer patterns\" while addressing enterprise goals, we aimed to create delightful and intuitive user-centric designs that remain effective even in complex workflows."
+      },
+      {
+        "type": "paragraph",
+        "text": "In addition to user experience considerations, we were mindful of integrating corporate marketing and branding elements into our design system, as evident in the First Time User screens. This involved paying close attention to typography, color schemes, and overall theming, resulting in a unified and immersive user experience."
+      },
+      {
+        "type": "paragraph",
+        "text": "The success of this endeavor was driven by the collaboration of an exceptional team composed of experts from various disciplines. Despite their diverse backgrounds, they shared a common goal and worked together seamlessly to achieve it."
+      },
+      {
+        "type": "image",
+        "source": "or-styleguide@2x.png",
+        "alt": "Style Guide"
+      },
+      {
+        "type": "image",
+        "source": "or-styleguide2@2x.png",
+        "alt": "Style Guide"
+      },
+      {
+        "type": "paragraph",
+        "text": "Introducing the Virtual 3D Map: an innovative solution revolutionizing the way you view and interact with your data and networking landscape. This immersive environment offers a fresh and tactile experience, inviting users to explore asset relationships, security groups, VPC-to-VPC connections, vulnerabilities, and potential violations. Through powerful filtering, users can effortlessly access relevant real-time information, with minimal screen rendering delays."
+      },
+      {
+        "type": "paragraph",
+        "text": "While the Virtual 3D Map provides a unique and captivating network perspective, all filtered results are intelligently translated for easy analysis and management within the SaaS platform. For example, while exploring the map view, you can identify a violation and seamlessly address it using the Case Management feature with just one click. This interconnected ecosystem ensures streamlined data security, offering unparalleled visibility and transparency."
+      },
+      {
+        "type": "paragraph",
+        "text": "Experience the Virtual 3D Map's power as it becomes the cornerstone of your data security strategy, empowering you with comprehensive insights and actionable solutions."
+      },
+      {
+        "type": "image",
+        "source": "or-maps@2x.png",
+        "alt": "Discovery"
+      },
+      {
+        "type": "heading",
+        "text": "Agile Workflow and Design-to-Development Handoff"
+      },
+      {
+        "type": "paragraph",
+        "text": "Throughout the project, the UX team focused on delivering a persona-centric user experience that encompasses the entire user journey. Drawing insights from user feedback synthesis, we developed a robust design system that guided our design decisions. To align our product vision and showcase the roadmap features in context, we charted and shared user journey workflows using Miro, ensuring a shared understanding among the team."
+      },
+      {
+        "type": "paragraph",
+        "text": "To facilitate a smooth design-to-dev handoff within a predictable cycle, we further refined feature releases using a Gantt chart. This visual representation helped streamline the process and ensured efficient collaboration between designers and developers. Our design components were executed through Storybook, utilizing the Github repository for quick deployment onto the platform."
+      },
+      {
+        "type": "paragraph",
+        "text": "For effective ticket management and communication, we leveraged Jira and Confluence. These tools allowed us to describe and track tickets, ensuring transparency and accountability throughout the project. Additionally, we utilized Aha! for feature roadmap tracking, ensuring that all stakeholders were aligned and providing the necessary \"sign-off\" for each milestone."
+      },
+      {
+        "type": "paragraph",
+        "text": "By employing a comprehensive suite of tools and methodologies, we fostered a collaborative and efficient workflow, enabling the successful delivery of a user-centered experience that met the needs of our target personas."
+      },
+      {
+        "type": "heading",
+        "text": "Supporting the User Journey Narrative"
+      },
+      {
+        "type": "paragraph",
+        "text": "To highlight our key product features, we implemented a visually engaging product tour complete with guiding callouts. This tour effectively showcases how each use case aligns with and supports the four pillars of our marketing mantra: \"Discover, Classify, Monitor, and Protect.\" Users can conveniently access this tour by clicking on the \"i\" icon located in the masthead, introduced during the final step of the tour."
+      },
+      {
+        "type": "paragraph",
+        "text": "We also incorporated our company's distinctive branding elements to further reinforce our values and create a memorable impression. These elements add a touch of excellence and professionalism to the overall user experience, enhancing our brand's identity and promoting a cohesive and engaging journey for our users."
+      },
+      {
+        "type": "image",
+        "source": "or-tour-glify.gif",
+        "alt": "Tour"
+      },
+      {
+        "type": "paragraph",
+        "text": "The UX team collaborated closely with the product, development, support, and sales teams to expedite the release of features for the Pro 1.0 public version. Through seamless coordination and efficient communication, we ensured the timely delivery of a robust and polished product that met our users' needs."
+      },
+      {
+        "type": "paragraph",
+        "text": "With a planned and committed regular cadence in place, we continue to measure both quantitative (Amplitude, Google Analytics, and Fullstory) and qualitative (interviews and A/B testing) data with our design partners, comparing it to historical releases and our initial Pro 1.0 Benchmark."
+      },
+      {
+        "type": "paragraph",
+        "text": "As the product matures, we will increasingly employ machine learning to surface additional user nurture and expedite the visibility of any security anomalies."
+      }
+    ]
+  },
+  {
+    "slug": "work-5",
+    "browserTitle": "Power of Ai to Health and Wellness",
+    "title": "Employing AI/Machine Learning/CVision to support Health and Wellness",
+    "hero": "op-nutrition@2x.png",
+    "heroAlt": "Ai/CVision Nutrition",
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "Employing AI/Machine Learning/CVision to support Health and Wellness"
+      },
+      {
+        "type": "heading",
+        "text": "41.9% of adults in the U.S. have obesity.More than 1 billion, worldwide."
+      },
+      {
+        "type": "paragraph",
+        "text": "I became a part of a promising startup based in Colorado, Opsis Health, with its mission to transform wellness using AI technology. Our goal was to bring a distinctive health app to the market, offering users an innovative solution for managing their well-being and sustainability endeavors. Leveraging advanced image recognition and machine learning, we created Ai models via CVision. This AI accurately analyzes the nutritional composition of meals and offers personalized portion recommendations to promote healthy eating habits."
+      },
+      {
+        "type": "paragraph",
+        "text": "The Opsis Health app aims to help users gain a better understanding of the nutrients in their diet, which can have a positive impact on overall well-being. By providing valuable information, users are empowered to make informed choices about their food intake, supporting a sense of balance and improved health."
+      },
+      {
+        "type": "heading",
+        "text": "Accurate portion management and nutrition detection is a gamechanger"
+      },
+      {
+        "type": "paragraph",
+        "text": "What made our application truly unique was our unwavering commitment to precision in analyzing food. Our primary goal was to cater to a wide range of needs, from promoting consumer health and smart food choices to supporting medical programs and clinical trials. Even the slightest 5% accuracy gap was deemed unacceptable to us. Unlike many of our competitors, who provided rough and ambiguous estimates, our app's main focus was on delivering precise portion management. This approach became a game-changer in the field of food analysis, setting us apart from others in the category."
+      },
+      {
+        "type": "heading",
+        "text": "Ai nutrient deconstruction model training via robotics"
+      },
+      {
+        "type": "paragraph",
+        "text": "Our journey toward achieving such high-accuracy, speed, and precision convinced us that our user-base, for a public app would be insuffiencent to train our Ai models in time to add great value during an initial trial by a user. This finding led us to create robots with the impressive ability to capture food comprehensively, spanning a full 360-degree view. These versatile robots not only excelled in capturing images but also demonstrated proficiency in identifying patterns and assessing portion sizes. Our dedicated contributors eagerly embraced the challenge of providing food captures from diverse angles and setups, showcasing their commitment through the visually captivating point clouds generated by our advanced computer algorithms. As we integrated support for density models, the precision of our system continued to advance."
+      },
+      {
+        "type": "paragraph",
+        "text": "The effectiveness of our food scanning technology hinged on minimizing false outcomes. Previous endeavors aimed at identifying food types and nutritional information had produced inconsistent and below-par results, offering a starting point rather than an optimal benchmark. Determined to surpass these limitations, we persistently refined and honed the accuracy of our system, setting a new standard for excellence."
+      },
+      {
+        "type": "image",
+        "source": "op x y z@2x.png",
+        "alt": "Point Cloud in X Y Z"
+      },
+      {
+        "type": "paragraph",
+        "text": "In order to turn this concept into a reality, we partnered with Acorn, an industrial design company located in the Bay Area. Acorn had a notable track record, having been involved in designing components of the original iPhone for Apple. I took a personal visit to their workspace to closely supervise the project, offering design feedback and ensuring the robot's development was on track."
+      },
+      {
+        "type": "paragraph",
+        "text": "Given that this appliance would be a crucial tool from our health and wellness company, it was essential for the design to be user-friendly, intuitive, and visually appealing. We wanted the robot to represent the values and ethos of our company, aligning with our focus on providing a positive and empathetic user experience for our customers."
+      },
+      {
+        "type": "image",
+        "source": "op-robot-lg@2x.png",
+        "alt": "Industrial Design"
+      },
+      {
+        "type": "heading",
+        "text": "Human Factors"
+      },
+      {
+        "type": "paragraph",
+        "text": "We thoroughly examined every aspect, starting from the selection of plastics to be molded into the robot's shell, down to designing a user-friendly mobile device holding sprint mechanism. This innovative mechanism enables users to effortlessly operate the device, even when their hands are covered in food. Additionally, we meticulously planned the execution of a Bluetooth camera shooting from a remote control, ensuring it wouldn't disrupt the device's movement."
+      },
+      {
+        "type": "paragraph",
+        "text": "The choice of plastic surface was a deliberate decision, striking the perfect balance between providing tactile grip through its textured finish and ensuring easy cleaning with its smoothness. Furthermore, the material we opted for boasts impressive heat resistance, capable of withstanding temperatures of up to 140 degrees. This addresses the critical cookspace thresholds and ensures optimal performance in various environments."
+      },
+      {
+        "type": "paragraph",
+        "text": "Once the machines were built to specifications, we lent them to active participants in our food scanning program, enabling us to gather real-world data and fine-tune our ML food model recognition for improved accuracy and performance. Several interviews were conducted to gain all the feedback we could and then key feature improvements added to the readmap of subsequent versions."
+      },
+      {
+        "type": "image",
+        "source": "robot 1@2x.png",
+        "alt": "Training"
+      },
+      {
+        "type": "image",
+        "source": "robot 2@2x.png",
+        "alt": "Training"
+      },
+      {
+        "type": "image",
+        "source": "robot 4@2x.png",
+        "alt": "Training"
+      },
+      {
+        "type": "heading",
+        "text": "Health and wellbeing"
+      },
+      {
+        "type": "paragraph",
+        "text": "The app's value extended beyond general users to individuals managing various health conditions like diabetes, high blood pressure, celiac disease, colitis, Crohn’s disease, IBS, and gastroenteritis, among others. Instant insights into the nutritional content after scanning food helped them better manage their health and adjust their diet accordingly. This proactive approach improved their well-being and reduced the risk of complications, ultimately leading to a better quality of life."
+      },
+      {
+        "type": "heading",
+        "text": "Discovery"
+      },
+      {
+        "type": "paragraph",
+        "text": "When I joined the team, we lacked solid data to back up our claims, relying solely on prejudicial bias to support the application experience. To address this, I took the initiative to mentor the product managers on effective methods for interviewing potential users, administrators, and health professionals to understand their pain points when using technology to support their user journey. We approached sensitive subjects like obesity with care, considering their role in social stigma."
+      },
+      {
+        "type": "paragraph",
+        "text": "To gather valuable insights, I partnered each product manager during user interviews. We delved into their current state of perceived wellness, activity levels, dietary habits, and social health, while also gauging their expectations and familiarity with technology. Understanding how users would feel about interacting with our application was essential."
+      },
+      {
+        "type": "paragraph",
+        "text": "We conducted:"
+      },
+      {
+        "type": "paragraph",
+        "text": "All of these research methods conducted to test hypothesis regarding the appliance/robot and to gain data points on the friction for user adoption. Each potential user experienced a unique user journey."
+      },
+      {
+        "type": "heading",
+        "text": "Product design and brand communication"
+      },
+      {
+        "type": "paragraph",
+        "text": "As a small startup, we partnered with a local advertising agency to guide us in developing our branding, color palette, and tone for our marketing efforts. Our main focus was on conveying the concepts of health, wellness, freshness, brightness, strength, and nurture in our brand identity. To achieve this, we conducted synthesized discovery interviews with patients, users, and volunteers, combining these insights with our core ideas."
+      },
+      {
+        "type": "paragraph",
+        "text": "To validate our strategies and ideas, we conducted A/B tests to test our hypotheses, and we also used card sorting techniques to optimize the user experience for our mobile and web platforms. Throughout the process, we utilized mood boards to visually stimulate and facilitate internal discussions."
+      },
+      {
+        "type": "paragraph",
+        "text": "Once the testing phase is completed, we plan to share our refined concepts with potential users for their feedback and input."
+      },
+      {
+        "type": "paragraph",
+        "text": "Sample mood board:"
+      },
+      {
+        "type": "image",
+        "source": "mood board@2x.png",
+        "alt": "Mood Board"
+      },
+      {
+        "type": "heading",
+        "text": "User Roles"
+      },
+      {
+        "type": "paragraph",
+        "text": "What we discovered were several roles which interacted with our application."
+      },
+      {
+        "type": "paragraph",
+        "text": "Consumer: The Consumer is the regular user who downloads our application to their mobile device with a keen interest in discovering more about their dietary habits. They are drawn to the scientific data presented by the app and test its accuracy in their daily lives. Their hope is to identify patterns and trends that can guide them towards dietary improvements. Additionally, they are intrigued by the deployment of AI within the app and how it enhances their overall user experience."
+      },
+      {
+        "type": "paragraph",
+        "text": "Patient: Within medical partnership programs, we encourage weight management patients to utilize our app for effectively measuring portion sizes, nutritional intake, and diet consistency over time. The results gathered from the app are securely transmitted back to our partners through an API, where they are used to provide valuable counseling and support. Given the app's essential role in the patient's life, the data and insights it offers hold immense value. Moreover, the application's private and nurturing content fosters adoption and habitual use by the patient."
+      },
+      {
+        "type": "paragraph",
+        "text": "Contributor: We actively involve highly engaged members from both consumer and patient groups to contribute specific recipes and data points to enrich our app's content and functionality. These contributors become advocates for the app's value and play a pivotal role in identifying bugs and suggesting continuous improvements."
+      },
+      {
+        "type": "paragraph",
+        "text": "Administrator: Our PM and UX teams have access to the Administration view of the web platform, where they can closely monitor various aspects of the app. This includes observing failed scans, logging reported bugs, and identifying areas for further enhancing the app's user experience and data delivery to our users."
+      },
+      {
+        "type": "heading",
+        "text": "What does success look like?"
+      },
+      {
+        "type": "paragraph",
+        "text": "Benchmarking the current status was a crucial step. To generate both qualitative and quantitative data, we meticulously mapped user journeys and exposed potential users to prototype concepts. During this process, we paid close attention to sensitive mental models and recorded any pain points they experienced."
+      },
+      {
+        "type": "paragraph",
+        "text": "With this wealth of information, we charted concepts for various features, including community building, recipe sharing, messaging, professional endorsements, online medical advice, partnerships, and more. Each concept was carefully considered based on the insights we gained from the interviews and prototype testing."
+      },
+      {
+        "type": "heading",
+        "text": "Live Software"
+      },
+      {
+        "type": "paragraph",
+        "text": "As our app gained popularity, we saw its potential to significantly reduce diet-related health issues by promoting awareness of nutritional choices and portion control. This led to the emergence of a healthier and more proactive user group, where our users actively engaged with their health and well-being. The app was allowing new ways to manage what earlier had been a model for anxiety, but now was a benchmark of progress. Progress of their dietary history and the insights to improve through education supported by \"delight.\""
+      },
+      {
+        "type": "paragraph",
+        "text": "In addition to the food scanning app, we offered a web platform for users who wanted to contribute more labeled photos and recipes to train the model further. These social features helped boost our Net Promoter Score (NPS) and accelerated model training. Additionally, we provided an Admin view to vet submitted results, monitor contributions, and track social NPS scores within the company."
+      },
+      {
+        "type": "paragraph",
+        "text": "Company Admin Dashboard of KPIs Presenting views of metrics for user contribution stats and user outreach:"
+      },
+      {
+        "type": "image",
+        "source": "op-admin-dash@2x.png",
+        "alt": "Admin screen screen"
+      },
+      {
+        "type": "paragraph",
+        "text": "Company Admin of approval queue User recipe/ingredient submitted queue for approval. Once approved, these are committed to the training model, as well as, broader user community:"
+      },
+      {
+        "type": "image",
+        "source": "op-validation-queue@2x.png",
+        "alt": "Queue screen screen"
+      },
+      {
+        "type": "paragraph",
+        "text": "User contribution dashboard As a user volunteers to submit recipes with an accompanying food scan, they can monitor their progress:"
+      },
+      {
+        "type": "image",
+        "source": "op-recipe-ingred@2x.png",
+        "alt": "Contributor Dashboard screen"
+      }
+    ]
+  },
+  {
+    "slug": "work-6",
+    "browserTitle": "Mobile App / iPhone / Android",
+    "title": "Jasper Mobile App",
+    "hero": "j-webapp-composition@2x.png",
+    "heroAlt": "JW mobile app",
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "Jasper Mobile App"
+      },
+      {
+        "type": "heading",
+        "text": "Jasper/Cisco customers have requested on-demand account device analytics for more immediate performance insights and management."
+      },
+      {
+        "type": "paragraph",
+        "text": "Many of Cisco Jasper's telecom service providers have asked to extend the reach of analytics, exploring device performance and network status. This includes aspects like usage, outages, diagnostics, onboarding, and monitoring of their customers' bandwidth. They have requested a simplified mobile version of these Key Performance Indicators (KPIs) presented in a critical and relevant manner for their accounts."
+      },
+      {
+        "type": "heading",
+        "text": "Capitalizing on the data lake."
+      },
+      {
+        "type": "paragraph",
+        "text": "Jasper is uniquely positioned to execute with \"real-time\" customer data. While most telecom operators offer some form of mobile app to their subscribers, our backend agile capabilities and customer APIs enable us to promptly address user usage alerts and deploy additional capabilities upon agreement to the terms of an operator's service campaign."
+      },
+      {
+        "type": "paragraph",
+        "text": "This access to the customers' complete data sets our service offering apart, providing a more comprehensive opportunity. Alongside offering this visual presentation layer of KPIs, we can also filter their backend usage data and create special, relevant offers that enhance the appeal of our platform application services."
+      },
+      {
+        "type": "paragraph",
+        "text": "A sample interview from our research sessions:"
+      },
+      {
+        "type": "image",
+        "source": "jasper-iphone-interview-sample@2x.png",
+        "alt": "Interview"
+      },
+      {
+        "type": "image",
+        "source": "jasper-iphone-dt@2x.png",
+        "alt": "Design Thinking"
+      },
+      {
+        "type": "heading",
+        "text": "The Solution: A customer centric, actionable dashboard"
+      },
+      {
+        "type": "paragraph",
+        "text": "I designed this web/mobile app to address the need for a mobile customer to monitor and manage their voice, SMS, and data usage."
+      },
+      {
+        "type": "paragraph",
+        "text": "The true highlight of these dashboard apps is their limited yet robust user experience. We designed the user experience with simplicity in mind. The KPI anomalies are actionable, triggering notifications that can be more comprehensively explored in the expanded desktop version, which offers more screen space. When an automated rule is triggered due to detecting an overage threshold, the user is notified on both mobile and desktop platforms to attend to the alert."
+      },
+      {
+        "type": "paragraph",
+        "text": "The app has been tested through analytics and verified for its successful adoption."
+      }
+    ]
+  },
+  {
+    "slug": "work-7",
+    "browserTitle": "Marketplace",
+    "title": "Marketplace - In Product Store for Features and Add-Ons",
+    "hero": "cj-marketplace-hero@2x.png",
+    "heroAlt": "Marketplace",
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "Marketplace - In Product Store for Features and Add-Ons"
+      },
+      {
+        "type": "heading",
+        "text": "Goal: Supporting the purchasing of device performance features by our enterprise customers"
+      },
+      {
+        "type": "paragraph",
+        "text": "Based on customer interviews and sales feedback, we discovered that our platform was not addressing numerous valuable add-on features. These enhancements offered significant improvements in both device and user performance, creating a new revenue stream for service providers."
+      },
+      {
+        "type": "heading",
+        "text": "Our product design team embarked on finding solutions for selling add-ons, focusing on customer needs:"
+      },
+      {
+        "type": "paragraph",
+        "text": "We initiated interviews with enterprise customers who would benefit from these add-ons. We inquired about the impact of these enhanced features on their work and revenue, the value derived from service provider relationships, transparency in feature roadmaps, employee satisfaction with workflows, specific feature requests, and how they wished to explore new features and products in the competitive IoT market."
+      },
+      {
+        "type": "paragraph",
+        "text": "These questions provided valuable insights into the adoption of a marketplace feature."
+      },
+      {
+        "type": "paragraph",
+        "text": "Here is a sample persona used during our design thinking synthesis:"
+      },
+      {
+        "type": "image",
+        "source": "marketplace-interview@2x.png",
+        "alt": "Interview"
+      },
+      {
+        "type": "image",
+        "source": "jasper-mp-designthinking@2x.png",
+        "alt": "Design Exercise"
+      },
+      {
+        "type": "image",
+        "source": "jasper-mp-process2@2x.png",
+        "alt": "Design Thinking photo"
+      },
+      {
+        "type": "heading",
+        "text": "Synthesis"
+      },
+      {
+        "type": "paragraph",
+        "text": "We strategically differentiated support-oriented sales requests from paid add-on features. Each add-on was assigned a price, culminating in the creation of the \"Marketplace\" section within our Control Center SaaS platform."
+      },
+      {
+        "type": "paragraph",
+        "text": "Designing the Marketplace workflow was a complex task. Different personas (roles) followed distinct user journeys and pursued diverse goals. Service providers aimed to monetize Cisco Jasper-produced features, while enterprise customers sought to enhance their network or device performance without significant expenditure due to slim margins."
+      },
+      {
+        "type": "paragraph",
+        "text": "Our interviews emphasized the competitiveness of our IoT marketplace. Many service providers were developing or planning similar online shops for their proprietary solutions. Hence, our product design needed to devise a distinctive model for selling high-value add-on features."
+      },
+      {
+        "type": "heading",
+        "text": "Simplifying the legalese"
+      },
+      {
+        "type": "paragraph",
+        "text": "Our research strongly indicated that the purchase of add-on features needed to be streamlined for a smoother online experience. We collaborated with Sales and Support to explore various solutions. We transformed the once laborious process of extensive paperwork and signatures into a simplified, binding \"Terms and Conditions\" agreement, presented seamlessly in the UI as a mandatory step. This approach aligned with best practices observed in numerous international online software stores."
+      },
+      {
+        "type": "paragraph",
+        "text": "Here is the pdf of the site architecture detailing our decision-making process: (PDF):"
+      },
+      {
+        "type": "image",
+        "source": "cj-marketplace-architecture@2x.png",
+        "alt": "Marketplace Architecture"
+      },
+      {
+        "type": "heading",
+        "text": "Marketplace MVP"
+      },
+      {
+        "type": "paragraph",
+        "text": "Following interviews and A/B testing of our hypothetical concepts, we conducted iterative rounds of improvement, collaborating closely with the marketing team. This resulted in the launch of an MVP in select service provider markets. These MVP launches proved instrumental in testing workflows and prompted further changes to enhance user experience."
+      },
+      {
+        "type": "paragraph",
+        "text": "We simplified decision-making by utilizing existing account data and presenting limited choices, often not addressed or managed by the user in other contexts."
+      },
+      {
+        "type": "paragraph",
+        "text": "Marketplace landing page:"
+      },
+      {
+        "type": "image",
+        "source": "cj-marketplace-ent-store@2x.png",
+        "alt": "screen"
+      },
+      {
+        "type": "paragraph",
+        "text": "Our Marketplace embraced an open, modern design. We employed legible contemporary fonts and paired them with category-relevant images to showcase each add-on."
+      },
+      {
+        "type": "paragraph",
+        "text": "Only essential information is displayed for customers: features, terms, prices, and a review of the Terms and Conditions. Commitment concerns were alleviated by offering every add-on as a 30-day trial, a feature warmly received by both enterprise customers and service providers."
+      },
+      {
+        "type": "paragraph",
+        "text": "Some of the Feature details page workflow:"
+      },
+      {
+        "type": "image",
+        "source": "cj-marketplace-ent-detail-trail-accepted@2x.png",
+        "alt": "Trial Accepted"
+      },
+      {
+        "type": "heading",
+        "text": "Marketplace - A scalable, flexible service for platform adoption"
+      },
+      {
+        "type": "paragraph",
+        "text": "We continue to monitor the adoption, engagement, and success of the Marketplace. Given the fierce competition, our research underscores the crucial role of user experience in promoting these add-ons within our IoT marketplace."
+      },
+      {
+        "type": "paragraph",
+        "text": "The Marketplace represents a novel avenue for revenue growth, paralleling our customers' expansion and efficiency opportunities. We stand as their business partner in this endeavor."
+      }
+    ]
+  },
+  {
+    "slug": "work-8",
+    "browserTitle": "Tablet App",
+    "title": "Tablet App for Customer SMS, Voice and Data Usage",
+    "hero": "cj-ipad-hero@2x.png",
+    "heroAlt": "iPad Application",
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "Tablet App for Customer SMS, Voice and Data Usage"
+      },
+      {
+        "type": "heading",
+        "text": "Goal: To increase customers management of device performance and campaigns through accessible tablet experience"
+      },
+      {
+        "type": "paragraph",
+        "text": "With the success and adoption of the iPhone and Android app for our Telecom Operator Analytics dashboard, the next step would be to satisfy the tablet user requests."
+      },
+      {
+        "type": "paragraph",
+        "text": "Tablets are used by NOC customer, sales, support and the Enterprise to bring a larger mobile viewing space to the user. This demand was also confirmed in our google analytics for viewport sizes by user. But, how can we capitalize on the user interaction patterns and our complex platform user experience in a way that simplifies data and highlights anomalys?"
+      },
+      {
+        "type": "heading",
+        "text": "Capitalizing on the tablet experience"
+      },
+      {
+        "type": "paragraph",
+        "text": "Offering customers real-time access to their telecom usage and key performance indicators (KPIs) via a mobile tablet experience comes with a range of benefits. This transparent and data-rich approach empowers customers by providing them with a comprehensive grasp of their communication habits, enabling them to make well-informed decisions regarding their plans and services. Through interactive visuals and user-friendly graphs, customers can effortlessly monitor their data, voice, and messaging usage, giving them better control over their expenses and helping them avoid exceeding limits. Furthermore, the tablet's portability ensures that customers can conveniently keep an eye on their telecom metrics while on the move, allowing for timely adjustments to usage patterns and plans as necessary. This heightened visibility into telecom usage not only boosts customer satisfaction by giving them greater control over their connectivity but also fosters a sense of trust and engagement with the telecom provider's offerings."
+      },
+      {
+        "type": "image",
+        "source": "cj-ipad-open@2x.png",
+        "alt": "Tablet"
+      },
+      {
+        "type": "heading",
+        "text": "Tablet Adoption"
+      },
+      {
+        "type": "paragraph",
+        "text": "We collaborated with several design partners for our MVP testing, entrusting them with validating our product. Through ongoing feedback collection and selective A/B testing, we confirmed the effectiveness of user touchpoints in various workflows. We prioritized their management requests and restructured the Dashboard accordingly."
+      },
+      {
+        "type": "paragraph",
+        "text": "Notably, alerts are seamlessly integrated into the tablet's home view app icon, enabling users to promptly address any issues within the application."
+      },
+      {
+        "type": "paragraph",
+        "text": "Championed by the Jasper sales team, this tablet application has become a benchmark for user behavior within the Telecom Operator's platform. It effectively caters to users seeking a comprehensive overview of the enterprises supported by the operator."
+      }
+    ]
+  },
+  {
+    "slug": "work-9",
+    "browserTitle": "Driver Financial Mobile App",
+    "title": "'Know what you owe' with the SafeHold rideshare driver financial management app",
+    "hero": "sh-2370x1930@2x.png",
+    "heroAlt": "Driver Financial Management App",
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "'Know what you owe' with the SafeHold rideshare driver financial management app"
+      },
+      {
+        "type": "heading",
+        "text": "Question: Financial transparency to the rideshare driver...is this a true disruptor?"
+      },
+      {
+        "type": "paragraph",
+        "text": "I was asked by the ex-CEO of Jasper if I would join one of his side projects. This was a startup striving to provide financial transparency and income management to rideshare drivers of Uber and Lyft."
+      },
+      {
+        "type": "paragraph",
+        "text": "The problem is quite obvious in the driver interviews, they see the income, but cannot predict the taxes due for Federal and State. This information is just contextual interviews with people of the community, actually using the rideshare services and for this startup, being forensic CPAs."
+      },
+      {
+        "type": "heading",
+        "text": "My Role, Discovery Phase: Design, plan and execute user research"
+      },
+      {
+        "type": "paragraph",
+        "text": "We sourced drivers of both Uber and Lyft and surveyed their opinons on their ability to predict and manage tax due from their driving income. And, subsequently, if an app providing quick calculations of taxes due would be adopted into their routine. Lastly, what value they would place on such an application service (0 to 10). This would help us determine potential routes to monetization."
+      },
+      {
+        "type": "paragraph",
+        "text": "I designed a quick survey to expose user demand for a potential Uber and Lyft driver finance management app. Here is the Sketch layout:"
+      },
+      {
+        "type": "image",
+        "source": "safehold-survey-screens@2x.png",
+        "alt": "Uber/Lyft Driver Survey"
+      },
+      {
+        "type": "paragraph",
+        "text": "Survey results after the questionaire app had been distributed for 3 weeks to voluteer Uber and Lyft drivers:"
+      },
+      {
+        "type": "image",
+        "source": "safehold-survey-results@2x.png",
+        "alt": "Uber/Lyft Driver Survey Results"
+      },
+      {
+        "type": "paragraph",
+        "text": "Worked with an agency to bring some of their tone into the app:"
+      },
+      {
+        "type": "paragraph",
+        "text": "A sample persona to drive design thinking and user journey:"
+      },
+      {
+        "type": "image",
+        "source": "sh-felix-persona@2x.png",
+        "alt": "Persona"
+      },
+      {
+        "type": "heading",
+        "text": "My Role, Synthesis: Using the survey and interview results to design the app workflow"
+      },
+      {
+        "type": "paragraph",
+        "text": "The demand was validated. The UX had to provide very simple onboarding to the user, simple financial taxonomy, limited scope, visual presentation of income and tax due. Big hit areas since the driver may be at a stop light and tap to view status. Visibility of each element, text, buttons, data tested to be easy at arms length. This was a \"driver's app.\""
+      },
+      {
+        "type": "heading",
+        "text": "User Journey: Key Touchpoints"
+      },
+      {
+        "type": "paragraph",
+        "text": "In an effort to help Uber and Lyft drivers calculate their taxes due, Safehold provides financial management based on their Uber and Lyft income. The driver simply uses their Uber and Lyft SSO to allow Safehold to analyze their information and tax status. From this, and a bit of backend \"machine learning,\" Safehold provides a visual dashboard of their total daily, monthly and quarterly earnings. Additionally, with their acceptance of the Safehold engine, their \"tax due\"(\"I owe...\") is displayed to provide total transparency for driver money management."
+      },
+      {
+        "type": "paragraph",
+        "text": "New fintech apps, especially mobile, are applying machine learning strategic analytics at key user pain points to make sense of their data. This is where technology can disrupt the old financial models and innovate into a potential greenfield future."
+      },
+      {
+        "type": "paragraph",
+        "text": "As Max Levchin (Founder of Paypal and Affirm), maintains, these new disruptive financial servies which offer \"Adaptive banking built on trust and data.\" This is the future of financial management."
+      },
+      {
+        "type": "heading",
+        "text": "The Tricky Route to Market"
+      },
+      {
+        "type": "paragraph",
+        "text": "Rideshare companies do not look favorably on the financial transparency apps like Safehold provide. The driver can now see how little they earn from the total income received, often 30 to 40 percent. So, getting the cooperation of the rideshare companies has been complex. The drivers find out within their near future, regardless. So, the rideshare companies should examine worker policy and embrace transparency. This builds trust."
+      },
+      {
+        "type": "paragraph",
+        "text": "This has been field tested and currently in production."
+      }
+    ]
+  },
+  {
+    "slug": "work-10",
+    "browserTitle": "Cisco Jasper GPS Location Based Services",
+    "title": "Optimizing Fleet Visibility and Driver Experience with IoT Connectivity",
+    "hero": "cj-lbs-hero@2x.png",
+    "heroAlt": "Location Based Services GPS",
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "Optimizing Fleet Visibility and Driver Experience with IoT Connectivity"
+      },
+      {
+        "type": "heading",
+        "text": "UX-led innovation for fuel-focused logistics platforms"
+      },
+      {
+        "type": "paragraph",
+        "text": "At Cisco Jasper, I led design efforts for a suite of IoT-powered fleet tools aimed at simplifying logistics and enhancing visibility for transportation providers. While originally built for enterprise fleets, this work translates directly to the needs of small carriers, independent operators, and fuel-discount platforms—where usability, real-time data, and driver autonomy are key."
+      },
+      {
+        "type": "heading",
+        "text": "Rethinking Fleet Operations for the Driver"
+      },
+      {
+        "type": "paragraph",
+        "text": "Traditional fleet tracking often relies on outdated workflows: manual check-ins, delayed location data, and clunky interfaces. We saw an opportunity to modernize these systems with intuitive tools designed for leaner teams and on-the-road operators."
+      },
+      {
+        "type": "paragraph",
+        "text": "Through interviews with dispatchers and drivers, we identified common friction points: unreliable tracking, lack of fuel usage transparency, and poor support for remote diagnostics. These insights shaped our approach to develop a modular, mobile-friendly fleet tracking experience optimized for fast deployment and day-to-day use."
+      },
+      {
+        "type": "heading",
+        "text": "Building a Connected, Real-Time Platform"
+      },
+      {
+        "type": "paragraph",
+        "text": "Using our existing SaaS infrastructure, we designed and launched a Location-Based Services suite featuring:"
+      },
+      {
+        "type": "paragraph",
+        "text": "These tools gave fleet operators immediate insights without the need for technical overhead—ideal for logistics teams where every minute and mile count."
+      },
+      {
+        "type": "heading",
+        "text": "Reducing Friction Through Device Partnerships"
+      },
+      {
+        "type": "paragraph",
+        "text": "To simplify adoption, we partnered with hardware vendors offering pre-installed GPS tracking units. This meant customers could plug in, connect, and get started immediately—reducing the barriers often associated with telematics rollouts. For resource-constrained operators, this plug-and-play model was a game changer."
+      },
+      {
+        "type": "paragraph",
+        "text": "We deployed and validated the system across various geographies, introducing edge computing to accelerate real-time feedback, and refined our platform using ML-powered tracker session analysis. Our approach delivered performance far beyond legacy systems, while remaining accessible and cost-effective."
+      },
+      {
+        "type": "heading",
+        "text": "A UX Designed for Speed and Confidence"
+      },
+      {
+        "type": "paragraph",
+        "text": "We created a clean, actionable dashboard summarizing:"
+      },
+      {
+        "type": "paragraph",
+        "text": "From there, users could drill into each vehicle’s detail view: trip paths, connectivity health, and telemetry diagnostics were all surfaced in real-time."
+      },
+      {
+        "type": "paragraph",
+        "text": "This focus on clarity, responsiveness, and minimal training overhead helped operators stay ahead of problems—and supported smarter, faster decision-making across the board."
+      },
+      {
+        "type": "image",
+        "source": "cj-lbs-dash@2x.png",
+        "alt": "Fleet Tracking Dashboard"
+      },
+      {
+        "type": "heading",
+        "text": "Enabling a Marketplace of Connected Fleet Tools"
+      },
+      {
+        "type": "paragraph",
+        "text": "With strong adoption and positive feedback, we integrated these fleet tracking capabilities into our broader Control Center Marketplace—allowing operators to add functionality as needed, without switching platforms. This “composable logistics stack” mirrors the direction of many emerging platforms serving independent carriers, where visibility, control, and affordability are paramount."
+      }
+    ]
+  }
+]
