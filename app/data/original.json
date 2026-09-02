@@ -294,14 +294,14 @@
           {
             "tag": "div",
             "props": {
-              "className": "row"
+              "className": "container"
             },
             "children": [
               "\n\t\t\t\t",
               {
                 "tag": "div",
                 "props": {
-                  "className": "col-xs-12 col-sm-6 col-sm-offset-3 intro"
+                  "className": "col-xs-12 intro"
                 },
                 "children": [
                   "\n                    ",

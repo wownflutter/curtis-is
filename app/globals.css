@@ -33,8 +33,16 @@
 #team .rowbottom > .col-sm-3 > h3 { text-align:left; }
 #team .rowbottom > .col-sm-3 > .center-block img { display:block; margin-left:0; margin-right:0; }
 #apps .intro h1 { font-size:1.4em; }
-@media(min-width:992px) {
-  #team .process-introduction { width:66.666667%; margin-left:16.666667%; }
+#team .mission-statement { text-wrap:balance; }
+#team .portfolio-summary { max-width:65ch; text-wrap:pretty; }
+/* The intro has its own centered reading width, independent of the columns. */
+#team .process-introduction {
+  float:none;
+  width:100%;
+  max-width:900px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:left;
 }
 
 /* Keep the original edge-to-edge presentation without exposing browser chrome. */
