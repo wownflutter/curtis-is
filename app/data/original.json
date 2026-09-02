@@ -60,13 +60,6 @@
                         ]
                       },
                       "\n\t\t\t\t\t\t",
-                      {
-                        "tag": "h2",
-                        "props": {},
-                        "children": [
-                          "Explore."
-                        ]
-                      },
                       "\n\t\t\t\t\t\t",
                       {
                         "tag": "div",
