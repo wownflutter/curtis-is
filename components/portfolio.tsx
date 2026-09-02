@@ -1,7 +1,7 @@
 'use client';
 /* oxlint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions, next/no-img-element -- delegated events preserve the original nested markup; original media must remain byte-for-byte unchanged. */
 
-import { createElement, useEffect, useRef, useState, type ReactNode, type MouseEvent, type SyntheticEvent } from 'react';
+import { createElement, useEffect, useRef, useState, type ReactNode, type MouseEvent } from 'react';
 import { flushSync } from 'react-dom';
 import original from '@/app/data/original.json';
 import mediaSizes from '@/app/data/media-sizes.json';
@@ -21,6 +21,18 @@ type ContentNode = string | {tag:string; props:Record<string,unknown>; children:
 const content = original as unknown as {home:ContentNode;projects:{slug:string;title:string;css:string;tree:ContentNode[]}[]};
 const voidTags = new Set(['img','input','br','hr','source','wbr','embed','area','col']);
 
+function PortfolioFooter() {
+  return <footer id="contacts" className="portfolio-footer">
+    <div className="portfolio-footer-inner">
+      <p>© {new Date().getFullYear()} Curtis Hall</p>
+      <nav aria-label="Footer">
+        <a href="mailto:curtis@curtis.is">Email</a>
+        <a href="https://medium.com/@curtbydesign">Writing</a>
+      </nav>
+    </div>
+  </footer>;
+}
+
 /** Build ordinary React elements, preserving the authored content hierarchy.
  * No injected HTML, legacy scripts, jQuery, or client-side Next router.
  */
@@ -28,6 +40,9 @@ function render(node:ContentNode, key:string):ReactNode {
   if (typeof node === 'string') return node;
   const props: Record<string,unknown> = {...node.props, key};
   const id=typeof props.id==='string'?props.id:'';
+  if(id==='contacts' || id==='feeds')return null;
+  if(node.tag==='footer')return <PortfolioFooter key={key} />;
+  if(node.tag==='li' && node.children.some(child=>typeof child!=='string' && child.props.href==='#feeds'))return null;
   let tag = node.tag;
   if (/^work-\d+$/.test(id) && props.className === 'work') {
     tag = 'a'; props.href = `/${id}`;
@@ -50,7 +65,6 @@ export function Portfolio({initialSlug=null}:{initialSlug?:string|null}) {
   const [menuOpen,setMenuOpen]=useState(false);
   const [navVisible,setNavVisible]=useState(false);
   const [lightbox,setLightbox]=useState<{src:string;alt:string}|null>(null);
-  const [formMessage,setFormMessage]=useState('');
   const savedScroll=useRef(0);
   const lastCard=useRef<HTMLAnchorElement|null>(null);
   const closeButton=useRef<HTMLButtonElement>(null);
@@ -153,15 +167,8 @@ export function Portfolio({initialSlug=null}:{initialSlug?:string|null}) {
       event.preventDefault();setLightbox({src:href,alt:anchor.querySelector('img')?.alt||'Project image'});
     } else if(href.startsWith('#')) setMenuOpen(false);
   }
-  function onSubmit(event:SyntheticEvent<HTMLDivElement>) {
-    event.preventDefault();
-    const form=event.target as HTMLFormElement;
-    if(!form.reportValidity())return;
-    setFormMessage('The preview does not send messages yet. Please email curtis@curtis.is directly.');
-  }
-  return <div ref={surface} className={`portfolio-root ${menuOpen?'menu-open':''} ${navVisible?'nav-visible':''}`} onClick={onClick} onSubmit={onSubmit} onKeyDown={e=>{if(e.key==='Escape'&&!lightbox&&slug)navigate(null);}}>
+  return <div ref={surface} className={`portfolio-root ${menuOpen?'menu-open':''} ${navVisible?'nav-visible':''}`} onClick={onClick} onKeyDown={e=>{if(e.key==='Escape'&&!lightbox&&slug)navigate(null);}}>
     <div className="home-surface" hidden={Boolean(project)}>{render(content.home,'home')}
-      {formMessage&&<output className="form-status">{formMessage}</output>}
     </div>
     {project&&<div id="project-page" className="project-visible">
       {project.css&&<style>{project.css}</style>}
