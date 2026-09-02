@@ -97,7 +97,7 @@ body { overflow-x:clip; overflow-y:auto; }
 #header { position:relative; height:100vh; background-size:cover; }
 #header::before {
   content:''; position:absolute; inset:0; pointer-events:none;
-  background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.55) 45%,rgba(0,0,0,.4));
+  background:linear-gradient(180deg,rgba(0,0,0,.225),rgba(0,0,0,.495) 45%,rgba(0,0,0,.36));
 }
 #intro { z-index:1; }
 #intro :is(h1,h2) { color:#fff; text-shadow:0 2px 12px rgba(0,0,0,.5); }
