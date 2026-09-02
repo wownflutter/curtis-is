@@ -65,7 +65,7 @@
 #team .rowbottom .center-block { text-align:left; height:64px; }
 #team .rowbottom .center-block img { display:block; margin:0; width:64px; height:64px; object-fit:contain; }
 #team .rowbottom h3 { margin:20px 0 14px; font-size:22px; line-height:1.25; text-align:left; }
-#team p.principles { margin:0; font-family:var(--font-body); font-size:16px; font-weight:400; line-height:1.6; color:#444; text-align:left; }
+#team p.principles { margin:0; font-family:var(--font-body); font-size:16px; font-weight:400; line-height:1.45; color:#444; text-align:left; }
 @media(max-width:991px) {
   #team .process-introduction { gap:32px; }
   #team .rowbottom { grid-template-columns:repeat(2,minmax(0,1fr)); gap:36px 0; }

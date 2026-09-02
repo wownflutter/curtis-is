@@ -533,13 +533,7 @@
                           "className": "principles"
                         },
                         "children": [
-                          "Providing a vision for the future state",
-                          {
-                            "tag": "br",
-                            "props": {},
-                            "children": []
-                          },
-                          "(+ Escape Velocity), while satisfying product design and business goals."
+                          "Providing a vision for the future state (+ Escape Velocity), while satisfying product design and business goals."
                         ]
                       },
                       "\n            "
