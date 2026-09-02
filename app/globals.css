@@ -21,28 +21,62 @@
   font-weight:600;
   letter-spacing:-.015em;
 }
-#team p.principles {
-  font-family:var(--font-body);
-  font-size:14px;
-  font-weight:400;
-  line-height:1.6;
-  color:#444;
-  text-align:left;
-}
-#team .rowbottom > .col-sm-3 > .center-block,
-#team .rowbottom > .col-sm-3 > h3 { text-align:left; }
-#team .rowbottom > .col-sm-3 > .center-block img { display:block; margin-left:0; margin-right:0; }
 #apps .intro h1 { font-size:1.4em; }
-#team .mission-statement { text-wrap:balance; }
-#team .portfolio-summary { max-width:65ch; text-wrap:pretty; }
-/* The intro has its own centered reading width, independent of the columns. */
+/* Process section: shared edges, split introduction, and four asset-led columns. */
+#team > .container { width:calc(100% - 48px); max-width:1170px; }
 #team .process-introduction {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:64px;
   float:none;
   width:100%;
-  max-width:900px;
-  margin-left:auto;
-  margin-right:auto;
+  max-width:none;
+  margin:0 0 56px;
+  padding:24px 0 56px;
+  border-bottom:1px solid #dedbd6;
   text-align:left;
+}
+#team .process-introduction::before,
+#team .process-introduction::after { display:none; }
+#team .mission-statement {
+  margin:0;
+  font-size:clamp(32px,3.4vw,50px);
+  line-height:1.12;
+  letter-spacing:-.035em;
+}
+#team .mission-statement span { display:block; }
+#team .portfolio-summary {
+  margin:0;
+  padding:0;
+  font-family:var(--font-body);
+  font-size:clamp(18px,1.6vw,23px);
+  font-weight:400;
+  line-height:1.55;
+  letter-spacing:-.015em;
+  text-wrap:pretty;
+}
+#team .rowbottom { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); margin:0 0 80px; }
+#team .rowbottom::before,
+#team .rowbottom::after { display:none; }
+#team .rowbottom > .col-sm-3 { float:none; width:auto; padding:0 28px; border-left:1px solid #dedbd6; }
+#team .rowbottom > .col-sm-3:first-child { padding-left:0; border-left:0; }
+#team .rowbottom > .col-sm-3:last-child { padding-right:0; }
+#team .rowbottom .center-block { text-align:left; height:64px; }
+#team .rowbottom .center-block img { display:block; margin:0; width:64px; height:64px; object-fit:contain; }
+#team .rowbottom h3 { margin:20px 0 14px; font-size:22px; line-height:1.25; text-align:left; }
+#team p.principles { margin:0; font-family:var(--font-body); font-size:16px; font-weight:400; line-height:1.6; color:#444; text-align:left; }
+@media(max-width:991px) {
+  #team .process-introduction { gap:32px; }
+  #team .rowbottom { grid-template-columns:repeat(2,minmax(0,1fr)); gap:36px 0; }
+  #team .rowbottom > .col-sm-3:nth-child(odd) { padding-left:0; border-left:0; }
+  #team .rowbottom > .col-sm-3:nth-child(even) { padding-right:0; }
+}
+@media(max-width:600px) {
+  #team .process-introduction { grid-template-columns:1fr; gap:24px; padding-top:0; padding-bottom:32px; margin-bottom:32px; }
+  #team .rowbottom { grid-template-columns:1fr; gap:28px; margin-bottom:48px; }
+  #team .rowbottom > .col-sm-3 { padding:0; border-left:0; }
+  #team .rowbottom > .col-sm-3 + .col-sm-3 { border-top:1px solid #dedbd6; padding-top:28px; }
 }
 
 /* Keep the original edge-to-edge presentation without exposing browser chrome. */

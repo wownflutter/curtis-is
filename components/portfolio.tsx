@@ -55,6 +55,13 @@ function PortfolioFooter() {
  */
 function render(node:ContentNode, key:string):ReactNode {
   if (typeof node === 'string') return node;
+  if(node.props.className==='mission-statement') {
+    return <h2 key={key} className="mission-statement">
+      <span>Design leader.</span>
+      <span>Team builder.</span>
+      <span>User evangelist.</span>
+    </h2>;
+  }
   if(node.props.id==='project-title' && node.children[0]==='The Jasper IoT Control Center -') {
     return <div key={key} className="project-heading-group">
       <h2 id="project-title">The Jasper IoT Control Center</h2>
