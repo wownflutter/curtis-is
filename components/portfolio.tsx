@@ -26,8 +26,8 @@ function PortfolioFooter() {
     <div className="portfolio-footer-inner">
       <p>© {new Date().getFullYear()} Curtis Hall</p>
       <nav aria-label="Footer">
-        <a href="mailto:curtis@curtis.is">Email</a>
-        <a href="https://medium.com/@curtbydesign">Writing</a>
+        <a href="mailto:wownflutter@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/curtbydesign/">LinkedIn</a>
       </nav>
     </div>
   </footer>;
