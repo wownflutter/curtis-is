@@ -97,7 +97,7 @@ body { overflow-x:clip; overflow-y:auto; }
 #header { position:relative; height:100vh; background-size:cover; }
 #header::before {
   content:''; position:absolute; inset:0; pointer-events:none;
-  background:linear-gradient(180deg,rgba(0,0,0,.225),rgba(0,0,0,.495) 45%,rgba(0,0,0,.36));
+  background:linear-gradient(180deg,rgba(0,0,0,.2025),rgba(0,0,0,.4455) 45%,rgba(0,0,0,.324));
 }
 #intro { z-index:1; }
 #intro :is(h1,h2) { color:#fff; text-shadow:0 2px 12px rgba(0,0,0,.5); }
@@ -108,8 +108,18 @@ body { overflow-x:clip; overflow-y:auto; }
   line-height:1.25;
   text-wrap:balance;
 }
-#intro .hero-headline > span { display:block; }
-#intro .keep-together { white-space:nowrap; }
+#intro .hero-subtitle {
+  max-width:800px;
+  margin:24px auto 0;
+  color:#fff;
+  font-family:var(--font-body);
+  font-size:clamp(16px,1.7vw,22px);
+  font-weight:400;
+  line-height:1.5;
+  text-align:center;
+  text-wrap:balance;
+  text-shadow:0 2px 12px rgba(0,0,0,.5);
+}
 #intro { position:absolute; left:50%; top:50vh; transform:translate(-50%,-50%); width:calc(100% - 41px); }
 #top-bar { transition:top .2s; }
 .nav-visible #top-bar { top:0; }

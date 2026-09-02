@@ -49,7 +49,14 @@
                         "tag": "h1",
                         "props": {},
                         "children": [
-                          "curtis.is creating user-friendly experiences for innovative products."
+                          "curtis.is designing the interface between humans and autonomous systems."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "props": { "className": "hero-subtitle" },
+                        "children": [
+                          "Four-time founding designer, now leading AI product design at Cyderes."
                         ]
                       },
                       "\n\t\t\t\t\t\t",

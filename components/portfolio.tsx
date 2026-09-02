@@ -68,12 +68,6 @@ function render(node:ContentNode, key:string):ReactNode {
       <p className="project-deck">Rediscovered, redesigned and relaunched leading to <span className="project-outcome">1.48B acquisition</span></p>
     </div>;
   }
-  if(node.tag==='h1' && node.children.includes('curtis.is creating user-friendly experiences for innovative products.')) {
-    return <h1 key={key} className="hero-headline">
-      <span>curtis.is creating <span className="keep-together">user-friendly</span> experiences</span>{' '}
-      <span>for innovative products.</span>
-    </h1>;
-  }
   const props: Record<string,unknown> = {...node.props, key};
   const id=typeof props.id==='string'?props.id:'';
   if(node.tag==='ul')props.role='list';
