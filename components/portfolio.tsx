@@ -2,6 +2,7 @@
 /* oxlint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions, next/no-img-element -- delegated events preserve the original nested markup; original media must remain byte-for-byte unchanged. */
 
 import { createElement, useEffect, useRef, useState, type ReactNode, type MouseEvent, type SyntheticEvent } from 'react';
+import { flushSync } from 'react-dom';
 import original from '@/app/data/original.json';
 import mediaSizes from '@/app/data/media-sizes.json';
 
@@ -73,8 +74,13 @@ export function Portfolio({initialSlug=null}:{initialSlug?:string|null}) {
   },[project]);
   useEffect(()=>{if(lightbox)dialog.current?.showModal();else dialog.current?.close();},[lightbox]);
   function navigate(target:string|null) {
-    history.pushState(null,'',target?`/${target}`:'/#apps');
-    setSlug(target); setLightbox(null); setMenuOpen(false);
+    const update=()=>{
+      history.pushState(null,'',target?`/${target}`:'/#apps');
+      flushSync(()=>{setSlug(target); setLightbox(null); setMenuOpen(false);});
+    };
+    if(document.startViewTransition && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.startViewTransition(update);
+    } else update();
   }
   function onClick(event:MouseEvent<HTMLDivElement>) {
     const target=event.target as HTMLElement;

@@ -26,6 +26,34 @@ body { overflow-x:clip; overflow-y:auto; }
 #menu-mobile { border:0; padding:0; background:transparent; }
 #work-container .mix { display:block; opacity:1; }
 a.work { display:block; color:inherit; }
+/* Keep the photography still; reveal a lightly frosted caption over it. */
+a.work img, .no-touch a.work:hover img, .touch a.work img {
+  top:0; transition:opacity .2s ease; filter:none; -webkit-filter:none;
+}
+a.work .work-info {
+  bottom:0; height:auto; min-height:2.5em; padding:0 12px;
+  background:rgba(255,255,255,.94); color:#1a1a1a;
+  border-top:1px solid rgba(255,255,255,.65);
+  opacity:0; transform:translateY(8px);
+  transition:opacity .2s ease,transform .2s ease;
+}
+@supports ((backdrop-filter:blur(12px)) or (-webkit-backdrop-filter:blur(12px))) {
+  a.work .work-info {
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+  }
+}
+a.work:focus-visible .work-info { opacity:1; transform:translateY(0); }
+@media(hover:hover) {
+  a.work:hover .work-info { opacity:1; transform:translateY(0); }
+  a.work:hover img { opacity:.94; }
+}
+@media(hover:none) {
+  a.work .work-info { opacity:1; transform:none; }
+}
+::view-transition-old(root),::view-transition-new(root) {
+  animation-duration:180ms; animation-timing-function:ease-out;
+}
 #project-page.project-visible { display:block; }
 #project-top-bar button { border:0; padding:0; background-color:transparent; }
 #previous-project:hover + #previous-project-name,
@@ -46,3 +74,6 @@ section { scroll-margin-top:52px; }
   #top-navigation li { display:block; }
 }
 @media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+@media(prefers-reduced-motion:reduce) {
+  ::view-transition-old(root),::view-transition-new(root) { animation:none!important; }
+}
