@@ -69,7 +69,7 @@ function render(node:ContentNode, key:string):ReactNode {
   }
   const props: Record<string,unknown> = {...node.props, key};
   const id=typeof props.id==='string'?props.id:'';
-  if(node.tag==='ul' && String(props.className||'').split(/\s+/).includes('newlist'))props.role='list';
+  if(node.tag==='ul')props.role='list';
   if(node.children.some(child=>typeof child!=='string' && child.props.className==='mission-statement')) {
     props.className=`${props.className||''} process-introduction`;
   }
