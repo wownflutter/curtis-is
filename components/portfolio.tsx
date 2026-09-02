@@ -56,6 +56,9 @@ export function Portfolio({initialSlug=null}:{initialSlug?:string|null}) {
   const closeButton=useRef<HTMLButtonElement>(null);
   const dialog=useRef<HTMLDialogElement>(null);
   const transitioning=useRef(false);
+  const surface=useRef<HTMLDivElement>(null);
+  const cancelScroll=useRef<(()=>void)|null>(null);
+  useEffect(()=>()=>cancelScroll.current?.(),[]);
   const project=content.projects.find(p=>p.slug===slug);
   const index=content.projects.findIndex(p=>p.slug===slug);
   const previous=content.projects[(index+9)%10];
@@ -74,42 +77,57 @@ export function Portfolio({initialSlug=null}:{initialSlug?:string|null}) {
     document.title=project?`${project.title} — curtis.is`:'curtis.is : Product Design | Interaction | User Experience | Mobile Design | Saas | Motion';
   },[project]);
   useEffect(()=>{if(lightbox)dialog.current?.showModal();else dialog.current?.close();},[lightbox]);
-  function navigate(target:string|null) {
+  async function navigate(target:string|null) {
     if(transitioning.current)return;
-    const cardImage=lastCard.current?.querySelector('img');
-    const shared=(!slug && target) || (slug && !target);
-    const outgoing=shared?(slug?document.querySelector('#project img'):cardImage):null;
-    const visible=(element:Element|null|undefined):element is HTMLElement=>{
-      if(!(element instanceof HTMLElement))return false;
-      const rect=element.getBoundingClientRect();
-      return rect.width>0 && rect.height>0 && rect.bottom>0 && rect.top<window.innerHeight;
-    };
-    const animate=Boolean(document.startViewTransition) && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const canShare=animate && visible(outgoing);
-    let incoming:HTMLElement|null=null;
+    cancelScroll.current?.();
+    const element=surface.current;
+    const animate=element && typeof element.animate==='function' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const update=()=>{
       history.pushState(null,'',target?`/${target}`:'/#apps');
       flushSync(()=>{setSlug(target); setLightbox(null); setMenuOpen(false);});
-      // Restore scroll before the browser captures the destination snapshot.
+      // Change scroll while the surface is invisible, never during its reveal.
       window.scrollTo({top:target?0:savedScroll.current,behavior:'instant'});
-      const destination=target?document.querySelector('#project img'):cardImage;
-      if(canShare && visible(destination)) {
-        incoming=destination;
-        incoming.style.viewTransitionName='project-artwork';
-      }
     };
-    if(animate) {
-      transitioning.current=true;
-      if(canShare)outgoing.style.viewTransitionName='project-artwork';
-      const transition=document.startViewTransition(update);
-      // A skipped animation must never block navigation or leave duplicate names.
-      void transition.ready.catch(()=>{});
-      void transition.finished.catch(()=>{}).finally(()=>{
-        if(outgoing instanceof HTMLElement)outgoing.style.removeProperty('view-transition-name');
-        incoming?.style.removeProperty('view-transition-name');
-        transitioning.current=false;
-      });
-    } else update();
+    if(!animate){update();return;}
+    transitioning.current=true;
+    let animation:Animation|null=null;
+    try {
+      animation=element.animate([{opacity:1},{opacity:0}],{duration:220,easing:'ease-in',fill:'forwards'});
+      await animation.finished.catch(()=>{});
+      update();
+      animation.cancel();
+      animation=element.animate([{opacity:0},{opacity:1}],{duration:360,easing:'ease-out',fill:'both'});
+      await animation.finished.catch(()=>{});
+    } finally {
+      animation?.cancel();
+      transitioning.current=false;
+    }
+  }
+  function scrollToSection(destination:HTMLElement) {
+    cancelScroll.current?.();
+    const start=window.scrollY;
+    const margin=parseFloat(getComputedStyle(destination).scrollMarginTop)||0;
+    const end=Math.max(0,Math.min(start+destination.getBoundingClientRect().top-margin,document.documentElement.scrollHeight-window.innerHeight));
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){window.scrollTo({top:end,behavior:'instant'});return;}
+    let frame=0;
+    const began=performance.now();
+    const cancel=()=>{
+      cancelAnimationFrame(frame);
+      window.removeEventListener('wheel',cancel);
+      window.removeEventListener('touchstart',cancel);
+      window.removeEventListener('keydown',cancel);
+    };
+    cancelScroll.current=cancel;
+    window.addEventListener('wheel',cancel,{passive:true});
+    window.addEventListener('touchstart',cancel,{passive:true});
+    window.addEventListener('keydown',cancel);
+    const step=(now:number)=>{
+      const t=Math.min((now-began)/1000,1);
+      const eased=t*t*(3-2*t);
+      window.scrollTo({top:start+(end-start)*eased,behavior:'instant'});
+      if(t<1)frame=requestAnimationFrame(step);else cancel();
+    };
+    frame=requestAnimationFrame(step);
   }
   function onClick(event:MouseEvent<HTMLDivElement>) {
     const target=event.target as HTMLElement;
@@ -117,15 +135,12 @@ export function Portfolio({initialSlug=null}:{initialSlug?:string|null}) {
     const anchor=target.closest('a') as HTMLAnchorElement|null;
     if(!anchor || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     const href=anchor.getAttribute('href') || '';
-    if(anchor.closest('#explore') && href.startsWith('#')) {
+    if((anchor.closest('#explore') || anchor.closest('#top-navigation')) && href.startsWith('#')) {
       const destination=document.getElementById(href.slice(1));
       if(destination) {
         event.preventDefault();
         history.pushState(null,'',href);
-        destination.scrollIntoView({
-          behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',
-          block:'start',
-        });
+        scrollToSection(destination);
         setMenuOpen(false);
         return;
       }
@@ -144,7 +159,7 @@ export function Portfolio({initialSlug=null}:{initialSlug?:string|null}) {
     if(!form.reportValidity())return;
     setFormMessage('The preview does not send messages yet. Please email curtis@curtis.is directly.');
   }
-  return <div className={`portfolio-root ${menuOpen?'menu-open':''} ${navVisible?'nav-visible':''}`} onClick={onClick} onSubmit={onSubmit} onKeyDown={e=>{if(e.key==='Escape'&&!lightbox&&slug)navigate(null);}}>
+  return <div ref={surface} className={`portfolio-root ${menuOpen?'menu-open':''} ${navVisible?'nav-visible':''}`} onClick={onClick} onSubmit={onSubmit} onKeyDown={e=>{if(e.key==='Escape'&&!lightbox&&slug)navigate(null);}}>
     <div className="home-surface" hidden={Boolean(project)}>{render(content.home,'home')}
       {formMessage&&<output className="form-status">{formMessage}</output>}
     </div>

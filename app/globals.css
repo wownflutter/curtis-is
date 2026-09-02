@@ -51,17 +51,6 @@ a.work:focus-visible .work-info { opacity:1; transform:translateY(0); }
 @media(hover:none) {
   a.work .work-info { opacity:1; transform:none; }
 }
-::view-transition-old(root),::view-transition-new(root) {
-  animation-duration:420ms; animation-timing-function:cubic-bezier(.22,1,.36,1);
-}
-::view-transition-group(project-artwork) {
-  animation-duration:420ms; animation-timing-function:cubic-bezier(.22,1,.36,1);
-  overflow:clip;
-}
-::view-transition-old(project-artwork),::view-transition-new(project-artwork) {
-  width:100%; height:100%; object-fit:cover;
-  animation-duration:420ms; mix-blend-mode:normal;
-}
 #project-page.project-visible { display:block; }
 #project-top-bar button { border:0; padding:0; background-color:transparent; }
 #previous-project:hover + #previous-project-name,
