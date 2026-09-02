@@ -3,6 +3,7 @@
 
 import { createElement, useEffect, useRef, useState, type ReactNode, type MouseEvent } from 'react';
 import { flushSync } from 'react-dom';
+import { Globe2, Hammer, Handshake } from 'lucide-react';
 import original from '@/app/data/original.json';
 import mediaSizes from '@/app/data/media-sizes.json';
 
@@ -20,6 +21,22 @@ function MediaImage({attributes}:{attributes:Record<string,unknown>}) {
 type ContentNode = string | {tag:string; props:Record<string,unknown>; children:ContentNode[]};
 const content = original as unknown as {home:ContentNode;projects:{slug:string;title:string;tree:ContentNode[]}[]};
 const voidTags = new Set(['img','input','br','hr','source','wbr','embed','area','col']);
+
+const careerProofs = [
+  { title:'Founding Designer', lead:'5×', body:'Cyderes, Contrast Security, Opsis Health, Trackonomy, and Jasper. Built each design function from zero.', icon:Hammer },
+  { title:'Exit', lead:'$1.48B', body:'Jasper, where I was founding designer, acquired by Cisco. Continued at Cisco for four years as a design executive leading the IoT product design team.', icon:Handshake },
+  { title:'Scale', lead:'Fortune 500', body:'Platforms used by 800+ enterprise customers across cybersecurity, IoT, logistics, and healthcare—including UPS and Koch Industries.', icon:Globe2 },
+];
+
+function CareerProofStrip({keyName}:{keyName:string}) {
+  return <div key={keyName} className="row rowbottom career-proof-strip">
+    {careerProofs.map(({title,lead,body,icon:Icon})=><article className="col-sm-3 career-proof" key={title}>
+      <div className="career-proof-icon"><Icon aria-hidden="true" strokeWidth={1.2}/></div>
+      <h3>{title}</h3>
+      <p className="principles"><strong>{lead}</strong> · {body}</p>
+    </article>)}
+  </div>;
+}
 
 function textContent(node:ContentNode):string {
   return typeof node==='string' ? node : node.children.map(textContent).join('');
@@ -55,11 +72,12 @@ function PortfolioFooter() {
  */
 function render(node:ContentNode, key:string):ReactNode {
   if (typeof node === 'string') return node;
+  if(node.props.className==='row rowbottom') return <CareerProofStrip keyName={key} />;
   if(node.props.className==='mission-statement') {
     return <h2 key={key} className="mission-statement">
       <span>Design leader.</span>
       <span>Team builder.</span>
-      <span>4x founding designer.</span>
+      <span>5x founding designer.</span>
     </h2>;
   }
   if(node.props.id==='project-title' && node.children[0]==='The Jasper IoT Control Center -') {

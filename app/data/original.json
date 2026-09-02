@@ -56,7 +56,7 @@
                         "tag": "p",
                         "props": { "className": "hero-subtitle" },
                         "children": [
-                          "Four-time founding designer, now leading AI product design at Cyderes."
+                          "5× founding designer, now leading AI product design at Cyderes."
                         ]
                       },
                       "\n\t\t\t\t\t\t",
@@ -311,7 +311,7 @@
                       "className": "mission-statement"
                     },
                     "children": [
-                      "Design leader. Team builder. 4x founding designer."
+                      "Design leader. Team builder. 5x founding designer."
                     ]
                   },
                   "\n                       ",
@@ -319,7 +319,7 @@
                     "tag": "p",
                     "props": { "className": "portfolio-summary" },
                     "children": [
-                      "Four-time founding designer, including Jasper IoT, acquired by Cisco for $1.48B. Today I lead design at Cyderes, shaping how people work with AI agents to decide faster and act sooner."
+                      "Five-time founding designer, including Jasper, acquired by Cisco for $1.48B. Today I lead design at Cyderes, shaping how people work with AI agents to decide faster and act sooner."
                     ]
                   },
                   "\n",
@@ -376,7 +376,7 @@
                         "tag": "h3",
                         "props": {},
                         "children": [
-                          "Catalyst"
+                          "Founding designer"
                         ]
                       },
                       "\n                ",
@@ -386,7 +386,7 @@
                           "className": "principles"
                         },
                         "children": [
-                          "Serving as a catalyst for team synergy and brand awareness. Elevating the team conversation and growing the skillset."
+                          "4× · Cyderes, Contrast Security, Trackonomy, Jasper IoT. Built each design function from zero."
                         ]
                       },
                       "\n                "
@@ -425,7 +425,7 @@
                         "tag": "h3",
                         "props": {},
                         "children": [
-                          "User Evangelist"
+                          "Exit"
                         ]
                       },
                       "\n                ",
@@ -435,7 +435,7 @@
                           "className": "principles"
                         },
                         "children": [
-                          "We are the voice of the user, always pursuing the most intuitive product experience and brand adoption."
+                          "$1.48B · Jasper IoT, acquired by Cisco. Stayed on four years to lead IoT product design."
                         ]
                       },
                       "\n            "
@@ -474,7 +474,7 @@
                         "tag": "h3",
                         "props": {},
                         "children": [
-                          "Solver"
+                          "Scale"
                         ]
                       },
                       "\n                ",
@@ -484,7 +484,7 @@
                           "className": "principles"
                         },
                         "children": [
-                          "Delivering solid, proven execution based on data-driven user research analysis and market validation."
+                          "Fortune 500 · Platforms used by 800+ enterprise customers across security, IoT, logistics, and health, including UPS and Koch Industries."
                         ]
                       },
                       "\n            "
@@ -523,7 +523,7 @@
                         "tag": "h3",
                         "props": {},
                         "children": [
-                          "North Star Guide"
+                          "Recognition"
                         ]
                       },
                       "\n                ",
@@ -533,7 +533,7 @@
                           "className": "principles"
                         },
                         "children": [
-                          "Providing a vision for the future state (+ Escape Velocity), while satisfying product design and business goals."
+                          "Webby · Addy · Create Gold. 40+ designers hired and mentored across four teams."
                         ]
                       },
                       "\n            "

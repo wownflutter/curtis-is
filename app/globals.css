@@ -57,6 +57,7 @@
   text-wrap:pretty;
 }
 #team .rowbottom { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); margin:0 0 80px; }
+#team .career-proof-strip { grid-template-columns:repeat(3,minmax(0,1fr)); }
 #team .rowbottom::before,
 #team .rowbottom::after { display:none; }
 #team .rowbottom > .col-sm-3 { float:none; width:auto; padding:0 28px; border-left:1px solid #dedbd6; }
@@ -64,8 +65,11 @@
 #team .rowbottom > .col-sm-3:last-child { padding-right:0; }
 #team .rowbottom .center-block { text-align:left; height:64px; }
 #team .rowbottom .center-block img { display:block; margin:0; width:64px; height:64px; object-fit:contain; }
+#team .career-proof-icon { height:64px; color:#080808; }
+#team .career-proof-icon svg { display:block; width:64px; height:64px; }
 #team .rowbottom h3 { margin:20px 0 14px; font-size:22px; line-height:1.25; text-align:left; }
 #team p.principles { margin:0; font-family:var(--font-body); font-size:16px; font-weight:400; line-height:1.45; color:#444; text-align:left; }
+#team p.principles strong { color:#222; font-weight:700; }
 @media(max-width:991px) {
   #team .process-introduction { gap:32px; }
   #team .rowbottom { grid-template-columns:repeat(2,minmax(0,1fr)); gap:36px 0; }
