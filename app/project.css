@@ -1,0 +1,82 @@
+/* Case-study typography, lists, and theme variants. */
+#project {
+  --project-body-size:16px;
+  --project-body-leading:1.6;
+  --project-list-gap:8px;
+}
+#project ul.newlist { margin:0; padding-left:1.2em; }
+#project-page.project-visible { display:block; }
+#project :is(p,li) {
+  font-family:var(--font-body);
+  font-size:var(--project-body-size);
+  font-weight:400;
+  line-height:var(--project-body-leading);
+}
+#project .project-heading-group { margin-bottom:32px; }
+#project .project-heading-group #project-title {
+  margin-bottom:6px;
+  font-size:clamp(26px,3vw,36px);
+  line-height:1.2;
+  text-wrap:balance;
+}
+#project .project-heading-group .project-deck {
+  max-width:65ch;
+  margin:0;
+  padding:0;
+  font-size:clamp(18px,2vw,24px);
+  line-height:1.35;
+  text-wrap:pretty;
+}
+#project .project-outcome { white-space:nowrap; }
+#project ul.newlist > li {
+  position:relative;
+  list-style:none;
+  padding-left:calc(.3em + var(--project-list-gap));
+  padding-right:.8em;
+  margin-left:.3em;
+  padding-top:0;
+  padding-bottom:0;
+  margin-bottom:var(--project-list-gap);
+  line-height:var(--project-body-leading);
+  text-indent:0;
+}
+#project ul.newlist > li::before {
+  content:'';
+  position:absolute;
+  left:0;
+  top:calc(.8em - .15em);
+  width:.3em;
+  height:.3em;
+  border-radius:50%;
+  background:currentColor;
+}
+#project p:has(> b:only-child):has(+ .project-header) {
+  padding-top:32px;
+}
+@media(max-width:600px) {
+  #project p:has(> b:only-child):has(+ .project-header) { padding-top:24px; }
+}
+
+/* Labels above lists share one weight and spacing regardless of source markup. */
+#project p.list-introduction {
+  margin-top:20px;
+  margin-bottom:12px;
+  font-weight:600;
+}
+#project p.list-introduction :is(b,strong) { font-weight:inherit; }
+
+/* Theme only: dark pages inherit the same body and list sizing as light pages. */
+#project .dark-mode-usecase {
+  background:#272727;
+  color:#ececf0;
+  padding:40px 0;
+  font-family:var(--font-body);
+}
+#project .dark-mode-usecase .project-header { background:#272727; padding-top:20px; }
+#project .dark-mode-usecase #project-title { color:#f4594e; font-size:2em; line-height:1.3; }
+#project .dark-mode-usecase :is(h1,h2,h3,h4,h5,h6) { color:#f4594e; line-height:1.3; }
+#project .dark-mode-usecase :is(h4,h5,h6) { font-family:var(--font-body); font-weight:700; }
+#project .dark-mode-usecase :is(p,li) { color:#ececf0; }
+#project .dark-mode-usecase a { color:#f4594e; }
+#project .dark-mode-usecase img.fullimage { display:block; width:100%; height:auto; background:transparent; }
+#project .dark-mode-usecase ul.newlist { padding-left:1.8em; }

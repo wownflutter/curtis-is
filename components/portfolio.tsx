@@ -18,8 +18,25 @@ function MediaImage({attributes}:{attributes:Record<string,unknown>}) {
 }
 
 type ContentNode = string | {tag:string; props:Record<string,unknown>; children:ContentNode[]};
-const content = original as unknown as {home:ContentNode;projects:{slug:string;title:string;css:string;tree:ContentNode[]}[]};
+const content = original as unknown as {home:ContentNode;projects:{slug:string;title:string;tree:ContentNode[]}[]};
 const voidTags = new Set(['img','input','br','hr','source','wbr','embed','area','col']);
+
+function textContent(node:ContentNode):string {
+  return typeof node==='string' ? node : node.children.map(textContent).join('');
+}
+
+/** Give label paragraphs preceding lists one shared style. */
+function renderChildren(children:ContentNode[], key:string):ReactNode[] {
+  return children.map((child,index)=>{
+    const next=children.slice(index+1).find(node=>typeof node!=='string' || node.trim()!=='');
+    if(typeof child!=='string' && child.tag==='p' && textContent(child).trim().endsWith(':') &&
+      next && typeof next!=='string' && (next.tag==='ul' || next.tag==='ol')) {
+      const className=typeof child.props.className==='string' ? child.props.className : '';
+      child={...child,props:{...child.props,className:`${className} list-introduction`}};
+    }
+    return render(child,`${key}.${index}`);
+  });
+}
 
 function PortfolioFooter() {
   return <footer id="contacts" className="portfolio-footer">
@@ -38,8 +55,27 @@ function PortfolioFooter() {
  */
 function render(node:ContentNode, key:string):ReactNode {
   if (typeof node === 'string') return node;
+  if(node.props.id==='project-title' && node.children[0]==='The Jasper IoT Control Center -') {
+    return <div key={key} className="project-heading-group">
+      <h2 id="project-title">The Jasper IoT Control Center</h2>
+      <p className="project-deck">Rediscovered, redesigned and relaunched leading to <span className="project-outcome">1.48B acquisition</span></p>
+    </div>;
+  }
+  if(node.tag==='h1' && node.children.includes('curtis.is creating user-friendly experiences for innovative products.')) {
+    return <h1 key={key} className="hero-headline">
+      <span>curtis.is creating <span className="keep-together">user-friendly</span> experiences</span>{' '}
+      <span>for innovative products.</span>
+    </h1>;
+  }
   const props: Record<string,unknown> = {...node.props, key};
   const id=typeof props.id==='string'?props.id:'';
+  if(node.tag==='ul' && String(props.className||'').split(/\s+/).includes('newlist'))props.role='list';
+  if(node.children.some(child=>typeof child!=='string' && child.props.className==='mission-statement')) {
+    props.className=`${props.className||''} process-introduction`;
+  }
+  if(node.tag==='p' && node.children.some(child=>typeof child==='string' && child.startsWith('I design intuitive, scalable experiences'))) {
+    props.className=`${typeof props.className==='string'?props.className:''} portfolio-summary`;
+  }
   if(id==='contacts' || id==='feeds')return null;
   if(node.tag==='footer')return <PortfolioFooter key={key} />;
   if(node.tag==='li' && node.children.some(child=>typeof child!=='string' && child.props.href==='#feeds'))return null;
@@ -57,7 +93,7 @@ function render(node:ContentNode, key:string):ReactNode {
   if (tag === 'a' && String(props.href).includes('medium.com')) props['aria-label']='Medium';
   if (tag === 'textarea') { props.defaultValue=node.children.filter(x=>typeof x==='string').join(''); return createElement(tag,props); }
   if (tag === 'img') { const {key:unusedKey,...attributes}=props; return <MediaImage key={key} attributes={attributes} />; }
-  return voidTags.has(tag) ? createElement(tag, props) : createElement(tag, props, node.children.map((child,i)=>render(child,`${key}.${i}`)));
+  return voidTags.has(tag) ? createElement(tag, props) : createElement(tag, props, renderChildren(node.children,key));
 }
 
 export function Portfolio({initialSlug=null}:{initialSlug?:string|null}) {
@@ -171,7 +207,6 @@ export function Portfolio({initialSlug=null}:{initialSlug?:string|null}) {
     <div className="home-surface" hidden={Boolean(project)}>{render(content.home,'home')}
     </div>
     {project&&<div id="project-page" className="project-visible">
-      {project.css&&<style>{project.css}</style>}
       <nav id="project-top-bar" aria-label="Project navigation">
         <button id="previous-project" aria-label={`Previous project: ${previous.title}`} onClick={()=>navigate(previous.slug)} />
         <div id="previous-project-name"><h2>{previous.title}</h2></div>

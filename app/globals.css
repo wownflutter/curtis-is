@@ -2,7 +2,40 @@
 @import url('/original/css/bootstrap.css');
 @import url('/original/css/font-awesome.min.css');
 @import url('/original/css/styles.css');
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Inter:wght@200;300;400;500;600&display=swap');
+@import './project.css';
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Inter:wght@200;300;400;500;600&family=Manrope:wght@600&display=swap');
+
+/* Shared font families; component sizing lives with each section. */
+.portfolio-root {
+  --font-body:'Inter',sans-serif;
+  --font-heading:'Manrope','Inter',sans-serif;
+}
+.portfolio-root :is(h1,h2,h3) {
+  font-family:var(--font-heading) !important;
+  font-weight:600 !important;
+}
+.portfolio-root :is(h1,h2) { letter-spacing:-.025em; }
+.portfolio-root .mission-statement,
+.portfolio-root .portfolio-summary {
+  font-family:var(--font-heading);
+  font-weight:600;
+  letter-spacing:-.015em;
+}
+#team p.principles {
+  font-family:var(--font-body);
+  font-size:14px;
+  font-weight:400;
+  line-height:1.6;
+  color:#444;
+  text-align:left;
+}
+#team .rowbottom > .col-sm-3 > .center-block,
+#team .rowbottom > .col-sm-3 > h3 { text-align:left; }
+#team .rowbottom > .col-sm-3 > .center-block img { display:block; margin-left:0; margin-right:0; }
+#apps .intro h1 { font-size:1.4em; }
+@media(min-width:992px) {
+  #team .process-introduction { width:66.666667%; margin-left:16.666667%; }
+}
 
 /* Keep the original edge-to-edge presentation without exposing browser chrome. */
 html { scrollbar-width:none; }
@@ -20,6 +53,21 @@ body { overflow-x:clip; overflow-y:auto; }
 .portfolio-root,.home-surface { height:100%; }
 [hidden] { display:none !important; }
 #header { position:relative; height:100vh; background-size:cover; }
+#header::before {
+  content:''; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.55) 45%,rgba(0,0,0,.4));
+}
+#intro { z-index:1; }
+#intro :is(h1,h2) { color:#fff; text-shadow:0 2px 12px rgba(0,0,0,.5); }
+#intro h1 {
+  max-width:1100px;
+  margin-left:auto;
+  margin-right:auto;
+  line-height:1.25;
+  text-wrap:balance;
+}
+#intro .hero-headline > span { display:block; }
+#intro .keep-together { white-space:nowrap; }
 #intro { position:absolute; left:50%; top:50vh; transform:translate(-50%,-50%); width:calc(100% - 41px); }
 #top-bar { transition:top .2s; }
 .nav-visible #top-bar { top:0; }
@@ -44,6 +92,18 @@ a.work .work-info {
   }
 }
 a.work:focus-visible .work-info { opacity:1; transform:translateY(0); }
+a.work .work-info h6 {
+  margin:0;
+  padding:12px 4px;
+  font-family:'Manrope','Inter',sans-serif;
+  font-size:15px;
+  font-weight:600;
+  line-height:1.4;
+  letter-spacing:0;
+  color:#242424;
+  text-align:left;
+  text-wrap:pretty;
+}
 @media(hover:hover) {
   a.work:hover .work-info { opacity:1; transform:translateY(0); }
   a.work:hover img { opacity:.94; }
@@ -51,11 +111,18 @@ a.work:focus-visible .work-info { opacity:1; transform:translateY(0); }
 @media(hover:none) {
   a.work .work-info { opacity:1; transform:none; }
 }
-#project-page.project-visible { display:block; }
 #project-top-bar button { border:0; padding:0; background-color:transparent; }
 #previous-project:hover + #previous-project-name,
 #next-project:hover + #next-project-name { opacity:1; }
 :focus-visible { outline:2px solid #f4594e; outline-offset:4px; }
+.portfolio-root :is(a,button):focus:not(:focus-visible) {
+  outline:none;
+  box-shadow:none;
+}
+.portfolio-root :is(a,button):focus-visible {
+  outline:2px solid #f4594e;
+  outline-offset:4px;
+}
 #explore a:focus { outline:none; }
 #explore a:focus-visible { outline:2px solid #f4594e; outline-offset:4px; }
 section { scroll-margin-top:52px; }

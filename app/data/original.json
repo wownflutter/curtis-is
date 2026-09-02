@@ -1742,7 +1742,6 @@
       "slug": "work-1",
       "title": "IoT, Spatial Logistics and Healthcare through ML/AI",
       "browserTitle": "Control Center IoT Data Consumption Dashboard",
-      "css": "",
       "tree": [
         "\n",
         {
@@ -3060,7 +3059,6 @@
       "slug": "work-2",
       "title": "AI Remediation for Cyber Attacks",
       "browserTitle": "Contrast Security - Introduction of Application Detection and Response",
-      "css": "\n  .dark-mode-usecase {\n    background-color: #272727;\n    color: #ececf0;\n    padding: 40px 0;\n    font-family: 'Inter', sans-serif;\n  }\n\n  .dark-mode-usecase .project-header {\n    background-color: #272727;\n    padding-top: 20px;\n  }\n\n.dark-mode-usecase #project-title {\n  color: #f4594e; /* orange for hero headline */\n  font-family: 'Inter', sans-serif;\n  font-size: 2em;\n  font-weight: 700;\n  line-height: 1.3;\n}\n\n  .dark-mode-usecase h1,\n  .dark-mode-usecase h2,\n  .dark-mode-usecase h3,\n  .dark-mode-usecase h4,\n  .dark-mode-usecase h5,\n  .dark-mode-usecase h6 {\n    color: #f4594e; /* Orange for all headings in dark mode */\n    font-family: 'Inter', sans-serif;\n    font-weight: 700;\n    line-height: 1.3;\n  }\n\n  .dark-mode-usecase p,\n  .dark-mode-usecase li {\n    color: #ececf0;\n    font-size: 1.125em;\n    line-height: 1.5625em;\n  }\n\n  .dark-mode-usecase p.image-title {\n    color: #ececf0;\n  }\n\n  .dark-mode-usecase a {\n    color: #f4594e;\n  }\n\n  .dark-mode-usecase img.fullimage {\n    display: block;\n    width: 100%;\n    height: auto;\n    background: transparent;\n  }\n\n.dark-mode-usecase ul.newlist {\n  list-style-position: outside;\n  padding-left: 1.8em; /* adjust this value to control bullet + left space */\n  margin: 0;\n}\n\n.dark-mode-usecase ul.newlist li {\n  margin-bottom: 0.4em;\n  line-height: 1.4;\n  padding-left: 0; /* no extra indent here */\n  /* no text-indent */\n}\n\n.dark-mode-usecase ul.newlist li::marker {\n  color: #20b2aa;\n  font-weight: bold;\n}\n\n    \n",
       "tree": [
         "\n",
         {
@@ -4492,7 +4490,6 @@
       "slug": "work-3",
       "title": "Jasper SaaS/Mobile (Led to Acquisition by Cisco)",
       "browserTitle": "Jasper IoT Control Center - Rethought, Redesigned and Relaunched",
-      "css": "",
       "tree": [
         "\n",
         {
@@ -5754,7 +5751,6 @@
       "slug": "work-4",
       "title": "Bringing Unique Visibility to Cloud Data Management",
       "browserTitle": "Data Security Startup",
-      "css": "",
       "tree": [
         "\n",
         {
@@ -6417,7 +6413,6 @@
       "slug": "work-5",
       "title": "AI Enabled App Supporting Health and Nutrition Management",
       "browserTitle": "Power of Ai to Health and Wellness",
-      "css": "",
       "tree": [
         "\n",
         {
@@ -7269,7 +7264,6 @@
       "slug": "work-6",
       "title": "Jasper Mobile App for Status & Usage",
       "browserTitle": "Mobile App / iPhone / Android",
-      "css": "",
       "tree": [
         "\n",
         {
@@ -7487,7 +7481,6 @@
       "slug": "work-7",
       "title": "Cisco Marketplace for 3rd Party Apps",
       "browserTitle": "Marketplace",
-      "css": "",
       "tree": [
         "\n",
         {
@@ -7926,7 +7919,6 @@
       "slug": "work-8",
       "title": "iPad Mobile Customer Management App",
       "browserTitle": "Tablet App",
-      "css": "",
       "tree": [
         "\n",
         {
@@ -8116,7 +8108,6 @@
       "slug": "work-9",
       "title": "Driver's Rideshare Financial Mgmt App",
       "browserTitle": "Driver Financial Mobile App",
-      "css": "",
       "tree": [
         "\n",
         {
@@ -8442,7 +8433,6 @@
       "slug": "work-10",
       "title": "Fleet Tracking (Location-based Services)",
       "browserTitle": "Cisco Jasper GPS Location Based Services",
-      "css": "",
       "tree": [
         "\n",
         {
