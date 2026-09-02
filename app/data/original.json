@@ -311,15 +311,15 @@
                       "className": "mission-statement"
                     },
                     "children": [
-                      "Design leader. Team builder. User evangelist."
+                      "Design leader. Team builder. 4x founding designer."
                     ]
                   },
                   "\n                       ",
                   {
                     "tag": "p",
-                    "props": {},
+                    "props": { "className": "portfolio-summary" },
                     "children": [
-                      "I design intuitive, scalable experiences where AI and agent workflows support faster decisions, deeper insight, and more valuable outcomes."
+                      "Four-time founding designer, including Jasper IoT, acquired by Cisco for $1.48B. Today I lead design at Cyderes, shaping how people work with AI agents to decide faster and act sooner."
                     ]
                   },
                   "\n",

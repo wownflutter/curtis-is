@@ -59,7 +59,7 @@ function render(node:ContentNode, key:string):ReactNode {
     return <h2 key={key} className="mission-statement">
       <span>Design leader.</span>
       <span>Team builder.</span>
-      <span>User evangelist.</span>
+      <span>4x founding designer.</span>
     </h2>;
   }
   if(node.props.id==='project-title' && node.children[0]==='The Jasper IoT Control Center -') {
@@ -73,9 +73,6 @@ function render(node:ContentNode, key:string):ReactNode {
   if(node.tag==='ul')props.role='list';
   if(node.children.some(child=>typeof child!=='string' && child.props.className==='mission-statement')) {
     props.className=`${props.className||''} process-introduction`;
-  }
-  if(node.tag==='p' && node.children.some(child=>typeof child==='string' && child.startsWith('I design intuitive, scalable experiences'))) {
-    props.className=`${typeof props.className==='string'?props.className:''} portfolio-summary`;
   }
   if(id==='contacts' || id==='feeds')return null;
   if(node.tag==='footer')return <PortfolioFooter key={key} />;
