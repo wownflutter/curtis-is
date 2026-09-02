@@ -55,6 +55,7 @@ export function Portfolio({initialSlug=null}:{initialSlug?:string|null}) {
   const lastCard=useRef<HTMLAnchorElement|null>(null);
   const closeButton=useRef<HTMLButtonElement>(null);
   const dialog=useRef<HTMLDialogElement>(null);
+  const transitioning=useRef(false);
   const project=content.projects.find(p=>p.slug===slug);
   const index=content.projects.findIndex(p=>p.slug===slug);
   const previous=content.projects[(index+9)%10];
@@ -74,12 +75,40 @@ export function Portfolio({initialSlug=null}:{initialSlug?:string|null}) {
   },[project]);
   useEffect(()=>{if(lightbox)dialog.current?.showModal();else dialog.current?.close();},[lightbox]);
   function navigate(target:string|null) {
+    if(transitioning.current)return;
+    const cardImage=lastCard.current?.querySelector('img');
+    const shared=(!slug && target) || (slug && !target);
+    const outgoing=shared?(slug?document.querySelector('#project img'):cardImage):null;
+    const visible=(element:Element|null|undefined):element is HTMLElement=>{
+      if(!(element instanceof HTMLElement))return false;
+      const rect=element.getBoundingClientRect();
+      return rect.width>0 && rect.height>0 && rect.bottom>0 && rect.top<window.innerHeight;
+    };
+    const animate=Boolean(document.startViewTransition) && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const canShare=animate && visible(outgoing);
+    let incoming:HTMLElement|null=null;
     const update=()=>{
       history.pushState(null,'',target?`/${target}`:'/#apps');
       flushSync(()=>{setSlug(target); setLightbox(null); setMenuOpen(false);});
+      // Restore scroll before the browser captures the destination snapshot.
+      window.scrollTo({top:target?0:savedScroll.current,behavior:'instant'});
+      const destination=target?document.querySelector('#project img'):cardImage;
+      if(canShare && visible(destination)) {
+        incoming=destination;
+        incoming.style.viewTransitionName='project-artwork';
+      }
     };
-    if(document.startViewTransition && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.startViewTransition(update);
+    if(animate) {
+      transitioning.current=true;
+      if(canShare)outgoing.style.viewTransitionName='project-artwork';
+      const transition=document.startViewTransition(update);
+      // A skipped animation must never block navigation or leave duplicate names.
+      void transition.ready.catch(()=>{});
+      void transition.finished.catch(()=>{}).finally(()=>{
+        if(outgoing instanceof HTMLElement)outgoing.style.removeProperty('view-transition-name');
+        incoming?.style.removeProperty('view-transition-name');
+        transitioning.current=false;
+      });
     } else update();
   }
   function onClick(event:MouseEvent<HTMLDivElement>) {
