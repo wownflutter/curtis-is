@@ -82,6 +82,19 @@ export function Portfolio({initialSlug=null}:{initialSlug?:string|null}) {
     const anchor=target.closest('a') as HTMLAnchorElement|null;
     if(!anchor || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     const href=anchor.getAttribute('href') || '';
+    if(anchor.closest('#explore') && href.startsWith('#')) {
+      const destination=document.getElementById(href.slice(1));
+      if(destination) {
+        event.preventDefault();
+        history.pushState(null,'',href);
+        destination.scrollIntoView({
+          behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',
+          block:'start',
+        });
+        setMenuOpen(false);
+        return;
+      }
+    }
     if(/^\/work-\d+$/.test(href)) {
       event.preventDefault();
       if(!slug){savedScroll.current=window.scrollY;lastCard.current=anchor;}
