@@ -655,57 +655,6 @@
                       {
                         "tag": "div",
                         "props": {
-                          "id": "work-1",
-                          "className": "work"
-                        },
-                        "children": [
-                          "\n\t\t\t\t\t\t",
-                          {
-                            "tag": "img",
-                            "props": {
-                              "src": "/portfolio/card-tr-720x540@2x.png",
-                              "alt": "prototypes",
-                              "decoding": "async"
-                            },
-                            "children": []
-                          },
-                          "\n\t\t\t\t\t\t",
-                          {
-                            "tag": "div",
-                            "props": {
-                              "className": "work-info"
-                            },
-                            "children": [
-                              "\n\t\t\t\t\t\t\t",
-                              {
-                                "tag": "h6",
-                                "props": {
-                                  "className": "class-blacksubtitles"
-                                },
-                                "children": [
-                                  "IoT, Spatial Logistics and Healthcare through ML/AI"
-                                ]
-                              },
-                              "\n\t\t\t\t\t\t"
-                            ]
-                          },
-                          "\n\t\t\t\t\t"
-                        ]
-                      },
-                      "\n\t\t\t\t"
-                    ]
-                  },
-                  "\n\n                ",
-                  {
-                    "tag": "div",
-                    "props": {
-                      "className": "col-xs-12 col-sm-4 col-md-6 mix all apps"
-                    },
-                    "children": [
-                      "\n\t\t\t\t\t",
-                      {
-                        "tag": "div",
-                        "props": {
                           "id": "work-2",
                           "className": "work"
                         },
@@ -735,6 +684,57 @@
                                 },
                                 "children": [
                                   "AI Remediation for Cyber Attacks"
+                                ]
+                              },
+                              "\n\t\t\t\t\t\t"
+                            ]
+                          },
+                          "\n\t\t\t\t\t"
+                        ]
+                      },
+                      "\n\t\t\t\t"
+                    ]
+                  },
+                  "\n\n                ",
+                  {
+                    "tag": "div",
+                    "props": {
+                      "className": "col-xs-12 col-sm-4 col-md-6 mix all apps"
+                    },
+                    "children": [
+                      "\n\t\t\t\t\t",
+                      {
+                        "tag": "div",
+                        "props": {
+                          "id": "work-1",
+                          "className": "work"
+                        },
+                        "children": [
+                          "\n\t\t\t\t\t\t",
+                          {
+                            "tag": "img",
+                            "props": {
+                              "src": "/portfolio/card-tr-720x540@2x.png",
+                              "alt": "prototypes",
+                              "decoding": "async"
+                            },
+                            "children": []
+                          },
+                          "\n\t\t\t\t\t\t",
+                          {
+                            "tag": "div",
+                            "props": {
+                              "className": "work-info"
+                            },
+                            "children": [
+                              "\n\t\t\t\t\t\t\t",
+                              {
+                                "tag": "h6",
+                                "props": {
+                                  "className": "class-blacksubtitles"
+                                },
+                                "children": [
+                                  "IoT, Spatial Logistics and Healthcare through ML/AI"
                                 ]
                               },
                               "\n\t\t\t\t\t\t"
