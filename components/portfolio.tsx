@@ -22,6 +22,19 @@ type ContentNode = string | {tag:string; props:Record<string,unknown>; children:
 const content = original as unknown as {home:ContentNode;projects:{slug:string;title:string;tree:ContentNode[]}[]};
 const voidTags = new Set(['img','input','br','hr','source','wbr','embed','area','col']);
 
+function collectProjectSlugs(node:ContentNode, slugs:string[]=[]):string[] {
+  if(typeof node==='string') return slugs;
+  const id=typeof node.props.id==='string'?node.props.id:'';
+  if(node.props.className==='work' && /^work-\d+$/.test(id)) slugs.push(id);
+  node.children.forEach(child=>collectProjectSlugs(child,slugs));
+  return slugs;
+}
+
+const homepageProjectSlugs=collectProjectSlugs(content.home);
+const orderedProjects=homepageProjectSlugs
+  .map(slug=>content.projects.find(project=>project.slug===slug))
+  .filter((project):project is (typeof content.projects)[number]=>Boolean(project));
+
 const careerProofs = [
   { title:'Founding Designer', lead:'5×', body:'Cyderes, Contrast Security, Opsis Health, Trackonomy, and Jasper. Built each design function from zero.', icon:Hammer },
   { title:'Exit', lead:'$1.48B', body:'Jasper, where I was founding designer, acquired by Cisco. Continued at Cisco for four years as a design executive leading the IoT product design team.', icon:Handshake },
@@ -126,9 +139,9 @@ export function Portfolio({initialSlug=null}:{initialSlug?:string|null}) {
   const cancelScroll=useRef<(()=>void)|null>(null);
   useEffect(()=>()=>cancelScroll.current?.(),[]);
   const project=content.projects.find(p=>p.slug===slug);
-  const index=content.projects.findIndex(p=>p.slug===slug);
-  const previous=content.projects[(index+9)%10];
-  const next=content.projects[(index+1)%10];
+  const index=orderedProjects.findIndex(p=>p.slug===slug);
+  const previous=orderedProjects[(index-1+orderedProjects.length)%orderedProjects.length];
+  const next=orderedProjects[(index+1)%orderedProjects.length];
 
   useEffect(()=>{
     const update=()=>setNavVisible(window.scrollY >= window.innerHeight-60);
