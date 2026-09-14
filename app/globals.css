@@ -172,6 +172,11 @@ a.work .work-info h6 {
   background-image:url('/original/images/works/close-project.svg?v=2');
   filter:drop-shadow(0 1px 2px rgba(0,0,0,.9));
 }
+#close-project:focus-visible {
+  outline:none;
+  box-shadow:none;
+  opacity:1;
+}
 #previous-project:hover + #previous-project-name,
 #next-project:hover + #next-project-name { opacity:1; }
 :focus-visible { outline:2px solid #f4594e; outline-offset:4px; }
