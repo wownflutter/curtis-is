@@ -69,7 +69,7 @@
 #project .dark-mode-usecase {
   background:#272727;
   color:#ececf0;
-  padding:40px 0;
+  padding:0 0 40px;
   font-family:var(--font-body);
 }
 #project .dark-mode-usecase .project-header { background:#272727; padding-top:20px; }
