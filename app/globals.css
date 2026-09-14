@@ -167,6 +167,12 @@ a.work .work-info h6 {
 @media(hover:none) {
   a.work .work-info { opacity:1; transform:none; }
 }
+#project-top-bar {
+  position:absolute;
+  inset:0 0 auto;
+  height:0;
+  background:transparent;
+}
 #project-top-bar button { border:0; padding:0; background-color:transparent; }
 #close-project {
   background-image:url('/original/images/works/close-project.svg?v=2');
