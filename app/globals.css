@@ -168,6 +168,24 @@ a.work .work-info h6 {
   a.work .work-info { opacity:1; transform:none; }
 }
 #project-top-bar button { border:0; padding:0; background-color:transparent; }
+#close-project {
+  position:relative;
+  background-image:none;
+}
+#close-project::before,
+#close-project::after {
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:80%;
+  height:2px;
+  border-radius:999px;
+  background:#fff;
+  transform-origin:center;
+}
+#close-project::before { transform:translate(-50%,-50%) rotate(45deg); }
+#close-project::after { transform:translate(-50%,-50%) rotate(-45deg); }
 #previous-project:hover + #previous-project-name,
 #next-project:hover + #next-project-name { opacity:1; }
 :focus-visible { outline:2px solid #f4594e; outline-offset:4px; }
