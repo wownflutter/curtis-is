@@ -36,7 +36,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
     : undefined;
   const renderedChildren=isExplorer ? nodeChildren.map(child=>
     typeof child!=='string' && child.tag==='source'
-      ? {...child,props:{...child.props,src:`${source}?v=6`}}
+      ? {...child,props:{...child.props,src:`${source}?v=7`}}
       : child
   ) : nodeChildren;
 
@@ -45,6 +45,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
     if(!video)return;
     const cursor=cursorRef.current;
     const glance=glanceRef.current;
+    let syncFrame=0;
     let warmed=false;
     const warm=()=>{
       if(warmed)return;
@@ -73,22 +74,25 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
       [cursor,glance].forEach(element=>{
         if(!element)return;
         element.style.animationDelay=`-${video.currentTime}s`;
-        element.style.animationPlayState=video.paused?'paused':'running';
+        element.style.animationPlayState='paused';
       });
+      if(!video.paused)syncFrame=requestAnimationFrame(syncCursor);
     };
-    const pauseCursor=()=>[cursor,glance].forEach(element=>{
-      if(element)element.style.animationPlayState='paused';
-    });
-    video.addEventListener('play',syncCursor);
+    const startCursorSync=()=>{
+      cancelAnimationFrame(syncFrame);
+      syncCursor();
+    };
+    video.addEventListener('play',startCursorSync);
     video.addEventListener('seeked',syncCursor);
-    video.addEventListener('pause',pauseCursor);
+    video.addEventListener('pause',syncCursor);
     syncCursor();
     return ()=>{
       preloader.disconnect();
       player.disconnect();
-      video.removeEventListener('play',syncCursor);
+      video.removeEventListener('play',startCursorSync);
       video.removeEventListener('seeked',syncCursor);
-      video.removeEventListener('pause',pauseCursor);
+      video.removeEventListener('pause',syncCursor);
+      cancelAnimationFrame(syncFrame);
       video.pause();
     };
   },[source]);
