@@ -27,14 +27,24 @@ function videoSource(children:ContentNode[]):string {
 
 function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,unknown>;nodeChildren:ContentNode[];keyName:string}) {
   const ref=useRef<HTMLVideoElement>(null);
+  const cursorRef=useRef<HTMLSpanElement>(null);
+  const glanceRef=useRef<HTMLSpanElement>(null);
   const source=videoSource(nodeChildren);
+  const isExplorer=source==='/case-studies/explorer-animation.mp4';
   const poster=source==='/case-studies/explorer-animation.mp4'
     ? '/case-studies/explorer-animation-poster.webp'
     : undefined;
+  const renderedChildren=isExplorer ? nodeChildren.map(child=>
+    typeof child!=='string' && child.tag==='source'
+      ? {...child,props:{...child.props,src:`${source}?v=2`}}
+      : child
+  ) : nodeChildren;
 
   useEffect(()=>{
     const video=ref.current;
     if(!video)return;
+    const cursor=cursorRef.current;
+    const glance=glanceRef.current;
     let warmed=false;
     const warm=()=>{
       if(warmed)return;
@@ -59,12 +69,56 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
     },{threshold:0.05});
     preloader.observe(video);
     player.observe(video);
-    return ()=>{preloader.disconnect();player.disconnect();video.pause();};
+    const syncCursor=()=>{
+      [cursor,glance].forEach(element=>{
+        if(!element)return;
+        element.style.animationDelay=`-${video.currentTime}s`;
+        element.style.animationPlayState=video.paused?'paused':'running';
+      });
+    };
+    const pauseCursor=()=>[cursor,glance].forEach(element=>{
+      if(element)element.style.animationPlayState='paused';
+    });
+    video.addEventListener('play',syncCursor);
+    video.addEventListener('seeked',syncCursor);
+    video.addEventListener('pause',pauseCursor);
+    syncCursor();
+    return ()=>{
+      preloader.disconnect();
+      player.disconnect();
+      video.removeEventListener('play',syncCursor);
+      video.removeEventListener('seeked',syncCursor);
+      video.removeEventListener('pause',pauseCursor);
+      video.pause();
+    };
   },[source]);
 
-  return <video {...attributes} ref={ref} autoPlay={false} preload="metadata" poster={poster}>
-    {renderChildren(nodeChildren,keyName)}
+  const video=<video {...attributes} ref={ref} autoPlay={false} preload="metadata" poster={poster}>
+    {renderChildren(renderedChildren,keyName)}
   </video>;
+  if(!isExplorer)return video;
+  return <span className="explorer-video-stage">
+    {video}
+    <span ref={cursorRef} className="explorer-demo-cursor" aria-hidden="true">
+      <svg viewBox="0 0 24 28" focusable="false">
+        <path d="M2 1.5v21.4l5.7-5.4 4.1 8.8 4-1.9-4.1-8.5h8.1L2 1.5Z" />
+      </svg>
+    </span>
+    <span ref={glanceRef} className="explorer-at-a-glance" aria-hidden="true">
+      <span className="explorer-at-a-glance-title">
+        <svg viewBox="0 0 28 28" focusable="false">
+          <rect x="3.5" y="4" width="21" height="15" rx="2" />
+          <path d="M10 24h8M14 19v5" />
+        </svg>
+        <strong>Scheduler App <small>(application)</small></strong>
+      </span>
+      <span className="explorer-at-a-glance-grid">
+        <span>Language</span><b>Java</b>
+        <span>Issues</span><b>14</b>
+        <span>Incidents</span><b>3</b>
+      </span>
+    </span>
+  </span>;
 }
 
 const content = original as unknown as {home:ContentNode;projects:{slug:string;title:string;tree:ContentNode[]}[]};
