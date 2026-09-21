@@ -36,7 +36,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
     : undefined;
   const renderedChildren=isExplorer ? nodeChildren.map(child=>
     typeof child!=='string' && child.tag==='source'
-      ? {...child,props:{...child.props,src:`${source}?v=2`}}
+      ? {...child,props:{...child.props,src:`${source}?v=3`}}
       : child
   ) : nodeChildren;
 
