@@ -68,6 +68,44 @@
 /* Recruiter-speed summary of the two legacy product surfaces. */
 #project .legacy-snapshot { margin:42px 0 16px; padding:0; text-align:left; }
 #project .legacy-snapshot + .class-one { margin-top:0; }
+
+/* A quiet filmstrip cue signals that the design-system frame contains a sequence. */
+#project .design-system-video-stage {
+  position:relative;
+  display:block;
+}
+#project .design-system-video-stage video { display:block; }
+#project .design-system-sequence-cue {
+  position:absolute;
+  right:clamp(10px,1.4vw,18px);
+  bottom:clamp(10px,1.4vw,18px);
+  display:flex;
+  gap:5px;
+  padding:7px;
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:7px;
+  background:rgba(12,14,18,.72);
+  box-shadow:0 4px 14px rgba(0,0,0,.24);
+  backdrop-filter:blur(5px);
+}
+#project .design-system-sequence-cue span {
+  width:clamp(15px,1.8vw,23px);
+  aspect-ratio:4 / 3;
+  border:1px solid rgba(255,255,255,.78);
+  border-radius:2px;
+  background:rgba(255,255,255,.08);
+  animation:design-system-sequence 3s ease-in-out infinite;
+}
+#project .design-system-sequence-cue span:nth-child(2) { animation-delay:1s; }
+#project .design-system-sequence-cue span:nth-child(3) { animation-delay:2s; }
+@keyframes design-system-sequence {
+  0%,28% { border-color:#55c9d6; background:rgba(85,201,214,.42); }
+  34%,100% { border-color:rgba(255,255,255,.78); background:rgba(255,255,255,.08); }
+}
+@media(prefers-reduced-motion:reduce) {
+  #project .design-system-sequence-cue span { animation:none; }
+  #project .design-system-sequence-cue span:first-child { border-color:#55c9d6; background:rgba(85,201,214,.42); }
+}
 #project .legacy-snapshot-heading {
   display:grid;
   grid-template-columns:minmax(0,1fr) minmax(280px,.72fr);

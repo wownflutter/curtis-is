@@ -102,6 +102,12 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
   const video=<video {...attributes} ref={ref} autoPlay={false} preload="metadata" poster={poster}>
     {renderChildren(renderedChildren,keyName)}
   </video>;
+  if(isDesignSystem)return <span className="design-system-video-stage">
+    {video}
+    <span className="design-system-sequence-cue" aria-hidden="true">
+      <span /><span /><span />
+    </span>
+  </span>;
   if(!isExplorer)return video;
   return <span className="explorer-video-stage">
     {video}
