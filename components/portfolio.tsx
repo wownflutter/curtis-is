@@ -105,7 +105,9 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
   if(isDesignSystem)return <span className="design-system-video-stage">
     {video}
     <span className="design-system-sequence-cue" aria-hidden="true">
-      <span /><span /><span />
+      <img src="/case-studies/cont-ds-preview-1.webp" alt="" width="320" height="180" />
+      <img src="/case-studies/cont-ds-preview-2.webp" alt="" width="320" height="180" />
+      <img src="/case-studies/cont-ds-preview-3.webp" alt="" width="320" height="180" />
     </span>
   </span>;
   if(!isExplorer)return video;
