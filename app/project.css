@@ -66,7 +66,7 @@
 #project p.list-introduction :is(b,strong) { font-weight:inherit; }
 
 /* Recruiter-speed summary of the two legacy product surfaces. */
-#project .legacy-snapshot { margin:42px 0 16px; }
+#project .legacy-snapshot { margin:42px 0 16px; padding:0; text-align:left; }
 #project .legacy-snapshot + .class-one { margin-top:0; }
 #project .legacy-snapshot-heading {
   display:grid;
