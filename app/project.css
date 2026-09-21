@@ -69,33 +69,59 @@
 #project .legacy-snapshot { margin:42px 0 16px; padding:0; text-align:left; }
 #project .legacy-snapshot + .class-one { margin-top:0; }
 
-/* A quiet filmstrip cue signals that the design-system frame contains a sequence. */
+/* Synced sequence navigation for the design-system recording. */
 #project .design-system-video-stage {
   position:relative;
   display:block;
 }
 #project .design-system-video-stage video { display:block; }
-#project .design-system-sequence-cue {
+#project .design-system-sequence-rail {
   position:absolute;
-  right:clamp(10px,1.4vw,18px);
-  bottom:clamp(10px,1.4vw,18px);
+  left:50%;
+  bottom:clamp(9px,1.3vw,16px);
+  width:min(300px,calc(100% - 36px));
   display:flex;
-  gap:5px;
-  padding:7px;
-  border:1px solid rgba(255,255,255,.28);
-  border-radius:7px;
-  background:rgba(12,14,18,.72);
-  box-shadow:0 4px 14px rgba(0,0,0,.24);
+  gap:6px;
+  padding:5px 8px;
+  border-radius:999px;
+  background:rgba(12,14,18,.68);
+  box-shadow:0 3px 14px rgba(0,0,0,.22);
   backdrop-filter:blur(5px);
-  pointer-events:none;
+  transform:translateX(-50%);
 }
-#project .design-system-sequence-cue img {
-  display:block;
-  width:clamp(46px,6vw,76px);
-  height:auto;
-  border:1px solid rgba(255,255,255,.78);
-  border-radius:3px;
-  box-shadow:0 1px 4px rgba(0,0,0,.28);
+#project .design-system-sequence-rail button {
+  --segment-progress:0;
+  position:relative;
+  flex:1;
+  height:18px;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+  border:0;
+  border-radius:999px;
+  background:transparent;
+  cursor:pointer;
+}
+#project .design-system-sequence-rail button::before,
+#project .design-system-sequence-rail button::after {
+  content:'';
+  position:absolute;
+  left:0;
+  top:8px;
+  height:3px;
+  border-radius:999px;
+}
+#project .design-system-sequence-rail button::before {
+  width:100%;
+  background:rgba(255,255,255,.34);
+}
+#project .design-system-sequence-rail button::after {
+  width:calc(var(--segment-progress) * 100%);
+  background:#55c9d6;
+}
+#project .design-system-sequence-rail button:focus-visible {
+  outline:2px solid #fff;
+  outline-offset:1px;
 }
 #project .legacy-snapshot-heading {
   display:grid;

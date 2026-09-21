@@ -25,10 +25,13 @@ function videoSource(children:ContentNode[]):string {
   return typeof source?.props.src==='string' ? source.props.src : '';
 }
 
+const designSystemChapters=[0,1.48868,8.72201,15.9553];
+
 function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,unknown>;nodeChildren:ContentNode[];keyName:string}) {
   const ref=useRef<HTMLVideoElement>(null);
   const cursorRef=useRef<HTMLSpanElement>(null);
   const glanceRef=useRef<HTMLSpanElement>(null);
+  const sequenceRef=useRef<HTMLSpanElement>(null);
   const source=videoSource(nodeChildren);
   const isExplorer=source==='/case-studies/explorer-animation.mp4';
   const isTrackonomy=source.startsWith('/case-studies/tr-') && source.endsWith('.mp4');
@@ -47,6 +50,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
     if(!video)return;
     const cursor=cursorRef.current;
     const glance=glanceRef.current;
+    const sequence=sequenceRef.current;
     let syncFrame=0;
     let warmed=false;
     const warm=()=>{
@@ -78,6 +82,17 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
         element.style.animationDelay=`-${video.currentTime}s`;
         element.style.animationPlayState='paused';
       });
+      if(sequence) {
+        const duration=Number.isFinite(video.duration) ? video.duration : 17.51;
+        const active=Math.max(0,designSystemChapters.findLastIndex(time=>video.currentTime>=time));
+        sequence.querySelectorAll<HTMLButtonElement>('button').forEach((segment,index)=>{
+          const start=designSystemChapters[index];
+          const end=designSystemChapters[index+1] ?? duration;
+          const progress=index<active ? 1 : index>active ? 0 : Math.min(1,Math.max(0,(video.currentTime-start)/(end-start)));
+          segment.style.setProperty('--segment-progress',String(progress));
+          segment.setAttribute('aria-pressed',String(index===active));
+        });
+      }
       if(!video.paused)syncFrame=requestAnimationFrame(syncCursor);
     };
     const startCursorSync=()=>{
@@ -104,10 +119,19 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
   </video>;
   if(isDesignSystem)return <span className="design-system-video-stage">
     {video}
-    <span className="design-system-sequence-cue" aria-hidden="true">
-      <img src="/case-studies/cont-ds-preview-1.webp" alt="" width="320" height="180" />
-      <img src="/case-studies/cont-ds-preview-2.webp" alt="" width="320" height="180" />
-      <img src="/case-studies/cont-ds-preview-3.webp" alt="" width="320" height="180" />
+    <span ref={sequenceRef} className="design-system-sequence-rail" aria-label="Design system sequence navigation">
+      {designSystemChapters.map((time,index)=><button
+        key={time}
+        type="button"
+        aria-label={`Show design system screen ${index+1}`}
+        aria-pressed={index===0}
+        onClick={()=>{
+          const player=ref.current;
+          if(!player)return;
+          player.currentTime=time;
+          void player.play().catch(()=>{});
+        }}
+      />)}
     </span>
   </span>;
   if(!isExplorer)return video;
