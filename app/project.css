@@ -80,3 +80,132 @@
 #project .dark-mode-usecase a { color:#f4594e; }
 #project .dark-mode-usecase img.fullimage { display:block; width:100%; height:auto; background:transparent; }
 #project .dark-mode-usecase ul { padding-left:1.8em; }
+
+/* The recorded Explorer sheets stay untouched; this cursor introduces their trigger. */
+.explorer-video-stage {
+  position:relative;
+  isolation:isolate;
+  display:block;
+  width:100%;
+  margin-top:10px;
+  overflow:hidden;
+  line-height:0;
+}
+.explorer-video-stage > video {
+  position:relative;
+  z-index:0;
+  display:block;
+  margin-top:0 !important;
+}
+.explorer-demo-cursor {
+  position:absolute;
+  z-index:3;
+  left:70%;
+  top:68%;
+  width:clamp(22px,2.2vw,34px);
+  height:auto;
+  opacity:0;
+  pointer-events:none;
+  filter:drop-shadow(0 2px 2px rgba(0,0,0,.8));
+  animation:explorer-cursor-sequence 13.033s linear infinite paused;
+  transform-origin:2px 2px;
+}
+.explorer-demo-cursor svg { display:block; width:100%; height:auto; overflow:visible; }
+.explorer-demo-cursor path { fill:#fff; stroke:#10131c; stroke-width:1.5; stroke-linejoin:round; }
+.explorer-demo-cursor::after {
+  content:'';
+  position:absolute;
+  left:-9px;
+  top:-9px;
+  width:18px;
+  height:18px;
+  border:2px solid rgba(255,255,255,.95);
+  border-radius:50%;
+  opacity:0;
+  transform:scale(.25);
+  animation:explorer-click-pulse 13.033s ease-out infinite paused;
+  animation-delay:inherit;
+  animation-play-state:inherit;
+}
+@keyframes explorer-cursor-sequence {
+  0%,2% { left:70%; top:68%; opacity:0; transform:scale(1); }
+  3.5% { opacity:1; }
+  7.5%,26.5% { left:42.7%; top:44.6%; opacity:1; transform:scale(1); }
+  29.5% { left:47%; top:40%; opacity:1; transform:scale(1); }
+  31.5% { left:42.7%; top:44.6%; opacity:1; transform:scale(1); }
+  33% { left:42.7%; top:44.6%; opacity:1; transform:scale(.82); }
+  34.5% { left:42.7%; top:44.6%; opacity:1; transform:scale(1); }
+  38% { left:42.7%; top:44.6%; opacity:0; transform:scale(1); }
+  100% { left:42.7%; top:44.6%; opacity:0; transform:scale(1); }
+}
+@keyframes explorer-click-pulse {
+  0%,31.5% { opacity:0; transform:scale(.25); }
+  33% { opacity:.9; transform:scale(.4); }
+  37% { opacity:0; transform:scale(1.8); }
+  100% { opacity:0; transform:scale(1.8); }
+}
+.explorer-at-a-glance {
+  position:absolute;
+  z-index:2;
+  left:27.7%;
+  top:51%;
+  width:30%;
+  padding:clamp(10px,1.4vw,22px);
+  border:1px solid rgba(116,133,180,.32);
+  border-radius:2px;
+  background:#181d2e;
+  color:#f5f6fa;
+  box-shadow:0 10px 30px rgba(0,0,0,.42);
+  font-family:var(--font-body);
+  line-height:1.25;
+  opacity:0;
+  pointer-events:none;
+  animation:explorer-glance-sequence 13.033s ease infinite paused;
+}
+.explorer-at-a-glance::before {
+  content:'';
+  position:absolute;
+  left:calc(50% - 8px);
+  top:-9px;
+  width:16px;
+  height:16px;
+  border-left:1px solid rgba(116,133,180,.32);
+  border-top:1px solid rgba(116,133,180,.32);
+  background:#181d2e;
+  transform:rotate(45deg);
+}
+.explorer-at-a-glance-title {
+  display:flex;
+  align-items:center;
+  gap:clamp(7px,1vw,14px);
+  margin-bottom:clamp(12px,2vw,28px);
+  white-space:nowrap;
+}
+.explorer-at-a-glance-title svg {
+  flex:0 0 auto;
+  width:clamp(18px,2.3vw,34px);
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.explorer-at-a-glance-title strong { font-size:clamp(11px,1.5vw,23px); font-weight:600; }
+.explorer-at-a-glance-title small { font:inherit; }
+.explorer-at-a-glance-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(8px,1.5vw,22px) clamp(12px,2vw,32px);
+  align-items:baseline;
+}
+.explorer-at-a-glance-grid span { color:#9da0ad; font-size:clamp(10px,1.25vw,19px); }
+.explorer-at-a-glance-grid b { color:#f5f6fa; font-size:clamp(11px,1.35vw,21px); font-weight:400; }
+.explorer-at-a-glance-grid b:nth-of-type(n+2) { color:#5ad0dc; }
+@keyframes explorer-glance-sequence {
+  0%,6.5% { opacity:0; transform:translateY(-5px) scale(.98); }
+  8%,26.5% { opacity:1; transform:translateY(0) scale(1); }
+  29.5%,100% { opacity:0; transform:translateY(-5px) scale(.98); }
+}
+@media(prefers-reduced-motion:reduce) {
+  .explorer-demo-cursor,.explorer-at-a-glance { display:none; }
+}
