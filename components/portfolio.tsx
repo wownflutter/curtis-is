@@ -161,16 +161,46 @@ function textContent(node:ContentNode):string {
   return typeof node==='string' ? node : node.children.map(textContent).join('');
 }
 
+function LegacyBeforeSnapshot({keyName}:{keyName:string}) {
+  return <section key={keyName} className="legacy-snapshot" aria-labelledby={`${keyName}-title`}>
+    <header className="legacy-snapshot-heading">
+      <div>
+        <p className="legacy-snapshot-kicker">Before · Contrast Classic</p>
+        <h3 id={`${keyName}-title`} className="class-one">What I inherited</h3>
+      </div>
+      <p className="legacy-snapshot-summary">A fragmented dashboard and dense vulnerability inventory that made risk difficult to prioritize and action.</p>
+    </header>
+    <div className="legacy-snapshot-stage">
+      <a className="legacy-shot legacy-shot-primary" href="/case-studies/classic contrast dashboard.png" data-lightbox aria-label="Open the legacy Contrast dashboard">
+        <span className="legacy-shot-label">Legacy dashboard</span>
+        <MediaImage attributes={{src:'/case-studies/classic contrast dashboard.png',alt:'Contrast Classic dashboard',decoding:'async'}} />
+      </a>
+      <a className="legacy-shot legacy-shot-secondary" href="/case-studies/classic contrast vuln list.png" data-lightbox aria-label="Open the legacy vulnerabilities inventory">
+        <span className="legacy-shot-label">Legacy inventory</span>
+        <MediaImage attributes={{src:'/case-studies/classic contrast vuln list.png',alt:'Contrast Classic vulnerabilities inventory',decoding:'async'}} />
+      </a>
+      <span className="legacy-annotation legacy-annotation-one">Weak hierarchy</span>
+      <span className="legacy-annotation legacy-annotation-two">Disconnected workflows</span>
+      <span className="legacy-annotation legacy-annotation-three">High information density</span>
+      <p className="legacy-snapshot-foot"><span aria-hidden="true" />The redesign journey begins below.</p>
+    </div>
+  </section>;
+}
+
 /** Give label paragraphs preceding lists one shared style. */
 function renderChildren(children:ContentNode[], key:string):ReactNode[] {
-  return children.map((child,index)=>{
+  const legacyStart=children.findIndex(child=>typeof child!=='string' && child.tag==='h3' && textContent(child).includes('platform experience I inherited'));
+  const legacyEnd=legacyStart<0 ? -1 : children.findIndex((child,index)=>index>legacyStart && typeof child!=='string' && child.tag==='h3');
+  return children.flatMap((child,index)=>{
+    if(index===legacyStart)return [<LegacyBeforeSnapshot key={`${key}.legacy`} keyName={`${key}-legacy`} />];
+    if(legacyStart>=0 && index>legacyStart && (legacyEnd<0 || index<legacyEnd))return [];
     const next=children.slice(index+1).find(node=>typeof node!=='string' || node.trim()!=='');
     if(typeof child!=='string' && child.tag==='p' && textContent(child).trim().endsWith(':') &&
       next && typeof next!=='string' && (next.tag==='ul' || next.tag==='ol')) {
       const className=typeof child.props.className==='string' ? child.props.className : '';
       child={...child,props:{...child.props,className:`${className} list-introduction`}};
     }
-    return render(child,`${key}.${index}`);
+    return [render(child,`${key}.${index}`)];
   });
 }
 
