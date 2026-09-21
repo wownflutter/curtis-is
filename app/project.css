@@ -65,6 +65,93 @@
 }
 #project p.list-introduction :is(b,strong) { font-weight:inherit; }
 
+/* Recruiter-speed summary of the two legacy product surfaces. */
+#project .legacy-snapshot { margin:42px 0 52px; }
+#project .legacy-snapshot-heading {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(280px,.72fr);
+  align-items:end;
+  gap:32px;
+  margin-bottom:24px;
+}
+#project .legacy-snapshot-heading .class-one { margin:4px 0 0; }
+#project p.legacy-snapshot-kicker {
+  margin:0;
+  padding:0;
+  font-size:12px;
+  font-weight:600;
+  line-height:1.3;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+#project p.legacy-snapshot-summary { margin:0; padding:0; text-wrap:pretty; }
+#project .legacy-snapshot-stage {
+  position:relative;
+  min-height:clamp(360px,43vw,500px);
+}
+#project .legacy-shot {
+  position:absolute;
+  display:block;
+  overflow:hidden;
+  background:#111214;
+  box-shadow:0 18px 46px rgba(0,0,0,.24);
+}
+#project .legacy-shot-primary { left:0; top:0; z-index:1; width:70%; }
+#project .legacy-shot-secondary { right:0; top:15%; z-index:2; width:48%; }
+#project .legacy-shot img { display:block; width:100%; height:auto; margin:0; }
+#project .legacy-shot-label {
+  position:absolute;
+  top:12px;
+  left:12px;
+  z-index:3;
+  padding:6px 8px;
+  background:rgba(9,10,13,.9);
+  color:#fff;
+  font-family:var(--font-body);
+  font-size:11px;
+  font-weight:600;
+  line-height:1.2;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+#project .legacy-annotation {
+  position:absolute;
+  z-index:4;
+  padding:7px 10px;
+  border-left:2px solid #55c9d6;
+  background:rgba(16,18,24,.94);
+  color:#f4f4f5;
+  box-shadow:0 6px 18px rgba(0,0,0,.22);
+  font-family:var(--font-body);
+  font-size:12px;
+  font-weight:500;
+  line-height:1.25;
+}
+#project .legacy-annotation-one { left:18%; top:24%; }
+#project .legacy-annotation-two { left:47%; top:62%; }
+#project .legacy-annotation-three { right:5%; top:42%; }
+#project p.legacy-snapshot-foot {
+  position:absolute;
+  left:0;
+  bottom:0;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin:0;
+  padding:0;
+  font-size:13px;
+  opacity:.72;
+}
+#project .legacy-snapshot-foot span { width:36px; height:1px; background:currentColor; }
+@media(max-width:700px) {
+  #project .legacy-snapshot { margin:32px 0 40px; }
+  #project .legacy-snapshot-heading { grid-template-columns:1fr; gap:12px; margin-bottom:18px; }
+  #project .legacy-snapshot-stage { display:grid; gap:12px; min-height:0; }
+  #project .legacy-shot { position:relative; inset:auto; width:100%; box-shadow:none; }
+  #project .legacy-annotation { display:none; }
+  #project p.legacy-snapshot-foot { position:relative; margin-top:4px; }
+}
+
 /* Theme only: dark pages inherit the same body and list sizing as light pages. */
 #project .dark-mode-usecase {
   background:#272727;
