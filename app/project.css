@@ -147,9 +147,9 @@
 .explorer-at-a-glance {
   position:absolute;
   z-index:2;
-  left:36.7%;
+  left:calc(42.7% - clamp(80px,6%,115px));
   top:51%;
-  width:12%;
+  width:clamp(160px,12%,230px);
   padding:clamp(7px,.9vw,13.5px);
   border:1px solid rgba(116,133,180,.32);
   border-radius:2px;
