@@ -25,7 +25,10 @@ function videoSource(children:ContentNode[]):string {
   return typeof source?.props.src==='string' ? source.props.src : '';
 }
 
-const designSystemChapters=[0,1.48868,8.72201,15.9553];
+const designSystemSequences:Record<string,number[]>={
+  '/case-studies/cont-ds.mp4':[0,1.48868,8.72201,15.9553],
+  '/case-studies/tr-ds.mp4':[0,2.43893,5.53893,8.37227],
+};
 
 function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,unknown>;nodeChildren:ContentNode[];keyName:string}) {
   const ref=useRef<HTMLVideoElement>(null);
@@ -35,7 +38,8 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
   const source=videoSource(nodeChildren);
   const isExplorer=source==='/case-studies/explorer-animation.mp4';
   const isTrackonomy=source.startsWith('/case-studies/tr-') && source.endsWith('.mp4');
-  const isDesignSystem=source==='/case-studies/cont-ds.mp4';
+  const sequenceChapters=designSystemSequences[source];
+  const isDesignSystem=Boolean(sequenceChapters);
   const poster=source==='/case-studies/explorer-animation.mp4'
     ? '/case-studies/explorer-animation-poster.webp'
     : undefined;
@@ -84,10 +88,10 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
       });
       if(sequence) {
         const duration=Number.isFinite(video.duration) ? video.duration : 17.51;
-        const active=Math.max(0,designSystemChapters.findLastIndex(time=>video.currentTime>=time));
+        const active=Math.max(0,sequenceChapters.findLastIndex(time=>video.currentTime>=time));
         sequence.querySelectorAll<HTMLButtonElement>('button').forEach((segment,index)=>{
-          const start=designSystemChapters[index];
-          const end=designSystemChapters[index+1] ?? duration;
+          const start=sequenceChapters[index];
+          const end=sequenceChapters[index+1] ?? duration;
           const progress=index<active ? 1 : index>active ? 0 : Math.min(1,Math.max(0,(video.currentTime-start)/(end-start)));
           segment.style.setProperty('--segment-progress',String(progress));
           segment.setAttribute('aria-pressed',String(index===active));
@@ -112,7 +116,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
       cancelAnimationFrame(syncFrame);
       video.pause();
     };
-  },[source,isTrackonomy,isDesignSystem]);
+  },[source,isTrackonomy,isDesignSystem,sequenceChapters]);
 
   const video=<video {...attributes} ref={ref} autoPlay={false} preload="metadata" poster={poster}>
     {renderChildren(renderedChildren,keyName)}
@@ -120,7 +124,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
   if(isDesignSystem)return <span className="design-system-video-stage">
     {video}
     <span ref={sequenceRef} className="design-system-sequence-rail" aria-label="Design system sequence navigation">
-      {designSystemChapters.map((time,index)=><button
+      {sequenceChapters.map((time,index)=><button
         key={time}
         type="button"
         aria-label={`Show design system screen ${index+1}`}
