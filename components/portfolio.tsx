@@ -31,12 +31,13 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
   const glanceRef=useRef<HTMLSpanElement>(null);
   const source=videoSource(nodeChildren);
   const isExplorer=source==='/case-studies/explorer-animation.mp4';
+  const isTrackonomy=source.startsWith('/case-studies/tr-') && source.endsWith('.mp4');
   const poster=source==='/case-studies/explorer-animation.mp4'
     ? '/case-studies/explorer-animation-poster.webp'
     : undefined;
-  const renderedChildren=isExplorer ? nodeChildren.map(child=>
+  const renderedChildren=(isExplorer || isTrackonomy) ? nodeChildren.map(child=>
     typeof child!=='string' && child.tag==='source'
-      ? {...child,props:{...child.props,src:`${source}?v=7`}}
+      ? {...child,props:{...child.props,src:`${source}?v=${isExplorer?'7':'2'}`}}
       : child
   ) : nodeChildren;
 
@@ -58,7 +59,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
         warm();
         preloader.disconnect();
       }
-    },{rootMargin:'1000px 0px',threshold:0});
+    },{rootMargin:isTrackonomy?'1800px 0px':'1000px 0px',threshold:0});
     const player=new IntersectionObserver(entries=>{
       const visible=entries.some(entry=>entry.isIntersecting);
       if(visible && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -95,7 +96,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
       cancelAnimationFrame(syncFrame);
       video.pause();
     };
-  },[source]);
+  },[source,isTrackonomy]);
 
   const video=<video {...attributes} ref={ref} autoPlay={false} preload="metadata" poster={poster}>
     {renderChildren(renderedChildren,keyName)}
