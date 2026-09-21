@@ -110,7 +110,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
           <rect x="3.5" y="4" width="21" height="15" rx="2" />
           <path d="M10 24h8M14 19v5" />
         </svg>
-        <strong>Scheduler App <small>(application)</small></strong>
+        <strong>Scheduler App</strong>
       </span>
       <span className="explorer-at-a-glance-grid">
         <span>Language</span><b>Java</b>
