@@ -72,7 +72,7 @@
   grid-template-columns:minmax(0,1fr) minmax(280px,.72fr);
   align-items:end;
   gap:32px;
-  margin-bottom:24px;
+  margin-bottom:34px;
 }
 #project .legacy-snapshot-heading .class-one { margin:4px 0 0; }
 #project p.legacy-snapshot-kicker {
