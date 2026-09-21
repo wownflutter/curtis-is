@@ -66,7 +66,8 @@
 #project p.list-introduction :is(b,strong) { font-weight:inherit; }
 
 /* Recruiter-speed summary of the two legacy product surfaces. */
-#project .legacy-snapshot { margin:42px 0 52px; }
+#project .legacy-snapshot { margin:42px 0 16px; }
+#project .legacy-snapshot + .class-one { margin-top:0; }
 #project .legacy-snapshot-heading {
   display:grid;
   grid-template-columns:minmax(0,1fr) minmax(280px,.72fr);
@@ -144,7 +145,7 @@
 }
 #project .legacy-snapshot-foot span { width:36px; height:1px; background:currentColor; }
 @media(max-width:700px) {
-  #project .legacy-snapshot { margin:32px 0 40px; }
+  #project .legacy-snapshot { margin:32px 0 20px; }
   #project .legacy-snapshot-heading { grid-template-columns:1fr; gap:12px; margin-bottom:18px; }
   #project .legacy-snapshot-stage { display:grid; gap:12px; min-height:0; }
   #project .legacy-shot { position:relative; inset:auto; width:100%; box-shadow:none; }
