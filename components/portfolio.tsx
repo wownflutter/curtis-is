@@ -182,7 +182,6 @@ function LegacyBeforeSnapshot({keyName}:{keyName:string}) {
       <span className="legacy-annotation legacy-annotation-one">Weak hierarchy</span>
       <span className="legacy-annotation legacy-annotation-two">Disconnected workflows</span>
       <span className="legacy-annotation legacy-annotation-three">High information density</span>
-      <p className="legacy-snapshot-foot"><span aria-hidden="true" />The redesign journey begins below.</p>
     </div>
   </section>;
 }

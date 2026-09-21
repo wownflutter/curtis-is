@@ -3249,7 +3249,7 @@
                                 "The NorthStar initiative"
                               ]
                             },
-                            " began as a simple request from leadership: \"Advance our SOC-focused capabilities while seamlessly integrating and sustaining the IAST feature set.\" As the user experience director, I saw this as a call to craft a cohesive ADR (Application Detection and Response) narrative and connect the workflows of CISOs, SOC teams, and developers — aligning them around shared context, clearer signals, and a more actionable security experience."
+                            " began as a simple request from leadership: \"Advance our SOC-focused capabilities while seamlessly integrating and sustaining the IAST feature set.\" As the user experience director, I saw this as a call to craft a cohesive ADR (Application Detection and Response) narrative and connect the workflows of CISOs, SOC teams, and developers. The goal was to align them around shared context, clearer signals, and a more actionable security experience."
                           ]
                         },
                         "\n              \n                \n     ",
