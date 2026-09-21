@@ -1,5 +1,5 @@
 'use client';
-/* oxlint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions, next/no-img-element -- delegated events preserve the original nested markup; original media must remain byte-for-byte unchanged. */
+/* oxlint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/media-has-caption, next/no-img-element -- delegated events preserve the original nested markup; the embedded animation videos contain no audio track. */
 
 import { createElement, useEffect, useRef, useState, type ReactNode, type MouseEvent } from 'react';
 import { flushSync } from 'react-dom';
@@ -19,6 +19,54 @@ function MediaImage({attributes}:{attributes:Record<string,unknown>}) {
 }
 
 type ContentNode = string | {tag:string; props:Record<string,unknown>; children:ContentNode[]};
+
+function videoSource(children:ContentNode[]):string {
+  const source=children.find((child):child is Exclude<ContentNode,string>=>typeof child!=='string' && child.tag==='source');
+  return typeof source?.props.src==='string' ? source.props.src : '';
+}
+
+function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,unknown>;nodeChildren:ContentNode[];keyName:string}) {
+  const ref=useRef<HTMLVideoElement>(null);
+  const source=videoSource(nodeChildren);
+  const poster=source==='/case-studies/explorer-animation.mp4'
+    ? '/case-studies/explorer-animation-poster.webp'
+    : undefined;
+
+  useEffect(()=>{
+    const video=ref.current;
+    if(!video)return;
+    let warmed=false;
+    const warm=()=>{
+      if(warmed)return;
+      warmed=true;
+      video.preload='auto';
+      video.load();
+    };
+    const preloader=new IntersectionObserver(entries=>{
+      if(entries.some(entry=>entry.isIntersecting)) {
+        warm();
+        preloader.disconnect();
+      }
+    },{rootMargin:'1000px 0px',threshold:0});
+    const player=new IntersectionObserver(entries=>{
+      const visible=entries.some(entry=>entry.isIntersecting);
+      if(visible && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        warm();
+        void video.play().catch(()=>{});
+      } else {
+        video.pause();
+      }
+    },{threshold:0.05});
+    preloader.observe(video);
+    player.observe(video);
+    return ()=>{preloader.disconnect();player.disconnect();video.pause();};
+  },[source]);
+
+  return <video {...attributes} ref={ref} autoPlay={false} preload="metadata" poster={poster}>
+    {renderChildren(nodeChildren,keyName)}
+  </video>;
+}
+
 const content = original as unknown as {home:ContentNode;projects:{slug:string;title:string;tree:ContentNode[]}[]};
 const voidTags = new Set(['img','input','br','hr','source','wbr','embed','area','col']);
 
@@ -121,7 +169,8 @@ function render(node:ContentNode, key:string):ReactNode {
   if (tag === 'a' && String(props.href).includes('twitter.com')) props['aria-label']='Twitter';
   if (tag === 'a' && String(props.href).includes('medium.com')) props['aria-label']='Medium';
   if (tag === 'textarea') { props.defaultValue=node.children.filter(x=>typeof x==='string').join(''); return createElement(tag,props); }
-  if (tag === 'img') { const {key:unusedKey,...attributes}=props; return <MediaImage key={key} attributes={attributes} />; }
+  if (tag === 'img') { const {key:_unusedKey,...attributes}=props; return <MediaImage key={key} attributes={attributes} />; }
+  if (tag === 'video') { const {key:_unusedKey,...attributes}=props; return <MediaVideo key={key} keyName={key} attributes={attributes} nodeChildren={node.children} />; }
   return voidTags.has(tag) ? createElement(tag, props) : createElement(tag, props, renderChildren(node.children,key));
 }
 
