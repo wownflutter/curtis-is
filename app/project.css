@@ -88,7 +88,7 @@
 #project p.legacy-snapshot-summary { margin:0; padding:0; text-wrap:pretty; }
 #project .legacy-snapshot-stage {
   position:relative;
-  min-height:clamp(360px,43vw,500px);
+  aspect-ratio:2.55 / 1;
 }
 #project .legacy-shot {
   position:absolute;
@@ -131,26 +131,12 @@
 #project .legacy-annotation-one { left:18%; top:24%; }
 #project .legacy-annotation-two { left:47%; top:62%; }
 #project .legacy-annotation-three { right:5%; top:42%; }
-#project p.legacy-snapshot-foot {
-  position:absolute;
-  left:0;
-  bottom:0;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin:0;
-  padding:0;
-  font-size:13px;
-  opacity:.72;
-}
-#project .legacy-snapshot-foot span { width:36px; height:1px; background:currentColor; }
 @media(max-width:700px) {
   #project .legacy-snapshot { margin:32px 0 20px; }
   #project .legacy-snapshot-heading { grid-template-columns:1fr; gap:12px; margin-bottom:18px; }
-  #project .legacy-snapshot-stage { display:grid; gap:12px; min-height:0; }
+  #project .legacy-snapshot-stage { display:grid; gap:12px; aspect-ratio:auto; }
   #project .legacy-shot { position:relative; inset:auto; width:100%; box-shadow:none; }
   #project .legacy-annotation { display:none; }
-  #project p.legacy-snapshot-foot { position:relative; margin-top:4px; }
 }
 
 /* Theme only: dark pages inherit the same body and list sizing as light pages. */
