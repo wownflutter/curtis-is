@@ -207,7 +207,7 @@ function LegacyBeforeSnapshot({keyName}:{keyName:string}) {
         <p className="legacy-snapshot-kicker">Before · Contrast Classic</p>
         <h3 id={`${keyName}-title`} className="class-one">What I inherited</h3>
       </div>
-      <p className="legacy-snapshot-summary">A fragmented dashboard and dense vulnerability inventory that made risk difficult to prioritize and action.</p>
+      <p className="legacy-snapshot-summary">A fragmented dashboard and dense vulnerability inventory that made prioritization and remediation difficult.</p>
     </header>
     <div className="legacy-snapshot-stage">
       <a className="legacy-shot legacy-shot-primary" href="/case-studies/classic contrast dashboard.png" data-lightbox aria-label="Open the legacy Contrast dashboard">
