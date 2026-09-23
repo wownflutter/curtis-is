@@ -61,6 +61,17 @@ export function ScrambleHeading({ tag, attributes, children }: {
         cancelAnimationFrame(frame);
         for (const { original, wrapper } of replacements) wrapper.replaceWith(original);
       };
+      // Shuffle resolution order independently of each letter's position.
+      const order = glyphs.map((_, index) => index);
+      for (let index = order.length - 1; index > 0; index--) {
+        const swap = Math.floor(Math.random() * (index + 1));
+        [order[index], order[swap]] = [order[swap], order[index]];
+      }
+      const settleAt: number[] = [];
+      order.forEach((index, rank) => {
+        settleAt[index] = 120 + (rank / Math.max(1, order.length - 1)) * 420;
+      });
+      const letters = glyphs.map(({ letter }) => letter);
       const start = performance.now();
       let lastTick = -1;
       const animate = (now: number) => {
@@ -70,9 +81,8 @@ export function ScrambleHeading({ tag, attributes, children }: {
         if (tick !== lastTick) {
           lastTick = tick;
           glyphs.forEach(({ element, letter }, index) => {
-            const settled = elapsed >= 120 + (index / Math.max(1, glyphs.length - 1)) * 420;
-            const alphabet = letter === letter.toUpperCase() ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' : 'abcdefghijklmnopqrstuvwxyz';
-            element.textContent = settled ? letter : alphabet[(index * 7 + tick * 11) % alphabet.length];
+            const settled = elapsed >= settleAt[index];
+            element.textContent = settled ? letter : letters[Math.floor(Math.random() * letters.length)];
           });
         }
         frame = requestAnimationFrame(animate);
