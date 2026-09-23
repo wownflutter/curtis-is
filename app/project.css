@@ -140,7 +140,16 @@
   letter-spacing:.12em;
   text-transform:uppercase;
 }
-#project p.legacy-snapshot-summary { margin:0; padding:0; text-wrap:pretty; }
+#project p.legacy-snapshot-summary {
+  margin:0;
+  padding:2px 0 2px 16px;
+  border-left:2px solid #cf655d;
+  color:#c5c5c5;
+  font-size:14px;
+  font-style:italic;
+  line-height:1.55;
+  text-wrap:pretty;
+}
 #project .legacy-snapshot-stage {
   position:relative;
   aspect-ratio:2.55 / 1;
