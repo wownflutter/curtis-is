@@ -407,10 +407,6 @@
       },
       {
         "type": "paragraph",
-        "text": "Unlike traditional dashboards that emphasize breadth, NorthStar focused on signal over noise, using intelligent triage and role-specific prioritization powered by internal AI agents."
-      },
-      {
-        "type": "paragraph",
         "text": "\"Before producing any output, agents assembled runtime traces, asset dependencies, historical exploit behavior, and policy constraints so users could clearly understand what the agent knew and why it was reasoning a certain way.\" - SAP"
       },
       {
