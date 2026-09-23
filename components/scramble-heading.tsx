@@ -1,8 +1,6 @@
 'use client';
 
-import { createContext, createElement, useContext, useEffect, useRef, type ReactNode } from 'react';
-
-export const ScrambleHeadings = createContext(false);
+import { createElement, useEffect, useRef, type ReactNode } from 'react';
 
 /** Keep authored text in the accessibility tree and reserve every glyph's width. */
 export function ScrambleHeading({ tag, attributes, children }: {
@@ -10,12 +8,11 @@ export function ScrambleHeading({ tag, attributes, children }: {
   attributes: Record<string, unknown>;
   children: ReactNode;
 }) {
-  const enabled = useContext(ScrambleHeadings);
   const ref = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
     const heading = ref.current;
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (!enabled || !heading || motion.matches || !('IntersectionObserver' in window)) return;
+    if (!heading || motion.matches || !('IntersectionObserver' in window)) return;
     let frame = 0;
     let restore: (() => void) | undefined;
     const observer = new IntersectionObserver(entries => {
@@ -93,6 +90,6 @@ export function ScrambleHeading({ tag, attributes, children }: {
     motion.addEventListener('change', stop);
     observer.observe(heading);
     return () => { observer.disconnect(); restore?.(); motion.removeEventListener('change', stop); };
-  }, [enabled]);
+  }, []);
   return createElement(tag, { ...attributes, ref }, children);
 }

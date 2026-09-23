@@ -3,7 +3,7 @@
 
 import { createElement, useEffect, useRef, useState, type ReactNode, type MouseEvent } from 'react';
 import { flushSync } from 'react-dom';
-import { ScrambleHeading, ScrambleHeadings } from './scramble-heading';
+import { ScrambleHeading } from './scramble-heading';
 import { Globe2, Hammer, Handshake } from 'lucide-react';
 import original from '@/app/data/original.json';
 import mediaSizes from '@/app/data/media-sizes.json';
@@ -269,7 +269,7 @@ function render(node:ContentNode, key:string):ReactNode {
   }
   if(node.props.id==='project-title' && node.children[0]==='The Jasper IoT Control Center -') {
     return <div key={key} className="project-heading-group">
-      <h2 id="project-title">The Jasper IoT Control Center</h2>
+      <ScrambleHeading tag="h2" attributes={{id:'project-title'}}>The Jasper IoT Control Center</ScrambleHeading>
       <p className="project-deck">Rediscovered, redesigned and relaunched leading to <span className="project-outcome">1.48B acquisition</span></p>
     </div>;
   }
@@ -297,7 +297,7 @@ function render(node:ContentNode, key:string):ReactNode {
   if (tag === 'textarea') { props.defaultValue=node.children.filter(x=>typeof x==='string').join(''); return createElement(tag,props); }
   if (tag === 'img') { const {key:_unusedKey,...attributes}=props; return <MediaImage key={key} attributes={attributes} />; }
   if (tag === 'video') { const {key:_unusedKey,...attributes}=props; return <MediaVideo key={key} keyName={key} attributes={attributes} nodeChildren={node.children} />; }
-  if (/^h[1-3]$/.test(tag)) { const {key:_headingKey,...attributes}=props; return <ScrambleHeading key={key} tag={tag} attributes={attributes}>{renderChildren(node.children,key)}</ScrambleHeading>; }
+  if (id==='project-title' && /^h[1-6]$/.test(tag)) { const {key:_headingKey,...attributes}=props; return <ScrambleHeading key={key} tag={tag} attributes={attributes}>{renderChildren(node.children,key)}</ScrambleHeading>; }
   return voidTags.has(tag) ? createElement(tag, props) : createElement(tag, props, renderChildren(node.children,key));
 }
 
@@ -419,7 +419,7 @@ export function Portfolio({initialSlug=null}:{initialSlug?:string|null}) {
         <button id="next-project" aria-label={`Next project: ${next.title}`} onClick={()=>navigate(next.slug)} />
         <div id="next-project-name"><h2>{next.title}</h2></div>
       </nav>
-      <main id="project"><ScrambleHeadings.Provider value={slug==='work-2'}>{project.tree.map((node,i)=>render(node,`${slug}.${i}`))}</ScrambleHeadings.Provider></main>
+      <main id="project">{project.tree.map((node,i)=>render(node,`${slug}.${i}`))}</main>
     </div>}
     <dialog ref={dialog} className="image-lightbox" aria-label={lightbox?.alt||'Project image'} onCancel={()=>setLightbox(null)} onClick={e=>{if(e.target===e.currentTarget)setLightbox(null);}}>
       <button aria-label="Close image" onClick={()=>setLightbox(null)}>×</button>

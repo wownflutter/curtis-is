@@ -347,7 +347,7 @@
   .explorer-demo-cursor,.explorer-at-a-glance { display:none; }
 }
 
-/* A brief decode on Contrast headings; the final glyph reserves its own width. */
+/* A brief decode on case-study titles; the final glyph reserves its own width. */
 .scramble-word { display:inline-block; white-space:nowrap; }
 .scramble-cell { display:inline-block; position:relative; }
 .scramble-reserve { visibility:hidden; }
