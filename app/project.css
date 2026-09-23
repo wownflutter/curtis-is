@@ -140,7 +140,16 @@
   letter-spacing:.12em;
   text-transform:uppercase;
 }
-#project p.legacy-snapshot-summary { margin:0; padding:0; text-wrap:pretty; }
+#project p.legacy-snapshot-summary {
+  margin:0;
+  padding:2px 0 2px 16px;
+  border-left:2px solid #cf655d;
+  color:#c5c5c5;
+  font-size:14px;
+  font-style:italic;
+  line-height:1.55;
+  text-wrap:pretty;
+}
 #project .legacy-snapshot-stage {
   position:relative;
   aspect-ratio:2.55 / 1;
@@ -337,3 +346,10 @@
 @media(prefers-reduced-motion:reduce) {
   .explorer-demo-cursor,.explorer-at-a-glance { display:none; }
 }
+
+/* A brief decode on case-study titles; the final glyph reserves its own width. */
+.scramble-word { display:inline-block; white-space:nowrap; }
+.scramble-cell { display:inline-block; position:relative; }
+.scramble-reserve { visibility:hidden; }
+.scramble-ink { position:absolute; inset:0; text-align:center; overflow:hidden; }
+.scramble-accessible { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }

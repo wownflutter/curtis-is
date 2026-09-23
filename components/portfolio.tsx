@@ -3,6 +3,7 @@
 
 import { createElement, useEffect, useRef, useState, type ReactNode, type MouseEvent } from 'react';
 import { flushSync } from 'react-dom';
+import { ScrambleHeading } from './scramble-heading';
 import { Globe2, Hammer, Handshake } from 'lucide-react';
 import original from '@/app/data/original.json';
 import mediaSizes from '@/app/data/media-sizes.json';
@@ -206,7 +207,7 @@ function LegacyBeforeSnapshot({keyName}:{keyName:string}) {
         <p className="legacy-snapshot-kicker">Before · Contrast Classic</p>
         <h3 id={`${keyName}-title`} className="class-one">What I inherited</h3>
       </div>
-      <p className="legacy-snapshot-summary">A fragmented dashboard and dense vulnerability inventory that made risk difficult to prioritize and action.</p>
+      <p className="legacy-snapshot-summary">A fragmented dashboard and dense vulnerability inventory that made prioritization and remediation difficult.</p>
     </header>
     <div className="legacy-snapshot-stage">
       <a className="legacy-shot legacy-shot-primary" href="/case-studies/classic contrast dashboard.png" data-lightbox aria-label="Open the legacy Contrast dashboard">
@@ -268,7 +269,7 @@ function render(node:ContentNode, key:string):ReactNode {
   }
   if(node.props.id==='project-title' && node.children[0]==='The Jasper IoT Control Center -') {
     return <div key={key} className="project-heading-group">
-      <h2 id="project-title">The Jasper IoT Control Center</h2>
+      <ScrambleHeading tag="h2" attributes={{id:'project-title'}}>The Jasper IoT Control Center</ScrambleHeading>
       <p className="project-deck">Rediscovered, redesigned and relaunched leading to <span className="project-outcome">1.48B acquisition</span></p>
     </div>;
   }
@@ -296,6 +297,7 @@ function render(node:ContentNode, key:string):ReactNode {
   if (tag === 'textarea') { props.defaultValue=node.children.filter(x=>typeof x==='string').join(''); return createElement(tag,props); }
   if (tag === 'img') { const {key:_unusedKey,...attributes}=props; return <MediaImage key={key} attributes={attributes} />; }
   if (tag === 'video') { const {key:_unusedKey,...attributes}=props; return <MediaVideo key={key} keyName={key} attributes={attributes} nodeChildren={node.children} />; }
+  if (id==='project-title' && /^h[1-6]$/.test(tag)) { const {key:_headingKey,...attributes}=props; return <ScrambleHeading key={key} tag={tag} attributes={attributes}>{renderChildren(node.children,key)}</ScrambleHeading>; }
   return voidTags.has(tag) ? createElement(tag, props) : createElement(tag, props, renderChildren(node.children,key));
 }
 
