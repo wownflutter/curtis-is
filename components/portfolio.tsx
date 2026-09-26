@@ -181,7 +181,7 @@ const orderedProjects=homepageProjectSlugs
   .filter((project):project is (typeof content.projects)[number]=>Boolean(project));
 
 const careerProofs = [
-  { title:'Founding Designer', lead:'5×', body:'Cyderes, Contrast Security, Opsis Health, Trackonomy, and Jasper. Built each design function from zero.', icon:Hammer },
+  { title:'Founding Designer', lead:'5×', body:'Design functions built from zero across AI, cybersecurity, IoT, logistics, and healthcare.', icon:Hammer },
   { title:'Exit', lead:'$1.48B', body:'Jasper, where I was founding designer, acquired by Cisco. Continued at Cisco for four years as a design executive leading the IoT product design team.', icon:Handshake },
   { title:'Scale', lead:'Fortune 500', body:'Platforms used by 800+ enterprise customers across cybersecurity, IoT, logistics, and healthcare, including UPS and Koch Industries.', icon:Globe2 },
 ];
