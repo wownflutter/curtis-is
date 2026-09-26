@@ -56,7 +56,7 @@
                         "tag": "p",
                         "props": { "className": "hero-subtitle" },
                         "children": [
-                          "5× founding designer, now leading AI product design at Cyderes."
+                          "5× founding designer building AI products and design teams from zero."
                         ]
                       },
                       "\n\t\t\t\t\t\t",
@@ -319,7 +319,7 @@
                     "tag": "p",
                     "props": { "className": "portfolio-summary" },
                     "children": [
-                      "I was the founding designer at Jasper, acquired by Cisco for $1.48B. Today I lead design at Cyderes, shaping how people work with AI agents to decide faster and act sooner."
+                      "I was the founding designer at Jasper, acquired by Cisco for $1.48B. I build design teams and AI products that help people decide faster and act sooner."
                     ]
                   },
                   "\n",
@@ -386,7 +386,7 @@
                           "className": "principles"
                         },
                         "children": [
-                          "4×: Cyderes, Contrast Security, Trackonomy, Jasper IoT. Built each design function from zero."
+                          "Design functions built from zero across cybersecurity, IoT, logistics, and healthcare."
                         ]
                       },
                       "\n                "
