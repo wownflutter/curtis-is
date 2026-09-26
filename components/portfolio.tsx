@@ -182,7 +182,7 @@ const orderedProjects=homepageProjectSlugs
 
 const careerProofs = [
   { title:'Founding Designer', lead:'5×', body:'Design functions built from zero across AI, cybersecurity, IoT, logistics, and healthcare.', icon:Hammer },
-  { title:'Exit', lead:'$1.48B', body:'Jasper, where I was founding designer, acquired by Cisco. Continued at Cisco for four years as a design executive leading the IoT product design team.', icon:Handshake },
+  { title:'Exit', lead:'$1.4B', body:'Jasper, where I was founding designer, acquired by Cisco. Continued at Cisco for four years as a design executive leading the IoT product design team.', icon:Handshake },
   { title:'Scale', lead:'Fortune 500', body:'Platforms used by 800+ enterprise customers across cybersecurity, IoT, logistics, and healthcare, including UPS and Koch Industries.', icon:Globe2 },
 ];
 
@@ -270,7 +270,7 @@ function render(node:ContentNode, key:string):ReactNode {
   if(node.props.id==='project-title' && node.children[0]==='The Jasper IoT Control Center -') {
     return <div key={key} className="project-heading-group">
       <ScrambleHeading tag="h2" attributes={{id:'project-title'}}>The Jasper IoT Control Center</ScrambleHeading>
-      <p className="project-deck">Rediscovered, redesigned and relaunched leading to <span className="project-outcome">1.48B acquisition</span></p>
+      <p className="project-deck">Rediscovered, redesigned and relaunched leading to <span className="project-outcome">$1.4B acquisition</span></p>
     </div>;
   }
   const props: Record<string,unknown> = {...node.props, key};
