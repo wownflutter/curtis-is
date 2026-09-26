@@ -319,7 +319,7 @@
                     "tag": "p",
                     "props": { "className": "portfolio-summary" },
                     "children": [
-                      "I was the founding designer at Jasper, acquired by Cisco for $1.48B. I build design teams and AI products that help people decide faster and act sooner."
+                      "I was the founding designer at Jasper, which Cisco acquired for $1.4B. I build design teams and AI products that help people decide faster and act sooner."
                     ]
                   },
                   "\n",
@@ -435,7 +435,7 @@
                           "className": "principles"
                         },
                         "children": [
-                          "$1.48B: Jasper IoT, acquired by Cisco. Stayed on four years to lead IoT product design."
+                          "$1.4B: Jasper IoT, acquired by Cisco. Stayed on four years to lead IoT product design."
                         ]
                       },
                       "\n            "
@@ -4531,7 +4531,7 @@
                           "props": {},
                           "children": []
                         },
-                        "Rediscovered, redesigned and relaunched leading to 1.48B acquisition"
+                        "Rediscovered, redesigned and relaunched leading to $1.4B acquisition"
                       ]
                     },
                     "\n\t\t"
