@@ -319,7 +319,7 @@
                     "tag": "p",
                     "props": { "className": "portfolio-summary" },
                     "children": [
-                      "Five-time founding designer, including Jasper, acquired by Cisco for $1.48B. Today I lead design at Cyderes, shaping how people work with AI agents to decide faster and act sooner."
+                      "I was the founding designer at Jasper, acquired by Cisco for $1.48B. Today I lead design at Cyderes, shaping how people work with AI agents to decide faster and act sooner."
                     ]
                   },
                   "\n",
@@ -386,7 +386,7 @@
                           "className": "principles"
                         },
                         "children": [
-                          "4× · Cyderes, Contrast Security, Trackonomy, Jasper IoT. Built each design function from zero."
+                          "4×: Cyderes, Contrast Security, Trackonomy, Jasper IoT. Built each design function from zero."
                         ]
                       },
                       "\n                "
@@ -435,7 +435,7 @@
                           "className": "principles"
                         },
                         "children": [
-                          "$1.48B · Jasper IoT, acquired by Cisco. Stayed on four years to lead IoT product design."
+                          "$1.48B: Jasper IoT, acquired by Cisco. Stayed on four years to lead IoT product design."
                         ]
                       },
                       "\n            "
@@ -484,7 +484,7 @@
                           "className": "principles"
                         },
                         "children": [
-                          "Fortune 500 · Platforms used by 800+ enterprise customers across security, IoT, logistics, and health, including UPS and Koch Industries."
+                          "Fortune 500: Platforms used by 800+ enterprise customers across security, IoT, logistics, and health, including UPS and Koch Industries."
                         ]
                       },
                       "\n            "
@@ -533,7 +533,7 @@
                           "className": "principles"
                         },
                         "children": [
-                          "Webby · Addy · Create Gold. 40+ designers hired and mentored across four teams."
+                          "Webby, Addy, and Create Gold. 40+ designers hired and mentored across four teams."
                         ]
                       },
                       "\n            "

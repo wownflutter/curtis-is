@@ -183,7 +183,7 @@ const orderedProjects=homepageProjectSlugs
 const careerProofs = [
   { title:'Founding Designer', lead:'5×', body:'Cyderes, Contrast Security, Opsis Health, Trackonomy, and Jasper. Built each design function from zero.', icon:Hammer },
   { title:'Exit', lead:'$1.48B', body:'Jasper, where I was founding designer, acquired by Cisco. Continued at Cisco for four years as a design executive leading the IoT product design team.', icon:Handshake },
-  { title:'Scale', lead:'Fortune 500', body:'Platforms used by 800+ enterprise customers across cybersecurity, IoT, logistics, and healthcare—including UPS and Koch Industries.', icon:Globe2 },
+  { title:'Scale', lead:'Fortune 500', body:'Platforms used by 800+ enterprise customers across cybersecurity, IoT, logistics, and healthcare, including UPS and Koch Industries.', icon:Globe2 },
 ];
 
 function CareerProofStrip({keyName}:{keyName:string}) {
@@ -191,7 +191,7 @@ function CareerProofStrip({keyName}:{keyName:string}) {
     {careerProofs.map(({title,lead,body,icon:Icon})=><article className="col-sm-3 career-proof" key={title}>
       <div className="career-proof-icon"><Icon aria-hidden="true" strokeWidth={1.2}/></div>
       <h3>{title}</h3>
-      <p className="principles"><strong>{lead}</strong> · {body}</p>
+      <p className="principles"><strong>{lead}:</strong> {body}</p>
     </article>)}
   </div>;
 }
@@ -204,7 +204,7 @@ function LegacyBeforeSnapshot({keyName}:{keyName:string}) {
   return <section key={keyName} className="legacy-snapshot" aria-labelledby={`${keyName}-title`}>
     <header className="legacy-snapshot-heading">
       <div>
-        <p className="legacy-snapshot-kicker">Before · Contrast Classic</p>
+        <p className="legacy-snapshot-kicker">Before: Contrast Classic</p>
         <h3 id={`${keyName}-title`} className="class-one">What I inherited</h3>
       </div>
       <p className="legacy-snapshot-summary">A fragmented dashboard and dense vulnerability inventory that made prioritization and remediation difficult.</p>
