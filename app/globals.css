@@ -22,7 +22,7 @@
   letter-spacing:-.015em;
 }
 
-/* Homepage atmosphere: a restrained, original dark field with neutral light pools.
+/* Homepage atmosphere: a restrained, original dark field with softened cool light pools.
    Project pages keep their authored themes and full-bleed overlays. */
 .signal-concept #page {
   position:relative;
@@ -32,10 +32,10 @@
   color:#edf0f2;
   background-color:#080a0b;
   background-image:
-    radial-gradient(ellipse 70% 42% at 12% 14%,rgba(104,92,86,.20) 0%,rgba(60,53,51,.10) 42%,transparent 72%),
-    radial-gradient(ellipse 62% 39% at 89% 27%,rgba(70,69,82,.20) 0%,rgba(43,42,51,.10) 47%,transparent 75%),
-    radial-gradient(ellipse 58% 36% at 76% 72%,rgba(91,57,76,.18) 0%,rgba(52,36,46,.09) 49%,transparent 76%),
-    radial-gradient(ellipse 62% 38% at 13% 88%,rgba(89,76,69,.14) 0%,rgba(47,41,39,.07) 50%,transparent 76%),
+    radial-gradient(ellipse 70% 42% at 12% 14%,rgba(29,116,103,.32) 0%,rgba(23,66,61,.16) 42%,transparent 72%),
+    radial-gradient(ellipse 62% 39% at 89% 27%,rgba(54,72,127,.29) 0%,rgba(34,42,77,.14) 47%,transparent 75%),
+    radial-gradient(ellipse 58% 36% at 76% 72%,rgba(105,52,88,.22) 0%,rgba(57,32,53,.11) 49%,transparent 76%),
+    radial-gradient(ellipse 62% 38% at 13% 88%,rgba(31,91,78,.24) 0%,rgba(20,52,47,.10) 50%,transparent 76%),
     linear-gradient(180deg,#07090a 0%,#0b0e0f 38%,#090b0d 71%,#070809 100%);
   background-attachment:fixed;
 }
@@ -71,7 +71,7 @@
 .signal-concept #apps .intro h1 { color:#f1f4f5; }
 .signal-concept #team .portfolio-summary { color:#bec5c8; }
 .signal-concept #team .rowbottom > .col-sm-3 { border-color:rgba(232,239,241,.16); }
-.signal-concept #team .career-proof-icon { color:#c7bfbb; }
+.signal-concept #team .career-proof-icon { color:#b7c8ca; }
 .signal-concept #team .rowbottom h3 { color:#eef1f2; }
 .signal-concept #team p.principles { color:#aeb6b9; }
 .signal-concept #team p.principles strong { color:#f5f7f8; }
@@ -171,10 +171,10 @@
   filter:blur(56px);
   transform:translateZ(0);
   background:
-    linear-gradient(116deg,transparent 17%,rgba(158,139,130,.07) 35%,transparent 55%),
-    linear-gradient(302deg,transparent 40%,rgba(117,112,132,.08) 58%,transparent 75%),
-    radial-gradient(ellipse 30% 21% at 27% 17%,rgba(144,126,116,.12),transparent 72%),
-    radial-gradient(ellipse 32% 22% at 78% 61%,rgba(112,73,101,.14),transparent 72%);
+    linear-gradient(116deg,transparent 17%,rgba(82,159,147,.144) 35%,transparent 55%),
+    linear-gradient(302deg,transparent 40%,rgba(88,101,167,.136) 58%,transparent 75%),
+    radial-gradient(ellipse 30% 21% at 27% 17%,rgba(56,151,133,.248),transparent 72%),
+    radial-gradient(ellipse 32% 22% at 78% 61%,rgba(124,75,117,.216),transparent 72%);
 }
 .signal-concept #header::after {
   content:'';
@@ -201,8 +201,8 @@
   pointer-events:none;
   opacity:.92;
   background:
-    radial-gradient(ellipse 48% 64% at 13% 39%,rgba(109,91,83,.15),transparent 72%),
-    radial-gradient(ellipse 43% 60% at 87% 52%,rgba(79,75,94,.15),transparent 74%);
+    radial-gradient(ellipse 48% 64% at 13% 39%,rgba(34,112,98,.208),transparent 72%),
+    radial-gradient(ellipse 43% 60% at 87% 52%,rgba(68,68,121,.192),transparent 74%);
 }
 .signal-concept #team > .container,
 .signal-concept #team > #apps { position:relative; z-index:1; }
@@ -226,19 +226,19 @@
   width:330px;
   height:330px;
   pointer-events:none;
-  border:1px solid rgba(204,193,188,.09);
+  border:1px solid rgba(142,199,194,.07);
   border-radius:50%;
   box-shadow:
-    0 0 0 48px rgba(123,119,126,.03),
-    0 0 0 96px rgba(111,75,101,.022);
+    0 0 0 48px rgba(83,109,126,.025),
+    0 0 0 96px rgba(119,70,111,.02);
 }
 .signal-concept #team .mission-statement,
 .signal-concept #team .portfolio-summary { position:relative; z-index:1; }
 .signal-concept #team .mission-statement span { transition:color .2s ease; }
 .signal-concept #team .mission-statement span:nth-child(2) { color:#c7d0d2; }
 .signal-concept #team .mission-statement span:nth-child(3) {
-  color:#d2c4be;
-  text-shadow:0 0 34px rgba(166,135,121,.10);
+  color:#b8cfce;
+  text-shadow:0 0 34px rgba(86,166,154,.07);
 }
 .signal-concept #team .portfolio-summary {
   align-self:stretch;
@@ -249,7 +249,7 @@
   gap:18px;
   padding:12px 0 12px 30px;
   border:0;
-  border-left:1px solid rgba(207,190,182,.34);
+  border-left:1px solid rgba(139,204,197,.30);
   border-radius:0;
   background:transparent;
   box-shadow:none;
@@ -297,8 +297,8 @@
   inset:0;
   pointer-events:none;
   background:
-    radial-gradient(ellipse 40% 24% at 10% 8%,rgba(113,91,82,.14),transparent 75%),
-    radial-gradient(ellipse 43% 27% at 91% 34%,rgba(78,74,96,.14),transparent 76%);
+    radial-gradient(ellipse 40% 24% at 10% 8%,rgba(31,121,104,.20),transparent 75%),
+    radial-gradient(ellipse 43% 27% at 91% 34%,rgba(72,73,135,.176),transparent 76%);
 }
 .signal-concept #apps > * { position:relative; z-index:1; }
 .signal-concept a.work {
