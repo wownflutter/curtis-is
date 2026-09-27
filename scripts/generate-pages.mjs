@@ -18,7 +18,16 @@ for (const { slug, title } of projects) {
   await mkdir(directory, { recursive: true });
   const html = template.replace(/<title>.*?<\/title>/s, `<title>${escapeHtml(title)} — curtis.is</title>`);
   await writeFile(new URL('index.html', directory), html);
+
+  const signalProjectDirectory = new URL(`signal/${slug}/`, output);
+  await mkdir(signalProjectDirectory, { recursive: true });
+  await writeFile(new URL('index.html', signalProjectDirectory), html);
 }
+
+const signalDirectory = new URL('signal/', output);
+await mkdir(signalDirectory, { recursive: true });
+const signalHtml = template.replace(/<title>.*?<\/title>/s, '<title>Signal concept — curtis.is</title>');
+await writeFile(new URL('index.html', signalDirectory), signalHtml);
 
 // Unknown URLs retain an HTTP 404; known projects have their own real documents.
 await writeFile(new URL('404.html', output), template);

@@ -9,5 +9,5 @@ export async function generateMetadata({ params }: { params: Promise<{slug:strin
 export default async function ProjectPage({params}: {params:Promise<{slug:string}>}) {
   const {slug} = await params;
   if (!original.projects.some(p=>p.slug === slug)) notFound();
-  return <Portfolio initialSlug={slug} />;
+  return <Portfolio initialSlug={slug} variant="signal" routeBase="" />;
 }

@@ -49,14 +49,7 @@
                         "tag": "h1",
                         "props": {},
                         "children": [
-                          "curtis.is designing the interface between humans and autonomous systems."
-                        ]
-                      },
-                      {
-                        "tag": "p",
-                        "props": { "className": "hero-subtitle" },
-                        "children": [
-                          "5× founding designer building AI products and design teams from zero."
+                          "I build products that turn real-world signals into immediate action for people and AI agents."
                         ]
                       },
                       "\n\t\t\t\t\t\t",

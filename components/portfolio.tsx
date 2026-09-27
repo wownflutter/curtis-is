@@ -167,6 +167,37 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
 const content = original as unknown as {home:ContentNode;projects:{slug:string;title:string;tree:ContentNode[]}[]};
 const voidTags = new Set(['img','input','br','hr','source','wbr','embed','area','col']);
 
+function buildSignalHome(node:ContentNode,projectBase:''|'/signal'):ContentNode {
+  if(typeof node==='string') return node;
+  if(node.props.className==='portfolio-summary') {
+    return {...node,children:[
+      {
+        tag:'span',
+        props:{className:'portfolio-summary-thought'},
+        children:[
+          'I was the founding designer at ',
+          {tag:'strong',props:{},children:['Jasper']},
+          ' before its ',
+          {tag:'strong',props:{},children:['$1.4B']},
+          ' acquisition by Cisco.',
+        ],
+      },
+      {
+        tag:'span',
+        props:{className:'portfolio-summary-thought'},
+        children:['Today, my focus is building design teams and AI products that help people decide faster and act sooner.'],
+      },
+    ]};
+  }
+  const props=node.props.className==='work' && typeof node.props.id==='string' && /^work-\d+$/.test(node.props.id)
+    ? {...node.props,'data-project-base':projectBase}
+    : node.props;
+  return {...node,props,children:node.children.map(child=>buildSignalHome(child,projectBase))};
+}
+
+const signalHome=buildSignalHome(content.home,'/signal');
+const signalHomeAtRoot=buildSignalHome(content.home,'');
+
 function collectProjectSlugs(node:ContentNode, slugs:string[]=[]):string[] {
   if(typeof node==='string') return slugs;
   const id=typeof node.props.id==='string'?node.props.id:'';
@@ -254,6 +285,18 @@ function PortfolioFooter() {
   </footer>;
 }
 
+function NextCaseStudy({project,position,total,routeBase}:{project:(typeof content.projects)[number];position:number;total:number;routeBase:''|'/signal'}) {
+  const href=`${routeBase}/${project.slug}`;
+  const displayTitle=project.title.replace(/\s*\([^)]*\)\s*$/,'');
+  return <aside className="next-case-study" aria-label="Continue to the next case study">
+    <a href={href} aria-label={`Next case study: ${project.title}`}>
+      <span className="next-case-study-label">Next case study <span aria-hidden="true">{String(position).padStart(2,'0')} / {String(total).padStart(2,'0')}</span></span>
+      <span className="next-case-study-title">{displayTitle}</span>
+      <span className="next-case-study-arrow" aria-hidden="true">→</span>
+    </a>
+  </aside>;
+}
+
 /** Build ordinary React elements, preserving the authored content hierarchy.
  * No injected HTML, legacy scripts, jQuery, or client-side Next router.
  */
@@ -284,7 +327,9 @@ function render(node:ContentNode, key:string):ReactNode {
   if(node.tag==='li' && node.children.some(child=>typeof child!=='string' && child.props.href==='#feeds'))return null;
   let tag = node.tag;
   if (/^work-\d+$/.test(id) && props.className === 'work') {
-    tag = 'a'; props.href = `/${id}`;
+    const projectBase=props['data-project-base']==='/signal'?'/signal':'';
+    delete props['data-project-base'];
+    tag = 'a'; props.href = `${projectBase}/${id}`;
     props['aria-label'] = content.projects.find(p=>p.slug === id)?.title;
   }
   if (props.id === 'menu-mobile') { tag='button'; props.type='button'; props['aria-label']='Toggle navigation'; }
@@ -301,7 +346,7 @@ function render(node:ContentNode, key:string):ReactNode {
   return voidTags.has(tag) ? createElement(tag, props) : createElement(tag, props, renderChildren(node.children,key));
 }
 
-export function Portfolio({initialSlug=null}:{initialSlug?:string|null}) {
+export function Portfolio({initialSlug=null,variant='live',routeBase:routeBaseProp}:{initialSlug?:string|null;variant?:'live'|'signal';routeBase?:''|'/signal'}) {
   const [slug,setSlug]=useState<string|null>(initialSlug);
   const [menuOpen,setMenuOpen]=useState(false);
   const [navVisible,setNavVisible]=useState(false);
@@ -313,6 +358,10 @@ export function Portfolio({initialSlug=null}:{initialSlug?:string|null}) {
   const transitioning=useRef(false);
   const surface=useRef<HTMLDivElement>(null);
   const cancelScroll=useRef<(()=>void)|null>(null);
+  const isSignal=variant==='signal';
+  const routeBase=routeBaseProp ?? (isSignal?'/signal':'');
+  const homePath=routeBase || '/';
+  const homeTree=isSignal ? (routeBase==='/signal'?signalHome:signalHomeAtRoot) : content.home;
   useEffect(()=>()=>cancelScroll.current?.(),[]);
   const project=content.projects.find(p=>p.slug===slug);
   const index=orderedProjects.findIndex(p=>p.slug===slug);
@@ -322,15 +371,34 @@ export function Portfolio({initialSlug=null}:{initialSlug?:string|null}) {
   useEffect(()=>{
     const update=()=>setNavVisible(window.scrollY >= window.innerHeight-60);
     window.addEventListener('scroll',update,{passive:true}); update();
-    const pop=()=>{const pathSlug=location.pathname.replace(/^\/+|\/+$/g,'');setSlug(content.projects.some(p=>p.slug===pathSlug)?pathSlug:null);};
+    const pop=()=>{
+      const parts=location.pathname.split('/').filter(Boolean);
+      const pathSlug=routeBase==='/signal' && parts[0]==='signal' ? parts[1] : parts[0];
+      setSlug(content.projects.some(p=>p.slug===pathSlug)?pathSlug:null);
+    };
     window.addEventListener('popstate',pop);
     return ()=>{window.removeEventListener('scroll',update);window.removeEventListener('popstate',pop);};
-  },[]);
+  },[routeBase]);
   useEffect(()=>{
+    let frame=0;
+    const positionHome=()=>{
+      const hashTarget=location.hash ? document.getElementById(location.hash.slice(1)) : null;
+      const returnTop=savedScroll.current || (hashTarget ? window.scrollY+hashTarget.getBoundingClientRect().top : 0);
+      window.scrollTo({top:returnTop,behavior:'instant'});
+    };
     if (project) {window.scrollTo({top:0,behavior:'instant'}); closeButton.current?.focus({preventScroll:true});}
-    else {window.scrollTo({top:savedScroll.current,behavior:'instant'}); lastCard.current?.focus({preventScroll:true});}
-    document.title=project?`${project.title} — curtis.is`:'curtis.is : Product Design | Interaction | User Experience | Mobile Design | Saas | Motion';
-  },[project]);
+    else {
+      positionHome();
+      frame=requestAnimationFrame(()=>{frame=requestAnimationFrame(positionHome);});
+      lastCard.current?.focus({preventScroll:true});
+    }
+    document.title=project
+      ? `${project.title} — curtis.is`
+      : isSignal && routeBase==='/signal'
+        ? 'Signal concept — curtis.is'
+        : 'curtis.is : Product Design | Interaction | User Experience | Mobile Design | Saas | Motion';
+    return ()=>cancelAnimationFrame(frame);
+  },[project,isSignal,routeBase]);
   useEffect(()=>{if(lightbox)dialog.current?.showModal();else dialog.current?.close();},[lightbox]);
   async function navigate(target:string|null) {
     if(transitioning.current)return;
@@ -338,10 +406,12 @@ export function Portfolio({initialSlug=null}:{initialSlug?:string|null}) {
     const element=surface.current;
     const animate=element && typeof element.animate==='function' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const update=()=>{
-      history.pushState(null,'',target?`/${target}`:'/#apps');
+      history.pushState(null,'',target?`${routeBase}/${target}`:`${homePath}#apps`);
       flushSync(()=>{setSlug(target); setLightbox(null); setMenuOpen(false);});
       // Change scroll while the surface is invisible, never during its reveal.
-      window.scrollTo({top:target?0:savedScroll.current,behavior:'instant'});
+      const work=document.getElementById('apps');
+      const returnTop=savedScroll.current || (work ? window.scrollY+work.getBoundingClientRect().top : 0);
+      window.scrollTo({top:target?0:returnTop,behavior:'instant'});
     };
     if(!animate){update();return;}
     transitioning.current=true;
@@ -400,16 +470,16 @@ export function Portfolio({initialSlug=null}:{initialSlug?:string|null}) {
         return;
       }
     }
-    if(/^\/work-\d+$/.test(href)) {
+    if(/^\/(?:signal\/)?work-\d+$/.test(href)) {
       event.preventDefault();
       if(!slug){savedScroll.current=window.scrollY;lastCard.current=anchor;}
-      navigate(href.slice(1));
+      navigate(href.split('/').at(-1) || null);
     } else if(anchor.getAttribute('rel')?.includes('lightbox') || anchor.dataset.lightbox) {
       event.preventDefault();setLightbox({src:href,alt:anchor.querySelector('img')?.alt||'Project image'});
     } else if(href.startsWith('#')) setMenuOpen(false);
   }
-  return <div ref={surface} className={`portfolio-root ${menuOpen?'menu-open':''} ${navVisible?'nav-visible':''}`} onClick={onClick} onKeyDown={e=>{if(e.key==='Escape'&&!lightbox&&slug)navigate(null);}}>
-    <div className="home-surface" hidden={Boolean(project)}>{render(content.home,'home')}
+  return <div ref={surface} className={`portfolio-root ${isSignal?'signal-concept':''} ${menuOpen?'menu-open':''} ${navVisible?'nav-visible':''}`} onClick={onClick} onKeyDown={e=>{if(e.key==='Escape'&&!lightbox&&slug)navigate(null);}}>
+    <div className="home-surface" hidden={Boolean(project)}>{render(homeTree,'home')}
     </div>
     {project&&<div id="project-page" className="project-visible">
       <nav id="project-top-bar" aria-label="Project navigation">
@@ -419,7 +489,10 @@ export function Portfolio({initialSlug=null}:{initialSlug?:string|null}) {
         <button id="next-project" aria-label={`Next project: ${next.title}`} onClick={()=>navigate(next.slug)} />
         <div id="next-project-name"><h2>{next.title}</h2></div>
       </nav>
-      <main id="project">{project.tree.map((node,i)=>render(node,`${slug}.${i}`))}</main>
+      <main id="project">
+        {project.tree.map((node,i)=>render(node,`${slug}.${i}`))}
+        <NextCaseStudy project={next} position={(index+1)%orderedProjects.length+1} total={orderedProjects.length} routeBase={routeBase} />
+      </main>
     </div>}
     <dialog ref={dialog} className="image-lightbox" aria-label={lightbox?.alt||'Project image'} onCancel={()=>setLightbox(null)} onClick={e=>{if(e.target===e.currentTarget)setLightbox(null);}}>
       <button aria-label="Close image" onClick={()=>setLightbox(null)}>×</button>
