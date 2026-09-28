@@ -222,7 +222,7 @@ function CareerProofStrip({keyName}:{keyName:string}) {
     {careerProofs.map(({title,lead,body,icon:Icon})=><article className="col-sm-3 career-proof" key={title}>
       <div className="career-proof-icon"><Icon aria-hidden="true" strokeWidth={1.2}/></div>
       <h3>{title}</h3>
-      <p className="principles"><strong>{lead}:</strong> {body}</p>
+      <p className="principles"><strong>{lead}</strong><span className="proof-separator">: </span>{body}</p>
     </article>)}
   </div>;
 }
