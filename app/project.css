@@ -41,7 +41,7 @@
 }
 #project .trackonomy-refresh .trackonomy-heading {
   max-width:980px;
-  margin-bottom:58px;
+  margin-bottom:48px;
 }
 #project .trackonomy-refresh .trackonomy-heading #project-title {
   max-width:900px;
@@ -57,42 +57,6 @@
   color:var(--trackonomy-muted);
   font-size:18px;
   line-height:1.5625;
-}
-#project .trackonomy-refresh .trackonomy-brief {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:0;
-  margin-top:44px;
-  border-top:1px solid var(--trackonomy-line);
-  border-bottom:1px solid var(--trackonomy-line);
-}
-#project .trackonomy-refresh .trackonomy-brief > div {
-  min-width:0;
-  padding:22px 24px 24px 0;
-}
-#project .trackonomy-refresh .trackonomy-brief > div + div {
-  padding-left:24px;
-  border-left:1px solid var(--trackonomy-line);
-}
-#project .trackonomy-refresh .trackonomy-brief span,
-#project .trackonomy-refresh .trackonomy-brief strong {
-  display:block;
-  font-family:var(--font-body);
-}
-#project .trackonomy-refresh .trackonomy-brief span {
-  margin-bottom:7px;
-  color:var(--trackonomy-accent);
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:.14em;
-  line-height:1.3;
-  text-transform:uppercase;
-}
-#project .trackonomy-refresh .trackonomy-brief strong {
-  color:var(--trackonomy-ink);
-  font-size:15px;
-  font-weight:600;
-  line-height:1.45;
 }
 #project .trackonomy-refresh h3.class-one {
   margin-top:64px;
@@ -149,13 +113,6 @@
 #project .trackonomy-refresh .trackonomy-break { margin-top:16px; }
 @media(max-width:760px) {
   #project .trackonomy-refresh .trackonomy-heading { margin-bottom:42px; }
-  #project .trackonomy-refresh .trackonomy-brief { grid-template-columns:1fr; margin-top:32px; }
-  #project .trackonomy-refresh .trackonomy-brief > div { padding:16px 0; }
-  #project .trackonomy-refresh .trackonomy-brief > div + div {
-    padding-left:0;
-    border-top:1px solid var(--trackonomy-line);
-    border-left:0;
-  }
   #project .trackonomy-refresh h3.class-one { margin-top:48px; }
   #project .trackonomy-refresh .trackonomy-system { grid-template-columns:1fr; padding:0; }
   #project .trackonomy-refresh .trackonomy-system > div { padding:18px 0; }
