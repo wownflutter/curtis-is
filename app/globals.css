@@ -32,9 +32,9 @@
   color:#edf0f2;
   background-color:#080a0b;
   background-image:
-    radial-gradient(ellipse 54% 34% at 8% 31%,rgba(27,105,92,.048),transparent 74%),
-    radial-gradient(ellipse 50% 38% at 94% 58%,rgba(70,69,124,.044),transparent 76%),
-    radial-gradient(ellipse 42% 25% at 16% 86%,rgba(26,94,87,.032),transparent 78%),
+    radial-gradient(ellipse 54% 34% at 8% 31%,rgba(27,105,92,.074),transparent 74%),
+    radial-gradient(ellipse 50% 38% at 94% 58%,rgba(70,69,124,.067),transparent 76%),
+    radial-gradient(ellipse 42% 25% at 16% 86%,rgba(26,94,87,.049),transparent 78%),
     linear-gradient(180deg,#07090a 0%,#0b0e0f 38%,#090b0d 71%,#070809 100%);
   background-attachment:scroll;
 }
