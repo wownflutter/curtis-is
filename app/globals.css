@@ -193,7 +193,7 @@
 .signal-concept #team {
   position:relative;
   overflow:hidden;
-  padding-top:58px;
+  padding-top:29px;
 }
 .signal-concept #team::before {
   content:'';
@@ -211,7 +211,7 @@
   position:relative;
   overflow:hidden;
   margin-bottom:20px;
-  padding:25px 0 30px;
+  padding:12px 0 30px;
   border:0;
   border-bottom:1px solid rgba(231,240,242,.10);
   border-radius:0;
@@ -328,17 +328,17 @@
   }
 }
 @media(max-width:991px) {
-  .signal-concept #team .process-introduction { padding:24px 0; }
+  .signal-concept #team .process-introduction { padding:12px 0 24px; }
   .signal-concept #team .career-proof-strip { gap:16px; }
 }
 @media(max-width:600px) {
   .signal-concept #header { background-attachment:scroll; }
   .signal-concept #intro h1 { font-size:clamp(32px,9.5vw,38px); line-height:1.2; }
-  .signal-concept #team { padding-top:40px; }
+  .signal-concept #team { padding-top:20px; }
   .signal-concept #team .process-introduction {
     gap:18px;
     margin-bottom:12px;
-    padding:18px 0 20px;
+    padding:9px 0 20px;
   }
   .signal-concept #team .process-introduction::after {
     top:-150px;
