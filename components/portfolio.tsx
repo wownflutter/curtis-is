@@ -167,6 +167,17 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
 const content = original as unknown as {home:ContentNode;projects:{slug:string;title:string;tree:ContentNode[]}[]};
 const voidTags = new Set(['img','input','br','hr','source','wbr','embed','area','col']);
 
+function nestedWorkId(node:ContentNode):string {
+  if(typeof node==='string') return '';
+  const id=typeof node.props.id==='string'?node.props.id:'';
+  if(node.props.className==='work' && /^work-\d+$/.test(id)) return id;
+  for(const child of node.children) {
+    const childId=nestedWorkId(child);
+    if(childId) return childId;
+  }
+  return '';
+}
+
 function buildSignalHome(node:ContentNode,projectBase:''|'/signal'):ContentNode {
   if(typeof node==='string') return node;
   if(node.props.className==='portfolio-summary') {
@@ -192,7 +203,15 @@ function buildSignalHome(node:ContentNode,projectBase:''|'/signal'):ContentNode 
   const props=node.props.className==='work' && typeof node.props.id==='string' && /^work-\d+$/.test(node.props.id)
     ? {...node.props,'data-project-base':projectBase}
     : node.props;
-  return {...node,props,children:node.children.map(child=>buildSignalHome(child,projectBase))};
+  const children=node.children.map(child=>buildSignalHome(child,projectBase));
+  if(node.props.id==='work-container') {
+    const trackonomyIndex=children.findIndex(child=>nestedWorkId(child)==='work-1');
+    const contrastIndex=children.findIndex(child=>nestedWorkId(child)==='work-2');
+    if(trackonomyIndex>=0 && contrastIndex>=0 && trackonomyIndex>contrastIndex) {
+      [children[trackonomyIndex],children[contrastIndex]]=[children[contrastIndex],children[trackonomyIndex]];
+    }
+  }
+  return {...node,props,children};
 }
 
 const signalHome=buildSignalHome(content.home,'/signal');
@@ -206,7 +225,7 @@ function collectProjectSlugs(node:ContentNode, slugs:string[]=[]):string[] {
   return slugs;
 }
 
-const homepageProjectSlugs=collectProjectSlugs(content.home);
+const homepageProjectSlugs=collectProjectSlugs(signalHomeAtRoot);
 const orderedProjects=homepageProjectSlugs
   .map(slug=>content.projects.find(project=>project.slug===slug))
   .filter((project):project is (typeof content.projects)[number]=>Boolean(project));
@@ -365,7 +384,6 @@ export function Portfolio({initialSlug=null,variant='live',routeBase:routeBasePr
   useEffect(()=>()=>cancelScroll.current?.(),[]);
   const project=content.projects.find(p=>p.slug===slug);
   const index=orderedProjects.findIndex(p=>p.slug===slug);
-  const previous=orderedProjects[(index-1+orderedProjects.length)%orderedProjects.length];
   const next=orderedProjects[(index+1)%orderedProjects.length];
 
   useEffect(()=>{
@@ -483,11 +501,7 @@ export function Portfolio({initialSlug=null,variant='live',routeBase:routeBasePr
     </div>
     {project&&<div id="project-page" className="project-visible">
       <nav id="project-top-bar" aria-label="Project navigation">
-        <button id="previous-project" aria-label={`Previous project: ${previous.title}`} onClick={()=>navigate(previous.slug)} />
-        <div id="previous-project-name"><h2>{previous.title}</h2></div>
         <button id="close-project" ref={closeButton} aria-label="Close project and return to work" onClick={()=>navigate(null)} />
-        <button id="next-project" aria-label={`Next project: ${next.title}`} onClick={()=>navigate(next.slug)} />
-        <div id="next-project-name"><h2>{next.title}</h2></div>
       </nav>
       <main id="project">
         {project.tree.map((node,i)=>render(node,`${slug}.${i}`))}

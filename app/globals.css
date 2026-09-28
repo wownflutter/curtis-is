@@ -458,8 +458,6 @@ a.work .work-info h6 {
   box-shadow:none;
   opacity:1;
 }
-#previous-project:hover + #previous-project-name,
-#next-project:hover + #next-project-name { opacity:1; }
 :focus-visible { outline:2px solid #f4594e; outline-offset:4px; }
 .portfolio-root :is(a,button):focus:not(:focus-visible) {
   outline:none;
