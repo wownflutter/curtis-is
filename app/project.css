@@ -253,6 +253,51 @@
 #project .legacy-snapshot { margin:42px 0 16px; padding:0; text-align:left; }
 #project .legacy-snapshot + .class-one { margin-top:0; }
 
+/* Motion signifier for the assisted-triage recording. */
+#project .motion-prototype-stage {
+  margin:0;
+}
+#project .motion-prototype-caption {
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  align-items:center;
+  gap:12px 18px;
+  padding:13px 16px;
+  border-top:1px solid rgba(26,118,120,.28);
+  background:#f2f7f5;
+  color:#46585a;
+  font-family:'Manrope','Inter',sans-serif;
+  font-size:14px;
+  line-height:1.45;
+  text-align:left;
+}
+#project .motion-prototype-label {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:#176f71;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+#project .motion-prototype-label svg { width:13px; height:13px; }
+#project .motion-prototype-caption small {
+  color:#6b797a;
+  font-size:11px;
+  letter-spacing:.04em;
+  white-space:nowrap;
+}
+#project .motion-prototype-stage video { display:block; margin-top:0; }
+@media(max-width:760px) {
+  #project .motion-prototype-caption {
+    grid-template-columns:1fr;
+    gap:6px;
+    padding:12px 14px;
+  }
+}
+
 /* Synced sequence navigation for the design-system recording. */
 #project .design-system-video-stage {
   position:relative;

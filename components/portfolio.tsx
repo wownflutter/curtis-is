@@ -4,7 +4,7 @@
 import { createElement, useEffect, useRef, useState, type ReactNode, type MouseEvent } from 'react';
 import { flushSync } from 'react-dom';
 import { ScrambleHeading } from './scramble-heading';
-import { Globe2, Hammer, Handshake } from 'lucide-react';
+import { Globe2, Hammer, Handshake, Play } from 'lucide-react';
 import original from '@/app/data/original.json';
 import mediaSizes from '@/app/data/media-sizes.json';
 
@@ -39,6 +39,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
   const source=videoSource(nodeChildren);
   const isExplorer=source==='/case-studies/explorer-animation.mp4';
   const isTrackonomy=source.startsWith('/case-studies/tr-') && source.endsWith('.mp4');
+  const isAssistedTriage=source==='/case-studies/tr-activity-stream.mp4';
   const sequenceChapters=designSystemSequences[source];
   const isDesignSystem=Boolean(sequenceChapters);
   const poster=source==='/case-studies/explorer-animation.mp4'
@@ -122,6 +123,14 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
   const video=<video {...attributes} ref={ref} autoPlay={false} preload="metadata" poster={poster}>
     {renderChildren(renderedChildren,keyName)}
   </video>;
+  if(isAssistedTriage)return <figure className="motion-prototype-stage">
+    <figcaption className="motion-prototype-caption">
+      <span className="motion-prototype-label"><Play aria-hidden="true" fill="currentColor" /> Motion prototype</span>
+      <span>Watch AI detect an anomaly, open a support ticket, and draft a message for the triage and support team.</span>
+      <small>Loops automatically</small>
+    </figcaption>
+    {video}
+  </figure>;
   if(isDesignSystem)return <span className="design-system-video-stage">
     {video}
     <span ref={sequenceRef} className="design-system-sequence-rail" aria-label="Design system sequence navigation">
