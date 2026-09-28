@@ -118,7 +118,7 @@
 #team .process-introduction::after { display:none; }
 #team .mission-statement {
   margin:0;
-  font-size:clamp(26px,2.4vw,36px);
+  font-size:clamp(32px,3.4vw,50px);
   line-height:1.12;
   letter-spacing:-.035em;
 }
