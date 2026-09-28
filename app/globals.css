@@ -60,9 +60,9 @@
 .signal-concept #team .process-introduction { border-color:rgba(232,239,241,.16); }
 .signal-concept #team .mission-statement,
 .signal-concept #apps .intro h1 { color:#f1f4f5; }
-.signal-concept #team .portfolio-summary { color:#bec5c8; }
+.signal-concept #team .portfolio-summary { color:#c1c3c9; }
 .signal-concept #team .rowbottom > .col-sm-3 { border-color:rgba(232,239,241,.16); }
-.signal-concept #team .career-proof-icon { color:#b7c8ca; }
+.signal-concept #team .career-proof-icon { color:#bcc3ce; }
 .signal-concept #team .rowbottom h3 { color:#eef1f2; }
 .signal-concept #team p.principles { color:#aeb6b9; }
 .signal-concept #team p.principles strong { color:#f5f7f8; }
@@ -205,19 +205,19 @@
   width:330px;
   height:330px;
   pointer-events:none;
-  border:1px solid rgba(142,199,194,.07);
+  border:1px solid rgba(151,162,190,.07);
   border-radius:50%;
   box-shadow:
-    0 0 0 48px rgba(83,109,126,.025),
+    0 0 0 48px rgba(91,103,140,.025),
     0 0 0 96px rgba(119,70,111,.02);
 }
 .signal-concept #team .mission-statement,
 .signal-concept #team .portfolio-summary { position:relative; z-index:1; }
 .signal-concept #team .mission-statement span { transition:color .2s ease; }
-.signal-concept #team .mission-statement span:nth-child(2) { color:#c7d0d2; }
+.signal-concept #team .mission-statement span:nth-child(2) { color:#c9cbd0; }
 .signal-concept #team .mission-statement span:nth-child(3) {
-  color:#b8cfce;
-  text-shadow:0 0 34px rgba(86,166,154,.07);
+  color:#bec6d2;
+  text-shadow:0 0 34px rgba(94,105,167,.07);
 }
 .signal-concept #team .portfolio-summary {
   align-self:stretch;
@@ -228,7 +228,7 @@
   gap:18px;
   padding:0 0 0 30px;
   border:0;
-  border-left:1px solid rgba(139,204,197,.30);
+  border-left:1px solid rgba(145,156,190,.28);
   border-radius:0;
   background:transparent;
   box-shadow:none;
