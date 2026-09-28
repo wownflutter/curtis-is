@@ -1791,15 +1791,6 @@
                           "children": [
                             "Turning sensor telemetry into asset intelligence"
                           ]
-                        },
-                        {
-                          "tag": "p",
-                          "props": {
-                            "className": "project-deck"
-                          },
-                          "children": [
-                            "Designing Trackonomy’s multi-tenant web and mobile products across logistics, fleet, and healthcare."
-                          ]
                         }
                       ]
                     },
@@ -1824,13 +1815,6 @@
                   },
                   "children": [
                     "\n        ",
-                    {
-                      "tag": "p",
-                      "props": {},
-                      "children": [
-                        "\n\t\t  "
-                      ]
-                    },
                     {
                       "tag": "p",
                       "props": {},
@@ -1883,13 +1867,6 @@
                       },
                       "children": [
                         "One protected sensor, one shared telemetry model"
-                      ]
-                    },
-                    {
-                      "tag": "p",
-                      "props": {},
-                      "children": [
-                        "\n                \n            "
                       ]
                     },
                     {
@@ -2112,13 +2089,6 @@
                       },
                       "children": [
                         "Designing one product across many operating environments"
-                      ]
-                    },
-                    {
-                      "tag": "p",
-                      "props": {},
-                      "children": [
-                        "\n                \n"
                       ]
                     },
                     {
@@ -2658,13 +2628,6 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        " \n                \n            "
-                      ]
-                    },
-                    {
-                      "tag": "p",
-                      "props": {},
-                      "children": [
                         "Research showed that the hardest part was not receiving an alert. It was recognizing which pattern the alert belonged to and coordinating the response. Late assets, incorrect locations, labeling errors, missing equipment, and communication failures repeatedly created the same operational cases."
                       ]
                     },
@@ -2786,13 +2749,6 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        " \n                \n            "
-                      ]
-                    },
-                    {
-                      "tag": "p",
-                      "props": {},
-                      "children": [
                         "Find My Asset brought location intelligence to the people searching on the ground. Bluetooth first guided users toward the general area of a tagged asset, then shifted into a high-precision mode when they were within 200 feet."
                       ]
                     },
@@ -2871,13 +2827,6 @@
                       },
                       "children": [
                         "Voice input for hands-busy workflows"
-                      ]
-                    },
-                    {
-                      "tag": "p",
-                      "props": {},
-                      "children": [
-                        " \n                \n            "
                       ]
                     },
                     {
@@ -3088,11 +3037,6 @@
                       ]
                     },
                     "\n            ",
-                    {
-                      "tag": "p",
-                      "props": {},
-                      "children": []
-                    },
                     "\n\t\t"
                   ]
                 },

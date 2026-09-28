@@ -37,16 +37,16 @@
     radial-gradient(ellipse 58% 36% at 76% 72%,rgba(105,52,88,.168) 0%,rgba(57,32,53,.084) 49%,transparent 76%),
     radial-gradient(ellipse 62% 38% at 13% 88%,rgba(31,91,78,.18) 0%,rgba(20,52,47,.078) 50%,transparent 76%),
     linear-gradient(180deg,#07090a 0%,#0b0e0f 38%,#090b0d 71%,#070809 100%);
-  background-attachment:fixed;
+  background-attachment:scroll;
 }
 .signal-concept #page::after {
   content:'';
-  position:fixed;
+  position:absolute;
   z-index:0;
   inset:0;
   pointer-events:none;
-  opacity:.12;
-  mix-blend-mode:soft-light;
+  opacity:.045;
+  mix-blend-mode:normal;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.48'/%3E%3C/svg%3E");
 }
 .signal-concept #page > *:not(#top-bar) {
@@ -87,9 +87,9 @@
 }
 @supports ((backdrop-filter:blur(12px)) or (-webkit-backdrop-filter:blur(12px))) {
   .signal-concept a.work .work-info {
-    background:rgba(18,22,24,.84);
-    backdrop-filter:blur(10px);
-    -webkit-backdrop-filter:blur(10px);
+    background:rgba(18,22,24,.94);
+    backdrop-filter:none;
+    -webkit-backdrop-filter:none;
   }
 }
 .signal-concept a.work .work-info h6 { color:#f0f3f4; }
@@ -166,13 +166,13 @@
 /* Give the homepage distinct foreground, middle-ground, and ambient layers. */
 .signal-concept #page::before {
   content:'';
-  position:fixed;
+  position:absolute;
   z-index:0;
-  inset:-18%;
+  inset:0;
   pointer-events:none;
   opacity:.94;
-  filter:blur(56px);
-  transform:translateZ(0);
+  filter:none;
+  transform:none;
   background:
     linear-gradient(116deg,transparent 17%,rgba(82,159,147,.108) 35%,transparent 55%),
     linear-gradient(302deg,transparent 40%,rgba(88,101,167,.102) 58%,transparent 75%),
@@ -322,13 +322,13 @@
 }
 .signal-concept #top-bar {
   position:fixed;
-  background:rgba(20,22,24,.86);
+  background:rgba(20,22,24,.96);
   border-bottom:1px solid rgba(255,255,255,.07);
 }
 @supports ((backdrop-filter:blur(16px)) or (-webkit-backdrop-filter:blur(16px))) {
   .signal-concept #top-bar {
-    backdrop-filter:blur(16px) saturate(120%);
-    -webkit-backdrop-filter:blur(16px) saturate(120%);
+    backdrop-filter:none;
+    -webkit-backdrop-filter:none;
   }
 }
 @media(max-width:991px) {
@@ -419,7 +419,7 @@ a.work .work-info {
 @supports ((backdrop-filter:blur(12px)) or (-webkit-backdrop-filter:blur(12px))) {
   a.work .work-info {
     background:rgba(255,255,255,.96);
-    backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+    backdrop-filter:none; -webkit-backdrop-filter:none;
   }
 }
 a.work:focus-visible .work-info { opacity:1; transform:translateY(0); }
