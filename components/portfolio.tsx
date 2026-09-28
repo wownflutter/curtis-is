@@ -390,7 +390,14 @@ export function Portfolio({initialSlug=null,variant='live',routeBase:routeBasePr
   const routeBase=routeBaseProp ?? (isSignal?'/signal':'');
   const homePath=routeBase || '/';
   const homeTree=isSignal ? (routeBase==='/signal'?signalHome:signalHomeAtRoot) : content.home;
-  useEffect(()=>()=>cancelScroll.current?.(),[]);
+  useEffect(()=>{
+    const previousRestoration=history.scrollRestoration;
+    history.scrollRestoration='manual';
+    return ()=>{
+      cancelScroll.current?.();
+      history.scrollRestoration=previousRestoration;
+    };
+  },[]);
   const project=content.projects.find(p=>p.slug===slug);
   const index=orderedProjects.findIndex(p=>p.slug===slug);
   const next=orderedProjects[(index+1)%orderedProjects.length];
@@ -433,7 +440,7 @@ export function Portfolio({initialSlug=null,variant='live',routeBase:routeBasePr
     const element=surface.current;
     const animate=element && typeof element.animate==='function' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const update=()=>{
-      history.pushState(null,'',target?`${routeBase}/${target}`:`${homePath}#apps`);
+      history.pushState(null,'',target?`${routeBase}/${target}`:homePath);
       flushSync(()=>{setSlug(target); setLightbox(null); setMenuOpen(false);});
       // Change scroll while the surface is invisible, never during its reveal.
       const work=document.getElementById('apps');
