@@ -118,7 +118,7 @@
 #team .process-introduction::after { display:none; }
 #team .mission-statement {
   margin:0;
-  font-size:clamp(32px,3.4vw,50px);
+  font-size:clamp(26px,2.4vw,36px);
   line-height:1.12;
   letter-spacing:-.035em;
 }
@@ -210,6 +210,7 @@
 .signal-concept #team .process-introduction {
   position:relative;
   overflow:hidden;
+  align-items:start;
   margin-bottom:20px;
   padding:12px 0 30px;
   border:0;
@@ -246,9 +247,9 @@
   display:flex;
   flex-direction:column;
   align-items:flex-start;
-  justify-content:center;
+  justify-content:flex-start;
   gap:18px;
-  padding:12px 0 12px 30px;
+  padding:0 0 0 30px;
   border:0;
   border-left:1px solid rgba(139,204,197,.30);
   border-radius:0;
