@@ -8873,7 +8873,9 @@
                         {
                           "tag": "h2",
                           "props": {
-                            "id": "project-title"
+                            "id": "project-title",
+                            "data-scramble-duration": "900",
+                            "data-scramble-delay": "220"
                           },
                           "children": [
                             "Turning sensor telemetry into asset intelligence"
@@ -8911,15 +8913,6 @@
                   },
                   "children": [
                     "\n        ",
-                    {
-                      "tag": "h3",
-                      "props": {
-                        "className": "class-one"
-                      },
-                      "children": [
-                        "From protected sensor IP to operational intelligence"
-                      ]
-                    },
                     {
                       "tag": "p",
                       "props": {},

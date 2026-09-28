@@ -9,6 +9,10 @@ export function ScrambleHeading({ tag, attributes, children }: {
   children: ReactNode;
 }) {
   const ref = useRef<HTMLHeadingElement>(null);
+  const requestedDuration = Number(attributes['data-scramble-duration']);
+  const requestedDelay = Number(attributes['data-scramble-delay']);
+  const duration = Number.isFinite(requestedDuration) ? Math.min(1400, Math.max(400, requestedDuration)) : 600;
+  const delay = Number.isFinite(requestedDelay) ? Math.min(800, Math.max(0, requestedDelay)) : 0;
   useEffect(() => {
     const heading = ref.current;
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -66,14 +70,15 @@ export function ScrambleHeading({ tag, attributes, children }: {
       }
       const settleAt: number[] = [];
       order.forEach((index, rank) => {
-        settleAt[index] = 120 + (rank / Math.max(1, order.length - 1)) * 420;
+        settleAt[index] = duration * .2 + (rank / Math.max(1, order.length - 1)) * duration * .68;
       });
       const letters = glyphs.map(({ letter }) => letter);
-      const start = performance.now();
+      const start = performance.now() + delay;
       let lastTick = -1;
       const animate = (now: number) => {
+        if (now < start) { frame = requestAnimationFrame(animate); return; }
         const elapsed = now - start;
-        if (elapsed >= 600 || motion.matches) { restore?.(); return; }
+        if (elapsed >= duration || motion.matches) { restore?.(); return; }
         const tick = Math.floor(elapsed / 60);
         if (tick !== lastTick) {
           lastTick = tick;
@@ -90,6 +95,6 @@ export function ScrambleHeading({ tag, attributes, children }: {
     motion.addEventListener('change', stop);
     observer.observe(heading);
     return () => { observer.disconnect(); restore?.(); motion.removeEventListener('change', stop); };
-  }, []);
+  }, [delay, duration]);
   return createElement(tag, { ...attributes, ref }, children);
 }
