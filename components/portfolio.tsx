@@ -467,8 +467,8 @@ export function Portfolio({initialSlug=null,variant='live',routeBase:routeBasePr
     cancelScroll.current?.();
     const start=window.scrollY;
     const margin=parseFloat(getComputedStyle(destination).scrollMarginTop)||0;
-    const end=Math.max(0,Math.min(start+destination.getBoundingClientRect().top-margin,document.documentElement.scrollHeight-window.innerHeight));
-    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){window.scrollTo({top:end,behavior:'instant'});return;}
+    const destinationTop=()=>Math.max(0,Math.min(window.scrollY+destination.getBoundingClientRect().top-margin,document.documentElement.scrollHeight-window.innerHeight));
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){window.scrollTo({top:destinationTop(),behavior:'instant'});return;}
     let frame=0;
     const began=performance.now();
     const cancel=()=>{
@@ -484,6 +484,7 @@ export function Portfolio({initialSlug=null,variant='live',routeBase:routeBasePr
     const step=(now:number)=>{
       const t=Math.min((now-began)/1100,1);
       const eased=1-Math.pow(1-t,4);
+      const end=destinationTop();
       window.scrollTo({top:start+(end-start)*eased,behavior:'instant'});
       if(t<1)frame=requestAnimationFrame(step);else cancel();
     };
