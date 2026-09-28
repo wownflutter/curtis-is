@@ -444,7 +444,8 @@ export function Portfolio({initialSlug=null,variant='live',routeBase:routeBasePr
       flushSync(()=>{setSlug(target); setLightbox(null); setMenuOpen(false);});
       // Change scroll while the surface is invisible, never during its reveal.
       const work=document.getElementById('apps');
-      const returnTop=savedScroll.current || (work ? window.scrollY+work.getBoundingClientRect().top : 0);
+      const returnTop=target ? 0 : (work ? window.scrollY+work.getBoundingClientRect().top : savedScroll.current);
+      if(!target)savedScroll.current=returnTop;
       window.scrollTo({top:target?0:returnTop,behavior:'instant'});
     };
     if(!animate){update();return;}
@@ -481,8 +482,8 @@ export function Portfolio({initialSlug=null,variant='live',routeBase:routeBasePr
     window.addEventListener('touchstart',cancel,{passive:true});
     window.addEventListener('keydown',cancel);
     const step=(now:number)=>{
-      const t=Math.min((now-began)/1000,1);
-      const eased=t*t*(3-2*t);
+      const t=Math.min((now-began)/1100,1);
+      const eased=1-Math.pow(1-t,4);
       window.scrollTo({top:start+(end-start)*eased,behavior:'instant'});
       if(t<1)frame=requestAnimationFrame(step);else cancel();
     };
