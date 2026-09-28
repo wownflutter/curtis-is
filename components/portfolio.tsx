@@ -205,7 +205,7 @@ function buildSignalHome(node:ContentNode,projectBase:''|'/signal'):ContentNode 
       {
         tag:'span',
         props:{className:'portfolio-summary-thought'},
-        children:['Today, my focus is building design teams and AI products that help people decide faster and act sooner.'],
+        children:['Today, I build design teams and AI products that turn complex signals into useful action and measurable value.'],
       },
     ]};
   }
