@@ -3303,7 +3303,7 @@
                                 }
                               },
                               "children": [
-                                "CISOs wanted to understand whether their organization was truly secure — and what actions were being taken."
+                                "CISOs wanted to understand whether their organization was truly secure, and what actions were being taken."
                               ]
                             },
                             "\n\n",
@@ -3346,7 +3346,7 @@
                           "tag": "p",
                           "props": {},
                           "children": [
-                            "\nWe synthesized these insights into role-based personas and workflows, capturing the tension between visibility and actionability — especially where security and development overlapped."
+                            "\nWe synthesized these insights into role-based personas and workflows, capturing the tension between visibility and actionability, especially where security and development overlapped."
                           ]
                         },
                         "\n\n",
@@ -3414,13 +3414,13 @@
                           "tag": "p",
                           "props": {},
                           "children": [
-                            "\n“I don't need every detail — I need to know what's real, what's urgent, and if my teams are moving on it.”",
+                            "\n“I don't need every detail. I need to know what's real, what's urgent, and if my teams are moving on it.”",
                             {
                               "tag": "br",
                               "props": {},
                               "children": []
                             },
-                            "\n— Security Operations Center Analyst, Citibank"
+                            "\nSecurity Operations Center Analyst, Citibank"
                           ]
                         },
                         "\n                \n\n\n",
@@ -3461,7 +3461,7 @@
                                   "tag": "b",
                                   "props": {},
                                   "children": [
-                                    "Prioritize real exploitability —"
+                                    "Prioritize real exploitability:"
                                   ]
                                 },
                                 " Not all vulnerabilities are equal."
@@ -3480,7 +3480,7 @@
                                   "tag": "b",
                                   "props": {},
                                   "children": [
-                                    "Context is critical —"
+                                    "Context is critical:"
                                   ]
                                 },
                                 " Don't show alerts without explainable logic and filtering."
@@ -3499,7 +3499,7 @@
                                   "tag": "b",
                                   "props": {},
                                   "children": [
-                                    "Design for different minds —"
+                                    "Design for different minds:"
                                   ]
                                 },
                                 " Developers think in code; CISOs think in risk."
@@ -3518,7 +3518,7 @@
                                   "tag": "b",
                                   "props": {},
                                   "children": [
-                                    "Global patterns and consistency —"
+                                    "Global patterns and consistency:"
                                   ]
                                 },
                                 " Progressive disclosure, customizable views and filtering."
@@ -3537,7 +3537,7 @@
                                   "tag": "b",
                                   "props": {},
                                   "children": [
-                                    "Actionable, shareable data —"
+                                    "Actionable, shareable data:"
                                   ]
                                 },
                                 " In formats that accommodate the user."
@@ -3556,7 +3556,7 @@
                                   "tag": "b",
                                   "props": {},
                                   "children": [
-                                    "Trustworthy guidance from agents —"
+                                    "Trustworthy guidance from agents:"
                                   ]
                                 },
                                 " When the system recommends, explain the \"why.\""
@@ -3679,7 +3679,7 @@
                           "tag": "p",
                           "props": {},
                           "children": [
-                            "The core of the NorthStar UX became a dashboard that brought together real-time insights, fix velocity, exploitability context, and system signals — all in one unified view. Unlike traditional dashboards that emphasize breadth, NorthStar focused on signal over noise, pushing only what matters for each role."
+                            "The core of the NorthStar UX became a dashboard that brought together real-time insights, fix velocity, exploitability context, and system signals in one unified view. Unlike traditional dashboards that emphasize breadth, NorthStar focused on signal over noise, pushing only what matters for each role."
                           ]
                         },
                         "\n\n",
@@ -3695,7 +3695,7 @@
                           "tag": "p",
                           "props": {},
                           "children": [
-                            "The dashboard became the executive's home base — a visual contract of \"what's at risk and what can be done about it.\""
+                            "The dashboard became the executive's home base: a visual contract of \"what's at risk and what can be done about it.\""
                           ]
                         },
                         "\n\n\n\n\n\n                ",
@@ -3787,7 +3787,7 @@
                           "tag": "p",
                           "props": {},
                           "children": [
-                            "We also redesigned the Incident Detail and Issue Detail screens — not just as UI improvements, but as critical bridges between automated insight and human response."
+                            "We also redesigned the Incident Detail and Issue Detail screens, not just as UI improvements, but as critical bridges between automated insight and human response."
                           ]
                         },
                         "\n\n",
@@ -3950,7 +3950,7 @@
                           "tag": "p",
                           "props": {},
                           "children": [
-                            "This empowered developers to trust automation while staying in control — a critical element of effective human/agent collaboration."
+                            "This empowered developers to trust automation while staying in control, a critical element of effective human/agent collaboration."
                           ]
                         },
                         "\n\n\n\n",
@@ -4067,7 +4067,7 @@
                           "tag": "p",
                           "props": {},
                           "children": [
-                            "A reactive table view was added to complement the graph — giving users the ability to toggle between AI inferences and raw telemetry, reinforcing transparency and trust."
+                            "A reactive table view was added to complement the graph, giving users the ability to toggle between AI inferences and raw telemetry while reinforcing transparency and trust."
                           ]
                         },
                         "\n\n",
@@ -4075,7 +4075,7 @@
                           "tag": "p",
                           "props": {},
                           "children": [
-                            "With a stripped down UI and rebuilt GUI to emphasize flow and causal understanding — not just raw logs."
+                            "The stripped-down UI and rebuilt GUI emphasized flow and causal understanding, not just raw logs."
                           ]
                         },
                         "\n\n\n\n\n",
@@ -4176,7 +4176,7 @@
                           "tag": "p",
                           "props": {},
                           "children": [
-                            "The NorthStar work didn't just win internal praise — it reshaped customer perception and adoption. Field sales began using the dashboard in demos with enterprise CISOs. Program managers reported faster remediation tracking. And internal engineering teams finally aligned around a common UX language."
+                            "The NorthStar work did more than win internal praise. It reshaped customer perception and adoption. Field sales began using the dashboard in demos with enterprise CISOs. Program managers reported faster remediation tracking. Internal engineering teams finally aligned around a common UX language."
                           ]
                         },
                         "\n            \n",
@@ -4258,7 +4258,7 @@
                                   "tag": "b",
                                   "props": {},
                                   "children": [
-                                    "Enterprise Security Engineers reduced triage time by 66% —"
+                                    "Enterprise Security Engineers reduced triage time by 66%:"
                                   ]
                                 },
                                 " indicating faster issue identification and prioritization"
@@ -4273,7 +4273,7 @@
                                   "tag": "b",
                                   "props": {},
                                   "children": [
-                                    "Developer remediation rates increased by 40% —"
+                                    "Developer remediation rates increased by 40%:"
                                   ]
                                 },
                                 " signaling clearer fix guidance and higher trust in security findings"
@@ -4288,7 +4288,7 @@
                                   "tag": "b",
                                   "props": {},
                                   "children": [
-                                    "Confident decision-making 2x faster —"
+                                    "Confident decision-making 2x faster:"
                                   ]
                                 },
                                 " showing improved onboarding and reduced cognitive friction"
@@ -4303,7 +4303,7 @@
                                   "tag": "b",
                                   "props": {},
                                   "children": [
-                                    "Explorer feature engagement increased 2.5x —"
+                                    "Explorer feature engagement increased 2.5x:"
                                   ]
                                 },
                                 " confirming greater usability and relevance of trace-level visibility"
@@ -4318,7 +4318,7 @@
                                   "tag": "b",
                                   "props": {},
                                   "children": [
-                                    "Drop-off in key workflows decreased by 55% —"
+                                    "Drop-off in key workflows decreased by 55%:"
                                   ]
                                 },
                                 " suggesting smoother navigation and better task completion"
@@ -4333,7 +4333,7 @@
                                   "tag": "b",
                                   "props": {},
                                   "children": [
-                                    "Adoption of high-value views (e.g. top risks) grew 3x —"
+                                    "Adoption of high-value views (e.g. top risks) grew 3x:"
                                   ]
                                 },
                                 " highlighting improved discoverability of insights"
@@ -4365,7 +4365,7 @@
                           "tag": "p",
                           "props": {},
                           "children": [
-                            "I served as the UX lead throughout — from research through execution (Hands-on):"
+                            "I served as the UX lead throughout, from research through hands-on execution:"
                           ]
                         },
                         "\n\n\n",
