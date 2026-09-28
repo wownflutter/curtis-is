@@ -193,7 +193,7 @@
 .signal-concept #team {
   position:relative;
   overflow:hidden;
-  scroll-margin-top:54px;
+  scroll-margin-top:72px;
   padding-top:29px;
 }
 .signal-concept #team::before {
