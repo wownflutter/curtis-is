@@ -310,7 +310,9 @@
                   "\n                       ",
                   {
                     "tag": "p",
-                    "props": { "className": "portfolio-summary" },
+                    "props": {
+                      "className": "portfolio-summary"
+                    },
                     "children": [
                       "I was the founding designer at Jasper, which Cisco acquired for $1.4B. I build design teams and AI products that help people decide faster and act sooner."
                     ]
@@ -8805,6 +8807,1460 @@
                   ]
                 },
                 "\n\t"
+              ]
+            },
+            "\n"
+          ]
+        },
+        "\n",
+        "\n\n\n"
+      ]
+    },
+    {
+      "slug": "trackonomy-refresh",
+      "title": "Turning sensor telemetry into asset intelligence",
+      "browserTitle": "Trackonomy sensor telemetry and asset intelligence",
+      "tree": [
+        "\n",
+        {
+          "tag": "div",
+          "props": {
+            "id": "project-header"
+          },
+          "children": [
+            "\n\t",
+            {
+              "tag": "img",
+              "props": {
+                "src": "/case-studies/tr-cover@2x.png",
+                "alt": "Trackonomy sensor telemetry and asset intelligence",
+                "decoding": "async"
+              },
+              "children": []
+            },
+            "\n"
+          ]
+        },
+        "\n",
+        {
+          "tag": "div",
+          "props": {
+            "id": "project-details",
+            "className": "trackonomy-refresh"
+          },
+          "children": [
+            "\n\t",
+            {
+              "tag": "div",
+              "props": {
+                "className": "container row"
+              },
+              "children": [
+                "\n\t\t",
+                {
+                  "tag": "div",
+                  "props": {
+                    "className": "col-lg-10 col-lg-offset-2 col-centered col-xs-12 col-md-offset-2"
+                  },
+                  "children": [
+                    "\n            ",
+                    {
+                      "tag": "div",
+                      "props": {
+                        "className": "project-heading-group trackonomy-heading"
+                      },
+                      "children": [
+                        {
+                          "tag": "h2",
+                          "props": {
+                            "id": "project-title"
+                          },
+                          "children": [
+                            "Turning sensor telemetry into asset intelligence"
+                          ]
+                        },
+                        {
+                          "tag": "p",
+                          "props": {
+                            "className": "project-deck"
+                          },
+                          "children": [
+                            "Designing Trackonomy’s multi-tenant web and mobile products across logistics, fleet, and healthcare."
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "props": {
+                            "className": "trackonomy-brief"
+                          },
+                          "children": [
+                            {
+                              "tag": "div",
+                              "props": {},
+                              "children": [
+                                {
+                                  "tag": "span",
+                                  "props": {},
+                                  "children": [
+                                    "Role"
+                                  ]
+                                },
+                                {
+                                  "tag": "strong",
+                                  "props": {},
+                                  "children": [
+                                    "First product designer and design team leader"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "props": {},
+                              "children": [
+                                {
+                                  "tag": "span",
+                                  "props": {},
+                                  "children": [
+                                    "Product"
+                                  ]
+                                },
+                                {
+                                  "tag": "strong",
+                                  "props": {},
+                                  "children": [
+                                    "Multi-tenant web platform and mobile applications"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "props": {},
+                              "children": [
+                                {
+                                  "tag": "span",
+                                  "props": {},
+                                  "children": [
+                                    "Focus"
+                                  ]
+                                },
+                                {
+                                  "tag": "strong",
+                                  "props": {},
+                                  "children": [
+                                    "Telemetry, asset intelligence, and assisted workflows"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "\n\t\t"
+                  ]
+                },
+                "\n    "
+              ]
+            },
+            "\n\n        ",
+            {
+              "tag": "div",
+              "props": {
+                "className": "container row"
+              },
+              "children": [
+                "\n            ",
+                {
+                  "tag": "div",
+                  "props": {
+                    "className": "col-lg-10 col-lg-offset-2 col-centered col-md-6 col-md-offset-2"
+                  },
+                  "children": [
+                    "\n        ",
+                    {
+                      "tag": "h3",
+                      "props": {
+                        "className": "class-one"
+                      },
+                      "children": [
+                        "From protected sensor IP to operational intelligence"
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "\n\t\t  "
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "Trackonomy created an IP-protected adhesive sensor that reported location, light and darkness, temperature, and vibration. The product design opportunity was to make that telemetry useful to everyone responsible for assets and workflows, from fleet managers and cargo teams to healthcare floor staff and administrators."
+                      ]
+                    },
+                    "\n\n                \n",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "A common telemetry model supported many operational environments."
+                      ]
+                    },
+                    "\n                \n ",
+                    {
+                      "tag": "div",
+                      "props": {
+                        "id": "project-header",
+                        "className": "toppadding"
+                      },
+                      "children": [
+                        "\n\t",
+                        {
+                          "tag": "img",
+                          "props": {
+                            "src": "/case-studies/tr-categories-3.png",
+                            "alt": "Addressable Market Categories",
+                            "decoding": "async"
+                          },
+                          "children": []
+                        },
+                        "\n"
+                      ]
+                    },
+                    "  \n\n",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "As the first product designer, I led the experience strategy for the multi-tenant web and mobile products that converted raw device signals into asset intelligence. I later scaled the design team as customer demand expanded across logistics, fleet, healthcare, border security, and other operational environments."
+                      ]
+                    },
+                    "\n                \n           ",
+                    {
+                      "tag": "h3",
+                      "props": {
+                        "className": "class-one"
+                      },
+                      "children": [
+                        "One protected sensor, one shared telemetry model"
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "\n                \n            "
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "The sensor could attach to equipment, infrastructure, or cargo and communicate through Trackonomy’s network of mesh connections, plugs, and gateways. The multi-tenant software converted its telemetry into a living record of an asset: where it was, how its condition changed, what relationships surrounded it, and whether someone needed to act."
+                      ]
+                    },
+                    "\n",
+                    {
+                      "tag": "div",
+                      "props": {
+                        "className": "trackonomy-system",
+                        "aria-label": "How Trackonomy telemetry became operational action"
+                      },
+                      "children": [
+                        {
+                          "tag": "div",
+                          "props": {},
+                          "children": [
+                            {
+                              "tag": "span",
+                              "props": {},
+                              "children": [
+                                "01"
+                              ]
+                            },
+                            {
+                              "tag": "strong",
+                              "props": {},
+                              "children": [
+                                "Protected sensor"
+                              ]
+                            },
+                            {
+                              "tag": "small",
+                              "props": {},
+                              "children": [
+                                "Location, light, temperature, vibration"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "props": {},
+                          "children": [
+                            {
+                              "tag": "span",
+                              "props": {},
+                              "children": [
+                                "02"
+                              ]
+                            },
+                            {
+                              "tag": "strong",
+                              "props": {},
+                              "children": [
+                                "Telemetry network"
+                              ]
+                            },
+                            {
+                              "tag": "small",
+                              "props": {},
+                              "children": [
+                                "Mesh connections, plugs, and gateways"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "props": {},
+                          "children": [
+                            {
+                              "tag": "span",
+                              "props": {},
+                              "children": [
+                                "03"
+                              ]
+                            },
+                            {
+                              "tag": "strong",
+                              "props": {},
+                              "children": [
+                                "Multi-tenant products"
+                              ]
+                            },
+                            {
+                              "tag": "small",
+                              "props": {},
+                              "children": [
+                                "Role-based web and mobile experiences"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "props": {},
+                          "children": [
+                            {
+                              "tag": "span",
+                              "props": {},
+                              "children": [
+                                "04"
+                              ]
+                            },
+                            {
+                              "tag": "strong",
+                              "props": {},
+                              "children": [
+                                "Asset intelligence"
+                              ]
+                            },
+                            {
+                              "tag": "small",
+                              "props": {},
+                              "children": [
+                                "Location, condition, relationships, anomalies"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "props": {},
+                          "children": [
+                            {
+                              "tag": "span",
+                              "props": {},
+                              "children": [
+                                "05"
+                              ]
+                            },
+                            {
+                              "tag": "strong",
+                              "props": {},
+                              "children": [
+                                "Operational action"
+                              ]
+                            },
+                            {
+                              "tag": "small",
+                              "props": {},
+                              "children": [
+                                "Alerts, cases, finding, and coordination"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "\n",
+                    "\n                \n                \n",
+                    {
+                      "tag": "div",
+                      "props": {
+                        "className": "row"
+                      },
+                      "children": [
+                        "\n  ",
+                        {
+                          "tag": "div",
+                          "props": {
+                            "className": "col-md-12"
+                          },
+                          "children": [
+                            "\n    ",
+                            {
+                              "tag": "video",
+                              "props": {
+                                "className": "img-responsive",
+                                "style": {
+                                  "width": "100%",
+                                  "height": "auto",
+                                  "outline": "none",
+                                  "border": "none",
+                                  "marginTop": "10px"
+                                },
+                                "autoPlay": true,
+                                "muted": true,
+                                "loop": true,
+                                "playsInline": true,
+                                "preload": "metadata"
+                              },
+                              "children": [
+                                "\n      ",
+                                {
+                                  "tag": "source",
+                                  "props": {
+                                    "src": "/case-studies/tr-st.mp4",
+                                    "type": "video/mp4"
+                                  },
+                                  "children": []
+                                },
+                                "\n      ",
+                                {
+                                  "tag": "p",
+                                  "props": {},
+                                  "children": [
+                                    "Your browser doesn't support HTML5 video."
+                                  ]
+                                },
+                                "\n    "
+                              ]
+                            },
+                            "\n  "
+                          ]
+                        },
+                        "\n"
+                      ]
+                    },
+                    "\n\n          ",
+                    {
+                      "tag": "h3",
+                      "props": {
+                        "className": "class-one"
+                      },
+                      "children": [
+                        "Designing one product across many operating environments"
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "\n                \n"
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "Before a product design function existed, engineering teams shaped the experience from individual customer requests. The company had powerful technical capabilities, but no consistent discovery practice or shared interaction model."
+                      ]
+                    },
+                    "\n                \n\n\n            ",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "We introduced lean interviews with operations leaders and frontline roles, including cargo handlers, warehouse managers, nurses, and procurement teams. Across categories, people shared the same need: turn telemetry into role-specific decisions without fragmenting the product by industry."
+                      ]
+                    },
+                    "\n \n\n",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "Healthcare research helped us understand how asset intelligence appeared inside time-sensitive floor workflows."
+                      ]
+                    },
+                    "\n                \n",
+                    {
+                      "tag": "div",
+                      "props": {
+                        "id": "project-header",
+                        "className": "toppadding"
+                      },
+                      "children": [
+                        "\n\t",
+                        {
+                          "tag": "img",
+                          "props": {
+                            "className": "fullimage",
+                            "src": "/case-studies/tr-healthcare-persona-board@2x.png",
+                            "alt": "Floor Nurse Persona",
+                            "decoding": "async"
+                          },
+                          "children": []
+                        },
+                        "\n"
+                      ]
+                    },
+                    "       \n                \n                \n                \n             ",
+                    {
+                      "tag": "h3",
+                      "props": {
+                        "className": "class-one"
+                      },
+                      "children": [
+                        "Logistics proved the model. Healthcare extended it."
+                      ]
+                    },
+                    "\n                \n                ",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "We mapped the journeys of each primary role and tested their friction points. Disconnected software, unreliable APIs, communication gaps, and siloed visibility appeared across both logistics and healthcare. Those patterns became requirements for a common multi-tenant product."
+                      ]
+                    },
+                    "\n\n                \n\n                \n                ",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "The shared product capabilities that emerged from research included:"
+                      ]
+                    },
+                    "\n                \n                \n                                ",
+                    {
+                      "tag": "ul",
+                      "props": {},
+                      "children": [
+                        "\n",
+                        {
+                          "tag": "li",
+                          "props": {
+                            "style": {
+                              "border": "none"
+                            }
+                          },
+                          "children": [
+                            "Global asset visibility"
+                          ]
+                        },
+                        "\n",
+                        {
+                          "tag": "li",
+                          "props": {
+                            "style": {
+                              "border": "none"
+                            }
+                          },
+                          "children": [
+                            "Anomaly detection and predictive insight"
+                          ]
+                        },
+                        "\n",
+                        {
+                          "tag": "li",
+                          "props": {
+                            "style": {
+                              "border": "none"
+                            }
+                          },
+                          "children": [
+                            "Synchronized web and mobile alerts"
+                          ]
+                        },
+                        "\n",
+                        {
+                          "tag": "li",
+                          "props": {
+                            "style": {
+                              "border": "none"
+                            }
+                          },
+                          "children": [
+                            "Asset inventory and relationship mapping"
+                          ]
+                        },
+                        "\n",
+                        {
+                          "tag": "li",
+                          "props": {
+                            "style": {
+                              "border": "none"
+                            }
+                          },
+                          "children": [
+                            "Automation rules and escalations"
+                          ]
+                        },
+                        "\n",
+                        {
+                          "tag": "li",
+                          "props": {
+                            "style": {
+                              "border": "none"
+                            }
+                          },
+                          "children": [
+                            "Role-based access and account management"
+                          ]
+                        },
+                        "\n",
+                        {
+                          "tag": "li",
+                          "props": {
+                            "style": {
+                              "border": "none"
+                            }
+                          },
+                          "children": [
+                            "Case management and operational support"
+                          ]
+                        }
+                      ]
+                    },
+                    "\n                \n",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "Air cargo focused on locating valuable assets, monitoring their condition, and resolving exceptions quickly. Healthcare applied the same telemetry and asset model to equipment and location-aware operational workflows. These were not separate products. They were different configurations of the same system."
+                      ]
+                    },
+                    "\n                \n                ",
+                    {
+                      "tag": "br",
+                      "props": {
+                        "className": "trackonomy-break"
+                      },
+                      "children": []
+                    },
+                    "\n                ",
+                    {
+                      "tag": "br",
+                      "props": {
+                        "className": "trackonomy-break"
+                      },
+                      "children": []
+                    },
+                    "\n                \n                ",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        {
+                          "tag": "strong",
+                          "props": {},
+                          "children": [
+                            "Logistics Customer Journey Map:"
+                          ]
+                        },
+                        " ",
+                        {
+                          "tag": "a",
+                          "props": {
+                            "href": "/case-studies/Customer Journey Map.pdf",
+                            "target": "_blank",
+                            "rel": "noopener noreferrer"
+                          },
+                          "children": [
+                            "View PDF"
+                          ]
+                        }
+                      ]
+                    },
+                    "\n\n",
+                    {
+                      "tag": "div",
+                      "props": {
+                        "id": "project-header",
+                        "className": "toppadding"
+                      },
+                      "children": [
+                        "\n\t",
+                        {
+                          "tag": "img",
+                          "props": {
+                            "className": "fullimage",
+                            "src": "/case-studies/tr-logistics-journey-map@2x.png",
+                            "alt": "Asset Details",
+                            "decoding": "async"
+                          },
+                          "children": []
+                        },
+                        "\n"
+                      ]
+                    },
+                    "\n\n                \n",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        {
+                          "tag": "strong",
+                          "props": {},
+                          "children": [
+                            "Healthcare Information Architecture:"
+                          ]
+                        },
+                        " ",
+                        {
+                          "tag": "a",
+                          "props": {
+                            "href": "/case-studies/TMX Information Architecture.pdf",
+                            "target": "_blank",
+                            "rel": "noopener noreferrer"
+                          },
+                          "children": [
+                            "View PDF"
+                          ]
+                        }
+                      ]
+                    },
+                    "\n                \n",
+                    {
+                      "tag": "div",
+                      "props": {
+                        "id": "project-header",
+                        "className": "toppadding"
+                      },
+                      "children": [
+                        "\n\t",
+                        {
+                          "tag": "img",
+                          "props": {
+                            "className": "fullimage",
+                            "src": "/case-studies/tr-healthcare-customer-ia@2x.png",
+                            "alt": "Asset Details",
+                            "decoding": "async"
+                          },
+                          "children": []
+                        },
+                        "\n"
+                      ]
+                    },
+                    "\n\n                \n                \n",
+                    {
+                      "tag": "h3",
+                      "props": {
+                        "className": "class-one"
+                      },
+                      "children": [
+                        "Building a reusable multi-tenant product system"
+                      ]
+                    },
+                    "\n                \n            ",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "Research, competitive analysis, and accessibility requirements shaped a design system that could support healthcare, air cargo, border security, and fleet management without changing the core product model."
+                      ]
+                    },
+                    "  \n\n             ",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "The system needed to be modular enough for tenant configuration, clear enough for industrial users, and durable enough for rapid engineering delivery. Shared components, predictable taxonomy, and role-based views helped each customer see what mattered without creating a different interface for every market."
+                      ]
+                    },
+                    "  \n\n             ",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "Design and engineering reviewed components together from Figma through Storybook and functioning software. Live implementation reviews helped us improve labels, accessibility, module boundaries, and reuse before patterns spread across the platform."
+                      ]
+                    },
+                    "   \n                \n                ",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "The design system moving from Figma into functioning software:"
+                      ]
+                    },
+                    "\n\n\n",
+                    {
+                      "tag": "div",
+                      "props": {
+                        "className": "row"
+                      },
+                      "children": [
+                        "\n  ",
+                        {
+                          "tag": "div",
+                          "props": {
+                            "className": "col-md-12"
+                          },
+                          "children": [
+                            "\n    ",
+                            {
+                              "tag": "video",
+                              "props": {
+                                "className": "img-responsive",
+                                "style": {
+                                  "width": "100%",
+                                  "height": "auto",
+                                  "outline": "none",
+                                  "border": "none",
+                                  "marginTop": "10px"
+                                },
+                                "autoPlay": true,
+                                "muted": true,
+                                "loop": true,
+                                "playsInline": true,
+                                "preload": "metadata"
+                              },
+                              "children": [
+                                "\n      ",
+                                {
+                                  "tag": "source",
+                                  "props": {
+                                    "src": "/case-studies/tr-ds.mp4",
+                                    "type": "video/mp4"
+                                  },
+                                  "children": []
+                                },
+                                "\n      ",
+                                {
+                                  "tag": "p",
+                                  "props": {},
+                                  "children": [
+                                    "Your browser doesn't support HTML5 video."
+                                  ]
+                                },
+                                "\n    "
+                              ]
+                            },
+                            "\n  "
+                          ]
+                        },
+                        "\n"
+                      ]
+                    },
+                    "\n                \n                \n  ",
+                    {
+                      "tag": "h3",
+                      "props": {
+                        "className": "class-one"
+                      },
+                      "children": [
+                        "Turning telemetry into asset intelligence"
+                      ]
+                    },
+                    "              \n                \n",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "The web platform adapted dashboards, asset lists, and details to each role and tenant. The interface emphasized exceptions and decisions instead of presenting an undifferentiated stream of device data."
+                      ]
+                    },
+                    "\n                \n            \n\n    ",
+                    {
+                      "tag": "div",
+                      "props": {
+                        "id": "project-header",
+                        "className": "toppadding"
+                      },
+                      "children": [
+                        "\n\t",
+                        {
+                          "tag": "img",
+                          "props": {
+                            "className": "fullimage",
+                            "src": "/case-studies/tr-insights-dash2x.png",
+                            "alt": "Dashboard",
+                            "decoding": "async"
+                          },
+                          "children": []
+                        },
+                        "\n"
+                      ]
+                    },
+                    "\n\n",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "Asset filtering appeared in a side sheet so users could refine large inventories while keeping the operational context visible."
+                      ]
+                    },
+                    "\n                \n                \n                \n                    ",
+                    {
+                      "tag": "div",
+                      "props": {
+                        "id": "project-header",
+                        "className": "toppadding"
+                      },
+                      "children": [
+                        "\n\t",
+                        {
+                          "tag": "img",
+                          "props": {
+                            "className": "fullimage",
+                            "src": "/case-studies/tr-asset-list-filtering@2x.png",
+                            "alt": "Asset List Filtered",
+                            "decoding": "async"
+                          },
+                          "children": []
+                        },
+                        "\n"
+                      ]
+                    },
+                    "\n\n",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "Asset details combined location, telemetry trends, connected sensors, and network relationships in one view. This was the point where raw sensor readings became understandable asset intelligence."
+                      ]
+                    },
+                    "\n                \n                    ",
+                    {
+                      "tag": "div",
+                      "props": {
+                        "id": "project-header",
+                        "className": "toppadding"
+                      },
+                      "children": [
+                        "\n\t",
+                        {
+                          "tag": "img",
+                          "props": {
+                            "className": "fullimage",
+                            "src": "/case-studies/tr-sensor-details@2x.png",
+                            "alt": "Asset Details",
+                            "decoding": "async"
+                          },
+                          "children": []
+                        },
+                        "\n"
+                      ]
+                    },
+                    "\n\n                \n ",
+                    {
+                      "tag": "h3",
+                      "props": {
+                        "className": "class-one"
+                      },
+                      "children": [
+                        "Rules and escalations surfaced what required action"
+                      ]
+                    },
+                    "                \n                \n",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "Configurable rules converted changes in location or condition into meaningful alerts. Progressive disclosure let administrators define broad policies, inherit behavior from parent groups, and adjust exceptions without losing the relationship between a rule and the assets it governed."
+                      ]
+                    },
+                    "\n                \n                \n                    ",
+                    {
+                      "tag": "div",
+                      "props": {
+                        "id": "project-header",
+                        "className": "toppadding"
+                      },
+                      "children": [
+                        "\n\t",
+                        {
+                          "tag": "img",
+                          "props": {
+                            "className": "fullimage",
+                            "src": "/case-studies/tr-escalation-rules@2x.png",
+                            "alt": "Asset Details",
+                            "decoding": "async"
+                          },
+                          "children": []
+                        },
+                        "\n"
+                      ]
+                    },
+                    "\n\n                \n     \n                \n",
+                    {
+                      "tag": "h3",
+                      "props": {
+                        "className": "class-one"
+                      },
+                      "children": [
+                        "Finding patterns before they became operational failures"
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        " \n                \n            "
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "Research showed that the hardest part was not receiving an alert. It was recognizing which pattern the alert belonged to and coordinating the response. Late assets, incorrect locations, labeling errors, missing equipment, and communication failures repeatedly created the same operational cases."
+                      ]
+                    },
+                    "\n                \n",
+                    {
+                      "tag": "h3",
+                      "props": {
+                        "className": "class-one"
+                      },
+                      "children": [
+                        "Testing assisted triage with users"
+                      ]
+                    },
+                    "  \n                \n            ",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "We prototyped and tested alert language, ownership, follow-up actions, and activity history. Machine learning suggested a response inside the real-time activity stream, while the interface showed that the recommendation was being generated. Users could review and commit the response, which automatically carried the support ticket, asset identifier, and intended recipients into the case record."
+                      ]
+                    },
+                    "\n               \n\n\n",
+                    {
+                      "tag": "div",
+                      "props": {
+                        "className": "row"
+                      },
+                      "children": [
+                        "\n  ",
+                        {
+                          "tag": "div",
+                          "props": {
+                            "className": "col-md-12"
+                          },
+                          "children": [
+                            "\n    ",
+                            {
+                              "tag": "video",
+                              "props": {
+                                "className": "img-responsive",
+                                "style": {
+                                  "width": "100%",
+                                  "height": "auto",
+                                  "outline": "none",
+                                  "border": "none",
+                                  "marginTop": "10px"
+                                },
+                                "autoPlay": true,
+                                "muted": true,
+                                "loop": true,
+                                "playsInline": true,
+                                "preload": "metadata"
+                              },
+                              "children": [
+                                "\n      ",
+                                {
+                                  "tag": "source",
+                                  "props": {
+                                    "src": "/case-studies/tr-activity-stream.mp4",
+                                    "type": "video/mp4"
+                                  },
+                                  "children": []
+                                },
+                                "\n      ",
+                                {
+                                  "tag": "p",
+                                  "props": {},
+                                  "children": [
+                                    "Your browser doesn't support HTML5 video."
+                                  ]
+                                },
+                                "\n    "
+                              ]
+                            },
+                            "\n  "
+                          ]
+                        },
+                        "\n"
+                      ]
+                    },
+                    "\n                \n",
+                    "              \n                \n            ",
+                    {
+                      "tag": "h3",
+                      "props": {
+                        "className": "class-one"
+                      },
+                      "children": [
+                        "Evidence of immediate value"
+                      ]
+                    },
+                    "\n      \n            ",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "Thirty days after launch, engagement with the pre-populated notification workflow increased by 63 percent compared with the previous experience."
+                      ]
+                    },
+                    "\n                \n            ",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "We combined Google Analytics with contextual interviews to understand adoption, completion, and the quality of the resulting workflows."
+                      ]
+                    },
+                    "               \n                \n            ",
+                    {
+                      "tag": "h3",
+                      "props": {
+                        "className": "class-one"
+                      },
+                      "children": [
+                        "Taking asset intelligence into the field"
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        " \n                \n            "
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "Find My Asset brought location intelligence to the people searching on the ground. Bluetooth first guided users toward the general area of a tagged asset, then shifted into a high-precision mode when they were within 200 feet."
+                      ]
+                    },
+                    "\n                \n            ",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "The mobile experience began with air cargo, where teams needed to find equipment and shipments across large facilities. Healthcare and other asset-tracking customers later adopted the same finding model in their own environments."
+                      ]
+                    },
+                    "\n                \n              \n\n",
+                    {
+                      "tag": "div",
+                      "props": {
+                        "className": "row"
+                      },
+                      "children": [
+                        "\n  ",
+                        {
+                          "tag": "div",
+                          "props": {
+                            "className": "col-md-12"
+                          },
+                          "children": [
+                            "\n    ",
+                            {
+                              "tag": "video",
+                              "props": {
+                                "className": "img-responsive",
+                                "style": {
+                                  "width": "100%",
+                                  "height": "auto",
+                                  "outline": "none",
+                                  "border": "none",
+                                  "marginTop": "10px"
+                                },
+                                "autoPlay": true,
+                                "muted": true,
+                                "loop": true,
+                                "playsInline": true,
+                                "preload": "metadata"
+                              },
+                              "children": [
+                                "\n      ",
+                                {
+                                  "tag": "source",
+                                  "props": {
+                                    "src": "/case-studies/tr-fma-animation.mp4",
+                                    "type": "video/mp4"
+                                  },
+                                  "children": []
+                                },
+                                "\n      ",
+                                {
+                                  "tag": "p",
+                                  "props": {},
+                                  "children": [
+                                    "Your browser doesn't support HTML5 video."
+                                  ]
+                                },
+                                "\n    "
+                              ]
+                            },
+                            "\n  "
+                          ]
+                        },
+                        "\n"
+                      ]
+                    },
+                    "\n\n\n           \n                \n                \n ",
+                    {
+                      "tag": "h3",
+                      "props": {
+                        "className": "class-one"
+                      },
+                      "children": [
+                        "Voice input for hands-busy workflows"
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        " \n                \n            "
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "Healthcare research showed that many floor workflows happened while staff were moving, multitasking, or wearing gloves. We tested voice input as another way to search, update, and act without forcing every request through a keyboard."
+                      ]
+                    },
+                    "\n                \n                ",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "Floor nurses responded well to voice-assisted interaction during one-handed and hands-busy tasks. The experience used prior requests and role-specific language to improve how new commands were understood."
+                      ]
+                    },
+                    "\n                \n                ",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "We continued measuring usage and improving the healthcare taxonomy, then extended the same interaction model to industrial customers. The interface remained explicit about what the system understood and what action it would take."
+                      ]
+                    },
+                    "\n\n ",
+                    {
+                      "tag": "ul",
+                      "props": {
+                        "className": "newlist"
+                      },
+                      "children": [
+                        "\n",
+                        {
+                          "tag": "li",
+                          "props": {},
+                          "children": [
+                            "Within 30 days, voice commands accounted for 24 percent of total requests made by cargo-handling personnel."
+                          ]
+                        },
+                        "\n",
+                        {
+                          "tag": "li",
+                          "props": {},
+                          "children": [
+                            "Usage was measured separately from settings, profile administration, and asset-detail requests."
+                          ]
+                        },
+                        "\n"
+                      ]
+                    },
+                    "\n     \n     \n            ",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "Logistics customers ultimately showed the strongest adoption, especially among cargo handlers who used voice input to move through requests more quickly. This reinforced the larger product principle: a capability developed in one environment could create value in another when it was built on the same asset and workflow model."
+                      ]
+                    },
+                    "\n                \n",
+                    {
+                      "tag": "div",
+                      "props": {
+                        "className": "row"
+                      },
+                      "children": [
+                        "\n  ",
+                        {
+                          "tag": "div",
+                          "props": {
+                            "className": "col-md-12"
+                          },
+                          "children": [
+                            "\n    ",
+                            {
+                              "tag": "video",
+                              "props": {
+                                "className": "img-responsive",
+                                "style": {
+                                  "width": "100%",
+                                  "height": "auto",
+                                  "outline": "none",
+                                  "border": "none",
+                                  "marginTop": "10px"
+                                },
+                                "autoPlay": true,
+                                "muted": true,
+                                "loop": true,
+                                "playsInline": true,
+                                "preload": "metadata"
+                              },
+                              "children": [
+                                "\n      ",
+                                {
+                                  "tag": "source",
+                                  "props": {
+                                    "src": "/case-studies/uh-nlp.mp4",
+                                    "type": "video/mp4"
+                                  },
+                                  "children": []
+                                },
+                                "\n      ",
+                                {
+                                  "tag": "p",
+                                  "props": {},
+                                  "children": [
+                                    "Your browser doesn't support HTML5 video."
+                                  ]
+                                },
+                                "\n    "
+                              ]
+                            },
+                            "\n  "
+                          ]
+                        },
+                        "\n"
+                      ]
+                    },
+                    " \n\n",
+                    "                \n                    ",
+                    {
+                      "tag": "div",
+                      "props": {
+                        "id": "project-header",
+                        "className": "toppadding"
+                      },
+                      "children": [
+                        "\n\t",
+                        {
+                          "tag": "img",
+                          "props": {
+                            "className": "fullimage",
+                            "src": "/case-studies/nlp-role.png",
+                            "alt": "NLP engine",
+                            "decoding": "async"
+                          },
+                          "children": []
+                        },
+                        "\n"
+                      ]
+                    },
+                    "   \n               \n            ",
+                    {
+                      "tag": "h3",
+                      "props": {
+                        "className": "class-one"
+                      },
+                      "children": [
+                        "Building a product design practice inside an engineering-led startup"
+                      ]
+                    },
+                    "\n                \n                ",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "Design iterations and customer conversations happened several times each week. Our startup cadence let us test and revise live software faster than many customer organizations could move internally."
+                      ]
+                    },
+                    "\n                \n                ",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "We invited logistics partners into shared Miro boards and used earlier research as the starting point for critique. This made customers active design partners and helped the team surface operational edge cases earlier."
+                      ]
+                    },
+                    "\n                \n                ",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "Engineering capacity required clear prioritization. The design team joined product and field application engineering meetings so customer feedback, technical constraints, and experience quality could inform the same roadmap."
+                      ]
+                    },
+                    "\n \n                ",
+                    {
+                      "tag": "h3",
+                      "props": {
+                        "className": "class-one"
+                      },
+                      "children": [
+                        "Testing in the environments where the work happened"
+                      ]
+                    },
+                    "\n\n                ",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "Web and mobile software reached design partners early. For mobile testing, we hid tagged assets inside customer facilities and asked field users to locate them with Find My Asset. Observing the search in context revealed issues that would never appear in a conference-room review."
+                      ]
+                    },
+                    "\n\n                ",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "We established performance baselines, combined qualitative and quantitative findings, and used the synthesis to prioritize the roadmap."
+                      ]
+                    },
+                    "\n                \n                ",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "The product expanded across air freight, healthcare, border security, trucking, and fleet operations. The industries changed, but the experience model remained consistent: collect telemetry from Trackonomy’s protected sensor, translate it into asset intelligence, and help people take the next useful action."
+                      ]
+                    },
+                    "\n            ",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": []
+                    },
+                    "\n\t\t"
+                  ]
+                },
+                "\n\n\t"
               ]
             },
             "\n"
