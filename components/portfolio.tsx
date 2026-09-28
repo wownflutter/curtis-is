@@ -403,7 +403,7 @@ export function Portfolio({initialSlug=null,variant='live',routeBase:routeBasePr
   const next=orderedProjects[(index+1)%orderedProjects.length];
 
   useEffect(()=>{
-    const update=()=>setNavVisible(window.scrollY >= window.innerHeight-60);
+    const update=()=>setNavVisible((document.getElementById('header')?.getBoundingClientRect().bottom ?? window.innerHeight)<=0);
     window.addEventListener('scroll',update,{passive:true}); update();
     const pop=()=>{
       const parts=location.pathname.split('/').filter(Boolean);
