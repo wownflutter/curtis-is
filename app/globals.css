@@ -59,13 +59,15 @@
   background-position:center center;
   background-repeat:no-repeat;
   background-size:cover;
-  background-attachment:fixed;
+  background-attachment:scroll;
+  height:100svh;
   min-height:100svh;
 }
 .signal-concept #header::before {
   background:linear-gradient(180deg,rgba(0,0,0,.24),rgba(0,0,0,.34) 52%,rgba(0,0,0,.43));
 }
 .signal-concept #intro :is(h1,h2) { text-shadow:0 2px 18px rgba(0,0,0,.64); }
+.signal-concept #intro { top:50svh; }
 .signal-concept #team .process-introduction { border-color:rgba(232,239,241,.16); }
 .signal-concept #team .mission-statement,
 .signal-concept #apps .intro h1 { color:#f1f4f5; }
