@@ -58,6 +58,11 @@
   font-size:20px;
   font-weight:400;
   line-height:1.5;
+  animation:trackonomy-deck-in .5s cubic-bezier(.22,1,.36,1) 1.02s both;
+}
+@keyframes trackonomy-deck-in {
+  from { opacity:0; transform:translateY(8px); }
+  to { opacity:1; transform:translateY(0); }
 }
 #project .trackonomy-refresh h3.class-one {
   margin-top:64px;
@@ -122,6 +127,9 @@
     border-left:0;
   }
   #project .trackonomy-refresh .trackonomy-system span { margin-bottom:7px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  #project .trackonomy-refresh .trackonomy-heading .project-deck { animation:none; }
 }
 #project ul > li {
   position:relative;
