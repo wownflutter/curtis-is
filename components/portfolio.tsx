@@ -195,11 +195,9 @@ function buildSignalHome(node:ContentNode,projectBase:''|'/signal'):ContentNode 
         tag:'span',
         props:{className:'portfolio-summary-thought'},
         children:[
-          'I was the founding designer at ',
+          'I was ',
           {tag:'strong',props:{},children:['Jasper']},
-          ' before its ',
-          {tag:'strong',props:{},children:['$1.4B']},
-          ' acquisition by Cisco.',
+          '’s founding designer before its acquisition by Cisco, where I continued as a design executive leading the IoT product design team.',
         ],
       },
       {
