@@ -509,3 +509,8 @@ section { scroll-margin-top:52px; }
   #work-container a.captioned-work:is(:hover,:focus-visible) .project-card-arrow,
   #work-container a.captioned-work:hover .project-card-image img { transform:none; }
 }
+
+/* Tighten the proof-to-work transition by 30%. */
+.signal-concept #team .rowbottom { margin-bottom:56px; }
+.signal-concept #apps { padding-top:43.4px; }
+@media(max-width:600px) { .signal-concept #team .rowbottom { margin-bottom:33.6px; } }
