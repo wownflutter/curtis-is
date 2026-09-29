@@ -253,7 +253,7 @@ const projectCaptions: Record<string, {domain:string;name:string;description:str
   "work-3": {
     "domain": "Enterprise IoT",
     "name": "Jasper / Cisco",
-    "description": "Making connected-device management clearer for enterprise teams."
+    "description": "Bringing machine learning, predictive insights, and a recommendation engine to connected-device management for 50+ telecom operators."
   },
   "work-4": {
     "domain": "Cloud Security",
@@ -263,12 +263,12 @@ const projectCaptions: Record<string, {domain:string;name:string;description:str
   "work-5": {
     "domain": "Healthcare & AI",
     "name": "Opsis Health",
-    "description": "Helping people manage health and nutrition with AI-supported guidance."
+    "description": "Helping people understand nutrition and estimate portions through AI models trained to break down food into its nutritional components."
   },
   "work-6": {
     "domain": "IoT & Mobile",
     "name": "Jasper Mobile",
-    "description": "Giving telecom teams access to usage, alerts, and performance on the go."
+    "description": "Giving telecom operators and their enterprise customers mobile access to usage, alerts, and performance insights."
   },
   "work-7": {
     "domain": "Enterprise IoT",
@@ -283,12 +283,12 @@ const projectCaptions: Record<string, {domain:string;name:string;description:str
   "work-9": {
     "domain": "Fintech & Mobility",
     "name": "Rideshare Finances",
-    "description": "Helping rideshare drivers understand income and anticipate taxes."
+    "description": "Helping rideshare drivers compare hourly earnings, taxable income, and take-home pay to make informed spending decisions."
   },
   "work-10": {
     "domain": "Logistics & IoT",
     "name": "Cisco Fleet Tracking",
-    "description": "Giving fleet operators clearer visibility into vehicle location and performance."
+    "description": "Helping fleet operators improve energy efficiency and optimize delivery times through clearer visibility into vehicle location and performance."
   }
 };
 
