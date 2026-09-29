@@ -39,7 +39,12 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
   const source=videoSource(nodeChildren);
   const isExplorer=source==='/case-studies/explorer-animation.mp4';
   const isTrackonomy=source.startsWith('/case-studies/tr-') && source.endsWith('.mp4');
-  const isAssistedTriage=source==='/case-studies/tr-activity-stream.mp4';
+  const motionDescriptions:Record<string,string>={
+    '/case-studies/tr-activity-stream.mp4':'Watch AI detect an anomaly, open a support ticket, and draft a message for the triage and support team.',
+    '/case-studies/tr-fma-animation.mp4':'Watch Find My Asset guide a user from a general location to a precise search for a tagged asset, using sound and haptic feedback.',
+    '/case-studies/uh-nlp.mp4':'Watch a care professional use voice input to search for an asset, with an NLP/MCP context layer connecting the request to inventory location and tracking.',
+  };
+  const motionDescription=motionDescriptions[source];
   const sequenceChapters=designSystemSequences[source];
   const isDesignSystem=Boolean(sequenceChapters);
   const poster=source==='/case-studies/explorer-animation.mp4'
@@ -123,10 +128,10 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
   const video=<video {...attributes} ref={ref} autoPlay={false} preload="metadata" poster={poster}>
     {renderChildren(renderedChildren,keyName)}
   </video>;
-  if(isAssistedTriage)return <figure className="motion-prototype-stage">
+  if(motionDescription)return <figure className="motion-prototype-stage">
     <figcaption className="motion-prototype-caption">
       <span className="motion-prototype-label"><Play aria-hidden="true" fill="currentColor" /> Motion prototype</span>
-      <span>Watch AI detect an anomaly, open a support ticket, and draft a message for the triage and support team.</span>
+      <span>{motionDescription}</span>
       <small>Loops automatically</small>
     </figcaption>
     {video}
