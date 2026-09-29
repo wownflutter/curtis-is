@@ -241,7 +241,7 @@ const projectCaptions: Record<string, {domain:string;name:string;description:str
   "work-1": {
     "domain": "IoT & Asset Intelligence",
     "name": "Trackonomy",
-    "description": "Turning sensor data into actionable insights and agent-driven operations across logistics, fleet management, healthcare, industrial operations, and defense."
+    "description": "Sensor insights and agent-driven operations for logistics, fleet management, healthcare, industry, and defense."
   },
   "work-2": {
     "domain": "Cybersecurity & AI",
@@ -251,7 +251,7 @@ const projectCaptions: Record<string, {domain:string;name:string;description:str
   "work-3": {
     "domain": "Enterprise IoT",
     "name": "Jasper / Cisco",
-    "description": "Bringing machine learning, predictive insights, and a recommendation engine to connected-device management for 50+ telecom operators."
+    "description": "Connected-device management for 50+ telecom operators, powered by machine learning, predictive insights, and recommendations."
   },
   "work-4": {
     "domain": "Cloud Security",
@@ -261,7 +261,7 @@ const projectCaptions: Record<string, {domain:string;name:string;description:str
   "work-5": {
     "domain": "Healthcare & AI",
     "name": "Opsis Health",
-    "description": "Helping people understand nutrition and estimate portions through AI models trained to break down food into its nutritional components."
+    "description": "AI trained to analyze food’s nutritional components and estimate portions, helping people understand what they eat."
   },
   "work-6": {
     "domain": "IoT & Mobile",
@@ -292,8 +292,8 @@ const projectCaptions: Record<string, {domain:string;name:string;description:str
 
 const careerProofs = [
   { title:'Founding Designer', lead:'5×', body:'Design functions built from zero across AI, cybersecurity, IoT, logistics, and healthcare.', icon:Hammer },
-  { title:'Exit', lead:'$1.4B', body:'Jasper, where I was founding designer, acquired by Cisco. Continued at Cisco for four years as a design executive leading the IoT product design team.', icon:Handshake },
-  { title:'Scale', lead:'Fortune 500', body:'Platforms used by 800+ enterprise customers across cybersecurity, IoT, logistics, and healthcare, including UPS and Koch Industries.', icon:Globe2 },
+  { title:'Exit', lead:'$1.4B', body:'Cisco’s acquisition of Jasper, where I was the founding designer.', icon:Handshake },
+  { title:'Enterprise Reach', lead:'Fortune 500', body:'Platforms used by 800+ enterprise customers across cybersecurity, IoT, logistics, and healthcare, including UPS and Koch Industries.', icon:Globe2 },
 ];
 
 function CareerProofStrip({keyName}:{keyName:string}) {
