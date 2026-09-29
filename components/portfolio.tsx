@@ -243,12 +243,12 @@ const projectCaptions: Record<string, {domain:string;name:string;description:str
   "work-1": {
     "domain": "IoT & Asset Intelligence",
     "name": "Trackonomy",
-    "description": "Turning sensor data into actionable insights and agentic workflows across logistics, fleet management, healthcare, industrial operations, and defense."
+    "description": "Turning sensor data into actionable insights and agent-driven operations across logistics, fleet management, healthcare, industrial operations, and defense."
   },
   "work-2": {
     "domain": "Cybersecurity & AI",
     "name": "Contrast Security",
-    "description": "Helping security teams prioritize threats and coordinate remediation through agentic workflows."
+    "description": "Giving security teams clearer visibility into threats and helping them coordinate remediation through agentic workflows."
   },
   "work-3": {
     "domain": "Enterprise IoT",
