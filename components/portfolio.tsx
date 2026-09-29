@@ -239,6 +239,59 @@ const orderedProjects=homepageProjectSlugs
   .map(slug=>content.projects.find(project=>project.slug===slug))
   .filter((project):project is (typeof content.projects)[number]=>Boolean(project));
 
+const projectCaptions: Record<string, {domain:string;name:string;description:string}> = {
+  "work-1": {
+    "domain": "IoT & Asset Intelligence",
+    "name": "Trackonomy",
+    "description": "Turning sensor data into actionable insights and agentic workflows across logistics, fleet management, healthcare, industrial operations, and defense."
+  },
+  "work-2": {
+    "domain": "Cybersecurity & AI",
+    "name": "Contrast Security",
+    "description": "Helping security teams prioritize threats and coordinate remediation through agentic workflows."
+  },
+  "work-3": {
+    "domain": "Enterprise IoT",
+    "name": "Jasper / Cisco",
+    "description": "Making connected-device management clearer for enterprise teams."
+  },
+  "work-4": {
+    "domain": "Cloud Security",
+    "name": "Open Raven",
+    "description": "Helping teams discover, understand, and protect sensitive cloud data."
+  },
+  "work-5": {
+    "domain": "Healthcare & AI",
+    "name": "Opsis Health",
+    "description": "Helping people manage health and nutrition with AI-supported guidance."
+  },
+  "work-6": {
+    "domain": "IoT & Mobile",
+    "name": "Jasper Mobile",
+    "description": "Giving telecom teams access to usage, alerts, and performance on the go."
+  },
+  "work-7": {
+    "domain": "Enterprise IoT",
+    "name": "Cisco Marketplace",
+    "description": "Helping enterprise customers discover and adopt connected-service add-ons."
+  },
+  "work-8": {
+    "domain": "IoT & Tablet",
+    "name": "Jasper for iPad",
+    "description": "Bringing customer usage and performance insights to a larger mobile workspace."
+  },
+  "work-9": {
+    "domain": "Fintech & Mobility",
+    "name": "Rideshare Finances",
+    "description": "Helping rideshare drivers understand income and anticipate taxes."
+  },
+  "work-10": {
+    "domain": "Logistics & IoT",
+    "name": "Cisco Fleet Tracking",
+    "description": "Giving fleet operators clearer visibility into vehicle location and performance."
+  }
+};
+
 const careerProofs = [
   { title:'Founding Designer', lead:'5×', body:'Design functions built from zero across AI, cybersecurity, IoT, logistics, and healthcare.', icon:Hammer },
   { title:'Exit', lead:'$1.4B', body:'Jasper, where I was founding designer, acquired by Cisco. Continued at Cisco for four years as a design executive leading the IoT product design team.', icon:Handshake },
@@ -358,6 +411,17 @@ function render(node:ContentNode, key:string):ReactNode {
     const projectBase=props['data-project-base']==='/signal'?'/signal':'';
     delete props['data-project-base'];
     tag = 'a'; props.href = `${projectBase}/${id}`;
+    const caption=projectCaptions[id];
+    if(caption) {
+      return <a key={key} id={id} className="work captioned-work" href={`${projectBase}/${id}`}>
+        <div className="project-card-image">{renderChildren(node.children.filter(child=>typeof child!=='string' && child.tag==='img'),`${key}-image`)}</div>
+        <div className="project-card-caption">
+          <span className="project-card-domain">{caption.domain}</span>
+          <h3><span>{caption.name}</span><svg className="project-card-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg></h3>
+          <p>{caption.description}</p>
+        </div>
+      </a>;
+    }
     props['aria-label'] = content.projects.find(p=>p.slug === id)?.title;
   }
   if (props.id === 'menu-mobile') { tag='button'; props.type='button'; props['aria-label']='Toggle navigation'; }
