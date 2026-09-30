@@ -4095,13 +4095,7 @@
                           ]
                         },
                         " \n",
-                        {
-                          "tag": "p",
-                          "props": {},
-                          "children": [
-                            "Slide show"
-                          ]
-                        },
+
                         "\n\n",
                         {
                           "tag": "div",
