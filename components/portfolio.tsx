@@ -157,7 +157,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
   return <figure className="motion-prototype-stage">
     <figcaption className="motion-prototype-caption">
       <span className="motion-prototype-label"><Play aria-hidden="true" fill="currentColor" /> Motion prototype</span>
-      <span>Watch Explorer reveal relationships between risk, applications, servers, APIs, and databases, then open an asset’s details to inspect its security posture.</span>
+      <span>Watch Explorer map risk across applications, servers, APIs, and databases, then reveal an asset’s security posture.</span>
       <small>Loops automatically</small>
     </figcaption>
     <span className="explorer-video-stage">
