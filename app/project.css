@@ -616,7 +616,7 @@
   display:grid;
   gap:8px;
   padding-top:10px;
-  max-width:680px;
+  max-width:none;
 }
 #project .motion-caption-eyebrow {
   display:flex;
