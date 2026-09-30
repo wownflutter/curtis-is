@@ -40,11 +40,17 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
   const isExplorer=source==='/case-studies/explorer-animation.mp4';
   const isTrackonomy=source.startsWith('/case-studies/tr-') && source.endsWith('.mp4');
   const motionDescriptions:Record<string,string>={
-    '/case-studies/tr-activity-stream.mp4':'Watch AI detect an anomaly, open a support ticket, and draft a message for the triage and support team.',
-    '/case-studies/tr-fma-animation.mp4':'Watch Find My Asset guide a user from a general location to a precise search for a tagged asset, using sound and haptic feedback.',
-    '/case-studies/uh-nlp.mp4':'Watch a care professional use voice input to search for an asset, with an NLP/MCP context layer connecting the request to inventory location and tracking.',
+    '/case-studies/tr-activity-stream.mp4':'AI detects an anomaly, opens a support ticket, and drafts a message for the triage and support team.',
+    '/case-studies/tr-fma-animation.mp4':'Location guidance narrows to a precise search, supported by sound and haptic feedback.',
+    '/case-studies/uh-nlp.mp4':'A care professional’s spoken asset request connects to inventory location and tracking through an NLP/MCP context layer.',
   };
   const motionDescription=motionDescriptions[source];
+  const motionHeadings:Record<string,{label:string;title:string}>={
+    '/case-studies/tr-activity-stream.mp4':{label:'Respond',title:'Turn an anomaly into coordinated action.'},
+    '/case-studies/tr-fma-animation.mp4':{label:'Find',title:'From nearby to precisely located.'},
+    '/case-studies/uh-nlp.mp4':{label:'Ask',title:'Find an asset without typing.'},
+  };
+  const motionHeading=motionHeadings[source];
   const sequenceChapters=designSystemSequences[source];
   const isDesignSystem=Boolean(sequenceChapters);
   const poster=source==='/case-studies/explorer-animation.mp4'
@@ -130,9 +136,9 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
   </video>;
   if(motionDescription)return <figure className="motion-prototype-stage">
     <figcaption className="motion-prototype-caption">
-      <span className="motion-prototype-label"><Play aria-hidden="true" fill="currentColor" /> Motion prototype</span>
-      <span>{motionDescription}</span>
-      <small>Loops automatically</small>
+      <span className="motion-caption-eyebrow"><Play aria-hidden="true" fill="currentColor" />{motionHeading.label} / Motion demo</span>
+      <strong className="motion-caption-title">{motionHeading.title}</strong>
+      <span className="motion-caption-description">{motionDescription}</span>
     </figcaption>
     {video}
   </figure>;
@@ -154,11 +160,11 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
     </span>
   </span>;
   if(!isExplorer)return video;
-  return <figure className="motion-prototype-stage">
+  return <figure className="motion-prototype-stage motion-prototype-dark">
     <figcaption className="motion-prototype-caption">
-      <span className="motion-prototype-label"><Play aria-hidden="true" fill="currentColor" /> Motion prototype</span>
-      <span>Watch Explorer map risk across applications, servers, APIs, and databases, then reveal an asset’s security posture.</span>
-      <small>Loops automatically</small>
+      <span className="motion-caption-eyebrow"><Play aria-hidden="true" fill="currentColor" />Explore / Motion demo</span>
+      <strong className="motion-caption-title">See risk in context.</strong>
+      <span className="motion-caption-description">Explorer maps risk across applications, servers, APIs, and databases, then reveals an asset’s security posture.</span>
     </figcaption>
     <span className="explorer-video-stage">
     {video}
@@ -182,6 +188,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
       </span>
     </span>
   </span>
+
   </figure>;
 }
 

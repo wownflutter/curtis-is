@@ -582,3 +582,79 @@
 .scramble-reserve { visibility:hidden; }
 .scramble-ink { position:absolute; inset:0; text-align:center; overflow:hidden; }
 .scramble-accessible { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+
+/* Quiet captions keep the motion itself in focus. */
+#project .motion-prototype-caption,
+#project .motion-prototype-dark .motion-prototype-caption {
+  display:flex;
+  align-items:flex-start;
+  gap:9px;
+  padding:12px 0 0;
+  border:0;
+  background:transparent;
+  color:#6a7274;
+  font-size:14px;
+  font-weight:400;
+  line-height:1.6;
+}
+#project .motion-prototype-caption > svg {
+  width:10px;
+  height:10px;
+  margin-top:6px;
+  flex-shrink:0;
+}
+#project .motion-prototype-dark .motion-prototype-caption { color:#b5b5b5; }
+
+/* Keep each caption attached to its video and clear of the next section. */
+#project .motion-prototype-stage { margin:0 0 42px; }
+#project .motion-prototype-caption,
+#project .motion-prototype-dark .motion-prototype-caption { padding-top:4px; }
+
+/* A compact hierarchy inspired by the supplied reference. */
+#project .motion-prototype-caption,
+#project .motion-prototype-dark .motion-prototype-caption {
+  display:grid;
+  gap:8px;
+  padding-top:10px;
+  max-width:680px;
+}
+#project .motion-caption-eyebrow {
+  display:flex;
+  align-items:center;
+  gap:7px;
+  color:#247578;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+#project .motion-caption-eyebrow svg { width:9px; height:9px; }
+#project .motion-caption-title {
+  color:#253033;
+  font-size:22px;
+  font-weight:500;
+  line-height:1.3;
+}
+#project .motion-caption-description { font-size:14px; line-height:1.6; }
+#project .motion-prototype-dark .motion-caption-eyebrow { color:#8dc9c1; }
+#project .motion-prototype-dark .motion-caption-title { color:#f0f0f0; }
+#project .motion-prototype-caption,
+#project .motion-prototype-dark .motion-prototype-caption { grid-template-columns:minmax(0,1fr); }
+
+#project .motion-prototype-caption,
+#project .motion-prototype-dark .motion-prototype-caption { padding:0 0 20px; }
+
+/* Balance the introduction, playback, and following section as one rhythm. */
+#project .motion-prototype-stage { margin:24px 0 0; }
+#project .motion-prototype-caption,
+#project .motion-prototype-dark .motion-prototype-caption {
+  gap:6px;
+  padding:0 0 8px;
+}
+#project .motion-prototype-stage video { margin-top:0 !important; }
+#project .trackonomy-refresh .row:has(.motion-prototype-stage) + h3.class-one {
+  margin-top:32px;
+}
+
+/* Separate motion introductions from the preceding narrative. */
+#project .motion-prototype-stage { margin-top:44px; }
