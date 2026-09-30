@@ -658,3 +658,13 @@
 
 /* Separate motion introductions from the preceding narrative. */
 #project .motion-prototype-stage { margin-top:44px; }
+
+/* Actual playback feedback for the slower asset-finding walkthrough. */
+#project .motion-playback { margin:4px 0 0; color:#647174; font-size:11px; }
+#project .motion-playback-meta { display:flex; justify-content:space-between; align-items:center; margin-bottom:9px; }
+#project .motion-playback-meta > span:first-child { display:flex; align-items:center; gap:7px; }
+#project .motion-playing-dot { width:5px; height:5px; border-radius:50%; background:#a7b0b1; }
+#project .motion-playing-dot.active { background:#287c7a; }
+#project .motion-playback-time { font-variant-numeric:tabular-nums; }
+#project .motion-playback-track { height:2px; background:#e7eceb; }
+#project .motion-playback-track > span { display:block; height:100%; background:#287c7a; }

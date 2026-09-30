@@ -38,6 +38,24 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
   const sequenceRef=useRef<HTMLSpanElement>(null);
   const source=videoSource(nodeChildren);
   const isExplorer=source==='/case-studies/explorer-animation.mp4';
+  const showPlayback=source==='/case-studies/tr-fma-animation.mp4';
+  const [playback,setPlayback]=useState({playing:false,waiting:false,time:0,duration:0});
+  useEffect(()=>{
+    const player=ref.current;
+    if(!player || !showPlayback)return;
+    const update=()=>setPlayback({playing:!player.paused,waiting:false,time:player.currentTime,duration:Number.isFinite(player.duration)?player.duration:0});
+    const waiting=()=>setPlayback(previous=>({...previous,waiting:true}));
+    const events=['playing','pause','timeupdate','loadedmetadata','seeked','ended'];
+    events.forEach(event=>player.addEventListener(event,update));
+    player.addEventListener('waiting',waiting);
+    update();
+    return ()=>{
+      events.forEach(event=>player.removeEventListener(event,update));
+      player.removeEventListener('waiting',waiting);
+    };
+  },[source,showPlayback]);
+  const formatTime=(seconds:number)=>`${Math.floor(seconds/60)}:${String(Math.floor(seconds%60)).padStart(2,'0')}`;
+
   const isTrackonomy=source.startsWith('/case-studies/tr-') && source.endsWith('.mp4');
   const motionDescriptions:Record<string,string>={
     '/case-studies/tr-activity-stream.mp4':'AI detects an anomaly, opens a support ticket, and drafts a message for the triage and support team.',
@@ -140,6 +158,15 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
       <strong className="motion-caption-title">{motionHeading.title}</strong>
       <span className="motion-caption-description">{motionDescription}</span>
     </figcaption>
+    {showPlayback&&<div className="motion-playback" aria-label="Video playback status">
+      <div className="motion-playback-meta">
+        <span><span className={`motion-playing-dot${playback.playing&&!playback.waiting?' active':''}`} aria-hidden="true" />{playback.waiting?'Buffering':playback.playing?'Playing':'Paused'}</span>
+        <span className="motion-playback-time">{formatTime(playback.time)}{playback.duration>0?` / ${formatTime(playback.duration)}`:''}</span>
+      </div>
+      <div className="motion-playback-track" role="progressbar" aria-label="Video progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(playback.duration?playback.time/playback.duration*100:0)}>
+        <span style={{width:`${playback.duration?playback.time/playback.duration*100:0}%`}} />
+      </div>
+    </div>}
     {video}
   </figure>;
   if(isDesignSystem)return <span className="design-system-video-stage">
