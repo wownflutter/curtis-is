@@ -154,7 +154,13 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
     </span>
   </span>;
   if(!isExplorer)return video;
-  return <span className="explorer-video-stage">
+  return <figure className="motion-prototype-stage">
+    <figcaption className="motion-prototype-caption">
+      <span className="motion-prototype-label"><Play aria-hidden="true" fill="currentColor" /> Motion prototype</span>
+      <span>Watch Explorer reveal relationships between risk, applications, servers, APIs, and databases, then open an asset’s details to inspect its security posture.</span>
+      <small>Loops automatically</small>
+    </figcaption>
+    <span className="explorer-video-stage">
     {video}
     <span ref={cursorRef} className="explorer-demo-cursor" aria-hidden="true">
       <svg viewBox="0 0 24 28" focusable="false">
@@ -175,7 +181,8 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
         <span>Incidents</span><b>3</b>
       </span>
     </span>
-  </span>;
+  </span>
+  </figure>;
 }
 
 const content = original as unknown as {home:ContentNode;projects:{slug:string;title:string;tree:ContentNode[]}[]};
