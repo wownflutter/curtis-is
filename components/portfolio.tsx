@@ -337,7 +337,7 @@ const projectCaptions: Record<string, {domain:string;name:string;description:str
 };
 
 const careerProofs = [
-  { title:'Founding Designer', lead:'5×', body:'Design functions built from zero across AI, cybersecurity, IoT, logistics, and healthcare.', icon:Hammer },
+  { title:'Product Building', lead:'Zero-to-one', body:'Design functions built from zero across AI, cybersecurity, IoT, logistics, and healthcare.', icon:Hammer },
   { title:'Exit', lead:'$1.4B', body:'Cisco’s acquisition of Jasper, where I was the founding designer.', icon:Handshake },
   { title:'Enterprise Reach', lead:'Fortune 500', body:'Platforms used by 800+ enterprise customers across cybersecurity, IoT, logistics, and healthcare, including UPS and Koch Industries.', icon:Globe2 },
 ];
@@ -430,9 +430,9 @@ function render(node:ContentNode, key:string):ReactNode {
   if(node.props.className==='row rowbottom') return <CareerProofStrip keyName={key} />;
   if(node.props.className==='mission-statement') {
     return <h2 key={key} className="mission-statement">
-      <span>Design leader.</span>
-      <span>Team builder.</span>
-      <span>5x founding designer.</span>
+      <span>Product design leader</span>
+      <span>from zero-to-one</span>
+      <span>to global scale</span>
     </h2>;
   }
   if(node.props.id==='project-title' && node.children[0]==='The Jasper IoT Control Center -') {
