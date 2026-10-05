@@ -240,16 +240,7 @@ function buildSignalHome(node:ContentNode,projectBase:''|'/signal'):ContentNode 
       {
         tag:'span',
         props:{className:'portfolio-summary-thought'},
-        children:[
-          'I was ',
-          {tag:'strong',props:{},children:['Jasper']},
-          '’s founding designer before its acquisition by Cisco, where I continued as a design executive leading the IoT product design team.',
-        ],
-      },
-      {
-        tag:'span',
-        props:{className:'portfolio-summary-thought'},
-        children:['Today, I build design teams and AI products that turn complex signals into useful action and measurable value.'],
+        children:['My work connects research, product strategy, and hands-on design to make complex systems easier to use.'],
       },
     ]};
   }
@@ -337,9 +328,9 @@ const projectCaptions: Record<string, {domain:string;name:string;description:str
 };
 
 const careerProofs = [
-  { title:'Product Building', lead:'Zero-to-one', body:'Design functions built from zero across AI, cybersecurity, IoT, logistics, and healthcare.', icon:Hammer },
-  { title:'Exit', lead:'$1.4B', body:'Cisco’s acquisition of Jasper, where I was the founding designer.', icon:Handshake },
-  { title:'Enterprise Reach', lead:'Fortune 500', body:'Platforms used by 800+ enterprise customers across cybersecurity, IoT, logistics, and healthcare, including UPS and Koch Industries.', icon:Globe2 },
+  { title:'Teams & Practice', lead:'', body:'Built design teams across cybersecurity, IoT, logistics, and healthcare.', icon:Hammer },
+  { title:'Jasper → Cisco', lead:'', body:'Founding designer at Jasper. After its acquisition, led IoT product design at Cisco.', icon:Handshake },
+  { title:'Enterprise Reach', lead:'', body:'Platforms used by 800+ enterprise customers, including UPS and Koch Industries.', icon:Globe2 },
 ];
 
 function CareerProofStrip({keyName}:{keyName:string}) {
@@ -347,7 +338,7 @@ function CareerProofStrip({keyName}:{keyName:string}) {
     {careerProofs.map(({title,lead,body,icon:Icon})=><article className="col-sm-3 career-proof" key={title}>
       <div className="career-proof-icon"><Icon aria-hidden="true" strokeWidth={1.2}/></div>
       <h3>{title}</h3>
-      <p className="principles"><strong>{lead}</strong><span className="proof-separator">: </span>{body}</p>
+      <p className="principles">{lead && <><strong>{lead}</strong><span className="proof-separator">: </span></>}{body}</p>
     </article>)}
   </div>;
 }
@@ -438,7 +429,7 @@ function render(node:ContentNode, key:string):ReactNode {
   if(node.props.id==='project-title' && node.children[0]==='The Jasper IoT Control Center -') {
     return <div key={key} className="project-heading-group">
       <ScrambleHeading tag="h2" attributes={{id:'project-title'}}>The Jasper IoT Control Center</ScrambleHeading>
-      <p className="project-deck">Rediscovered, redesigned and relaunched leading to <span className="project-outcome">$1.4B acquisition</span></p>
+      <p className="project-deck">Redesigned and relaunched the IoT Control Center, then continued its evolution at Cisco</p>
     </div>;
   }
   const props: Record<string,unknown> = {...node.props, key};
