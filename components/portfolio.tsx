@@ -251,7 +251,7 @@ function buildSignalHome(node:ContentNode,projectBase:''|'/signal'):ContentNode 
   if(node.props.id==='work-container') {
     const trackonomyIndex=children.findIndex(child=>nestedWorkId(child)==='work-1');
     const contrastIndex=children.findIndex(child=>nestedWorkId(child)==='work-2');
-    if(trackonomyIndex>=0 && contrastIndex>=0 && trackonomyIndex>contrastIndex) {
+    if(trackonomyIndex>=0 && contrastIndex>=0 && trackonomyIndex<contrastIndex) {
       [children[trackonomyIndex],children[contrastIndex]]=[children[contrastIndex],children[trackonomyIndex]];
     }
   }
