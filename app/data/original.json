@@ -4097,7 +4097,10 @@
                         {
                           "tag": "ul",
                           "props": {
-                            "className": "newlist"
+                            "className": "newlist",
+                            "style": {
+                              "marginBottom": "28px"
+                            }
                           },
                           "children": [
                             "\n",
