@@ -3811,7 +3811,7 @@
                           "tag": "p",
                           "props": {},
                           "children": [
-                            "This is where AI agents directly engaged the user:"
+                            "The Incident Detail view helped SOC analysts investigate and respond:"
                           ]
                         },
                         "\n\n",
@@ -3830,7 +3830,7 @@
                                 }
                               },
                               "children": [
-                                "Agents recommended next steps and explained the evidence behind each recommendation."
+                                "Agents recommended next steps and explained the supporting evidence."
                               ]
                             },
                             "\n    ",
@@ -3842,7 +3842,7 @@
                                 }
                               },
                               "children": [
-                                "The system provided blast radius estimation, using correlation heuristics to suggest related issues."
+                                "Related issues and estimated blast radius helped analysts assess the scope of an incident."
                               ]
                             },
                             "\n    ",
@@ -3854,7 +3854,7 @@
                                 }
                               },
                               "children": [
-                                "Users could accept, edit, defer, or override agent recommendations."
+                                "Analysts could review the recommendations and decide how to respond."
                               ]
                             },
                             "\n                "
