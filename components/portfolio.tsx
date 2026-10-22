@@ -372,11 +372,52 @@ function LegacyBeforeSnapshot({keyName}:{keyName:string}) {
   </section>;
 }
 
+const contrastPersonas = [
+  {label:'CISO',src:'/case-studies/cont-persona-ciso.png',cutoff:1175},
+  {label:'SOC',src:'/case-studies/cont-persona-soc.png',cutoff:1140},
+  {label:'Developer',src:'/case-studies/cont-persona-deveng.png',cutoff:1115},
+];
+
+function PersonaSlideshow() {
+  const [active,setActive]=useState(0);
+  const [expanded,setExpanded]=useState<Record<number,boolean>>({});
+  const sectionRef=useRef<HTMLElement>(null);
+  return <section ref={sectionRef} className="persona-slideshow" aria-label="Research personas" aria-roledescription="carousel">
+    <div className="persona-controls">
+      <div className="persona-choices" aria-label="Choose a persona">
+        {contrastPersonas.map((persona,index)=><button key={persona.label} type="button"
+          aria-pressed={active===index} aria-controls={`persona-slide-${index}`}
+          onClick={()=>setActive(index)}>{persona.label}</button>)}
+      </div>
+    </div>
+    {contrastPersonas.map((persona,index)=><figure key={persona.src} id={`persona-slide-${index}`}
+      hidden={active!==index} role="group" aria-roledescription="slide" aria-label={`${index+1} of 3: ${persona.label}`}>
+      <div className="persona-preview" id={`persona-document-${index}`}
+        style={{aspectRatio:expanded[index]?'auto':`${imageSizes[persona.src].width} / ${persona.cutoff}`}}>
+        <MediaImage attributes={{src:persona.src,alt:`${persona.label} research persona${expanded[index]?', full document':', preview including the full Key Insights section'}`,decoding:'async'}} />
+      </div>
+      <figcaption><span>{persona.label} {index+1} / 3</span>
+        <button className="persona-expand" type="button" aria-expanded={Boolean(expanded[index])}
+          aria-controls={`persona-document-${index}`} onClick={()=>{
+            const collapsing=expanded[index];
+            setExpanded(previous=>({...previous,[index]:!previous[index]}));
+            if(collapsing)requestAnimationFrame(()=>sectionRef.current?.scrollIntoView({block:'start',behavior:'instant'}));
+          }}>{expanded[index]?'Show less ↑':'Show full persona ↓'}</button>
+      </figcaption>
+    </figure>)}
+  </section>;
+}
+
 /** Give label paragraphs preceding lists one shared style. */
 function renderChildren(children:ContentNode[], key:string):ReactNode[] {
   const legacyStart=children.findIndex(child=>typeof child!=='string' && child.tag==='h3' && textContent(child).includes('platform experience I inherited'));
   const legacyEnd=legacyStart<0 ? -1 : children.findIndex((child,index)=>index>legacyStart && typeof child!=='string' && child.tag==='h3');
+  const personaIndices=children.flatMap((child,index)=>typeof child!=='string' && child.tag==='div' &&
+    child.children.some(node=>typeof node!=='string' && node.tag==='img' && contrastPersonas.some(persona=>persona.src===node.props.src)) ? [index] : []);
   return children.flatMap((child,index)=>{
+    if(personaIndices.length===3 && personaIndices.includes(index)) {
+      return index===personaIndices[0] ? [<PersonaSlideshow key={`${key}.personas`} />] : [];
+    }
     if(index===legacyStart)return [<LegacyBeforeSnapshot key={`${key}.legacy`} keyName={`${key}-legacy`} />];
     if(legacyStart>=0 && index>legacyStart && (legacyEnd<0 || index<legacyEnd))return [];
     const next=children.slice(index+1).find(node=>typeof node!=='string' || node.trim()!=='');
@@ -631,3 +672,4 @@ export function Portfolio({initialSlug=null,variant='live',routeBase:routeBasePr
     </dialog>
   </div>;
 }
+
