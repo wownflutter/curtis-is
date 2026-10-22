@@ -457,12 +457,20 @@
         "text": "AI Remediation That Developers Can Trust"
       },
       {
-        "type": "paragraph",
-        "text": "Once actions were taken, the system logged agent recommendations, human decisions, and outcomes. This enabled SOC review, compliance, and organizational learning."
+        "type": "heading",
+        "text": "Human Approval and Control of Agentic Outcomes"
       },
       {
         "type": "paragraph",
-        "text": "This empowered developers to trust automation while staying in control — a critical element of effective human/agent collaboration."
+        "text": "In the AI remediation workflow, developers had explicit Approve, Reject, and Modify controls to vet agent recommendations before acting on them. Approve authorized the proposed remediation, Reject stopped it from proceeding, and Modify let the developer refine the proposed change before approval. For remediation actions governed by these controls, human approval was required before the agent could execute."
+      },
+      {
+        "type": "paragraph",
+        "text": "Supporting evidence gave developers the context to evaluate each recommendation: the relevant runtime traces, exploit context, asset dependencies, and policy constraints made the proposed action and its rationale reviewable. This helped developers assess whether a fix addressed the issue and fit their application's needs before authorizing execution."
+      },
+      {
+        "type": "paragraph",
+        "text": "The system recorded agent recommendations, human approvals, rejections, and modifications, along with execution outcomes. These decision and outcome audit trails supported SOC review, compliance, and organizational learning, while keeping accountability visible throughout the remediation workflow."
       },
       {
         "type": "image",
