@@ -3830,7 +3830,7 @@
                                 }
                               },
                               "children": [
-                                "Agents produced actionable recommendations with supporting rationale."
+                                "Agents recommended next steps and explained the evidence behind each recommendation."
                               ]
                             },
                             "\n    ",
