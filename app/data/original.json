@@ -3940,8 +3940,10 @@
                         },
                         "\n\n",
                         {
-                          "tag": "h4",
-                          "props": {},
+                          "tag": "h3",
+                          "props": {
+                            "className": "class-one"
+                          },
                           "children": [
                             "Human Approval and Control of Agentic Outcomes"
                           ]
@@ -3950,7 +3952,76 @@
                           "tag": "p",
                           "props": {},
                           "children": [
-                            "In the AI remediation workflow, developers had explicit Approve, Reject, and Modify controls to vet agent recommendations before acting on them. Approve authorized the proposed remediation, Reject stopped it from proceeding, and Modify let the developer refine the proposed change before approval. For remediation actions governed by these controls, human approval was required before the agent could execute."
+                            "In the AI remediation workflow, developers had explicit Approve, Reject, and Modify controls to vet agent recommendations before acting on them."
+                          ]
+                        },
+                        {
+                          "tag": "ul",
+                          "props": {
+                            "className": "newlist"
+                          },
+                          "children": [
+                            {
+                              "tag": "li",
+                              "props": {
+                                "style": {
+                                  "border": "none"
+                                }
+                              },
+                              "children": [
+                                {
+                                  "tag": "b",
+                                  "props": {},
+                                  "children": [
+                                    "Approve:"
+                                  ]
+                                },
+                                " Authorized the proposed remediation."
+                              ]
+                            },
+                            {
+                              "tag": "li",
+                              "props": {
+                                "style": {
+                                  "border": "none"
+                                }
+                              },
+                              "children": [
+                                {
+                                  "tag": "b",
+                                  "props": {},
+                                  "children": [
+                                    "Reject:"
+                                  ]
+                                },
+                                " Stopped the proposed remediation from proceeding."
+                              ]
+                            },
+                            {
+                              "tag": "li",
+                              "props": {
+                                "style": {
+                                  "border": "none"
+                                }
+                              },
+                              "children": [
+                                {
+                                  "tag": "b",
+                                  "props": {},
+                                  "children": [
+                                    "Modify:"
+                                  ]
+                                },
+                                " Let the developer refine the proposed change before approval."
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "p",
+                          "props": {},
+                          "children": [
+                            "For remediation actions governed by these controls, human approval was required before the agent could execute."
                           ]
                         },
                         {
