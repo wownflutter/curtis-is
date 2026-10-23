@@ -3711,7 +3711,7 @@
                                 "className": "northstar-goal"
                               },
                               "children": [
-                                "Agent-generated insights connected security signals to recommended next steps, with supporting context that helped leaders understand what the agent had identified and why it mattered."
+                                "Agents surfaced risks, explained why they mattered, and recommended next steps."
                               ]
                             }
                           ]
