@@ -3146,7 +3146,16 @@
                           "tag": "p",
                           "props": {},
                           "children": [
-                            "NorthStar was intentionally designed as an agentic system, not a passive dashboard.\nThe goal was to operationalize AI in a way that accelerated human decision-making while preserving trust, accountability, and control."
+                            "NorthStar was intentionally designed as an agentic system, not a passive dashboard.",
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "northstar-goal"
+                              },
+                              "children": [
+                                "The goal was to operationalize AI in a way that accelerated human decision-making while preserving trust, accountability, and control."
+                              ]
+                            }
                           ]
                         },
                         "\n\n \n\n",
