@@ -11,7 +11,7 @@ export function ScrambleHeading({ tag, attributes, children }: {
   const ref = useRef<HTMLHeadingElement>(null);
   const requestedDuration = Number(attributes['data-scramble-duration']);
   const requestedDelay = Number(attributes['data-scramble-delay']);
-  const duration = Number.isFinite(requestedDuration) ? Math.min(1400, Math.max(400, requestedDuration)) : 900;
+  const duration = Number.isFinite(requestedDuration) ? Math.min(2000, Math.max(400, requestedDuration)) : 1500;
   const delay = Number.isFinite(requestedDelay) ? Math.min(800, Math.max(0, requestedDelay)) : 0;
   useEffect(() => {
     const heading = ref.current;
