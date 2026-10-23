@@ -3704,7 +3704,16 @@
                           "tag": "p",
                           "props": {},
                           "children": [
-                            "The dashboard became the executive's home base: a visual contract of \"what's at risk and what can be done about it.\""
+                            "The dashboard became the executive’s home base for understanding risk and the response underway.",
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "northstar-goal"
+                              },
+                              "children": [
+                                "Agent-generated insights connected security signals to recommended next steps, with supporting context that helped leaders understand what the agent had identified and why it mattered."
+                              ]
+                            }
                           ]
                         },
                         "\n\n\n\n\n\n                ",
