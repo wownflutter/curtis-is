@@ -36,8 +36,8 @@
 #incident-transition .trace-tooltip>span,#incident-transition .trace-tooltip strong span{color:#9da2b6}
 #incident-transition .trace-tooltip .sample-label{display:block;margin-bottom:8px;color:#9da2b6}
 #incident-transition .trace-tooltip .critical-value{color:#ff648f}
-#incident-transition .trace-tooltip dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:0}
-#incident-transition .trace-tooltip dt{color:#9da2b6}#incident-transition .trace-tooltip dd{margin:0}
+#incident-transition .trace-tooltip dl{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:4px 12px;margin:0}
+#incident-transition .trace-tooltip dt{color:#9da2b6}#incident-transition .trace-tooltip dd{margin:0;min-width:0;overflow-wrap:anywhere}
 #incident-transition .trace-cursor{position:absolute;left:0;top:0;z-index:5;color:#f1f2f8;filter:drop-shadow(0 1px 2px #000);opacity:0;pointer-events:none}
 #incident-transition .trace-cursor svg{width:20px;height:20px;fill:#f1f2f8;stroke:#252938}
 #incident-transition .section-focus{position:absolute;box-sizing:border-box;border:0;background:transparent;opacity:0;pointer-events:none}
@@ -54,7 +54,7 @@
 #incident-transition .tour-track{height:3px;background:var(--muted);margin-top:8px;overflow:hidden}
 #incident-transition .tour-track>span{display:block;height:100%;width:0;background:var(--foreground)}
 @media(prefers-reduced-motion:reduce){#incident-transition .tour-world{will-change:auto}}
-@media(max-width:500px){#incident-transition .tour-stage{aspect-ratio:1/1}#incident-transition .section-intro{padding:6px 8px}#incident-transition .section-intro span{display:none}}
+@media(max-width:500px){#incident-transition .tour-stage{aspect-ratio:1/1}#incident-transition .section-intro{padding:6px 8px}#incident-transition .section-intro span{display:none}#incident-transition .trace-tooltip{left:16%;top:45%;width:72%;padding:8px 10px;font-size:9px;line-height:1.4}#incident-transition .trace-tooltip strong{white-space:normal;overflow-wrap:anywhere;margin-bottom:4px}#incident-transition .trace-tooltip .sample-label{margin-bottom:5px}#incident-transition .trace-tooltip dl{grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:2px 8px}}
 </style>
 <script>
 (()=>{
