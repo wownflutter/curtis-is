@@ -86,7 +86,7 @@
   rimElements.forEach((rim,i)=>{const threshold=[0,2.5,5,7.5][i];rim.setAttribute('opacity',String(elapsed>0?clamp((7.4*gaugeProgress-threshold)/.25):0));});
   const moveToPet=ease(clamp((elapsed-8.5)/.7)),moveToGet=ease(clamp((elapsed-11.5)/1));
   const cursorX=(.27+(.313-.27)*moveToPet)+(.441-.313)*moveToGet;
-  const cursorY=.76+(.733-.76)*moveToPet;
+  const cursorY=.76+(.733-.76)*moveToPet+.014*Math.sin(Math.PI*moveToGet);
   cursor.style.transform=`translate(${cursorX*w}px,${cursorY*w}px)`;
   cursor.style.opacity=elapsed>=8.5&&elapsed<15.5?'1':'0';
   petTooltip.style.opacity=elapsed>=9.2&&elapsed<11.5?'1':'0';
