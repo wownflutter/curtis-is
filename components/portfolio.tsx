@@ -33,7 +33,7 @@ function IncidentWalkthrough() {
     observer.observe(element);
     return ()=>{resize.disconnect();observer.disconnect();window.removeEventListener('message',ready);};
   },[]);
-  return <iframe ref={frame} src="/case-studies/incident-tour.html?v=20261031-smooth" title="Incident investigation walkthrough" loading="eager" style={{display:'block',width:'100%',height:640,border:0}} />;
+  return <iframe ref={frame} src="/case-studies/incident-tour.html?v=20261031-hierarchy" title="Incident investigation walkthrough" loading="eager" style={{display:'block',width:'100%',height:640,border:0}} />;
 }
 
 function MediaImage({attributes}:{attributes:Record<string,unknown>}) {
