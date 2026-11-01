@@ -8,7 +8,6 @@ export function TelemetryUseCases(){
  useEffect(()=>{
   const root=rootRef.current;
   if(!root)return;
-  const button=root.querySelector<HTMLButtonElement>('#scene-replay')!;
   const targets=Array.from(root.querySelectorAll<HTMLElement>('.reveal'));
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let animations:Animation[]=[];
@@ -23,12 +22,11 @@ export function TelemetryUseCases(){
     ],{duration:1400,delay:action?1300:pin?650:350,easing:'cubic-bezier(.22,1,.36,1)',fill:'both'}));
    });
   }
-  button.addEventListener('click',play);
   const observer=new IntersectionObserver(entries=>{
    if(entries.some(entry=>entry.isIntersecting)){if(!reduced)play();observer.disconnect();}
   },{threshold:.3});
   observer.observe(root.querySelector('.worlds')!);
-  return ()=>{observer.disconnect();button.removeEventListener('click',play);animations.forEach(animation=>animation.cancel());};
+  return ()=>{observer.disconnect();animations.forEach(animation=>animation.cancel());};
  },[]);
  return (<div id="telemetry-scenes" ref={rootRef}>
  <section className="story">
@@ -58,6 +56,5 @@ export function TelemetryUseCases(){
    </article>
   </div>
  </section>
- <div className="controls"><button className="btn" type="button" id="scene-replay">Replay</button></div>
 </div>);
 }
