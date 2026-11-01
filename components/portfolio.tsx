@@ -380,6 +380,24 @@ function textContent(node:ContentNode):string {
 }
 
 function LegacyBeforeSnapshot({keyName}:{keyName:string}) {
+  const stageRef=useRef<HTMLDivElement>(null);
+  useEffect(()=>{
+    const stage=stageRef.current;
+    if(!stage || window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    const animations:Animation[]=[];
+    const observer=new IntersectionObserver(entries=>{
+      if(!entries.some(entry=>entry.isIntersecting))return;
+      stage.querySelectorAll<HTMLElement>('.legacy-annotation').forEach(annotation=>{
+        animations.push(annotation.animate([
+          {transform:'translateY(20px)',opacity:.2},
+          {transform:'translateY(0)',opacity:1},
+        ],{duration:2000,easing:'cubic-bezier(.22,1,.36,1)',fill:'both'}));
+      });
+      observer.disconnect();
+    },{threshold:.25});
+    observer.observe(stage);
+    return ()=>{observer.disconnect();animations.forEach(animation=>animation.cancel());};
+  },[]);
   return <section key={keyName} className="legacy-snapshot" aria-labelledby={`${keyName}-title`}>
     <header className="legacy-snapshot-heading">
       <div>
@@ -388,7 +406,7 @@ function LegacyBeforeSnapshot({keyName}:{keyName:string}) {
       </div>
       <p className="legacy-snapshot-summary">A fragmented dashboard and dense vulnerability inventory that made prioritization and remediation difficult.</p>
     </header>
-    <div className="legacy-snapshot-stage">
+    <div ref={stageRef} className="legacy-snapshot-stage">
       <a className="legacy-shot legacy-shot-primary" href="/case-studies/classic contrast dashboard.png" data-lightbox aria-label="Open the legacy Contrast dashboard">
         <span className="legacy-shot-label">Legacy dashboard</span>
         <MediaImage attributes={{src:'/case-studies/classic contrast dashboard.png',alt:'Contrast Classic dashboard',decoding:'async'}} />
