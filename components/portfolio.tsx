@@ -384,18 +384,24 @@ function LegacyBeforeSnapshot({keyName}:{keyName:string}) {
   useEffect(()=>{
     const stage=stageRef.current;
     if(!stage || window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-    const animations:Animation[]=[];
+    const animations=new Map<Element,Animation>();
+    stage.querySelectorAll<HTMLElement>('.legacy-annotation').forEach(annotation=>{
+      const animation=annotation.animate([
+        {transform:'translateY(30px)',opacity:0},
+        {transform:'translateY(0)',opacity:1},
+      ],{duration:3000,easing:'cubic-bezier(.22,1,.36,1)',fill:'both'});
+      animation.pause();
+      animation.currentTime=0;
+      animations.set(annotation,animation);
+    });
     const observer=new IntersectionObserver(entries=>{
-      if(!entries.some(entry=>entry.isIntersecting))return;
-      stage.querySelectorAll<HTMLElement>('.legacy-annotation').forEach(annotation=>{
-        animations.push(annotation.animate([
-          {transform:'translateY(30px)',opacity:.2},
-          {transform:'translateY(0)',opacity:1},
-        ],{duration:3000,easing:'cubic-bezier(.22,1,.36,1)',fill:'both'}));
+      entries.forEach(entry=>{
+        if(!entry.isIntersecting || entry.intersectionRatio<1)return;
+        animations.get(entry.target)?.play();
+        observer.unobserve(entry.target);
       });
-      observer.disconnect();
-    },{threshold:.25});
-    observer.observe(stage);
+    },{threshold:1,rootMargin:'0px 0px -100px 0px'});
+    animations.forEach((_,annotation)=>observer.observe(annotation));
     return ()=>{observer.disconnect();animations.forEach(animation=>animation.cancel());};
   },[]);
   return <section key={keyName} className="legacy-snapshot" aria-labelledby={`${keyName}-title`}>
