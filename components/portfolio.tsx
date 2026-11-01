@@ -9,6 +9,33 @@ import original from '@/app/data/original.json';
 import mediaSizes from '@/app/data/media-sizes.json';
 
 const imageSizes:Record<string,{width:number;height:number}>=mediaSizes;
+
+function IncidentWalkthrough() {
+  const frame=useRef<HTMLIFrameElement>(null);
+  useEffect(()=>{
+    const element=frame.current;
+    if(!element)return;
+    let visible=false;
+    const notify=()=>element.contentWindow?.postMessage({type:'incident-tour-visibility',visible},window.location.origin);
+    const resize=new ResizeObserver(()=>{
+      const width=element.getBoundingClientRect().width;
+      element.style.height=`${Math.ceil(width*(width<=500?1:.625)+64)}px`;
+    });
+    const observer=new IntersectionObserver(entries=>{
+      visible=entries.some(entry=>entry.isIntersecting&&entry.intersectionRatio>=.35);
+      notify();
+    },{threshold:[0,.35]});
+    const ready=(event:MessageEvent)=>{
+      if(event.source===element.contentWindow&&event.origin===window.location.origin&&event.data?.type==='incident-tour-ready')notify();
+    };
+    window.addEventListener('message',ready);
+    resize.observe(element);
+    observer.observe(element);
+    return ()=>{resize.disconnect();observer.disconnect();window.removeEventListener('message',ready);};
+  },[]);
+  return <iframe ref={frame} src="/case-studies/incident-tour.html" title="Incident investigation walkthrough" loading="lazy" style={{display:'block',width:'100%',height:640,border:0}} />;
+}
+
 function MediaImage({attributes}:{attributes:Record<string,unknown>}) {
   const [arrived,setArrived]=useState(false);
   const ref=useRef<HTMLImageElement>(null);
@@ -508,6 +535,7 @@ function render(node:ContentNode, key:string):ReactNode {
   if (tag === 'a' && String(props.href).includes('twitter.com')) props['aria-label']='Twitter';
   if (tag === 'a' && String(props.href).includes('medium.com')) props['aria-label']='Medium';
   if (tag === 'textarea') { props.defaultValue=node.children.filter(x=>typeof x==='string').join(''); return createElement(tag,props); }
+  if (tag === 'img' && props.src === '/case-studies/cont-incident-detail.png') return <IncidentWalkthrough key={key} />;
   if (tag === 'img') { const {key:_unusedKey,...attributes}=props; return <MediaImage key={key} attributes={attributes} />; }
   if (tag === 'video') { const {key:_unusedKey,...attributes}=props; return <MediaVideo key={key} keyName={key} attributes={attributes} nodeChildren={node.children} />; }
   if (id==='project-title' && /^h[1-6]$/.test(tag)) { const {key:_headingKey,...attributes}=props; return <ScrambleHeading key={key} tag={tag} attributes={attributes}>{renderChildren(node.children,key)}</ScrambleHeading>; }

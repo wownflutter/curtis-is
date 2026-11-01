@@ -1,0 +1,101 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Incident investigation walkthrough</title><style>html,body{margin:0;background:#292929;color:#ececf0;font-family:Arial,sans-serif;--muted:#444;--foreground:#ececf0}*{box-sizing:border-box}.btn{font:inherit;font-size:13px;color:#85bedb;background:transparent;border:1px solid #666;border-radius:4px;padding:8px 14px;cursor:pointer}.btn:focus-visible{outline:2px solid #85bedb;outline-offset:3px}.text-small{font-size:12px;color:#b5b5b5}.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}</style></head><body><div id="incident-transition" role="region" aria-label="Incident investigation walkthrough">
+ <div class="tour-stage">
+  <div class="tour-world">
+   <img src="/case-studies/cont-incident-detail.png" alt="Contrast Incident Detail design showing incident context, attack route, associated assets, and response actions." />
+   <svg class="gauge-rims" viewBox="0 0 1077 1800" aria-hidden="true"><defs><filter id="rim-saturation" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="1.2"/></filter><image id="rim-source" width="1077" height="1800" preserveAspectRatio="none"/><mask id="rim-0"><path d="M213.041 522.662 A67 67 0 0 1 229.434 481.044 M206.045 522.417 A74 74 0 0 1 224.151 476.452 M213.04081458972058 522.6617337209324 L206.0450788005869 522.4174372440149 M229.4344581250743 481.044045057636 L224.15149106351487 476.45163185470244" fill="none" stroke="white" stroke-width="1.4"/></mask><mask id="rim-1"><path d="M234.306 475.999 A67 67 0 0 1 275.326 458.163 M229.532 470.880 A74 74 0 0 1 274.838 451.180 M234.3061098758126 475.99930199151555 L229.53212135537512 470.8798260801814 M275.3263162591436 458.16320863259176 L274.83802094293475 451.18026028077304" fill="none" stroke="white" stroke-width="1.4"/></mask><mask id="rim-2"><path d="M283.507 458.092 A67 67 0 0 1 325.694 475.999 M283.873 451.101 A74 74 0 0 1 330.468 470.880 M283.50650906827724 458.09182117144354 L283.87286076197785 451.10141442816155 M325.6938901241874 475.9993019915156 L330.4678786446249 470.8798260801814" fill="none" stroke="white" stroke-width="1.4"/></mask><mask id="rim-3"><path d="M330.566 481.044 A67 67 0 0 1 346.908 521.493 M335.849 476.452 A74 74 0 0 1 353.899 521.127 M330.5655418749257 481.044045057636 L335.84850893648513 476.45163185470244 M346.90817882855646 521.4934909317228 L353.89858557183845 521.1271392380222" fill="none" stroke="white" stroke-width="1.4"/></mask></defs><use class="gauge-rim" href="#rim-source" mask="url(#rim-0)" filter="url(#rim-saturation)" opacity="0"/><use class="gauge-rim" href="#rim-source" mask="url(#rim-1)" filter="url(#rim-saturation)" opacity="0"/><use class="gauge-rim" href="#rim-source" mask="url(#rim-2)" filter="url(#rim-saturation)" opacity="0"/><use class="gauge-rim" href="#rim-source" mask="url(#rim-3)" filter="url(#rim-saturation)" opacity="0"/></svg>
+   <svg class="gauge-animation" viewBox="0 0 1077 1800" aria-label="Posture score rises to 7.4"><rect x="264" y="465" width="53" height="68" fill="#0a0d18"/><g id="gauge-needle" transform="rotate(-90 280 493)"><path d="M280 463 L275 487 L280 493 L285 487 Z" fill="#ececf0"/></g><text id="gauge-value" x="280" y="510" text-anchor="middle" fill="#ececf0" font-family="Arial,sans-serif" font-size="16" font-weight="600">0.0</text><text x="280" y="528" text-anchor="middle" fill="#c9cbd6" font-family="Arial,sans-serif" font-size="10">HIGH</text></svg>
+   <div class="trace-tooltip-mask"></div>
+   <div class="trace-tooltip pet-tooltip"><strong>petclinic-demo-2.5-ss3</strong><span class="sample-label">Application / Sample data</span><dl><dt>Severity</dt><dd class="critical-value">Critical</dd><dt>Environment</dt><dd>Production</dd><dt>Language</dt><dd>Java 17</dd><dt>Owner</dt><dd>Platform Engineering</dd><dt>Open incidents</dt><dd>3</dd><dt>Related issues</dt><dd>14</dd><dt>Affected endpoints</dt><dd>4</dd><dt>Last activity</dt><dd>2 minutes ago</dd></dl></div>
+   <div class="trace-tooltip get-tooltip"><strong>GET/customer_info <span>Source</span></strong><dl><dt>Attack value</dt><dd>1=1</dd><dt>Environment</dt><dd>Dev</dd><dt>Requests</dt><dd>47</dd><dt>Last executed</dt><dd>11 minutes ago</dd><dt>Type</dt><dd>text/html<br>text/plain</dd></dl></div>
+   <div class="trace-cursor" aria-hidden="true"><svg viewBox="0 0 24 28" aria-hidden="true"><path d="M2 1.5v21l5.7-5.4 4.1 8.8 4-1.9-4.1-8.5h8.1Z"/></svg></div>
+   <div class="section-focus gauge"><div class="section-intro"><strong>Assess the incident’s risk</strong><span>The posture score and recent trend help analysts judge urgency.</span></div></div>
+   <div class="section-focus route"><div class="section-intro"><strong>Follow the attack path</strong><span>See how the attack moved through the application.</span></div></div>
+   <div class="section-focus assets"><div class="section-intro"><strong>Understand what is connected</strong><span>Related applications, databases, and infrastructure help analysts assess scope.</span></div></div>
+   <div class="section-focus response"><div class="section-intro"><strong>Choose how to respond</strong><span>Review available actions, from blocking an IP to creating a virtual patch.</span></div></div>
+  </div>
+  <div class="entrance-shade"></div>
+  <div class="entrance-title"><span>INCIDENT INVESTIGATION</span><strong>Investigate an incident<br>in context.</strong><p>From the attack path to affected assets and response.</p></div>
+ </div>
+ <div class="tour-track"><span></span></div>
+ <div class="tour-controls"><button class="btn" type="button" id="tour-play">Play preview</button><span class="text-small" id="tour-time">0:00 / 0:24</span><span class="sr-only" id="tour-status" aria-live="polite">Investigate an incident in context.</span></div>
+</div>
+<style>
+#incident-transition .tour-stage{position:relative;overflow:hidden;aspect-ratio:16/10;background:#03050d;container-type:inline-size}
+#incident-transition .tour-world{position:absolute;inset:0 0 auto;transform-origin:0 0;will-change:transform;aspect-ratio:1077/1800}
+#incident-transition .tour-world>img{display:block;width:100%;height:auto;max-width:none}
+#incident-transition .entrance-shade{position:absolute;inset:0;background:linear-gradient(90deg,#03050df2 0%,#03050dbd 47%,#03050d44 100%);pointer-events:none}
+#incident-transition .entrance-title{position:absolute;left:9%;top:27%;right:8%;color:#e8e9f0;font:14px/1.5 system-ui;pointer-events:none}
+#incident-transition .entrance-title>span{display:block;color:#54becb;letter-spacing:.14em;font-size:clamp(11px,1.25cqw,14px);margin-bottom:14px}
+#incident-transition .entrance-title>strong{display:block;font-size:clamp(25px,4.7cqw,48px);font-weight:500;line-height:1.12;letter-spacing:-.035em}
+#incident-transition .entrance-title p{font-size:clamp(12px,1.7cqw,18px);color:#bec1cf;margin:18px 0 0;max-width:none;white-space:nowrap}
+#incident-transition .trace-tooltip-mask{position:absolute;left:36.3%;top:45.95%;width:15.85%;height:6.85%;background:linear-gradient(to bottom,#0a0d18 0%,#0a0d18 50%,#03050d 50%,#03050d 100%)}
+#incident-transition .trace-tooltip{position:absolute;z-index:3;top:46%;padding:10px 12px;box-sizing:border-box;background:#1b1e2d;color:#d8dae5;font:clamp(11px,1.05cqw,13px)/1.5 Arial,sans-serif;box-shadow:0 5px 15px #0005;opacity:0;pointer-events:none}
+#incident-transition .pet-tooltip{left:25%;width:29%}
+#incident-transition .get-tooltip{left:36.3%;width:23%}
+#incident-transition .trace-tooltip strong{display:block;font-weight:500;white-space:nowrap;margin-bottom:8px}
+#incident-transition .trace-tooltip>span,#incident-transition .trace-tooltip strong span{color:#9da2b6}
+#incident-transition .trace-tooltip .sample-label{display:block;margin-bottom:8px;color:#9da2b6}
+#incident-transition .trace-tooltip .critical-value{color:#ff648f}
+#incident-transition .trace-tooltip dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:0}
+#incident-transition .trace-tooltip dt{color:#9da2b6}#incident-transition .trace-tooltip dd{margin:0}
+#incident-transition .trace-cursor{position:absolute;left:0;top:0;z-index:5;color:#f1f2f8;filter:drop-shadow(0 1px 2px #000);opacity:0;pointer-events:none}
+#incident-transition .trace-cursor svg{width:20px;height:20px;fill:#f1f2f8;stroke:#252938}
+#incident-transition .section-focus{position:absolute;box-sizing:border-box;border:0;background:transparent;opacity:0;pointer-events:none}
+#incident-transition .gauge-rims{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+#incident-transition .gauge-animation{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+#incident-transition .section-focus.gauge{left:14%;top:22.6%;width:24%;height:13.6%}
+#incident-transition .section-focus.route{left:12.2%;top:40.3%;width:86%;height:9.2%}
+#incident-transition .section-focus.assets{left:12.2%;top:52.8%;width:74%;height:21.5%}
+#incident-transition .section-focus.response{left:40.5%;top:27.7%;width:54%;height:6.5%}
+#incident-transition .section-intro{position:absolute;left:-1px;right:-1px;bottom:100%;padding:10px 12px;background:#0a0d19f5;border-left:2px solid #54becb;color:#e8e9f0;font:clamp(11px,1.4cqw,15px)/1.4 system-ui;box-sizing:border-box}
+#incident-transition .section-intro strong{display:block;font-weight:500;color:#67c8d4;margin-bottom:3px}
+#incident-transition .section-intro span{display:block;color:#d1d3df;font-size:clamp(11px,1.2cqw,13px)}
+#incident-transition .tour-controls{display:flex;align-items:center;flex-wrap:wrap;gap:12px;padding-top:12px}
+#incident-transition .tour-track{height:3px;background:var(--muted);margin-top:8px;overflow:hidden}
+#incident-transition .tour-track>span{display:block;height:100%;width:0;background:var(--foreground)}
+@media(prefers-reduced-motion:reduce){#incident-transition .tour-world{will-change:auto}}
+@media(max-width:500px){#incident-transition .tour-stage{aspect-ratio:1/1}#incident-transition .section-intro{padding:6px 8px}#incident-transition .section-intro span{display:none}}
+</style>
+<script>
+(()=>{
+ const root=document.getElementById('incident-transition'),world=root.querySelector('.tour-world'),stage=root.querySelector('.tour-stage'),intro=root.querySelector('.entrance-title'),shade=root.querySelector('.entrance-shade'),play=root.querySelector('#tour-play'),clock=root.querySelector('#tour-time'),track=root.querySelector('.tour-track>span'),status=root.querySelector('#tour-status');
+ const cursor=root.querySelector('.trace-cursor'),petTooltip=root.querySelector('.pet-tooltip'),getTooltip=root.querySelector('.get-tooltip');
+ const regions=[root.querySelector('.gauge'),root.querySelector('.route'),root.querySelector('.assets'),root.querySelector('.response')];
+ const needle=root.querySelector('#gauge-needle'),value=root.querySelector('#gauge-value');
+ const rimElements=Array.from(root.querySelectorAll('.gauge-rim'));
+ root.querySelector('#rim-source').setAttribute('href',world.querySelector('img').getAttribute('src'));
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ let pausedByViewer=false;
+ const frames=[{t:0,x:.32,y:.12,s:.82},{t:2.8,x:0,y:0,s:1},{t:4.5,x:-.12,y:-.29,s:1.6},{t:7,x:-.12,y:-.29,s:1.6},{t:8.5,x:-.14,y:-.57,s:1.27},{t:15.5,x:-.14,y:-.57,s:1.27},{t:17,x:-.14,y:-1.00,s:1.27},{t:18.5,x:-.14,y:-1.00,s:1.27},{t:20,x:-.39,y:-.26,s:1.48},{t:23.5,x:-.39,y:-.26,s:1.48}];
+ let elapsed=0,running=false,last=0,raf=0,active=-2;
+ const clamp=v=>Math.min(1,Math.max(0,v)),ease=v=>v*v*(3-2*v);
+ function draw(){
+  let a=frames[0],b=frames[1];for(let i=1;i<frames.length;i++){a=frames[i-1];b=frames[i];if(elapsed<=b.t)break;}
+  const p=ease(clamp((elapsed-a.t)/(b.t-a.t))),mix=k=>a[k]+(b[k]-a[k])*p,w=stage.clientWidth;
+  const gaugeLift=100*ease(clamp((elapsed-2.8)/1.7))*(1-ease(clamp((elapsed-7)/1.5)));
+  const responseLift=100*ease(clamp((elapsed-18.5)/1.5));
+  world.style.transform=`translate(${mix('x')*w}px,${mix('y')*w-gaugeLift-responseLift}px) scale(${mix('s')})`;
+  world.style.opacity=String(.45+.55*ease(clamp(elapsed/2.5)));
+  const introOut=ease(clamp((elapsed-2.6)/1.2));intro.style.opacity=String(1-introOut);intro.style.transform=`translateY(${-24*introOut}px)`;shade.style.opacity=String(1-introOut);
+  const step=elapsed<4?-1:elapsed<8?0:elapsed<16.5?1:elapsed<23.5?2:3;
+  const gaugeProgress=ease(clamp(elapsed/6.7));value.textContent=(7.4*gaugeProgress).toFixed(1);needle.setAttribute('transform',`rotate(${-90+132*gaugeProgress} 280 493)`);
+  rimElements.forEach((rim,i)=>{const threshold=[0,2.5,5,7.5][i];rim.setAttribute('opacity',String(elapsed>0?clamp((7.4*gaugeProgress-threshold)/.25):0));});
+  const moveToPet=ease(clamp((elapsed-8.5)/.7)),moveToGet=ease(clamp((elapsed-11.5)/1));
+  const cursorX=(.27+(.313-.27)*moveToPet)+(.441-.313)*moveToGet;
+  const cursorY=.76+(.733-.76)*moveToPet;
+  cursor.style.transform=`translate(${cursorX*w}px,${cursorY*w}px)`;
+  cursor.style.opacity=elapsed>=8.5&&elapsed<15.5?'1':'0';
+  petTooltip.style.opacity=elapsed>=9.2&&elapsed<11.5?'1':'0';
+  getTooltip.style.opacity=elapsed>=12.5&&elapsed<15.5?'1':'0';
+  regions.forEach((region,i)=>{const start=[4,8,16.5,19.5][i],end=[7,15.5,18.5,23.5][i];const enter=ease(clamp((elapsed-start)/.75)),leave=i<3?ease(clamp((elapsed-end)/.75)):0;region.style.opacity=String(enter*(1-leave));region.querySelector('.section-intro').style.transform=`translateY(${12*(1-enter)-(i===0?60/mix('s'):0)}px)`;});
+  if(step!==active){active=step;status.textContent=['Assess the incident’s risk.','Follow the attack path.','Understand what is connected.','Choose how to respond.'][step]||'Investigate an incident in context.';}
+  track.style.width=`${elapsed/23.5*100}%`;clock.textContent=`0:${String(Math.floor(elapsed)).padStart(2,'0')} / 0:24`;play.textContent=running?'Pause':elapsed>=23.5?'Replay':'Play preview';
+ }
+ function tick(now){if(!running)return;elapsed=Math.min(23.5,elapsed+(now-last)/1000);last=now;if(elapsed>=23.5)running=false;draw();if(running)raf=requestAnimationFrame(tick);}
+ function start(){cancelAnimationFrame(raf);if(elapsed>=23.5)elapsed=0;running=true;last=performance.now();draw();raf=requestAnimationFrame(tick);}
+ play.addEventListener('click',()=>{if(running){pausedByViewer=true;running=false;cancelAnimationFrame(raf);draw();}else{pausedByViewer=false;start();}});new ResizeObserver(draw).observe(stage);draw();
+ window.addEventListener('message',event=>{if(event.source!==window.parent||event.origin!==location.origin||event.data?.type!=='incident-tour-visibility')return;const visible=event.data.visible;if(visible&&!reduced&&!pausedByViewer&&elapsed<23.5){if(!running)start();}else if(!visible&&running){running=false;cancelAnimationFrame(raf);draw();}});
+ window.parent.postMessage({type:'incident-tour-ready'},location.origin);
+})();
+</script>
+</body></html>
