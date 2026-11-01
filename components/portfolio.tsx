@@ -391,7 +391,7 @@ function LegacyBeforeSnapshot({keyName}:{keyName:string}) {
         animations.push(annotation.animate([
           {transform:'translateY(30px)',opacity:.2},
           {transform:'translateY(0)',opacity:1},
-        ],{duration:2000,easing:'cubic-bezier(.22,1,.36,1)',fill:'both'}));
+        ],{duration:3000,easing:'cubic-bezier(.22,1,.36,1)',fill:'both'}));
       });
       observer.disconnect();
     },{threshold:.25});
