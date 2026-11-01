@@ -1,0 +1,28 @@
+
+#project #telemetry-cases .case-surface{background:#f5f8f8;color:#18282b;font-family:Arial,sans-serif;padding:28px 22px 22px;border-block:1px solid #d2dadd;container-type:inline-size}
+#project #telemetry-cases header{margin-bottom:28px}
+#project #telemetry-cases .eyebrow{font-size:11px;font-weight:500;letter-spacing:.12em;color:#24595e}
+#project #telemetry-cases h2{font-size:23px;line-height:1.25;font-weight:500;letter-spacing:-.025em;margin:10px 0 0;max-width:none;white-space:nowrap}
+#project #telemetry-cases .case-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));column-gap:18px;position:relative}
+#project #telemetry-cases .stage-head{position:relative;padding:12px 10px 20px;display:flex;flex-direction:column;align-items:flex-start;gap:12px;border-bottom:1px solid #c6d7d7}
+#project #telemetry-cases .stage-head>span{font-size:10px;letter-spacing:.14em;color:#45666c}
+#project #telemetry-cases .stage-head>svg{width:22px;height:22px;stroke-width:1.5;color:#3d7e83}
+#project #telemetry-cases h3{font-size:clamp(12px,1.8cqw,15px);font-weight:500;line-height:1.3;margin:0;min-height:2.6em;letter-spacing:.025em;color:#294d54}
+#project #telemetry-cases .product{background:#eaf2f1}
+#project #telemetry-cases .case-label{grid-column:1/-1;display:flex;align-items:center;flex-wrap:wrap;gap:8px 10px;padding:20px 10px 10px}
+#project #telemetry-cases .case-label>svg{width:18px;height:18px;color:#397d81;stroke-width:1.5}
+#project #telemetry-cases .case-label>strong{font-size:15px;font-weight:500;letter-spacing:.015em;color:#17383d;flex:0 0 88px}
+#project #telemetry-cases .case-label>span{font-size:12px;color:#3e575d;margin-left:6px;padding-left:12px;border-left:1px solid #a9c2c4}
+#project #telemetry-cases .event{position:relative;min-width:0;padding:17px 10px 20px;border-bottom:1px solid #d7e0e0;transition:background .4s}
+#project #telemetry-cases .event-content{display:flex;flex-direction:column;gap:10px}
+#project #telemetry-cases .event-icon{display:flex;width:26px;height:26px;color:#245f65;transform-origin:center}
+#project #telemetry-cases .event-icon svg{width:24px;height:24px;stroke-width:1.7}
+#project #telemetry-cases .event p{position:relative;margin:0;font-size:clamp(12px,1.75cqw,15px);line-height:1.5;color:#233e45;font-weight:400}
+#project #telemetry-cases .event:not([data-step="4"]):after{content:'';position:absolute;right:-12px;top:50%;z-index:1;width:8px;height:8px;border-top:2px solid #345f65;border-right:2px solid #345f65;border-radius:1px;transform:translateY(-50%) rotate(45deg)}
+#project #telemetry-cases .event.active{background:#d9ebe8}
+#project #telemetry-cases .event.active p{color:#0d5056}#project #telemetry-cases .event[data-step="4"] p{font-weight:500;color:#123e44}#project #telemetry-cases .event[data-step="4"] .event-icon{color:#146c72}#project #telemetry-cases .case-label{border-top:1px solid #cbd9da;margin-top:6px}#project #telemetry-cases .case-label.logistics{border-top:0;margin-top:0}
+#project #telemetry-cases .mobile-stage{display:none}
+#project #telemetry-cases .case-controls{padding-top:12px}
+@media(max-width:560px){#project #telemetry-cases .case-surface{padding:24px 16px 16px}#project #telemetry-cases h2{font-size:clamp(10px,3.05cqw,17px)}#project #telemetry-cases .case-grid{display:block}#project #telemetry-cases .stage-head{display:none}#project #telemetry-cases .case-label{padding:20px 8px 14px}#project #telemetry-cases .case-label>span{flex-basis:100%;margin-left:28px;padding-left:0;border-left:0}#project #telemetry-cases .event{display:grid;grid-template-columns:100px minmax(0,1fr);gap:12px;padding:13px 10px 13px 22px;border-left:1px solid #b3cbcc;border-bottom:0;margin-left:12px}#project #telemetry-cases .event:before{content:'';position:absolute;left:-3px;top:19px;width:5px;height:5px;border-radius:50%;background:#63999c}#project #telemetry-cases .event:not([data-step="4"]):after{display:none}#project #telemetry-cases .mobile-stage{display:block;color:#3e575d;font-size:11px;line-height:1.5}#project #telemetry-cases .event p{font-size:13px}}
+
+#project #telemetry-cases{margin:32px 0;}#project #telemetry-cases .case-controls .btn{background:transparent;border:1px solid #666;border-radius:4px;padding:8px 13px;color:#85bedb;font:inherit;font-size:13px;cursor:pointer;}#project #telemetry-cases .case-controls .btn:disabled{opacity:.5;cursor:default;}#project #telemetry-cases .case-controls .btn:focus-visible{outline:2px solid #85bedb;outline-offset:3px;}
