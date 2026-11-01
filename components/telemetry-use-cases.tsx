@@ -1,6 +1,6 @@
 'use client';
 import {useEffect,useRef} from 'react';
-import {Radio,Network,PanelsTopLeft,ScanSearch,BellRing,Truck,Hospital,Thermometer,Package,TriangleAlert,MapPin,ClipboardList,MapPinned,Navigation} from 'lucide-react';
+import {Radio,ArrowUpRight,Thermometer,BedSingle,Cross,MapPin,LocateFixed} from 'lucide-react';
 import './telemetry-use-cases.css';
 
 export function TelemetryUseCases(){
@@ -8,61 +8,56 @@ export function TelemetryUseCases(){
  useEffect(()=>{
   const root=rootRef.current;
   if(!root)return;
-  const button=root.querySelector<HTMLButtonElement>('#case-replay')!;
-  const events=Array.from(root.querySelectorAll<HTMLElement>('.event'));
+  const button=root.querySelector<HTMLButtonElement>('#scene-replay')!;
+  const targets=Array.from(root.querySelectorAll<HTMLElement>('.reveal'));
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let animations:Animation[]=[];
-  let timer:ReturnType<typeof setTimeout>|undefined;
   function play(){
-   clearTimeout(timer);
-   animations.forEach(a=>a.cancel());animations=[];
-   button.disabled=true;
-   events.forEach(event=>event.classList.remove('active'));
-   events.forEach(event=>{
-    const delay=Number(event.dataset.step)*750;
-    const animation=event.querySelector('p')!.animate([{opacity:.25},{opacity:1}],{duration:1100,delay,easing:'cubic-bezier(.22,1,.36,1)',fill:'both'});
-    animations.push(animation);
-    const step=Number(event.dataset.step);
-    const iconFrames=step===4
-      ?[{transform:'rotate(0deg)'},{transform:'rotate(-12deg)',offset:.25},{transform:'rotate(10deg)',offset:.5},{transform:'rotate(-6deg)',offset:.75},{transform:'rotate(0deg)'}]
-      :step===1
-        ?[{transform:'scale(1)',opacity:.4},{transform:'scale(1.15)',opacity:1,offset:.5},{transform:'scale(1)',opacity:1}]
-        :[{transform:'scale(.85)',opacity:.35},{transform:'scale(1.08)',opacity:1,offset:.65},{transform:'scale(1)',opacity:1}];
-    animations.push(event.querySelector('.event-icon')!.animate(iconFrames,{duration:1100,delay,easing:'ease-in-out',fill:'both'}));
-    animation.finished.then(()=>event.classList.add('active')).catch(()=>{});
+   animations.forEach(animation=>animation.cancel());animations=[];
+   targets.forEach(element=>{
+    const action=element.classList.contains('scene-action');
+    const pin=element.classList.contains('equipment-pin');
+    animations.push(element.animate([
+      {opacity:0,transform:pin?'scale(.75)':'translateY(8px)'},
+      {opacity:1,transform:pin?'scale(1)':'translateY(0)'},
+    ],{duration:1400,delay:action?1300:pin?650:350,easing:'cubic-bezier(.22,1,.36,1)',fill:'both'}));
    });
-   timer=setTimeout(()=>{button.disabled=false;},4500);
   }
   button.addEventListener('click',play);
   const observer=new IntersectionObserver(entries=>{
-   if(entries.some(e=>e.isIntersecting)){if(!reduced)play();observer.disconnect();}
-  },{threshold:.35});
-  observer.observe(root.querySelector('.case-surface')!);
-  return ()=>{observer.disconnect();clearTimeout(timer);button.removeEventListener('click',play);animations.forEach(a=>a.cancel());};
+   if(entries.some(entry=>entry.isIntersecting)){if(!reduced)play();observer.disconnect();}
+  },{threshold:.3});
+  observer.observe(root.querySelector('.worlds')!);
+  return ()=>{observer.disconnect();button.removeEventListener('click',play);animations.forEach(animation=>animation.cancel());};
  },[]);
- return (<div id="telemetry-cases" ref={rootRef}>
- <section className="case-surface" aria-label="One telemetry model supporting logistics and healthcare">
-  <header><span className="eyebrow">ONE SHARED TELEMETRY MODEL</span><h2>Different environments. The same path to action.</h2></header>
-  <div className="case-grid">
-   <div className="stage-head"><span>01</span><Radio aria-hidden="true" /><h3>Sensor</h3></div>
-   <div className="stage-head"><span>02</span><Network aria-hidden="true" /><h3>Network</h3></div>
-   <div className="stage-head product"><span>03</span><PanelsTopLeft aria-hidden="true" /><h3>Web &amp; mobile</h3></div>
-   <div className="stage-head product"><span>04</span><ScanSearch aria-hidden="true" /><h3>Asset intelligence</h3></div>
-   <div className="stage-head product"><span>05</span><BellRing aria-hidden="true" /><h3>Action</h3></div>
-   <div className="case-label logistics"><Truck aria-hidden="true" /><strong>Logistics</strong><span>Protect a shipment’s condition</span></div>
-   <div className="event logistics" data-step="0"><span className="mobile-stage">Sensor</span><div className="event-content"><span className="event-icon" aria-hidden="true"><Thermometer aria-hidden="true" /></span><p>Temperature rises</p></div></div>
-   <div className="event logistics" data-step="1"><span className="mobile-stage">Network</span><div className="event-content"><span className="event-icon" aria-hidden="true"><Radio aria-hidden="true" /></span><p>Reading received</p></div></div>
-   <div className="event logistics product" data-step="2"><span className="mobile-stage">Web &amp; mobile</span><div className="event-content"><span className="event-icon" aria-hidden="true"><Package aria-hidden="true" /></span><p>Linked to a shipment</p></div></div>
-   <div className="event logistics product" data-step="3"><span className="mobile-stage">Asset intelligence</span><div className="event-content"><span className="event-icon" aria-hidden="true"><TriangleAlert aria-hidden="true" /></span><p>Condition risk identified</p></div></div>
-   <div className="event logistics product" data-step="4"><span className="mobile-stage">Action</span><div className="event-content"><span className="event-icon" aria-hidden="true"><BellRing aria-hidden="true" /></span><p>Cargo team alerted</p></div></div>
-   <div className="case-label healthcare"><Hospital aria-hidden="true" /><strong>Healthcare</strong><span>Find equipment when it is needed</span></div>
-   <div className="event healthcare" data-step="0"><span className="mobile-stage">Sensor</span><div className="event-content"><span className="event-icon" aria-hidden="true"><MapPin aria-hidden="true" /></span><p>Equipment changes location</p></div></div>
-   <div className="event healthcare" data-step="1"><span className="mobile-stage">Network</span><div className="event-content"><span className="event-icon" aria-hidden="true"><Radio aria-hidden="true" /></span><p>Location update received</p></div></div>
-   <div className="event healthcare product" data-step="2"><span className="mobile-stage">Web &amp; mobile</span><div className="event-content"><span className="event-icon" aria-hidden="true"><ClipboardList aria-hidden="true" /></span><p>Linked to the equipment record</p></div></div>
-   <div className="event healthcare product" data-step="3"><span className="mobile-stage">Asset intelligence</span><div className="event-content"><span className="event-icon" aria-hidden="true"><MapPinned aria-hidden="true" /></span><p>Current location shown</p></div></div>
-   <div className="event healthcare product" data-step="4"><span className="mobile-stage">Action</span><div className="event-content"><span className="event-icon" aria-hidden="true"><Navigation aria-hidden="true" /></span><p>Staff locate the equipment</p></div></div>
+ return (<div id="telemetry-scenes" ref={rootRef}>
+ <section className="story">
+  <header><span className="overline">TRACKONOMY / CONNECTED ASSET INTELLIGENCE</span><h2>One sensor. A world of useful signals.</h2></header>
+  <div className="origin"><div className="sensor"><span></span><Radio aria-hidden="true" /></div><div><strong>One shared telemetry model</strong><span>Location / Temperature / Vibration / Light &amp; dark</span></div></div>
+  <div className="branches" aria-hidden="true"><span></span><span></span></div>
+  <div className="worlds">
+   <article className="world cargo">
+    <div className="world-label"><span><small>01</small>Logistics</span><ArrowUpRight aria-hidden="true" /></div>
+    <div className="scene shipment" role="img" aria-label="A sensor on a shipment detects a temperature change and prompts an alert to the cargo team.">
+     <div className="global-globe" aria-hidden="true"><span className="longitude lon-one"></span><span className="longitude lon-two"></span><span className="latitude lat-one"></span><span className="latitude lat-two"></span><span className="equator"></span></div><span className="global-label">GLOBAL ASSET VISIBILITY</span><div className="route-line"></div><div className="route-point start"></div><div className="route-point end"></div>
+     <span className="route-label">IN TRANSIT</span>
+     <div className="parcel"><div className="parcel-top"></div><div className="parcel-front"><span className="parcel-label"><b></b><b></b><b></b><b></b><b></b><b></b></span><div className="parcel-sensor"><span></span></div></div><div className="parcel-side"></div></div>
+     <div className="signal-reading reveal"><span className="reading-label"><Thermometer aria-hidden="true" />Condition change</span><svg viewBox="0 0 150 30" aria-label="Temperature trend rising"><path d="M0 25 L20 23 L40 24 L60 18 L80 19 L100 10 L120 12 L150 2" fill="none" stroke="currentColor" strokeWidth="1.6"/></svg><strong>Temperature rising</strong></div>
+     <div className="scene-action reveal"><span className="status-dot"></span>Cargo team alerted</div>
+    </div>
+    <div className="world-copy"><span className="small-label">LOCATION, CONDITION &amp; OPERATIONAL CONTEXT</span><h3>Operational awareness, wherever assets move.</h3><p>Track shipments and field equipment, understand changing conditions, and coordinate the next action.</p></div>
+   </article>
+   <article className="world care">
+    <div className="world-label"><span><small>02</small>Healthcare</span><ArrowUpRight aria-hidden="true" /></div>
+    <div className="scene hospital" role="img" aria-label="A hospital floor plan shows equipment location so staff can find it when needed.">
+     <div className="floorplan"><div className="room room-a"><span>Rooms</span><BedSingle aria-hidden="true" /></div><div className="room room-b"><BedSingle aria-hidden="true" /></div><div className="room room-c"><span>Equipment</span></div><div className="room room-d"><span>Care team</span><Cross aria-hidden="true" /></div><div className="hall-path"></div><div className="staff-dot"></div><div className="equipment-pin reveal"><MapPin aria-hidden="true" /></div></div>
+     <div className="location-reading reveal"><span className="reading-label"><LocateFixed aria-hidden="true" />Location updated</span><strong>Equipment located</strong><span>Floor-level context</span></div>
+     <div className="scene-action reveal"><span className="status-dot"></span>Staff find the equipment</div>
+    </div>
+    <div className="world-copy"><span className="small-label">FROM LOCATION TO AVAILABILITY</span><h3>Find what care depends on.</h3><p>Turn equipment location into useful guidance for staff working on the floor.</p></div>
+   </article>
   </div>
  </section>
- <div className="case-controls"><button className="btn" type="button" id="case-replay">Replay sequence</button></div>
+ <div className="controls"><button className="btn" type="button" id="scene-replay">Replay</button></div>
 </div>);
 }
