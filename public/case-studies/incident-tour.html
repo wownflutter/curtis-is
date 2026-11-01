@@ -77,7 +77,8 @@
   const p=ease(clamp((elapsed-a.t)/(b.t-a.t))),mix=k=>a[k]+(b[k]-a[k])*p,w=stageWidth;
   const gaugeLift=100*ease(clamp((elapsed-2.8)/1.7))*(1-ease(clamp((elapsed-7)/1.5)));
   const responseLift=100*ease(clamp((elapsed-18.5)/1.5));
-  world.style.transform=`translate3d(${mix('x')*w}px,${mix('y')*w-gaugeLift-responseLift}px,0) scale(${mix('s')})`;
+  const traceLift=80*ease(clamp((elapsed-7)/1.5))*(1-ease(clamp((elapsed-15.5)/1.5)));
+  world.style.transform=`translate3d(${mix('x')*w}px,${mix('y')*w-gaugeLift-responseLift-traceLift}px,0) scale(${mix('s')})`;
   world.style.opacity=String(.45+.55*ease(clamp(elapsed/2.5)));
   const introOut=ease(clamp((elapsed-2.6)/1.2));intro.style.opacity=String(1-introOut);intro.style.transform=`translateY(${-24*introOut}px)`;shade.style.opacity=String(1-introOut);
   const step=elapsed<4?-1:elapsed<8?0:elapsed<16.5?1:elapsed<23.5?2:3;
