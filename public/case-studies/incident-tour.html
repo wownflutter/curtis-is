@@ -91,8 +91,8 @@
   if(step!==active){active=step;status.textContent=['Assess the incident’s risk.','Follow the attack path.','Understand what is connected.','Choose how to respond.'][step]||'Investigate an incident in context.';}
   track.style.width=`${elapsed/23.5*100}%`;clock.textContent=`0:${String(Math.floor(elapsed)).padStart(2,'0')} / 0:24`;play.textContent=running?'Pause':elapsed>=23.5?'Replay':'Play preview';
  }
- function tick(now){if(!running)return;elapsed=Math.min(23.5,elapsed+(now-last)/1000);last=now;if(elapsed>=23.5)running=false;draw();if(running)raf=requestAnimationFrame(tick);}
- function start(){cancelAnimationFrame(raf);if(elapsed>=23.5)elapsed=0;running=true;last=performance.now();draw();raf=requestAnimationFrame(tick);}
+ function tick(now){if(!running)return;if(last===0)last=now;elapsed=Math.min(23.5,elapsed+Math.max(0,now-last)/1000);last=now;if(elapsed>=23.5)running=false;draw();if(running)raf=requestAnimationFrame(tick);}
+ function start(){cancelAnimationFrame(raf);if(elapsed>=23.5)elapsed=0;running=true;last=0;draw();raf=requestAnimationFrame(tick);}
  play.addEventListener('click',()=>{if(running){pausedByViewer=true;running=false;cancelAnimationFrame(raf);draw();}else{pausedByViewer=false;start();}});new ResizeObserver(draw).observe(stage);draw();
  window.addEventListener('message',event=>{if(event.source!==window.parent||event.origin!==location.origin||event.data?.type!=='incident-tour-visibility')return;const visible=event.data.visible;if(visible&&!reduced&&!pausedByViewer&&elapsed<23.5){if(!running)start();}else if(!visible&&running){running=false;cancelAnimationFrame(raf);draw();}});
  window.parent.postMessage({type:'incident-tour-ready'},location.origin);
