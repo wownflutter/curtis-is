@@ -389,7 +389,7 @@ function LegacyBeforeSnapshot({keyName}:{keyName:string}) {
       if(!entries.some(entry=>entry.isIntersecting))return;
       stage.querySelectorAll<HTMLElement>('.legacy-annotation').forEach(annotation=>{
         animations.push(annotation.animate([
-          {transform:'translateY(20px)',opacity:.2},
+          {transform:'translateY(30px)',opacity:.2},
           {transform:'translateY(0)',opacity:1},
         ],{duration:2000,easing:'cubic-bezier(.22,1,.36,1)',fill:'both'}));
       });
