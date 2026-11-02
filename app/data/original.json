@@ -2516,67 +2516,74 @@
                     },
                     "\n\n",
                     {
-                      "tag": "p",
+                      "tag": "section",
                       "props": {
-                        "style": {
-                          "paddingTop": 15,
-                          "paddingBottom": 15
-                        }
+                        "className": "screen-story"
                       },
                       "children": [
-                        "Asset filtering appeared in a side sheet so users could refine large inventories while keeping the operational context visible."
-                      ]
-                    },
-                    "\n                \n                \n                \n                    ",
-                    {
-                      "tag": "div",
-                      "props": {
-                        "id": "project-header",
-                        "className": "toppadding"
-                      },
-                      "children": [
-                        "\n\t",
                         {
-                          "tag": "img",
-                          "props": {
-                            "className": "fullimage",
-                            "src": "/case-studies/tr-asset-list-filtering@2x.png",
-                            "alt": "Asset List Filtered",
-                            "decoding": "async"
-                          },
-                          "children": []
+                          "tag": "p",
+                          "props": {},
+                          "children": [
+                            "Asset filtering appeared in a side sheet so users could refine large inventories while keeping the operational context visible."
+                          ]
                         },
-                        "\n"
+                        {
+                          "tag": "div",
+                          "props": {
+                            "className": "screen-story-media"
+                          },
+                          "children": [
+                            "\n\t",
+                            {
+                              "tag": "img",
+                              "props": {
+                                "className": "fullimage",
+                                "src": "/case-studies/tr-asset-list-filtering@2x.png",
+                                "alt": "Asset List Filtered",
+                                "decoding": "async"
+                              },
+                              "children": []
+                            },
+                            "\n"
+                          ]
+                        }
                       ]
                     },
                     "\n\n",
                     {
-                      "tag": "p",
-                      "props": {},
-                      "children": [
-                        "Asset details combined location, telemetry trends, connected sensors, and network relationships in one view. This was the point where raw sensor readings became understandable asset intelligence."
-                      ]
-                    },
-                    "\n                \n                    ",
-                    {
-                      "tag": "div",
+                      "tag": "section",
                       "props": {
-                        "id": "project-header",
-                        "className": "toppadding"
+                        "className": "screen-story"
                       },
                       "children": [
-                        "\n\t",
                         {
-                          "tag": "img",
-                          "props": {
-                            "className": "fullimage",
-                            "src": "/case-studies/tr-sensor-details@2x.png",
-                            "alt": "Asset Details",
-                            "decoding": "async"
-                          },
-                          "children": []
+                          "tag": "p",
+                          "props": {},
+                          "children": [
+                            "Asset details combined location, telemetry trends, connected sensors, and network relationships in one view. This was the point where raw sensor readings became understandable asset intelligence."
+                          ]
                         },
-                        "\n"
+                        {
+                          "tag": "div",
+                          "props": {
+                            "className": "screen-story-media"
+                          },
+                          "children": [
+                            "\n\t",
+                            {
+                              "tag": "img",
+                              "props": {
+                                "className": "fullimage",
+                                "src": "/case-studies/tr-sensor-details@2x.png",
+                                "alt": "Asset Details",
+                                "decoding": "async"
+                              },
+                              "children": []
+                            },
+                            "\n"
+                          ]
+                        }
                       ]
                     },
                     "\n\n                \n ",

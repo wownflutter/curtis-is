@@ -706,3 +706,9 @@
 #project .motion-video-controls button:focus-visible{outline:2px solid #287c7a;outline-offset:3px;}
 
 #project .motion-video-controls{padding-bottom:30px;}
+
+#project .screen-story{margin:48px 0 0;padding:0;}
+#project .screen-story>p{margin:0 0 20px;padding:0;}
+#project .screen-story .screen-story-media{margin:0;padding:0;}
+#project .screen-story .screen-story-media img{display:block;margin:0;width:100%;height:auto;}
+@media(max-width:640px){#project .screen-story{margin-top:32px;}#project .screen-story>p{margin-bottom:16px;}}
