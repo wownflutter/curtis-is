@@ -38,7 +38,7 @@ function IncidentWalkthrough() {
     <figcaption className="motion-prototype-caption">
       <span className="motion-caption-eyebrow"><Play aria-hidden="true" fill="currentColor" />Investigate / Motion demo</span>
     </figcaption>
-    <iframe ref={frame} src="/case-studies/incident-tour.html?v=20261101-endpoint-heading" title="Incident investigation walkthrough" loading="eager" style={{display:'block',width:'100%',height:640,border:0}} />
+    <iframe ref={frame} src="/case-studies/incident-walkthrough-v3.html" title="Incident investigation walkthrough" loading="eager" style={{display:'block',width:'100%',height:640,border:0}} />
   </figure>;
 }
 
