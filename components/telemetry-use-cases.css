@@ -55,3 +55,28 @@
 @media(max-width:560px){#project #telemetry-scenes .overline{font-size:10px}#project #telemetry-scenes .origin strong{font-size:14px}#project #telemetry-scenes .origin>div>span{font-size:11px}#project #telemetry-scenes .origin{align-items:flex-start}#project #telemetry-scenes .origin>div:last-child{max-width:220px}#project #telemetry-scenes .sensor{flex-shrink:0}#project #telemetry-scenes .world-label{font-size:25px}#project #telemetry-scenes .scene{height:330px}}
 
 #project #telemetry-scenes{margin:32px 0;}#project #telemetry-scenes header{text-align:center;}#project #telemetry-scenes .world,#project #telemetry-scenes .world-copy,#project #telemetry-scenes p{text-align:left;}#project #telemetry-scenes h2{color:#172e32;}#project #telemetry-scenes .controls .btn{background:transparent;border:1px solid #666;border-radius:4px;padding:8px 13px;color:#85bedb;font:inherit;font-size:13px;cursor:pointer;}#project #telemetry-scenes .controls .btn:focus-visible{outline:2px solid #85bedb;outline-offset:3px;}
+
+/* Keep illustration structure legible against the light scene surfaces. */
+#project #telemetry-scenes .sensor{border-color:#77998d;box-shadow:0 4px 10px #173b3520;}
+#project #telemetry-scenes .sensor svg{color:#315e50;stroke-width:1.7;}
+#project #telemetry-scenes .sensor>span{background:#286c57;}
+#project #telemetry-scenes .branches:before{background:#7f9f95;}
+#project #telemetry-scenes .branches>span{border-color:#7f9f95;}
+#project #telemetry-scenes .global-globe{border-color:#799177a6;background:radial-gradient(circle at 35% 35%,#f4f4e920,#a8b8a225);}
+#project #telemetry-scenes .global-globe span{border-color:#7991778c;}
+#project #telemetry-scenes .route-line{border-top:1.5px dashed #6d8666;}
+#project #telemetry-scenes .route-point{background:#456943;}
+#project #telemetry-scenes .parcel-front{background:#b99e73;}
+#project #telemetry-scenes .parcel-top{background:#d2ba8c;}
+#project #telemetry-scenes .parcel-side{background:#8d7751;}
+#project #telemetry-scenes .parcel-sensor{border-color:#6b8773;}
+#project #telemetry-scenes .parcel-label b{background:#43503e;}
+#project #telemetry-scenes .signal-reading,#project #telemetry-scenes .location-reading{border-color:#a5b9ac;box-shadow:0 8px 20px #293a2d12;}
+#project #telemetry-scenes .signal-reading>svg{color:#88602e;stroke-width:2;}
+#project #telemetry-scenes .floorplan{background:#f6faf7;border:1.5px solid #6f9587;box-shadow:0 12px 20px #36564b18;}
+#project #telemetry-scenes .room{background:#d7e5dc;border:1.5px solid #7d9e8d;}
+#project #telemetry-scenes .room svg{color:#3c6553;stroke-width:1.6;}
+#project #telemetry-scenes .room span{color:#294e3c;}
+#project #telemetry-scenes .hall-path{border-color:#276d58;border-top-width:2.5px;border-right-width:2.5px;}
+#project #telemetry-scenes .staff-dot{background:#326c56;}
+#project #telemetry-scenes .equipment-pin{background:#174e3e;box-shadow:0 0 0 6px #285b512b;}
