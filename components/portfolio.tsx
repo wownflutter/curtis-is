@@ -111,9 +111,9 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
   const poster=source==='/case-studies/explorer-animation.mp4'
     ? '/case-studies/explorer-animation-poster.webp'
     : isRemediation ? '/case-studies/cont-ai-review-poster.webp' : undefined;
-  const renderedChildren=(isExplorer || isTrackonomy || isDesignSystem) ? nodeChildren.map(child=>
+  const renderedChildren=(isRemediation || isExplorer || isTrackonomy || isDesignSystem) ? nodeChildren.map(child=>
     typeof child!=='string' && child.tag==='source'
-      ? {...child,props:{...child.props,src:`${source}?v=${isExplorer?'7':'2'}`}}
+      ? {...child,props:{...child.props,src:`${source}?v=${isRemediation?'hover-1':isExplorer?'7':'2'}`}}
       : child
   ) : nodeChildren;
 
@@ -204,7 +204,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
       {playback.waiting&&<span role="status">Buffering</span>}
     </div>
   </div>:null;
-  if(motionDescription)return <figure className={`motion-prototype-stage${isRemediation?' motion-prototype-dark':''}`}>
+  if(motionDescription)return <figure className={`motion-prototype-stage${isRemediation?' motion-prototype-dark remediation-motion':''}`}>
     <figcaption className="motion-prototype-caption">
       <span className="motion-caption-eyebrow"><Play aria-hidden="true" fill="currentColor" />{motionHeading.label} / Motion demo</span>
       <strong className="motion-caption-title">{motionHeading.title}</strong>

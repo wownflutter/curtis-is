@@ -719,6 +719,7 @@
 
 /* Keep introductory copy visually connected to its own screen with room to breathe. */
 #project .motion-prototype-stage>.motion-prototype-caption{margin-bottom:30px;}
+#project .remediation-motion>.motion-prototype-caption{margin-bottom:20px;}
 #project .screen-story>p{margin-bottom:30px;}
 
 /* Motion labels must remain readable on both case-study themes. */
