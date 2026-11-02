@@ -87,3 +87,8 @@
 #project #telemetry-scenes .global-label,#project #telemetry-scenes .route-label{font-family:var(--font-body);font-size:12px;font-weight:600;letter-spacing:.035em;color:#314f36;}
 #project #telemetry-scenes .world-label small{font-size:13px;font-weight:500;color:#34534d;}
 @media(max-width:560px){#project #telemetry-scenes .overline{font-size:11px;letter-spacing:.035em;}#project #telemetry-scenes .small-label{font-size:12px;}#project #telemetry-scenes .global-label,#project #telemetry-scenes .route-label{font-size:11px;}}
+
+/* Branch from the complete sensor group, not an individual parameter. */
+#project #telemetry-scenes .origin{padding-bottom:22px;border-bottom:1px solid #7f9f95;max-width:610px;margin:0 auto;align-items:center;}
+#project #telemetry-scenes .branches:before{top:0;}
+@media(max-width:560px){#project #telemetry-scenes .origin{gap:12px;padding-bottom:22px;}#project #telemetry-scenes .origin>div:last-child{min-width:0;}#project #telemetry-scenes .sensor{flex-shrink:0;}}
