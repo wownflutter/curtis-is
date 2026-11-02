@@ -2517,7 +2517,12 @@
                     "\n\n",
                     {
                       "tag": "p",
-                      "props": {},
+                      "props": {
+                        "style": {
+                          "paddingTop": 15,
+                          "paddingBottom": 15
+                        }
+                      },
                       "children": [
                         "Asset filtering appeared in a side sheet so users could refine large inventories while keeping the operational context visible."
                       ]
