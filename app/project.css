@@ -704,3 +704,5 @@
 #project .motion-video-controls .motion-playback-meta{justify-content:flex-start;gap:14px;margin:12px 0 0;}
 #project .motion-video-controls button{border:1px solid #879795;border-radius:4px;padding:7px 14px;background:transparent;color:#246f73;font:inherit;cursor:pointer;}
 #project .motion-video-controls button:focus-visible{outline:2px solid #287c7a;outline-offset:3px;}
+
+#project .motion-video-controls{padding-bottom:30px;}
