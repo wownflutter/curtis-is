@@ -4077,14 +4077,33 @@
                           "children": [
                             "\n\t",
                             {
-                              "tag": "img",
+                              "tag": "video",
                               "props": {
-                                "className": "fullimage",
-                                "src": "/case-studies/cont-issue-remediation.png",
-                                "alt": "AI How to Fix",
-                                "decoding": "async"
+                                "className": "img-responsive",
+                                "style": {
+                                  "width": "100%",
+                                  "height": "auto",
+                                  "outline": "none",
+                                  "border": "none"
+                                },
+                                "width": 1920,
+                                "height": 1080,
+                                "muted": true,
+                                "loop": false,
+                                "playsInline": true,
+                                "preload": "metadata",
+                                "aria-label": "AI fix review and pull request approval walkthrough"
                               },
-                              "children": []
+                              "children": [
+                                {
+                                  "tag": "source",
+                                  "props": {
+                                    "src": "/case-studies/cont-ai-review.mp4",
+                                    "type": "video/mp4"
+                                  },
+                                  "children": []
+                                }
+                              ]
                             },
                             "\n"
                           ]

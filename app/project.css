@@ -706,6 +706,10 @@
 #project .motion-video-controls button:focus-visible{outline:2px solid #287c7a;outline-offset:3px;}
 
 #project .motion-video-controls{padding-bottom:30px;}
+#project .motion-prototype-dark .motion-video-controls{color:#c4c4c4;}
+#project .motion-prototype-dark .motion-playback-track{background:#5f5f5f;}
+#project .motion-prototype-dark .motion-playback-track>span{background:#dedede;}
+#project .motion-prototype-dark .motion-video-controls button{border-color:#777;color:#85bedb;}
 
 #project .screen-story{margin:48px 0 0;padding:0;}
 #project .screen-story>p{margin:0 0 20px;padding:0;}

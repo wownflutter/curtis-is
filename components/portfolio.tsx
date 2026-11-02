@@ -71,7 +71,8 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
   const sequenceRef=useRef<HTMLSpanElement>(null);
   const source=videoSource(nodeChildren);
   const isExplorer=source==='/case-studies/explorer-animation.mp4';
-  const showPlayback=(source.startsWith('/case-studies/tr-') || source==='/case-studies/uh-nlp.mp4') && source.endsWith('.mp4');
+  const isRemediation=source==='/case-studies/cont-ai-review.mp4';
+  const showPlayback=(isRemediation || source.startsWith('/case-studies/tr-') || source==='/case-studies/uh-nlp.mp4') && source.endsWith('.mp4');
   const pausedByViewer=useRef(false);
   const [playback,setPlayback]=useState({playing:false,waiting:false,time:0,duration:0});
   useEffect(()=>{
@@ -92,12 +93,14 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
 
   const isTrackonomy=source.startsWith('/case-studies/tr-') && source.endsWith('.mp4');
   const motionDescriptions:Record<string,string>={
+    '/case-studies/cont-ai-review.mp4':'Review the evidence, refine the proposed change, and approve a pull request for code review.',
     '/case-studies/tr-activity-stream.mp4':'AI detects an anomaly, opens a support ticket, and drafts a message for the triage and support team.',
     '/case-studies/tr-fma-animation.mp4':'Location guidance narrows to a precise search, supported by sound and haptic feedback.',
     '/case-studies/uh-nlp.mp4':'A care professional’s spoken asset request connects to inventory location and tracking through an NLP/MCP context layer.',
   };
   const motionDescription=motionDescriptions[source];
   const motionHeadings:Record<string,{label:string;title:string}>={
+    '/case-studies/cont-ai-review.mp4':{label:'Review',title:'Review the fix before it becomes a pull request.'},
     '/case-studies/tr-activity-stream.mp4':{label:'Respond',title:'Turn an anomaly into coordinated action.'},
     '/case-studies/tr-fma-animation.mp4':{label:'Find',title:'From nearby to precisely located.'},
     '/case-studies/uh-nlp.mp4':{label:'Ask',title:'Find an asset without typing.'},
@@ -107,7 +110,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
   const isDesignSystem=Boolean(sequenceChapters);
   const poster=source==='/case-studies/explorer-animation.mp4'
     ? '/case-studies/explorer-animation-poster.webp'
-    : undefined;
+    : isRemediation ? '/case-studies/cont-ai-review-poster.webp' : undefined;
   const renderedChildren=(isExplorer || isTrackonomy || isDesignSystem) ? nodeChildren.map(child=>
     typeof child!=='string' && child.tag==='source'
       ? {...child,props:{...child.props,src:`${source}?v=${isExplorer?'7':'2'}`}}
@@ -133,16 +136,16 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
         warm();
         preloader.disconnect();
       }
-    },{rootMargin:(isTrackonomy || isDesignSystem)?'1800px 0px':'1000px 0px',threshold:0});
+    },{rootMargin:(isRemediation || isTrackonomy || isDesignSystem)?'1800px 0px':'1000px 0px',threshold:0});
     const player=new IntersectionObserver(entries=>{
-      const visible=entries.some(entry=>entry.isIntersecting);
+      const visible=entries.some(entry=>entry.isIntersecting && (!isRemediation || entry.intersectionRatio>=.35));
       if(visible && !pausedByViewer.current && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         warm();
         void video.play().catch(()=>{});
       } else {
         video.pause();
       }
-    },{threshold:0.05});
+    },{threshold:isRemediation?[0,.35]:0.05});
     preloader.observe(video);
     player.observe(video);
     const syncCursor=()=>{
@@ -181,7 +184,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
       cancelAnimationFrame(syncFrame);
       video.pause();
     };
-  },[source,isTrackonomy,isDesignSystem,sequenceChapters]);
+  },[source,isRemediation,isTrackonomy,isDesignSystem,sequenceChapters]);
 
   const video=<video {...attributes} ref={ref} autoPlay={false} preload="metadata" poster={poster}>
     {renderChildren(renderedChildren,keyName)}
@@ -201,7 +204,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
       {playback.waiting&&<span role="status">Buffering</span>}
     </div>
   </div>:null;
-  if(motionDescription)return <figure className="motion-prototype-stage">
+  if(motionDescription)return <figure className={`motion-prototype-stage${isRemediation?' motion-prototype-dark':''}`}>
     <figcaption className="motion-prototype-caption">
       <span className="motion-caption-eyebrow"><Play aria-hidden="true" fill="currentColor" />{motionHeading.label} / Motion demo</span>
       <strong className="motion-caption-title">{motionHeading.title}</strong>
