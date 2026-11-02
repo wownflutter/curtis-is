@@ -71,7 +71,8 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
   const sequenceRef=useRef<HTMLSpanElement>(null);
   const source=videoSource(nodeChildren);
   const isExplorer=source==='/case-studies/explorer-animation.mp4';
-  const showPlayback=source==='/case-studies/tr-fma-animation.mp4';
+  const showPlayback=(source.startsWith('/case-studies/tr-') || source==='/case-studies/uh-nlp.mp4') && source.endsWith('.mp4');
+  const pausedByViewer=useRef(false);
   const [playback,setPlayback]=useState({playing:false,waiting:false,time:0,duration:0});
   useEffect(()=>{
     const player=ref.current;
@@ -135,7 +136,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
     },{rootMargin:(isTrackonomy || isDesignSystem)?'1800px 0px':'1000px 0px',threshold:0});
     const player=new IntersectionObserver(entries=>{
       const visible=entries.some(entry=>entry.isIntersecting);
-      if(visible && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if(visible && !pausedByViewer.current && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         warm();
         void video.play().catch(()=>{});
       } else {
@@ -185,24 +186,32 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
   const video=<video {...attributes} ref={ref} autoPlay={false} preload="metadata" poster={poster}>
     {renderChildren(renderedChildren,keyName)}
   </video>;
+  const playbackControls=showPlayback?<div className="motion-playback motion-video-controls" aria-label="Video playback controls">
+    <div className="motion-playback-track" role="progressbar" aria-label="Video progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(playback.duration?playback.time/playback.duration*100:0)}>
+      <span style={{width:`${playback.duration?playback.time/playback.duration*100:0}%`}} />
+    </div>
+    <div className="motion-playback-meta">
+      <button type="button" onClick={()=>{
+        const player=ref.current;
+        if(!player)return;
+        if(player.paused){pausedByViewer.current=false;if(player.ended)player.currentTime=0;void player.play().catch(()=>{});}
+        else{pausedByViewer.current=true;player.pause();}
+      }}>{playback.playing?'Pause':'Play'}</button>
+      <span className="motion-playback-time">{formatTime(playback.time)} / {formatTime(playback.duration)}</span>
+      {playback.waiting&&<span role="status">Buffering</span>}
+    </div>
+  </div>:null;
   if(motionDescription)return <figure className="motion-prototype-stage">
     <figcaption className="motion-prototype-caption">
       <span className="motion-caption-eyebrow"><Play aria-hidden="true" fill="currentColor" />{motionHeading.label} / Motion demo</span>
       <strong className="motion-caption-title">{motionHeading.title}</strong>
       <span className="motion-caption-description">{motionDescription}</span>
     </figcaption>
-    {showPlayback&&<div className="motion-playback" aria-label="Video playback status">
-      <div className="motion-playback-meta">
-        <span><span className={`motion-playing-dot${playback.playing&&!playback.waiting?' active':''}`} aria-hidden="true" />{playback.waiting?'Buffering':playback.playing?'Playing':'Paused'}</span>
-        <span className="motion-playback-time">{formatTime(playback.time)}{playback.duration>0?` / ${formatTime(playback.duration)}`:''}</span>
-      </div>
-      <div className="motion-playback-track" role="progressbar" aria-label="Video progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(playback.duration?playback.time/playback.duration*100:0)}>
-        <span style={{width:`${playback.duration?playback.time/playback.duration*100:0}%`}} />
-      </div>
-    </div>}
     {video}
+    {playbackControls}
   </figure>;
-  if(isDesignSystem)return <span className="design-system-video-stage">
+  if(isDesignSystem)return <div>
+    <div className="design-system-video-stage">
     {video}
     <span ref={sequenceRef} className="design-system-sequence-rail" aria-label="Design system sequence navigation">
       {sequenceChapters.map((time,index)=><button
@@ -218,8 +227,10 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
         }}
       />)}
     </span>
-  </span>;
-  if(!isExplorer)return video;
+    </div>
+    {playbackControls}
+  </div>;
+  if(!isExplorer)return showPlayback?<div className="motion-prototype-stage">{video}{playbackControls}</div>:video;
   return <figure className="motion-prototype-stage motion-prototype-dark">
     <figcaption className="motion-prototype-caption">
       <span className="motion-caption-eyebrow"><Play aria-hidden="true" fill="currentColor" />Explore / Motion demo</span>
