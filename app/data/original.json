@@ -1866,14 +1866,14 @@
                         "className": "class-one"
                       },
                       "children": [
-                        "One protected sensor, one shared telemetry model"
+                        "One versatile sensor. Real-time insight across environments."
                       ]
                     },
                     {
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "The sensor could attach to equipment, infrastructure, or cargo and communicate through Trackonomy’s network of mesh connections, plugs, and gateways. The multi-tenant software converted its telemetry into a living record of an asset: where it was, how its condition changed, what relationships surrounded it, and whether someone needed to act."
+                        "Bluetooth, Wi-Fi, and RFID connectivity supports deployment across personal, consumer, and industrial settings, turning location and condition data into real-time insight."
                       ]
                     },
                     "\n",
@@ -4201,7 +4201,6 @@
                           ]
                         },
                         " \n",
-
                         "\n\n",
                         {
                           "tag": "div",
@@ -8924,4 +8923,3 @@
     }
   ]
 }
-
