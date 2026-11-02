@@ -80,3 +80,10 @@
 #project #telemetry-scenes .hall-path{border-color:#276d58;border-top-width:2.5px;border-right-width:2.5px;}
 #project #telemetry-scenes .staff-dot{background:#326c56;}
 #project #telemetry-scenes .equipment-pin{background:#174e3e;box-shadow:0 0 0 6px #285b512b;}
+
+/* Clear, readable hierarchy for supporting illustration labels. */
+#project #telemetry-scenes .small-label{display:block;font-family:var(--font-body);font-size:13px;line-height:1.5;font-weight:600;letter-spacing:.025em;color:#294b4f;}
+#project #telemetry-scenes .overline{font-family:var(--font-body);font-size:12px;line-height:1.5;font-weight:600;letter-spacing:.08em;color:#294b4f;}
+#project #telemetry-scenes .global-label,#project #telemetry-scenes .route-label{font-family:var(--font-body);font-size:12px;font-weight:600;letter-spacing:.035em;color:#314f36;}
+#project #telemetry-scenes .world-label small{font-size:13px;font-weight:500;color:#34534d;}
+@media(max-width:560px){#project #telemetry-scenes .overline{font-size:11px;letter-spacing:.035em;}#project #telemetry-scenes .small-label{font-size:12px;}#project #telemetry-scenes .global-label,#project #telemetry-scenes .route-label{font-size:11px;}}
