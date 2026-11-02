@@ -566,6 +566,10 @@ function render(node:ContentNode, key:string):ReactNode {
   if (tag === 'a' && String(props.href).includes('twitter.com')) props['aria-label']='Twitter';
   if (tag === 'a' && String(props.href).includes('medium.com')) props['aria-label']='Medium';
   if (tag === 'textarea') { props.defaultValue=node.children.filter(x=>typeof x==='string').join(''); return createElement(tag,props); }
+  if (tag === 'img' && props.src === '/case-studies/tr-categories-3.png') return <figure key={key} className="trackonomy-market-banner">
+    <MediaImage attributes={{src:String(props.src),alt:'Sensor placement across air cargo, healthcare, industrial equipment, and supply chain environments',decoding:'async'}} />
+    <figcaption>{['Air cargo','Healthcare','Industrial equipment','Supply chain'].map(label=><span key={label}>{label}</span>)}</figcaption>
+  </figure>;
   if (tag === 'img' && props.src === '/case-studies/cont-incident-detail.png') return <IncidentWalkthrough key={key} />;
   if (tag === 'img') { const {key:_unusedKey,...attributes}=props; return <MediaImage key={key} attributes={attributes} />; }
   if (tag === 'video') { const {key:_unusedKey,...attributes}=props; return <MediaVideo key={key} keyName={key} attributes={attributes} nodeChildren={node.children} />; }
