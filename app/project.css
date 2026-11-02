@@ -693,7 +693,7 @@
 /* Give the NorthStar goal a quiet emphasis without link styling. */
 #project .northstar-goal { display:block; margin:18px 0 24px; padding:2px 0 2px 16px; border-left:2px solid rgba(236,236,240,.4); color:inherit; font-weight:500; }
 
-#project .trackonomy-market-banner{position:relative;margin:0;overflow:hidden;border-radius:4px;}
-#project .trackonomy-market-banner img{display:block;width:100%;height:auto;margin:0;clip-path:inset(0 0 12.3% 0);}
-#project .trackonomy-market-banner figcaption{position:absolute;left:0;right:0;bottom:0;height:12.3%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:center;background:#404040;color:#fff;text-align:center;font-size:clamp(8px,1.4vw,14px);line-height:1.15;font-weight:500;}
+#project .trackonomy-market-banner{position:relative;margin:32px 0;overflow:hidden;border-radius:4px;}
+#project .trackonomy-market-banner img{display:block;width:100%;height:auto;margin:0 0 -3.375%;clip-path:inset(0 0 12.3% 0);}
+#project .trackonomy-market-banner figcaption{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:center;min-height:44px;padding:12px 0;box-sizing:border-box;background:#404040;color:#fff;text-align:center;font-family:var(--font-body);font-size:clamp(10px,1.4vw,14px);line-height:1.4;font-weight:400;}
 #project .trackonomy-market-banner figcaption span{padding:0 4px;}
