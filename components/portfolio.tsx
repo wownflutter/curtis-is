@@ -93,7 +93,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
 
   const isTrackonomy=source.startsWith('/case-studies/tr-') && source.endsWith('.mp4');
   const motionDescriptions:Record<string,string>={
-    '/case-studies/cont-ai-review.mp4':'Review the evidence, refine the proposed change, and approve a pull request for code review.',
+    '/case-studies/cont-ai-review.mp4':'Review the evidence and proposed fix, then approve a pull request for code review.',
     '/case-studies/tr-activity-stream.mp4':'AI detects an anomaly, opens a support ticket, and drafts a message for the triage and support team.',
     '/case-studies/tr-fma-animation.mp4':'Location guidance narrows to a precise search, supported by sound and haptic feedback.',
     '/case-studies/uh-nlp.mp4':'A care professional’s spoken asset request connects to inventory location and tracking through an NLP/MCP context layer.',
@@ -113,7 +113,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
     : isRemediation ? '/case-studies/cont-ai-review-poster.webp' : undefined;
   const renderedChildren=(isRemediation || isExplorer || isTrackonomy || isDesignSystem) ? nodeChildren.map(child=>
     typeof child!=='string' && child.tag==='source'
-      ? {...child,props:{...child.props,src:`${source}?v=${isRemediation?'travel-40-sheet-50':isExplorer?'7':'2'}`}}
+      ? {...child,props:{...child.props,src:`${source}?v=${isRemediation?'review-approve-1':isExplorer?'7':'2'}`}}
       : child
   ) : nodeChildren;
 
