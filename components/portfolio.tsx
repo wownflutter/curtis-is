@@ -113,7 +113,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
     : isRemediation ? '/case-studies/cont-ai-review-poster.webp' : undefined;
   const renderedChildren=(isRemediation || isExplorer || isTrackonomy || isDesignSystem) ? nodeChildren.map(child=>
     typeof child!=='string' && child.tag==='source'
-      ? {...child,props:{...child.props,src:`${source}?v=${isRemediation?'travel-40':isExplorer?'7':'2'}`}}
+      ? {...child,props:{...child.props,src:`${source}?v=${isRemediation?'travel-40-sheet-50':isExplorer?'7':'2'}`}}
       : child
   ) : nodeChildren;
 
