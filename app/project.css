@@ -712,3 +712,7 @@
 #project .screen-story .screen-story-media{margin:0;padding:0;}
 #project .screen-story .screen-story-media img{display:block;margin:0;width:100%;height:auto;}
 @media(max-width:640px){#project .screen-story{margin-top:32px;}#project .screen-story>p{margin-bottom:16px;}}
+
+/* Keep introductory copy visually connected to its own screen with room to breathe. */
+#project .motion-prototype-stage>.motion-prototype-caption{margin-bottom:30px;}
+#project .screen-story>p{margin-bottom:30px;}
