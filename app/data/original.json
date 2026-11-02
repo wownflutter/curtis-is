@@ -3918,71 +3918,14 @@
                             "className": "class-one"
                           },
                           "children": [
-                            "AI Remediation That Developers Can Trust"
-                          ]
-                        },
-                        "  \n\n",
-                        "\n\n",
-                        {
-                          "tag": "ul",
-                          "props": {
-                            "className": "newlist"
-                          },
-                          "children": [
-                            "\n    ",
-                            {
-                              "tag": "li",
-                              "props": {
-                                "style": {
-                                  "border": "none"
-                                }
-                              },
-                              "children": [
-                                "Code-level remediation tailored to the developer’s language and framework."
-                              ]
-                            },
-                            "\n    ",
-                            {
-                              "tag": "li",
-                              "props": {
-                                "style": {
-                                  "border": "none"
-                                }
-                              },
-                              "children": [
-                                "Confidence scores and summaries explaining each recommendation."
-                              ]
-                            },
-                            "\n    ",
-                            {
-                              "tag": "li",
-                              "props": {
-                                "style": {
-                                  "border": "none"
-                                }
-                              },
-                              "children": [
-                                "Options to view alternative fixes or manually override the suggestions."
-                              ]
-                            },
-                            "\n"
-                          ]
-                        },
-                        "\n\n",
-                        {
-                          "tag": "h3",
-                          "props": {
-                            "className": "class-one"
-                          },
-                          "children": [
-                            "Human Approval and Control of Agentic Outcomes"
+                            "Keeping developers in control of AI-assisted fixes"
                           ]
                         },
                         {
                           "tag": "p",
                           "props": {},
                           "children": [
-                            "In the AI remediation workflow, developers had explicit Approve, Reject, and Modify controls to vet agent recommendations before acting on them."
+                            "The review experience pairs a proposed code change with the runtime evidence behind it. Developers can understand the recommendation and decide what happens next:"
                           ]
                         },
                         {
@@ -4003,10 +3946,10 @@
                                   "tag": "b",
                                   "props": {},
                                   "children": [
-                                    "Approve:"
+                                    "Review the evidence:"
                                   ]
                                 },
-                                " Authorized the proposed remediation."
+                                " Inspect the runtime trace and proposed change."
                               ]
                             },
                             {
@@ -4021,10 +3964,10 @@
                                   "tag": "b",
                                   "props": {},
                                   "children": [
-                                    "Reject:"
+                                    "Edit or dismiss:"
                                   ]
                                 },
-                                " Stopped the proposed remediation from proceeding."
+                                " Refine the fix or set the suggestion aside."
                               ]
                             },
                             {
@@ -4039,10 +3982,10 @@
                                   "tag": "b",
                                   "props": {},
                                   "children": [
-                                    "Modify:"
+                                    "Approve and create a PR:"
                                   ]
                                 },
-                                " Let the developer refine the proposed change before approval."
+                                " Send the reviewed proposal into code review."
                               ]
                             }
                           ]
@@ -4051,24 +3994,10 @@
                           "tag": "p",
                           "props": {},
                           "children": [
-                            "For remediation actions governed by these controls, human approval was required before the agent could execute."
+                            "The approval record captures the reviewer, proposal version, and supporting evidence. Testing, merge, and deployment remain separate steps, and the issue stays open until the fix is verified."
                           ]
                         },
-                        {
-                          "tag": "p",
-                          "props": {},
-                          "children": [
-                            "Supporting evidence gave developers the context to evaluate each recommendation: the relevant runtime traces, exploit context, asset dependencies, and policy constraints made the proposed action and its rationale reviewable. This helped developers assess whether a fix addressed the issue and fit their application's needs before authorizing execution."
-                          ]
-                        },
-                        {
-                          "tag": "p",
-                          "props": {},
-                          "children": [
-                            "The system recorded agent recommendations, human approvals, rejections, and modifications, along with execution outcomes. These decision and outcome audit trails supported SOC review, compliance, and organizational learning, while keeping accountability visible throughout the remediation workflow."
-                          ]
-                        },
-                        "\n\n\n\n",
+                        "\n\n",
                         {
                           "tag": "div",
                           "props": {
