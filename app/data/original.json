@@ -3122,7 +3122,7 @@
                             "id": "project-title"
                           },
                           "children": [
-                            "Transforming Security Workflows with NorthStar and AI Agents"
+                            "A clearer path from security risk to response."
                           ]
                         },
                         "\n\t\t"
@@ -3256,7 +3256,7 @@
                             "className": "class-one"
                           },
                           "children": [
-                            "Reframing the past and promoting the Northstar"
+                            "Setting a shared direction for security teams"
                           ]
                         },
                         "            \n\n",
@@ -3281,7 +3281,7 @@
                             "className": "class-one"
                           },
                           "children": [
-                            "Grounding the vision in research"
+                            "Understanding what each role needed to decide"
                           ]
                         },
                         "           \n                \n                                \n ",
@@ -3692,7 +3692,7 @@
                             "className": "class-one"
                           },
                           "children": [
-                            "Designing the NorthStar experience"
+                            "Bringing risk and response into one view"
                           ]
                         },
                         "\n                \n",
@@ -3918,7 +3918,7 @@
                             "className": "class-one"
                           },
                           "children": [
-                            "Keeping developers in control of AI-assisted fixes"
+                            "Give developers control over suggested fixes."
                           ]
                         },
                         {
@@ -4044,7 +4044,7 @@
                             "className": "class-one"
                           },
                           "children": [
-                            "The Explorer Graph: Visualizing agent insights in context"
+                            "Making risk understandable in context"
                           ]
                         },
                         "\n           \n",
@@ -4222,282 +4222,228 @@
                         },
                         "\n               \n\n\n",
                         {
-                          "tag": "h3",
+                          "tag": "section",
                           "props": {
-                            "className": "class-one"
+                            "className": "case-results-summary",
+                            "aria-labelledby": "case-results-title"
                           },
                           "children": [
-                            "Impact"
+                            {
+                              "tag": "h3",
+                              "props": {
+                                "id": "case-results-title"
+                              },
+                              "children": [
+                                "The work gave customers and teams a clearer way forward."
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "props": {},
+                              "children": [
+                                "Field sales adopted the dashboard for enterprise demonstrations. Program managers reported faster remediation tracking, and engineering teams aligned around a shared UX language."
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "props": {
+                                "className": "case-results-metrics"
+                              },
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "props": {},
+                                  "children": [
+                                    {
+                                      "tag": "span",
+                                      "props": {
+                                        "className": "case-result-number"
+                                      },
+                                      "children": [
+                                        "66%"
+                                      ]
+                                    },
+                                    {
+                                      "tag": "span",
+                                      "props": {
+                                        "className": "case-result-label"
+                                      },
+                                      "children": [
+                                        "Less time spent in triage"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "props": {},
+                                  "children": [
+                                    {
+                                      "tag": "span",
+                                      "props": {
+                                        "className": "case-result-number"
+                                      },
+                                      "children": [
+                                        "40%"
+                                      ]
+                                    },
+                                    {
+                                      "tag": "span",
+                                      "props": {
+                                        "className": "case-result-label"
+                                      },
+                                      "children": [
+                                        "Increase in developer remediation rates"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tag": "div",
+                                  "props": {},
+                                  "children": [
+                                    {
+                                      "tag": "span",
+                                      "props": {
+                                        "className": "case-result-number"
+                                      },
+                                      "children": [
+                                        "2.5×"
+                                      ]
+                                    },
+                                    {
+                                      "tag": "span",
+                                      "props": {
+                                        "className": "case-result-label"
+                                      },
+                                      "children": [
+                                        "Explorer feature engagement"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "props": {
+                                "className": "case-results-method"
+                              },
+                              "children": [
+                                "To validate the impact of the redesigned experience, we instrumented tracking using ",
+                                {
+                                  "tag": "b",
+                                  "props": {},
+                                  "children": [
+                                    "DataDog"
+                                  ]
+                                },
+                                " (event logging, interaction flows) and ",
+                                {
+                                  "tag": "b",
+                                  "props": {},
+                                  "children": [
+                                    "Google Analytics"
+                                  ]
+                                },
+                                " (navigation patterns, drop-off rates). This allowed us to measure before-and-after performance and capture user behavior across key workflows."
+                              ]
+                            },
+                            {
+                              "tag": "details",
+                              "props": {
+                                "className": "case-results-additional"
+                              },
+                              "children": [
+                                {
+                                  "tag": "summary",
+                                  "props": {},
+                                  "children": [
+                                    "Additional measured results"
+                                  ]
+                                },
+                                {
+                                  "tag": "ul",
+                                  "props": {
+                                    "className": "newlist"
+                                  },
+                                  "children": [
+                                    {
+                                      "tag": "li",
+                                      "props": {},
+                                      "children": [
+                                        {
+                                          "tag": "b",
+                                          "props": {},
+                                          "children": [
+                                            "Confident decision-making 2x faster:"
+                                          ]
+                                        },
+                                        " showing improved onboarding and reduced cognitive friction"
+                                      ]
+                                    },
+                                    {
+                                      "tag": "li",
+                                      "props": {},
+                                      "children": [
+                                        {
+                                          "tag": "b",
+                                          "props": {},
+                                          "children": [
+                                            "Drop-off in key workflows decreased by 55%:"
+                                          ]
+                                        },
+                                        " suggesting smoother navigation and better task completion"
+                                      ]
+                                    },
+                                    {
+                                      "tag": "li",
+                                      "props": {},
+                                      "children": [
+                                        {
+                                          "tag": "b",
+                                          "props": {},
+                                          "children": [
+                                            "Adoption of high-value views (e.g. top risks) grew 3x:"
+                                          ]
+                                        },
+                                        " highlighting improved discoverability of insights"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "props": {
+                                "className": "project-header toppadding"
+                              },
+                              "children": [
+                                "\n\t",
+                                {
+                                  "tag": "img",
+                                  "props": {
+                                    "className": "fullimage",
+                                    "src": "/case-studies/contrast-press.png",
+                                    "alt": "Press",
+                                    "decoding": "async"
+                                  },
+                                  "children": []
+                                },
+                                "\n"
+                              ]
+                            },
+                            {
+                              "tag": "p",
+                              "props": {},
+                              "children": [
+                                "This work ultimately became the foundation for a platform-wide shift toward role-aligned, user-centered experiences across the Contrast Security platform."
+                              ]
+                            }
                           ]
                         },
                         "\n\n",
-                        {
-                          "tag": "p",
-                          "props": {},
-                          "children": [
-                            "The NorthStar work did more than win internal praise. It reshaped customer perception and adoption. Field sales began using the dashboard in demos with enterprise CISOs. Program managers reported faster remediation tracking. Internal engineering teams finally aligned around a common UX language."
-                          ]
-                        },
-                        "\n            \n",
-                        {
-                          "tag": "div",
-                          "props": {
-                            "className": "project-header toppadding"
-                          },
-                          "children": [
-                            "\n\t",
-                            {
-                              "tag": "img",
-                              "props": {
-                                "className": "fullimage",
-                                "src": "/case-studies/contrast-press.png",
-                                "alt": "Press",
-                                "decoding": "async"
-                              },
-                              "children": []
-                            },
-                            "\n"
-                          ]
-                        },
-                        "   \n\n            \n",
-                        {
-                          "tag": "h3",
-                          "props": {
-                            "className": "class-one"
-                          },
-                          "children": [
-                            "Results"
-                          ]
-                        },
-                        "\n            \n",
-                        {
-                          "tag": "p",
-                          "props": {},
-                          "children": [
-                            "To validate the impact of the redesigned experience, we instrumented tracking using ",
-                            {
-                              "tag": "b",
-                              "props": {},
-                              "children": [
-                                "DataDog"
-                              ]
-                            },
-                            " (event logging, interaction flows) and ",
-                            {
-                              "tag": "b",
-                              "props": {},
-                              "children": [
-                                "Google Analytics"
-                              ]
-                            },
-                            " (navigation patterns, drop-off rates). This allowed us to measure before-and-after performance and capture user behavior across key workflows."
-                          ]
-                        },
-                        "\n\n",
-                        {
-                          "tag": "p",
-                          "props": {},
-                          "children": [
-                            "What the data revealed:"
-                          ]
-                        },
-                        "\n\n",
-                        {
-                          "tag": "ul",
-                          "props": {
-                            "className": "newlist"
-                          },
-                          "children": [
-                            "\n  ",
-                            {
-                              "tag": "li",
-                              "props": {},
-                              "children": [
-                                {
-                                  "tag": "b",
-                                  "props": {},
-                                  "children": [
-                                    "Enterprise Security Engineers reduced triage time by 66%:"
-                                  ]
-                                },
-                                " indicating faster issue identification and prioritization"
-                              ]
-                            },
-                            "\n  ",
-                            {
-                              "tag": "li",
-                              "props": {},
-                              "children": [
-                                {
-                                  "tag": "b",
-                                  "props": {},
-                                  "children": [
-                                    "Developer remediation rates increased by 40%:"
-                                  ]
-                                },
-                                " signaling clearer fix guidance and higher trust in security findings"
-                              ]
-                            },
-                            "\n  ",
-                            {
-                              "tag": "li",
-                              "props": {},
-                              "children": [
-                                {
-                                  "tag": "b",
-                                  "props": {},
-                                  "children": [
-                                    "Confident decision-making 2x faster:"
-                                  ]
-                                },
-                                " showing improved onboarding and reduced cognitive friction"
-                              ]
-                            },
-                            "\n  ",
-                            {
-                              "tag": "li",
-                              "props": {},
-                              "children": [
-                                {
-                                  "tag": "b",
-                                  "props": {},
-                                  "children": [
-                                    "Explorer feature engagement increased 2.5x:"
-                                  ]
-                                },
-                                " confirming greater usability and relevance of trace-level visibility"
-                              ]
-                            },
-                            "\n  ",
-                            {
-                              "tag": "li",
-                              "props": {},
-                              "children": [
-                                {
-                                  "tag": "b",
-                                  "props": {},
-                                  "children": [
-                                    "Drop-off in key workflows decreased by 55%:"
-                                  ]
-                                },
-                                " suggesting smoother navigation and better task completion"
-                              ]
-                            },
-                            "\n  ",
-                            {
-                              "tag": "li",
-                              "props": {},
-                              "children": [
-                                {
-                                  "tag": "b",
-                                  "props": {},
-                                  "children": [
-                                    "Adoption of high-value views (e.g. top risks) grew 3x:"
-                                  ]
-                                },
-                                " highlighting improved discoverability of insights"
-                              ]
-                            },
-                            "\n"
-                          ]
-                        },
-                        "\n\n\n       \n",
-                        {
-                          "tag": "p",
-                          "props": {},
-                          "children": [
-                            "This work ultimately became the foundation for a platform-wide shift toward role-aligned, user-centered experiences across the Contrast Security platform."
-                          ]
-                        },
-                        "\n\n\n\n                \n",
-                        {
-                          "tag": "h3",
-                          "props": {
-                            "className": "class-one"
-                          },
-                          "children": [
-                            "My role"
-                          ]
-                        },
-                        "\n\n\n",
-                        {
-                          "tag": "p",
-                          "props": {},
-                          "children": [
-                            "I served as the UX lead throughout, from research through hands-on execution:"
-                          ]
-                        },
-                        "\n\n\n",
-                        {
-                          "tag": "ul",
-                          "props": {
-                            "className": "newlist"
-                          },
-                          "children": [
-                            "\n\n",
-                            {
-                              "tag": "li",
-                              "props": {
-                                "style": {
-                                  "border": "none"
-                                }
-                              },
-                              "children": [
-                                "Drove interviews, persona creation, and journey synthesis with my reports"
-                              ]
-                            },
-                            "\n\n",
-                            {
-                              "tag": "li",
-                              "props": {
-                                "style": {
-                                  "border": "none"
-                                }
-                              },
-                              "children": [
-                                "Facilitated vision alignment via collaborative team design thinking sessions."
-                              ]
-                            },
-                            "\n\n",
-                            {
-                              "tag": "li",
-                              "props": {
-                                "style": {
-                                  "border": "none"
-                                }
-                              },
-                              "children": [
-                                "Designed, spec'd and guided all major UX surfaces in Figma"
-                              ]
-                            },
-                            "\n\n",
-                            {
-                              "tag": "li",
-                              "props": {
-                                "style": {
-                                  "border": "none"
-                                }
-                              },
-                              "children": [
-                                "Created the shared design system for engineering handoff (Figma to Storybook)"
-                              ]
-                            },
-                            "\n\n",
-                            {
-                              "tag": "li",
-                              "props": {
-                                "style": {
-                                  "border": "none"
-                                }
-                              },
-                              "children": [
-                                "Partnered cross-functionally with PMs, Engineering, Support, and Field teams"
-                              ]
-                            },
-                            "  \n"
-                          ]
-                        },
-                        "           \n        \n\n\n",
                         {
                           "tag": "h3",
                           "props": {
