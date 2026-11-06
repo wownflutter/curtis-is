@@ -63,6 +63,16 @@
 }
 #project .trackonomy-refresh h3.class-one:first-child { margin-top:0; }
 #project .trackonomy-refresh :is(p,li) { color:#314447; }
+#project .trackonomy-refresh .screen-story > p { text-align:left; }
+#project .trackonomy-results-metrics { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px; margin:32px 0; text-align:left; }
+#project .trackonomy-results-metrics > div { display:flex; flex-direction:column; gap:10px; }
+#project .trackonomy-result-number { color:#34464d; font-family:Inter,sans-serif; font-size:clamp(36px,5vw,52px); font-weight:400; letter-spacing:-.05em; line-height:1.05; }
+#project .trackonomy-result-label { color:#526269; font-size:14px; line-height:1.5; max-width:250px; }
+@media(max-width:560px) {
+  #project .trackonomy-results-metrics { gap:15px; }
+  #project .trackonomy-result-number { font-size:35px; }
+  #project .trackonomy-result-label { font-size:12px; }
+}
 #project .trackonomy-refresh img { margin-bottom:18px; }
 #project .trackonomy-refresh :is(.row,#project-header.toppadding) + h3.class-one { margin-top:28px; }
 #project .trackonomy-refresh .trackonomy-system {

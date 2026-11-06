@@ -1771,7 +1771,7 @@
                 {
                   "tag": "div",
                   "props": {
-                    "className": "col-lg-10 col-lg-offset-2 col-centered col-xs-12 col-md-offset-2"
+                    "className": "col-lg-10 col-lg-offset-2 col-centered col-md-6 col-md-offset-2"
                   },
                   "children": [
                     "\n            ",
@@ -2019,6 +2019,20 @@
                             }
                           ]
                         }
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "In healthcare, sensors tracked high-value medical equipment and staff. The platform helped teams locate equipment, make better use of it, and keep it available when needed. During the global distribution of COVID medications, sensors also helped monitor shipments with time and temperature requirements."
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "NLP-supported search and agentic workflows helped people use that intelligence. People could search for assets in natural language. When an anomaly required attention, agents triggered alerts and automatically notified the appropriate team members. Role-based access governed the experience, and an audit trail recorded the activity."
                       ]
                     },
                     "\n",
@@ -2731,6 +2745,63 @@
                         "Evidence of immediate value"
                       ]
                     },
+                    {
+                      "tag": "div",
+                      "props": {
+                        "className": "trackonomy-results-metrics",
+                        "aria-label": "Measured results"
+                      },
+                      "children": [
+                        {
+                          "tag": "div",
+                          "props": {},
+                          "children": [
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-number"
+                              },
+                              "children": [
+                                "63%"
+                              ]
+                            },
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-label"
+                              },
+                              "children": [
+                                "Increase in engagement with the pre-populated notification workflow, compared with the previous experience, 30 days after launch"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "props": {},
+                          "children": [
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-number"
+                              },
+                              "children": [
+                                "24%"
+                              ]
+                            },
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-label"
+                              },
+                              "children": [
+                                "Of cargo-handling requests made using voice commands within 30 days"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
                     "\n      \n            ",
                     {
                       "tag": "p",
@@ -3003,7 +3074,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "We invited logistics partners into shared Miro boards and used earlier research as the starting point for critique. This made customers active design partners and helped the team surface operational edge cases earlier."
+                        "We shared information architecture flows with logistics partners and used earlier research as the starting point for critique. This made customers active design partners and helped the team surface operational edge cases earlier."
                       ]
                     },
                     "\n                \n                ",
