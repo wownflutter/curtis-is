@@ -3156,7 +3156,7 @@
                 {
                   "tag": "img",
                   "props": {
-                    "src": "/case-studies/contrast-hero.png",
+                    "src": "/case-studies/contrast-hero-clean.png",
                     "alt": "Rethought, Redesigned and Relaunched IoT Control Center",
                     "decoding": "async"
                   },
