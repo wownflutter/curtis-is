@@ -1743,7 +1743,7 @@
             {
               "tag": "img",
               "props": {
-                "src": "/case-studies/tr-cover@2x.png",
+                "src": "/case-studies/tr-cover-short.png",
                 "alt": "Trackonomy sensor telemetry and asset intelligence",
                 "decoding": "async"
               },
