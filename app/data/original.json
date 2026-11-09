@@ -2855,7 +2855,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "Platform instrumentation recorded the interval from login to time-to-target. On that measure, time to first value fell from about two days to under an hour."
+                        "Reduced time to first value from approximately two days to under an hour, measured through platform instrumentation from login to time-to-target."
                       ]
                     },
                     "\n      \n            ",
