@@ -1856,7 +1856,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "As the first product designer, I led the experience strategy for the multi-tenant web and mobile products that converted raw device signals into asset intelligence. I later scaled the design team as customer demand expanded across logistics, fleet, healthcare, border security, and other operational environments."
+                        "As the first product designer, I led the experience strategy for the multi-tenant web and mobile products that converted raw device signals into asset intelligence. I later scaled the design team as customer demand expanded across logistics, fleet, healthcare, and other operational environments."
                       ]
                     },
                     "\n                \n           ",
@@ -2402,7 +2402,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "Research, competitive analysis, and accessibility requirements shaped a design system that could support healthcare, air cargo, border security, and fleet management without changing the core product model."
+                        "Research, competitive analysis, and accessibility requirements shaped a design system that could support healthcare, air cargo, and fleet management without changing the core product model."
                       ]
                     },
                     "  \n\n             ",
@@ -2799,6 +2799,30 @@
                               ]
                             }
                           ]
+                        },
+                        {
+                          "tag": "div",
+                          "props": {},
+                          "children": [
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-number"
+                              },
+                              "children": [
+                                "< 1 hr"
+                              ]
+                            },
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-label"
+                              },
+                              "children": [
+                                "Time to first value, down from about two days"
+                              ]
+                            }
+                          ]
                         }
                       ]
                     },
@@ -3116,7 +3140,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "The product expanded across air freight, healthcare, border security, trucking, and fleet operations. The industries changed, but the experience model remained consistent: collect telemetry from Trackonomy’s protected sensor, translate it into asset intelligence, and help people take the next useful action."
+                        "The product expanded across air freight, healthcare, trucking, and fleet operations. The industries changed, but the experience model remained consistent: collect telemetry from Trackonomy’s protected sensor, translate it into asset intelligence, and help people take the next useful action."
                       ]
                     },
                     "\n            ",
@@ -3779,7 +3803,7 @@
                           "tag": "p",
                           "props": {},
                           "children": [
-                            "\"Before producing any output, agents assembled runtime traces, asset dependencies, historical exploit behavior, and policy constraints so users could clearly understand what the agent knew and why it was reasoning a certain way.\" - SAP"
+                            "Before producing any output, agents assembled runtime traces, asset dependencies, historical exploit behavior, and policy constraints so users could clearly understand what the agent knew and why it was reasoning a certain way."
                           ]
                         },
                         "\n\n",
