@@ -5884,8 +5884,8 @@
             {
               "tag": "img",
               "props": {
-                "src": "/case-studies/or-atmosphere-optimized@2x.jpg",
-                "alt": "Reimaging Data Security",
+                "src": "/case-studies/open-hero.webp",
+                "alt": "Open Raven operations overview displayed on a monitor in a security workspace",
                 "decoding": "async"
               },
               "children": []
