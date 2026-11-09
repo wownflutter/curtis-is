@@ -2032,7 +2032,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "NLP-supported search and agentic workflows helped people use that intelligence. People could search for assets in natural language. When an anomaly required attention, agents triggered alerts and automatically notified the appropriate team members. Role-based access governed the experience, and an audit trail recorded the activity."
+                        "Sitewide search and agentic workflows helped people use that intelligence. NLP-supported search let people find assets in natural language. When an anomaly required attention, agents triggered alerts and automatically notified the appropriate team members. Role-based access governed the experience, and an audit trail recorded the activity."
                       ]
                     },
                     "\n",
@@ -2824,6 +2824,14 @@
                             }
                           ]
                         }
+                      ]
+                    },
+                    "\n",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "Platform instrumentation recorded the interval from login to time-to-target. On that measure, time to first value fell from about two days to under an hour."
                       ]
                     },
                     "\n      \n            ",
@@ -3898,6 +3906,32 @@
                           ]
                         },
                         "\n\n",
+                        {
+                          "tag": "h3",
+                          "props": {
+                            "className": "class-one"
+                          },
+                          "children": [
+                            "Sitewide search in natural language and code"
+                          ]
+                        },
+                        "\n",
+                        {
+                          "tag": "p",
+                          "props": {},
+                          "children": [
+                            "We built MCP/NLP-powered sitewide search so users could query the platform in natural language or code within the same search box. This lowered the friction of finding the focused, valuable results they needed."
+                          ]
+                        },
+                        "\n",
+                        {
+                          "tag": "p",
+                          "props": {},
+                          "children": [
+                            "The foundation was an organized ontology and taxonomy reflecting users’ roles and the platform features available to them. That structure connected the language people used with the information and capabilities they were trying to find."
+                          ]
+                        },
+                        "\n",
                         {
                           "tag": "h3",
                           "props": {
