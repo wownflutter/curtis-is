@@ -4422,7 +4422,7 @@
                                         "className": "case-result-label"
                                       },
                                       "children": [
-                                        "Less time spent in triage"
+                                        "Less time to assess a threat"
                                       ]
                                     }
                                   ]
@@ -4611,7 +4611,7 @@
                           "tag": "p",
                           "props": {},
                           "children": [
-                            "This agentic structure reduced triage time without increasing risk, improved remediation velocity without sacrificing trust, and aligned CISOs, SOC teams, and developers around shared signals and actions. AI became a reliable collaborator, not an unpredictable authority."
+                            "This agentic structure reduced the time to assess a threat without increasing risk, improved remediation velocity without sacrificing trust, and aligned CISOs, SOC teams, and developers around shared signals and actions. AI became a reliable collaborator, not an unpredictable authority."
                           ]
                         },
                         "\n\n         \n\t\t"
