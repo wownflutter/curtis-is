@@ -325,7 +325,7 @@ const projectCaptions: Record<string, {domain:string;name:string;description:str
   "work-1": {
     "domain": "IoT & Asset Intelligence",
     "name": "Trackonomy",
-    "description": "Sensor insights and agent-driven operations for logistics, fleet management, healthcare, industry, and defense."
+    "description": "Sensor insights and agent-driven operations for logistics, fleet management, healthcare, and industry."
   },
   "work-2": {
     "domain": "Cybersecurity & AI",

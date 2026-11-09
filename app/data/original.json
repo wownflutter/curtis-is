@@ -1856,7 +1856,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "As the first product designer, I led the experience strategy for the multi-tenant web and mobile products that converted raw device signals into asset intelligence. I later scaled the design team as customer demand expanded across logistics, fleet, healthcare, border security, and other operational environments."
+                        "As the first product designer, I led the experience strategy for the multi-tenant web and mobile products that converted raw device signals into asset intelligence. I later scaled the design team as customer demand expanded across logistics, fleet, healthcare, and other operational environments."
                       ]
                     },
                     "\n                \n           ",
@@ -2032,7 +2032,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "NLP-supported search and agentic workflows helped people use that intelligence. People could search for assets in natural language. When an anomaly required attention, agents triggered alerts and automatically notified the appropriate team members. Role-based access governed the experience, and an audit trail recorded the activity."
+                        "Sitewide search and agentic workflows helped people use that intelligence. NLP-supported search let people find assets in natural language. When an anomaly required attention, agents triggered alerts and automatically notified the appropriate team members. Role-based access governed the experience, and an audit trail recorded the activity."
                       ]
                     },
                     "\n",
@@ -2402,7 +2402,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "Research, competitive analysis, and accessibility requirements shaped a design system that could support healthcare, air cargo, border security, and fleet management without changing the core product model."
+                        "Research, competitive analysis, and accessibility requirements shaped a design system that could support healthcare, air cargo, and fleet management without changing the core product model."
                       ]
                     },
                     "  \n\n             ",
@@ -2799,7 +2799,39 @@
                               ]
                             }
                           ]
+                        },
+                        {
+                          "tag": "div",
+                          "props": {},
+                          "children": [
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-number"
+                              },
+                              "children": [
+                                "< 1 hr"
+                              ]
+                            },
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-label"
+                              },
+                              "children": [
+                                "Time to first value, down from about two days"
+                              ]
+                            }
+                          ]
                         }
+                      ]
+                    },
+                    "\n",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "Platform instrumentation recorded the interval from login to time-to-target. On that measure, time to first value fell from about two days to under an hour."
                       ]
                     },
                     "\n      \n            ",
@@ -3116,7 +3148,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "The product expanded across air freight, healthcare, border security, trucking, and fleet operations. The industries changed, but the experience model remained consistent: collect telemetry from Trackonomy’s protected sensor, translate it into asset intelligence, and help people take the next useful action."
+                        "The product expanded across air freight, healthcare, trucking, and fleet operations. Trackonomy also sold its sensor services and platform to government customers. The industries changed, but the experience model remained consistent: collect telemetry from Trackonomy’s protected sensor, translate it into asset intelligence, and help people take the next useful action."
                       ]
                     },
                     "\n            ",
@@ -3779,7 +3811,7 @@
                           "tag": "p",
                           "props": {},
                           "children": [
-                            "\"Before producing any output, agents assembled runtime traces, asset dependencies, historical exploit behavior, and policy constraints so users could clearly understand what the agent knew and why it was reasoning a certain way.\" - SAP"
+                            "Before producing any output, agents assembled runtime traces, asset dependencies, historical exploit behavior, and policy constraints so users could clearly understand what the agent knew and why it was reasoning a certain way."
                           ]
                         },
                         "\n\n",
@@ -3874,6 +3906,32 @@
                           ]
                         },
                         "\n\n",
+                        {
+                          "tag": "h3",
+                          "props": {
+                            "className": "class-one"
+                          },
+                          "children": [
+                            "Sitewide search in natural language and code"
+                          ]
+                        },
+                        "\n",
+                        {
+                          "tag": "p",
+                          "props": {},
+                          "children": [
+                            "We built MCP/NLP-powered sitewide search so users could query the platform in natural language or code within the same search box. This lowered the friction of finding the focused, valuable results they needed."
+                          ]
+                        },
+                        "\n",
+                        {
+                          "tag": "p",
+                          "props": {},
+                          "children": [
+                            "The foundation was an organized ontology and taxonomy reflecting users’ roles and the platform features available to them. That structure connected the language people used with the information and capabilities they were trying to find."
+                          ]
+                        },
+                        "\n",
                         {
                           "tag": "h3",
                           "props": {
