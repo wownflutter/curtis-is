@@ -585,6 +585,16 @@ function render(node:ContentNode, key:string):ReactNode {
     <figcaption>{['Air cargo','Healthcare','Industrial equipment','Supply chain'].map(label=><span key={label}>{label}</span>)}</figcaption>
   </figure>;
   if (tag === 'img' && props.src === '/case-studies/cont-incident-detail.png') return <IncidentWalkthrough key={key} />;
+  if (tag === 'img' && props.src === '/case-studies/jasper-legacy@2x.png') {
+    return <figure key={key} className="jasper-legacy-snapshot" aria-label="Legacy Jasper screen with usability annotations">
+      <MediaImage attributes={props} />
+      <figcaption className="jasper-legacy-annotations">
+        <span className="legacy-annotation jasper-nav-annotation">Crowded, role-agnostic navigation</span>
+        <span className="legacy-annotation jasper-density-annotation">Dense data, weak visual hierarchy</span>
+        <span className="legacy-annotation jasper-truncation-annotation">Truncated names hide key details</span>
+      </figcaption>
+    </figure>;
+  }
   if (tag === 'img') { const {key:_unusedKey,...attributes}=props; return <MediaImage key={key} attributes={attributes} />; }
   if (tag === 'video') { const {key:_unusedKey,...attributes}=props; return <MediaVideo key={key} keyName={key} attributes={attributes} nodeChildren={node.children} />; }
   if (id==='project-title' && /^h[1-6]$/.test(tag)) { const {key:_headingKey,...attributes}=props; return <ScrambleHeading key={key} tag={tag} attributes={attributes}>{renderChildren(node.children,key)}</ScrambleHeading>; }
@@ -734,7 +744,7 @@ export function Portfolio({initialSlug=null,variant='live',routeBase:routeBasePr
   return <div ref={surface} className={`portfolio-root ${isSignal?'signal-concept':''} ${menuOpen?'menu-open':''} ${navVisible?'nav-visible':''}`} onClick={onClick} onKeyDown={e=>{if(e.key==='Escape'&&!lightbox&&slug)navigate(null);}}>
     <div className="home-surface" hidden={Boolean(project)}>{render(homeTree,'home')}
     </div>
-    {project&&<div id="project-page" className="project-visible">
+    {project&&<div id="project-page" className={`project-visible ${project.slug === 'work-2' ? 'contrast-case-study' : 'light-case-study'}`}>
       <nav id="project-top-bar" aria-label="Project navigation">
         <button id="close-project" ref={closeButton} aria-label="Close project and return to work" onClick={()=>navigate(null)} />
       </nav>
