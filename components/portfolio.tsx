@@ -394,7 +394,7 @@ function textContent(node:ContentNode):string {
   return typeof node==='string' ? node : node.children.map(textContent).join('');
 }
 
-function LegacyBeforeSnapshot({keyName}:{keyName:string}) {
+function useLegacyAnnotationAnimation() {
   const stageRef=useRef<HTMLDivElement>(null);
   useEffect(()=>{
     const stage=stageRef.current;
@@ -419,6 +419,24 @@ function LegacyBeforeSnapshot({keyName}:{keyName:string}) {
     animations.forEach((_,annotation)=>observer.observe(annotation));
     return ()=>{observer.disconnect();animations.forEach(animation=>animation.cancel());};
   },[]);
+  return stageRef;
+}
+
+function JasperLegacySnapshot({attributes}:{attributes:Record<string,unknown>}) {
+  const stageRef=useLegacyAnnotationAnimation();
+  return <figure className="jasper-legacy-snapshot" aria-label="Legacy Jasper screen with usability annotations">
+    <MediaImage attributes={attributes} />
+    <figcaption ref={stageRef} className="jasper-legacy-annotations">
+      <span className="legacy-annotation jasper-nav-annotation">Crowded, role-agnostic navigation</span>
+      <span className="legacy-annotation jasper-density-annotation">Dense data, weak visual hierarchy</span>
+      <span className="legacy-annotation jasper-truncation-annotation">Truncated names hide key details</span>
+    </figcaption>
+  </figure>;
+}
+
+function LegacyBeforeSnapshot({keyName}:{keyName:string}) {
+  const stageRef=useLegacyAnnotationAnimation();
+
   return <section key={keyName} className="legacy-snapshot" aria-labelledby={`${keyName}-title`}>
     <header className="legacy-snapshot-heading">
       <div>
@@ -586,14 +604,7 @@ function render(node:ContentNode, key:string):ReactNode {
   </figure>;
   if (tag === 'img' && props.src === '/case-studies/cont-incident-detail.png') return <IncidentWalkthrough key={key} />;
   if (tag === 'img' && props.src === '/case-studies/jasper-legacy@2x.png') {
-    return <figure key={key} className="jasper-legacy-snapshot" aria-label="Legacy Jasper screen with usability annotations">
-      <MediaImage attributes={props} />
-      <figcaption className="jasper-legacy-annotations">
-        <span className="legacy-annotation jasper-nav-annotation">Crowded, role-agnostic navigation</span>
-        <span className="legacy-annotation jasper-density-annotation">Dense data, weak visual hierarchy</span>
-        <span className="legacy-annotation jasper-truncation-annotation">Truncated names hide key details</span>
-      </figcaption>
-    </figure>;
+    return <JasperLegacySnapshot key={key} attributes={props} />;
   }
   if (tag === 'img') { const {key:_unusedKey,...attributes}=props; return <MediaImage key={key} attributes={attributes} />; }
   if (tag === 'video') { const {key:_unusedKey,...attributes}=props; return <MediaVideo key={key} keyName={key} attributes={attributes} nodeChildren={node.children} />; }
