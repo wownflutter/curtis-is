@@ -2892,7 +2892,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "Reduced time to first value from approximately two days to under an hour, measured through platform instrumentation from login to time-to-target."
+                        "Reduced time to first value, from login to the first alert received, to under an hour, measured through platform instrumentation. Before the redesign, reaching the same point took about two days, by my recollection of how long setup used to take."
                       ]
                     },
                     "\n            ",
