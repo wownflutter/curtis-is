@@ -457,6 +457,7 @@
 #project .case-results-metrics>div { display:flex; flex-direction:column; gap:10px; }
 #project .case-results-metrics-single { grid-template-columns:minmax(0,1fr); margin:24px 0 44px; }
 #project .case-results-metrics-single .case-result-label { max-width:340px; }
+#project .case-results-metrics-pair { grid-template-columns:repeat(2,minmax(0,1fr)); margin:24px 0 44px; }
 #project .case-result-number { color:#f1f1f1; font-family:Inter,sans-serif; font-size:clamp(36px,5vw,52px); font-weight:400; letter-spacing:-.05em; line-height:1.05; }
 #project .case-result-label { color:#c1c1c1; font-size:14px; line-height:1.5; max-width:210px; }
 #project .case-results-method { color:#b7b7b7; font-size:14px; line-height:1.65; }

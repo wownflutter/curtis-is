@@ -2331,7 +2331,7 @@
                           "props": {
                             "className": "fullimage",
                             "src": "/case-studies/tr-logistics-journey-map@2x.png",
-                            "alt": "Asset Details",
+                            "alt": "Logistics customer journey map",
                             "decoding": "async"
                           },
                           "children": []
@@ -2379,7 +2379,7 @@
                           "props": {
                             "className": "fullimage",
                             "src": "/case-studies/tr-healthcare-customer-ia@2x.png",
-                            "alt": "Asset Details",
+                            "alt": "Healthcare information architecture",
                             "decoding": "async"
                           },
                           "children": []
@@ -2627,7 +2627,7 @@
                               "props": {
                                 "className": "fullimage",
                                 "src": "/case-studies/tr-sensor-details@2x.png",
-                                "alt": "Asset Details",
+                                "alt": "Asset details with telemetry trends and connected sensors",
                                 "decoding": "async"
                               },
                               "children": []
@@ -2669,7 +2669,7 @@
                           "props": {
                             "className": "fullimage",
                             "src": "/case-studies/tr-escalation-rules@2x.png",
-                            "alt": "Asset Details",
+                            "alt": "Rules and escalations configuration",
                             "decoding": "async"
                           },
                           "children": []
@@ -3250,7 +3250,7 @@
                   "tag": "img",
                   "props": {
                     "src": "/case-studies/contrast-hero-short.png",
-                    "alt": "Rethought, Redesigned and Relaunched IoT Control Center",
+                    "alt": "Contrast Security NorthStar platform",
                     "decoding": "async"
                   },
                   "children": []
@@ -3453,7 +3453,7 @@
                           "tag": "p",
                           "props": {},
                           "children": [
-                            "To ensure that NorthStar wasn't just a UI facelift, I led a rigorous discovery process. We conducted interviews across key user roles: CISOs, SOC analysts, developers, DevOps engineers, Enterprise Security Engineers, Security Reliability Engineers(SREs) and program managers. We found that in cybersecurity, often different labelled roles shared some of the same JTBD (Jobs-to-be done). So, careful mapping of user journey goals and painpoints were vetted for affinity and focus."
+                            "To ensure that NorthStar wasn't just a UI facelift, I led a rigorous discovery process. We conducted interviews across key user roles: CISOs, SOC analysts, developers, DevOps engineers, Enterprise Security Engineers, Security Reliability Engineers(SREs) and program managers. We found that in cybersecurity, often different labelled roles shared some of the same JTBD (Jobs-to-be done). So, careful mapping of user journey goals and pain points were vetted for affinity and focus."
                           ]
                         },
                         "\n\n",
@@ -3958,7 +3958,7 @@
                               "props": {
                                 "className": "fullimage",
                                 "src": "/case-studies/cont-phase3-insights.png",
-                                "alt": "Insights Phase 3",
+                                "alt": "Insights Phase 2",
                                 "decoding": "async"
                               },
                               "children": []
@@ -4296,8 +4296,8 @@
                         {
                           "tag": "div",
                           "props": {
-                            "className": "case-results-metrics case-results-metrics-single",
-                            "aria-label": "Measured result"
+                            "className": "case-results-metrics case-results-metrics-pair",
+                            "aria-label": "Measured results"
                           },
                           "children": [
                             {
@@ -4320,6 +4320,30 @@
                                   },
                                   "children": [
                                     "Faster for developers to fix security issues, median across enterprise customers"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "tag": "div",
+                              "props": {},
+                              "children": [
+                                {
+                                  "tag": "span",
+                                  "props": {
+                                    "className": "case-result-number"
+                                  },
+                                  "children": [
+                                    "14%"
+                                  ]
+                                },
+                                {
+                                  "tag": "span",
+                                  "props": {
+                                    "className": "case-result-label"
+                                  },
+                                  "children": [
+                                    "Override rate on AI remediation, down from 28% at launch within one quarter"
                                   ]
                                 }
                               ]
@@ -4637,6 +4661,33 @@
                                         },
                                         " highlighting improved discoverability of insights"
                                       ]
+                                    },
+                                    {
+                                      "tag": "li",
+                                      "props": {},
+                                      "children": [
+                                        {
+                                          "tag": "b",
+                                          "props": {},
+                                          "children": [
+                                            "System Usability Scale (SUS) raised from 43 to 84"
+                                          ]
+                                        },
+                                        " through the platform redesign"
+                                      ]
+                                    },
+                                    {
+                                      "tag": "li",
+                                      "props": {},
+                                      "children": [
+                                        {
+                                          "tag": "b",
+                                          "props": {},
+                                          "children": [
+                                            "Support tickets in redesigned areas decreased by 38%"
+                                          ]
+                                        }
+                                      ]
                                     }
                                   ]
                                 }
@@ -4723,7 +4774,7 @@
               "tag": "img",
               "props": {
                 "src": "/case-studies/cj-refresh-hero-atmos@2x.png",
-                "alt": "Rethought, Redesigned and Relaunched IoT Control Center",
+                "alt": "Jasper IoT Control Center, redesigned and relaunched",
                 "decoding": "async"
               },
               "children": []
@@ -4759,13 +4810,7 @@
                         "id": "project-title"
                       },
                       "children": [
-                        "The Jasper IoT Control Center -",
-                        {
-                          "tag": "br",
-                          "props": {},
-                          "children": []
-                        },
-                        "Redesigned and relaunched the IoT Control Center, then continued its evolution at Cisco"
+                        "Redesigning the Jasper IoT Control Center for sales and adoption, then evolving it at Cisco"
                       ]
                     },
                     "\n\t\t"
@@ -5025,7 +5070,7 @@
                             }
                           },
                           "children": [
-                            "Absent visual heirarchy of most content pages"
+                            "Absent visual hierarchy of most content pages"
                           ]
                         },
                         "\n",
@@ -5203,7 +5248,7 @@
                           "tag": "strong",
                           "props": {},
                           "children": [
-                            "card sortin"
+                            "card sorting"
                           ]
                         },
                         ", subjects determined which category titles and actions made sense in their routines. We assessed which categories were relevant to their new user journey and which should be eliminated, merged or reconfigured. This exercise proved interesting, as many PMs felt the features they championed deserved promotion above others, even though these categories often confused the user or were unimportant to their business."
@@ -5411,7 +5456,7 @@
                             "Beta Release Internal:"
                           ]
                         },
-                        " Launched at the same time as the Preview. Here we released the new build to design partners and internal teams. We had regular cadance of feedback, to vet, prioritize and track."
+                        " Launched at the same time as the Preview. Here we released the new build to design partners and internal teams. We had regular cadence of feedback, to vet, prioritize and track."
                       ]
                     },
                     "\n\n                ",
@@ -5474,7 +5519,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "The biggest change introduced by the RefreshUI rollout was the new role customized dashboard with relevant metrics and trends. The data display was derrived from our discovery synthesis after speaking to over a hundred users. These design partners participated in the A/B testing, prototype contextual interviews, and tree-testing. This was a welcomed new experience, which when compared to the original homepage the users had high appreciation."
+                        "The biggest change introduced by the RefreshUI rollout was the new role customized dashboard with relevant metrics and trends. The data display was derived from our discovery synthesis after speaking to over a hundred users. These design partners participated in the A/B testing, prototype contextual interviews, and tree-testing. This was a welcomed new experience, which when compared to the original homepage the users had high appreciation."
                       ]
                     },
                     "\n\n",
@@ -5557,7 +5602,7 @@
                           "props": {
                             "className": "fullimage",
                             "src": "/case-studies/cj-analytics-overview-tesla@2x.png",
-                            "alt": "Service Provider Persona",
+                            "alt": "New role-based homepage with analytics",
                             "decoding": "async"
                           },
                           "children": []
@@ -5586,7 +5631,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "Using machine learning to analyze usage trends, we are now able to employ predictive analytics when seeing a trend leading to a potential anomaly, often an overage. These overages can be short-lived, yet spike usage to have penalty costs associated to cover the service. With this, we now present a static intercept banner at the top of the users main homepage alerting to the potential overage. This solution is part of a pattern called a \"Recommentation Engine.\" The Recommendation displays the current anomaly detected and a pre-authored automation rule which will temporarily raise the limit of usage until the spike subsides. \n\n"
+                        "Using machine learning to analyze usage trends, we are now able to employ predictive analytics when seeing a trend leading to a potential anomaly, often an overage. These overages can be short-lived, yet spike usage to have penalty costs associated to cover the service. With this, we now present a static intercept banner at the top of the users main homepage alerting to the potential overage. This solution is part of a pattern called a \"Recommendation Engine.\" The Recommendation displays the current anomaly detected and a pre-authored automation rule which will temporarily raise the limit of usage until the spike subsides. \n\n"
                       ]
                     },
                     {
@@ -5951,7 +5996,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "While the RefreshUI was successful, we continued to monitor our platform and microservices performance through analytics. The Control Center is a real-time, results driven, complex, observerability SaaS platform. With our global telcom operator customers and their thousands of enterprise customers, we are providing a critical management, at scale, with the required flexibiility for success.\n                "
+                        "While the RefreshUI was successful, we continued to monitor our platform and microservices performance through analytics. The Control Center is a real-time, results-driven, complex, observability SaaS platform. With our global telecom operator customers and their thousands of enterprise customers, we are providing a critical management, at scale, with the required flexibility for success.\n                "
                       ]
                     },
                     "\n                ",
@@ -5963,6 +6008,13 @@
                       ]
                     },
                     "\n            ",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "The platform onboarded 55+ mobile operators and managed more than 100 million subscribers at Jasper, and 45 additional global carriers at Cisco."
+                      ]
+                    },
                     {
                       "tag": "p",
                       "props": {},
@@ -6760,7 +6812,7 @@
                         "className": "class-one"
                       },
                       "children": [
-                        "Accurate portion management and nutrition detection is a gamechanger"
+                        "Accurate portion management and nutrition detection is a game changer"
                       ]
                     },
                     "\n                \n",
@@ -6786,7 +6838,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "Our journey toward achieving such high-accuracy, speed, and precision convinced us that our user-base, for a public app would be insuffiencent to train our Ai models in time to add great value during an initial trial by a user. This finding led us to create robots with the impressive ability to capture food comprehensively, spanning a full 360-degree view. These versatile robots not only excelled in capturing images but also demonstrated proficiency in identifying patterns and assessing portion sizes. Our dedicated contributors eagerly embraced the challenge of providing food captures from diverse angles and setups, showcasing their commitment through the visually captivating point clouds generated by our advanced computer algorithms. As we integrated support for density models, the precision of our system continued to advance.\n\n"
+                        "Our journey toward achieving such high-accuracy, speed, and precision convinced us that our user-base, for a public app would be insufficient to train our Ai models in time to add great value during an initial trial by a user. This finding led us to create robots with the impressive ability to capture food comprehensively, spanning a full 360-degree view. These versatile robots not only excelled in capturing images but also demonstrated proficiency in identifying patterns and assessing portion sizes. Our dedicated contributors eagerly embraced the challenge of providing food captures from diverse angles and setups, showcasing their commitment through the visually captivating point clouds generated by our advanced computer algorithms. As we integrated support for density models, the precision of our system continued to advance.\n\n"
                       ]
                     },
                     {
@@ -6885,7 +6937,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "Once the machines were built to specifications, we lent them to active participants in our food scanning program, enabling us to gather real-world data and fine-tune our ML food model recognition for improved accuracy and performance. Several interviews were conducted to gain all the feedback we could and then key feature improvements added to the readmap of subsequent versions.\n"
+                        "Once the machines were built to specifications, we lent them to active participants in our food scanning program, enabling us to gather real-world data and fine-tune our ML food model recognition for improved accuracy and performance. Several interviews were conducted to gain all the feedback we could and then key feature improvements added to the roadmap of subsequent versions.\n"
                       ]
                     },
                     "\n\n",
@@ -7083,7 +7135,7 @@
                                 "A/B testing -"
                               ]
                             },
-                            " Discovering perferred options of our users."
+                            " Discovering preferred options of our users."
                           ]
                         },
                         "\n                    ",
@@ -8250,7 +8302,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "Tablets are used by NOC customer, sales, support and the Enterprise to bring a larger mobile viewing space to the user. This demand was also confirmed in our google analytics for viewport sizes by user. But, how can we capitalize on the user interaction patterns and our complex platform user experience in a way that simplifies data and highlights anomalys?"
+                        "Tablets are used by NOC customer, sales, support and the Enterprise to bring a larger mobile viewing space to the user. This demand was also confirmed in our google analytics for viewport sizes by user. But, how can we capitalize on the user interaction patterns and our complex platform user experience in a way that simplifies data and highlights anomalies?"
                       ]
                     },
                     "\n                \n                ",
@@ -8456,7 +8508,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "We sourced drivers of both Uber and Lyft and surveyed their opinons on their ability to predict and manage tax due from their driving income. And, subsequently, if an app providing quick calculations of taxes due would be adopted into their routine. Lastly, what value they would place on such an application service (0 to 10). This would help us determine potential routes to monetization."
+                        "We sourced drivers of both Uber and Lyft and surveyed their opinions on their ability to predict and manage tax due from their driving income. And, subsequently, if an app providing quick calculations of taxes due would be adopted into their routine. Lastly, what value they would place on such an application service (0 to 10). This would help us determine potential routes to monetization."
                       ]
                     },
                     "\n                \n                                ",
@@ -8493,7 +8545,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "Survey results after the questionaire app had been distributed for 3 weeks to voluteer Uber and Lyft drivers:"
+                        "Survey results after the questionnaire app had been distributed for 3 weeks to volunteer Uber and Lyft drivers:"
                       ]
                     },
                     "\n                                                            ",
@@ -8623,7 +8675,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "As Max Levchin (Founder of Paypal and Affirm), maintains, these new disruptive financial servies which offer \"Adaptive banking built on trust and data.\" This is the future of financial management.\n            "
+                        "As Max Levchin (Founder of Paypal and Affirm), maintains, these new disruptive financial services which offer \"Adaptive banking built on trust and data.\" This is the future of financial management.\n            "
                       ]
                     },
                     "\n                ",
