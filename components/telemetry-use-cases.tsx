@@ -22,9 +22,19 @@ export function TelemetryUseCases(){
     ],{duration:1400,delay:action?1300:pin?650:350,easing:'cubic-bezier(.22,1,.36,1)',fill:'both'}));
    });
   }
+  let playing=false;
+  function reset(){
+   animations.forEach(animation=>animation.cancel());animations=[];
+   targets.forEach(element=>{element.style.opacity='0';});
+   playing=false;
+  }
   const observer=new IntersectionObserver(entries=>{
-   if(entries.some(entry=>entry.isIntersecting)){if(!reduced)play();observer.disconnect();}
-  },{threshold:.3});
+   if(reduced)return;
+   entries.forEach(entry=>{
+    if(entry.isIntersecting && entry.intersectionRatio>=.3 && !playing){playing=true;play();}
+    else if(!entry.isIntersecting && playing){reset();}
+   });
+  },{threshold:[0,.3]});
   observer.observe(root.querySelector('.worlds')!);
   return ()=>{observer.disconnect();animations.forEach(animation=>animation.cancel());};
  },[]);
