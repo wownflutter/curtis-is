@@ -4586,7 +4586,16 @@
                                     "className": "case-result-label"
                                   },
                                   "children": [
-                                    "Explorer feature engagement"
+                                    "Explorer engagement"
+                                  ]
+                                },
+                                {
+                                  "tag": "span",
+                                  "props": {
+                                    "className": "case-result-detail"
+                                  },
+                                  "children": [
+                                    "12% to 30% of weekly active users within 90 days of launch."
                                   ]
                                 }
                               ]
