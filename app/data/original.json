@@ -6926,7 +6926,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "As the product matures, we will increasingly employ machine learning to surface additional user nurture and expedite the visibility of any security anomalies."
+                        "Machine learning ranked findings by risk and recommended a remediation action for each one, which analysts could accept, edit or override in Case Management."
                       ]
                     },
                     "\n            ",
