@@ -477,12 +477,12 @@ const jasperPersonas:PersonaSlide[] = [
   {label:'Operations Manager',src:'/case-studies/cj-analytics-persona-humphrey@2x.png',cutoff:2000,alt:'Discovery interview with an operations manager'},
 ];
 
-const personaSets:{id:string;theme:'dark'|'light';slides:PersonaSlide[]}[] = [
+const personaSets:{id:string;theme:'dark'|'light';slides:PersonaSlide[];extra?:number}[] = [
   {id:'contrast',theme:'dark',slides:contrastPersonas},
-  {id:'jasper',theme:'light',slides:jasperPersonas},
+  {id:'jasper',theme:'light',slides:jasperPersonas,extra:100},
 ];
 
-function PersonaSlideshow({id,slides,theme}:{id:string;slides:PersonaSlide[];theme:'dark'|'light'}) {
+function PersonaSlideshow({id,slides,theme,extra=0}:{id:string;slides:PersonaSlide[];theme:'dark'|'light';extra?:number}) {
   const [active,setActive]=useState(0);
   const [expanded,setExpanded]=useState<Record<number,boolean>>({});
   const sectionRef=useRef<HTMLElement>(null);
@@ -496,8 +496,10 @@ function PersonaSlideshow({id,slides,theme}:{id:string;slides:PersonaSlide[];the
     </div>
     {slides.map((persona,index)=><figure key={persona.src} id={`${id}-persona-slide-${index}`}
       hidden={active!==index} role="group" aria-roledescription="slide" aria-label={`${index+1} of ${slides.length}: ${persona.label}`}>
-      <div className="persona-preview" id={`${id}-persona-document-${index}`}
-        style={{aspectRatio:expanded[index]?'auto':`${imageSizes[persona.src].width} / ${persona.cutoff}`}}>
+      <div className={`persona-preview${extra && !expanded[index] ? ' persona-preview-extra' : ''}`} id={`${id}-persona-document-${index}`}
+        style={expanded[index] ? {aspectRatio:'auto'} : extra
+          ? {paddingBottom:`calc(${(persona.cutoff/imageSizes[persona.src].width*100).toFixed(4)}% + ${extra}px)`}
+          : {aspectRatio:`${imageSizes[persona.src].width} / ${persona.cutoff}`}}>
         <MediaImage attributes={{src:persona.src,alt:`${persona.alt ?? `${persona.label} research persona`}${expanded[index]?', full document':', preview'}`,decoding:'async'}} />
       </div>
       <figcaption><span>{persona.label} {index+1} / {slides.length}</span>
@@ -524,7 +526,7 @@ function renderChildren(children:ContentNode[], key:string):ReactNode[] {
   return children.flatMap((child,index)=>{
     const personaGroup=personaGroups.find(group=>group.indices.includes(index));
     if(personaGroup) {
-      return index===personaGroup.indices[0] ? [<PersonaSlideshow key={`${key}.personas`} id={personaGroup.set.id} slides={personaGroup.set.slides} theme={personaGroup.set.theme} />] : [];
+      return index===personaGroup.indices[0] ? [<PersonaSlideshow key={`${key}.personas`} id={personaGroup.set.id} slides={personaGroup.set.slides} theme={personaGroup.set.theme} extra={personaGroup.set.extra} />] : [];
     }
     if(index===legacyStart)return [<LegacyBeforeSnapshot key={`${key}.legacy`} keyName={`${key}-legacy`} />];
     if(legacyStart>=0 && index>legacyStart && (legacyEnd<0 || index<legacyEnd))return [];

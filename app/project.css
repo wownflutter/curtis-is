@@ -716,6 +716,8 @@
 #project .persona-slideshow-light button { border-color:#9aa7ac; color:#34464d; }
 #project .persona-slideshow-light button[aria-pressed="true"] { border-color:#1b6b93; color:#1b6b93; background:rgba(27,107,147,.08); }
 #project .persona-slideshow-light :is(button,a):focus-visible { outline-color:#1b6b93; }
+#project .persona-preview-extra { position:relative; height:0; }
+#project .persona-preview-extra img { position:absolute; top:0; left:0; }
 #project .persona-slideshow-light .persona-preview { background:#fff; border:1px solid #d9dede; }
 #project .persona-slideshow-light figcaption > span { color:#526269; }
 #project .persona-slideshow-light .persona-expand { border:0; color:#1b6b93; }
