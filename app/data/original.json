@@ -6637,6 +6637,123 @@
                         "className": "class-one"
                       },
                       "children": [
+                        "Supporting the User Journey Narrative"
+                      ]
+                    },
+                    "\n                \n",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "To highlight our key product features, we implemented a visually engaging product tour complete with guiding callouts. This tour effectively showcases how each use case aligns with and supports the four pillars of our marketing mantra: \"Discover, Classify, Monitor, and Protect.\" Users can conveniently access this tour by clicking on the \"i\" icon located in the masthead, introduced during the final step of the tour."
+                      ]
+                    },
+                    "\n\n",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "We also incorporated our company's distinctive branding elements to further reinforce our values and create a memorable impression. These elements add a touch of excellence and professionalism to the overall user experience, enhancing our brand's identity and promoting a cohesive and engaging journey for our users."
+                      ]
+                    },
+                    "\n\n                \n         ",
+                    {
+                      "tag": "div",
+                      "props": {
+                        "id": "project-header",
+                        "className": "toppadding"
+                      },
+                      "children": [
+                        "\n\t",
+                        {
+                          "tag": "img",
+                          "props": {
+                            "className": "fullimage",
+                            "src": "/case-studies/or-tour-glify.gif",
+                            "alt": "Tour",
+                            "decoding": "async"
+                          },
+                          "children": []
+                        },
+                        "\n"
+                      ]
+                    },
+                    "   \n          \n",
+                    "\n            \n",
+                    {
+                      "tag": "h3",
+                      "props": {
+                        "className": "class-one"
+                      },
+                      "children": [
+                        "Getting new accounts to a first finding"
+                      ]
+                    },
+                    "\n            ",
+                    {
+                      "tag": "div",
+                      "props": {
+                        "className": "trackonomy-results-metrics",
+                        "aria-label": "Measured results"
+                      },
+                      "children": [
+                        {
+                          "tag": "div",
+                          "props": {},
+                          "children": [
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-number"
+                              },
+                              "children": [
+                                "48%"
+                              ]
+                            },
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-label"
+                              },
+                              "children": [
+                                "Of new accounts reached a first classified finding, up from 31%"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "props": {},
+                          "children": [
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-number"
+                              },
+                              "children": [
+                                "2×"
+                              ]
+                            },
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-label"
+                              },
+                              "children": [
+                                "Pilot-to-paid conversion for activated accounts compared with accounts that did not activate"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "\n            ",
+                    {
+                      "tag": "h3",
+                      "props": {
+                        "className": "class-one"
+                      },
+                      "children": [
                         "Agile Workflow and Design-to-Development Handoff"
                       ]
                     },
@@ -6757,123 +6874,6 @@
                       ]
                     },
                     "\n\n            \n                \n                \n ",
-                    {
-                      "tag": "h3",
-                      "props": {
-                        "className": "class-one"
-                      },
-                      "children": [
-                        "Supporting the User Journey Narrative"
-                      ]
-                    },
-                    "\n                \n",
-                    {
-                      "tag": "p",
-                      "props": {},
-                      "children": [
-                        "To highlight our key product features, we implemented a visually engaging product tour complete with guiding callouts. This tour effectively showcases how each use case aligns with and supports the four pillars of our marketing mantra: \"Discover, Classify, Monitor, and Protect.\" Users can conveniently access this tour by clicking on the \"i\" icon located in the masthead, introduced during the final step of the tour."
-                      ]
-                    },
-                    "\n\n",
-                    {
-                      "tag": "p",
-                      "props": {},
-                      "children": [
-                        "We also incorporated our company's distinctive branding elements to further reinforce our values and create a memorable impression. These elements add a touch of excellence and professionalism to the overall user experience, enhancing our brand's identity and promoting a cohesive and engaging journey for our users."
-                      ]
-                    },
-                    "\n\n                \n         ",
-                    {
-                      "tag": "div",
-                      "props": {
-                        "id": "project-header",
-                        "className": "toppadding"
-                      },
-                      "children": [
-                        "\n\t",
-                        {
-                          "tag": "img",
-                          "props": {
-                            "className": "fullimage",
-                            "src": "/case-studies/or-tour-glify.gif",
-                            "alt": "Tour",
-                            "decoding": "async"
-                          },
-                          "children": []
-                        },
-                        "\n"
-                      ]
-                    },
-                    "   \n          \n",
-                    "\n            \n",
-                    {
-                      "tag": "h3",
-                      "props": {
-                        "className": "class-one"
-                      },
-                      "children": [
-                        "Getting new accounts to a first finding"
-                      ]
-                    },
-                    "\n            ",
-                    {
-                      "tag": "div",
-                      "props": {
-                        "className": "trackonomy-results-metrics",
-                        "aria-label": "Measured results"
-                      },
-                      "children": [
-                        {
-                          "tag": "div",
-                          "props": {},
-                          "children": [
-                            {
-                              "tag": "span",
-                              "props": {
-                                "className": "trackonomy-result-number"
-                              },
-                              "children": [
-                                "48%"
-                              ]
-                            },
-                            {
-                              "tag": "span",
-                              "props": {
-                                "className": "trackonomy-result-label"
-                              },
-                              "children": [
-                                "Of new accounts reached a first classified finding, up from 31%"
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "tag": "div",
-                          "props": {},
-                          "children": [
-                            {
-                              "tag": "span",
-                              "props": {
-                                "className": "trackonomy-result-number"
-                              },
-                              "children": [
-                                "2×"
-                              ]
-                            },
-                            {
-                              "tag": "span",
-                              "props": {
-                                "className": "trackonomy-result-label"
-                              },
-                              "children": [
-                                "Pilot-to-paid conversion for activated accounts compared with accounts that did not activate"
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    "\n            ",
                     {
                       "tag": "p",
                       "props": {},
