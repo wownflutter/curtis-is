@@ -4373,16 +4373,7 @@
                                     "className": "case-result-detail"
                                   },
                                   "children": [
-                                    "Median time to fix fell from about 10 days to about 6 within a quarter of rollout."
-                                  ]
-                                },
-                                {
-                                  "tag": "span",
-                                  "props": {
-                                    "className": "case-result-detail"
-                                  },
-                                  "children": [
-                                    "Proposed fixes arrive with the runtime evidence behind them, so developers can review, edit or approve and open a PR in one flow."
+                                    "About 10 days to about 6, within a quarter of rollout."
                                   ]
                                 }
                               ]
