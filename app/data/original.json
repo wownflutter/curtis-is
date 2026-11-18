@@ -3966,6 +3966,39 @@
                             "\n"
                           ]
                         },
+                        {
+                          "tag": "div",
+                          "props": {
+                            "className": "case-results-metrics case-results-metrics-single",
+                            "aria-label": "Measured result"
+                          },
+                          "children": [
+                            {
+                              "tag": "div",
+                              "props": {},
+                              "children": [
+                                {
+                                  "tag": "span",
+                                  "props": {
+                                    "className": "case-result-number"
+                                  },
+                                  "children": [
+                                    "4.4/5"
+                                  ]
+                                },
+                                {
+                                  "tag": "span",
+                                  "props": {
+                                    "className": "case-result-label"
+                                  },
+                                  "children": [
+                                    "User confidence in the posture score, up from 2.3, from in-product ratings"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
                         "\n\n",
                         {
                           "tag": "h3",
@@ -4101,6 +4134,39 @@
                             "\n"
                           ]
                         },
+                        {
+                          "tag": "div",
+                          "props": {
+                            "className": "case-results-metrics case-results-metrics-single",
+                            "aria-label": "Measured result"
+                          },
+                          "children": [
+                            {
+                              "tag": "div",
+                              "props": {},
+                              "children": [
+                                {
+                                  "tag": "span",
+                                  "props": {
+                                    "className": "case-result-number"
+                                  },
+                                  "children": [
+                                    "66%"
+                                  ]
+                                },
+                                {
+                                  "tag": "span",
+                                  "props": {
+                                    "className": "case-result-label"
+                                  },
+                                  "children": [
+                                    "Less time to assess a threat"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
                         "\n\n\n",
                         {
                           "tag": "h3",
@@ -4225,6 +4291,39 @@
                               ]
                             },
                             "\n"
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "props": {
+                            "className": "case-results-metrics case-results-metrics-single",
+                            "aria-label": "Measured result"
+                          },
+                          "children": [
+                            {
+                              "tag": "div",
+                              "props": {},
+                              "children": [
+                                {
+                                  "tag": "span",
+                                  "props": {
+                                    "className": "case-result-number"
+                                  },
+                                  "children": [
+                                    "40%"
+                                  ]
+                                },
+                                {
+                                  "tag": "span",
+                                  "props": {
+                                    "className": "case-result-label"
+                                  },
+                                  "children": [
+                                    "Faster for developers to fix security issues, median across enterprise customers"
+                                  ]
+                                }
+                              ]
+                            }
                           ]
                         },
                         "\n\n",
@@ -4410,6 +4509,39 @@
                             "\n"
                           ]
                         },
+                        {
+                          "tag": "div",
+                          "props": {
+                            "className": "case-results-metrics case-results-metrics-single",
+                            "aria-label": "Measured result"
+                          },
+                          "children": [
+                            {
+                              "tag": "div",
+                              "props": {},
+                              "children": [
+                                {
+                                  "tag": "span",
+                                  "props": {
+                                    "className": "case-result-number"
+                                  },
+                                  "children": [
+                                    "2.5×"
+                                  ]
+                                },
+                                {
+                                  "tag": "span",
+                                  "props": {
+                                    "className": "case-result-label"
+                                  },
+                                  "children": [
+                                    "Explorer feature engagement"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
                         "\n               \n\n\n",
                         {
                           "tag": "section",
@@ -4432,86 +4564,6 @@
                               "props": {},
                               "children": [
                                 "Field sales adopted the dashboard for enterprise demonstrations. Program managers reported faster remediation tracking, and engineering teams aligned around a shared UX language."
-                              ]
-                            },
-                            {
-                              "tag": "div",
-                              "props": {
-                                "className": "case-results-metrics"
-                              },
-                              "children": [
-                                {
-                                  "tag": "div",
-                                  "props": {},
-                                  "children": [
-                                    {
-                                      "tag": "span",
-                                      "props": {
-                                        "className": "case-result-number"
-                                      },
-                                      "children": [
-                                        "66%"
-                                      ]
-                                    },
-                                    {
-                                      "tag": "span",
-                                      "props": {
-                                        "className": "case-result-label"
-                                      },
-                                      "children": [
-                                        "Less time to assess a threat"
-                                      ]
-                                    }
-                                  ]
-                                },
-                                {
-                                  "tag": "div",
-                                  "props": {},
-                                  "children": [
-                                    {
-                                      "tag": "span",
-                                      "props": {
-                                        "className": "case-result-number"
-                                      },
-                                      "children": [
-                                        "40%"
-                                      ]
-                                    },
-                                    {
-                                      "tag": "span",
-                                      "props": {
-                                        "className": "case-result-label"
-                                      },
-                                      "children": [
-                                        "Increase in developer remediation rates"
-                                      ]
-                                    }
-                                  ]
-                                },
-                                {
-                                  "tag": "div",
-                                  "props": {},
-                                  "children": [
-                                    {
-                                      "tag": "span",
-                                      "props": {
-                                        "className": "case-result-number"
-                                      },
-                                      "children": [
-                                        "2.5×"
-                                      ]
-                                    },
-                                    {
-                                      "tag": "span",
-                                      "props": {
-                                        "className": "case-result-label"
-                                      },
-                                      "children": [
-                                        "Explorer feature engagement"
-                                      ]
-                                    }
-                                  ]
-                                }
                               ]
                             },
                             {
@@ -4558,20 +4610,6 @@
                                     "className": "newlist"
                                   },
                                   "children": [
-                                    {
-                                      "tag": "li",
-                                      "props": {},
-                                      "children": [
-                                        {
-                                          "tag": "b",
-                                          "props": {},
-                                          "children": [
-                                            "Confident decision-making 2x faster:"
-                                          ]
-                                        },
-                                        " showing improved onboarding and reduced cognitive friction"
-                                      ]
-                                    },
                                     {
                                       "tag": "li",
                                       "props": {},
