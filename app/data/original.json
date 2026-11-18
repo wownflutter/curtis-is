@@ -5717,36 +5717,36 @@
                     },
                     "\n                ",
                     {
-                      "tag": "ul",
+                      "tag": "div",
                       "props": {
-                        "className": "newlist"
+                        "className": "trackonomy-results-metrics",
+                        "aria-label": "Measured results"
                       },
                       "children": [
-                        "\n     ",
                         {
-                          "tag": "li",
-                          "props": {
-                            "style": {
-                              "border": "none"
-                            }
-                          },
+                          "tag": "div",
+                          "props": {},
                           "children": [
-                            "Conducted contextual interviews with select design partners."
-                          ]
-                        },
-                        "\n     ",
-                        {
-                          "tag": "li",
-                          "props": {
-                            "style": {
-                              "border": "none"
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-number"
+                              },
+                              "children": [
+                                "5/5"
+                              ]
+                            },
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-label"
+                              },
+                              "children": [
+                                "Customer satisfaction (CSAT), rated 1 to 5 stars in a user survey (Typeform), 30 days after launch"
+                              ]
                             }
-                          },
-                          "children": [
-                            "Reg users survey: Customer Satisfaction Score (CSAT) of 5 stars (Typeform, 0-5 stars)"
                           ]
-                        },
-                        "\n                "
+                        }
                       ]
                     },
                     "\n\n\n               ",
