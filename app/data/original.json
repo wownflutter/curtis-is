@@ -5581,7 +5581,7 @@
                                 "className": "trackonomy-result-label"
                               },
                               "children": [
-                                "Customer satisfaction (CSAT), from a 0 to 10 user survey, 30 days after launch"
+                                "Customer satisfaction (CSAT) with the new homepage, from a 0 to 10 user survey, 30 days after launch"
                               ]
                             }
                           ]
@@ -5742,18 +5742,11 @@
                                 "className": "trackonomy-result-label"
                               },
                               "children": [
-                                "Customer satisfaction (CSAT), rated 1 to 5 stars in a user survey (Typeform), 30 days after launch"
+                                "Customer satisfaction (CSAT) with the Recommendation Engine, rated 1 to 5 stars in a user survey (Typeform), 30 days after launch"
                               ]
                             }
                           ]
                         }
-                      ]
-                    },
-                    {
-                      "tag": "p",
-                      "props": {},
-                      "children": [
-                        "We collected the CSAT data through contextual interviews with select design partners and a survey of registered users."
                       ]
                     },
                     "\n\n\n               ",
