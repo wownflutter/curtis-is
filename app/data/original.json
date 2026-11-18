@@ -5749,6 +5749,13 @@
                         }
                       ]
                     },
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "We collected the CSAT data through contextual interviews with select design partners and a survey of registered users."
+                      ]
+                    },
                     "\n\n\n               ",
                     {
                       "tag": "div",
