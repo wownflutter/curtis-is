@@ -6807,6 +6807,74 @@
                     "   \n          \n",
                     "\n            \n",
                     {
+                      "tag": "h3",
+                      "props": {
+                        "className": "class-one"
+                      },
+                      "children": [
+                        "Getting new accounts to a first finding"
+                      ]
+                    },
+                    "\n            ",
+                    {
+                      "tag": "div",
+                      "props": {
+                        "className": "trackonomy-results-metrics",
+                        "aria-label": "Measured results"
+                      },
+                      "children": [
+                        {
+                          "tag": "div",
+                          "props": {},
+                          "children": [
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-number"
+                              },
+                              "children": [
+                                "48%"
+                              ]
+                            },
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-label"
+                              },
+                              "children": [
+                                "Of new accounts reached a first classified finding, up from 31%"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "props": {},
+                          "children": [
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-number"
+                              },
+                              "children": [
+                                "2×"
+                              ]
+                            },
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-label"
+                              },
+                              "children": [
+                                "Pilot-to-paid conversion for activated accounts compared with accounts that did not activate"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "\n            ",
+                    {
                       "tag": "p",
                       "props": {},
                       "children": [
