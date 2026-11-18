@@ -2895,6 +2895,14 @@
                         "Reduced time to first value from approximately two days to under an hour, measured through platform instrumentation from login to time-to-target."
                       ]
                     },
+                    "\n            ",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "Contextual search powered by MCP and LLMs helped support teams find answers faster, contributing to a 39 percent average drop in ticket resolution time, year over year."
+                      ]
+                    },
                     "\n      \n            ",
                     {
                       "tag": "p",
@@ -2912,13 +2920,6 @@
                       ]
                     },
                     "\n            ",
-                    {
-                      "tag": "p",
-                      "props": {},
-                      "children": [
-                        "Support tickets were resolved 39 percent faster on average, year over year, helped in part by contextual search powered by MCP and LLMs."
-                      ]
-                    },
                     "               \n                \n            ",
                     {
                       "tag": "h3",
