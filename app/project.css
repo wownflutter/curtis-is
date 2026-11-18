@@ -797,3 +797,19 @@
 #project #project-header.jasper-hero { position:relative; }
 #project .jasper-hero-caption { position:absolute; top:calc(clamp(10px,3%,32px) + 20px); right:clamp(44px,10%,160px); display:flex; flex-direction:column; align-items:flex-end; gap:.2em; max-width:46%; text-align:right; color:#fff; font-family:var(--font-heading); font-size:clamp(10px,2.1vw,26px); font-weight:500; line-height:1.2; letter-spacing:-.01em; text-shadow:0 1px 14px rgba(0,0,0,.55),0 0 2px rgba(0,0,0,.35); pointer-events:none; }
 #project .jasper-hero-caption-sub { font-weight:400; opacity:.88; }
+
+/* Jasper persona switcher: Apple-style segmented control */
+#project .persona-slideshow-light .persona-choices { display:inline-flex; gap:2px; padding:3px; border-radius:999px; background:rgba(52,70,77,.09); }
+#project .persona-slideshow-light .persona-choices button { border:0; border-radius:999px; padding:8px 20px; background:transparent; color:#4d5d63; font-family:Inter,-apple-system,BlinkMacSystemFont,'SF Pro Text',sans-serif; font-size:14px; font-weight:500; letter-spacing:-.01em; line-height:1.2; transition:background-color .2s ease,color .2s ease,box-shadow .2s ease; }
+#project .persona-slideshow-light .persona-choices button:hover { color:#1d2a2f; }
+#project .persona-slideshow-light .persona-choices button[aria-pressed="true"] { background:#fff; color:#1d2a2f; box-shadow:0 1px 2px rgba(0,0,0,.14),0 3px 8px rgba(0,0,0,.08); }
+#project .persona-slideshow-light .persona-choices button:focus-visible { outline:2px solid #1b6b93; outline-offset:2px; }
+#project .persona-slideshow-light .persona-preview { border:0; border-radius:14px; box-shadow:0 0 0 1px rgba(0,0,0,.06),0 8px 28px rgba(0,0,0,.08); }
+#project .persona-slideshow-light figcaption { align-items:center; padding-top:14px; }
+#project .persona-slideshow-light figcaption > span { font-size:12.5px; letter-spacing:.01em; color:#6c7b81; }
+#project .persona-slideshow-light .persona-expand { border-radius:999px; padding:6px 14px; background:rgba(27,107,147,.08); color:#1b6b93; font-size:13px; font-weight:500; text-decoration:none; transition:background-color .2s ease; }
+#project .persona-slideshow-light .persona-expand:hover { background:rgba(27,107,147,.15); }
+@media (max-width:640px) {
+  #project .persona-slideshow-light .persona-choices { display:flex; width:100%; }
+  #project .persona-slideshow-light .persona-choices button { flex:1; padding:8px 6px; font-size:12px; }
+}
