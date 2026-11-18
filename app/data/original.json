@@ -6958,7 +6958,7 @@
                             "width": 1920,
                             "height": 1080,
                             "muted": true,
-                            "loop": false,
+                            "loop": true,
                             "playsInline": true,
                             "preload": "metadata",
                             "aria-label": "Case management walkthrough: an ML recommendation is reviewed and accepted"
