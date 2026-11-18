@@ -6897,6 +6897,74 @@
                         "As the product matures, we will increasingly employ machine learning to surface additional user nurture and expedite the visibility of any security anomalies."
                       ]
                     },
+                    "\n            ",
+                    {
+                      "tag": "h3",
+                      "props": {
+                        "className": "class-one"
+                      },
+                      "children": [
+                        "Faster remediation decisions with ML recommendations"
+                      ]
+                    },
+                    "\n            ",
+                    {
+                      "tag": "div",
+                      "props": {
+                        "className": "trackonomy-results-metrics",
+                        "aria-label": "Measured results"
+                      },
+                      "children": [
+                        {
+                          "tag": "div",
+                          "props": {},
+                          "children": [
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-number"
+                              },
+                              "children": [
+                                "46%"
+                              ]
+                            },
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-label"
+                              },
+                              "children": [
+                                "Reduction in time to remediation decision"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "props": {},
+                          "children": [
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-number"
+                              },
+                              "children": [
+                                "78%"
+                              ]
+                            },
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-label"
+                              },
+                              "children": [
+                                "Acceptance rate on ML-recommended actions"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
                     "\n\n            \n        \n            \n\t\t"
                   ]
                 },
