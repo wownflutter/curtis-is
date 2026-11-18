@@ -479,7 +479,7 @@ const jasperPersonas:PersonaSlide[] = [
 
 const personaSets:{id:string;theme:'dark'|'light';slides:PersonaSlide[];extra?:number}[] = [
   {id:'contrast',theme:'dark',slides:contrastPersonas},
-  {id:'jasper',theme:'light',slides:jasperPersonas,extra:100},
+  {id:'jasper',theme:'light',slides:jasperPersonas,extra:180},
 ];
 
 function PersonaSlideshow({id,slides,theme,extra=0}:{id:string;slides:PersonaSlide[];theme:'dark'|'light';extra?:number}) {
