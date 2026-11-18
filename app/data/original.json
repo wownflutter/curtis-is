@@ -2510,20 +2510,57 @@
                     {
                       "tag": "div",
                       "props": {
-                        "id": "project-header",
-                        "className": "toppadding"
+                        "className": "row"
                       },
                       "children": [
-                        "\n\t",
+                        "\n  ",
                         {
-                          "tag": "img",
+                          "tag": "div",
                           "props": {
-                            "className": "fullimage",
-                            "src": "/case-studies/tr-insights-dash2x.png",
-                            "alt": "Dashboard",
-                            "decoding": "async"
+                            "className": "col-md-12"
                           },
-                          "children": []
+                          "children": [
+                            "\n    ",
+                            {
+                              "tag": "video",
+                              "props": {
+                                "className": "img-responsive",
+                                "style": {
+                                  "width": "100%",
+                                  "height": "auto",
+                                  "outline": "none",
+                                  "border": "none",
+                                  "marginTop": "10px"
+                                },
+                                "autoPlay": true,
+                                "muted": true,
+                                "loop": true,
+                                "playsInline": true,
+                                "preload": "metadata"
+                              },
+                              "children": [
+                                "\n      ",
+                                {
+                                  "tag": "source",
+                                  "props": {
+                                    "src": "/case-studies/tr-insights-animation.mp4",
+                                    "type": "video/mp4"
+                                  },
+                                  "children": []
+                                },
+                                "\n      ",
+                                {
+                                  "tag": "p",
+                                  "props": {},
+                                  "children": [
+                                    "Your browser doesn't support HTML5 video."
+                                  ]
+                                },
+                                "\n    "
+                              ]
+                            },
+                            "\n  "
+                          ]
                         },
                         "\n"
                       ]

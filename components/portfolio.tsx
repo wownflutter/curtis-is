@@ -96,6 +96,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
     '/case-studies/cont-ai-review.mp4':'Review the evidence, refine the suggested code, and approve a pull request for code review.',
     '/case-studies/tr-activity-stream.mp4':'AI detects an anomaly, opens a support ticket, and drafts a message for the triage and support team.',
     '/case-studies/tr-fma-animation.mp4':'Location guidance narrows to a precise search, supported by sound and haptic feedback.',
+    '/case-studies/tr-insights-animation.mp4':'A search scopes the shipment map to a hub, and a tooltip summarizes that hub’s shipments by risk level.',
     '/case-studies/uh-nlp.mp4':'A care professional’s spoken asset request connects to inventory location and tracking through an NLP/MCP context layer.',
   };
   const motionDescription=motionDescriptions[source];
@@ -103,6 +104,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
     '/case-studies/cont-ai-review.mp4':{label:'Review',title:'Review the fix before it becomes a pull request.'},
     '/case-studies/tr-activity-stream.mp4':{label:'Respond',title:'Turn an anomaly into coordinated action.'},
     '/case-studies/tr-fma-animation.mp4':{label:'Find',title:'From nearby to precisely located.'},
+    '/case-studies/tr-insights-animation.mp4':{label:'Insights',title:'From a search to risk in context.'},
     '/case-studies/uh-nlp.mp4':{label:'Ask',title:'Find an asset without typing.'},
   };
   const motionHeading=motionHeadings[source];
