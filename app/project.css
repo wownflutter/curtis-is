@@ -721,7 +721,7 @@
 
 #project .trackonomy-market-banner{position:relative;margin:16px 0 32px;overflow:hidden;border-radius:4px;}
 #project .trackonomy-market-banner img{display:block;width:100%;height:auto;margin:0 0 -3.375%;clip-path:inset(0 0 12.3% 0);}
-#project .trackonomy-market-banner figcaption{position:absolute;left:0;right:0;bottom:0;z-index:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:end;padding:64px 0 clamp(12px,1.9vw,24px);box-sizing:border-box;background:linear-gradient(to top,rgba(10,12,16,.62) 0%,rgba(10,12,16,.28) 55%,rgba(10,12,16,0) 100%);color:#fff;text-align:center;font-family:var(--font-body);font-size:clamp(8.5px,.9vw,12px);line-height:1.5;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-wrap:balance;}
+#project .trackonomy-market-banner figcaption{position:absolute;left:0;right:0;bottom:0;z-index:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:end;padding:64px 0 clamp(12px,1.9vw,24px);box-sizing:border-box;background:linear-gradient(to top,rgba(10,12,16,.48) 0%,rgba(10,12,16,.2) 55%,rgba(10,12,16,0) 100%);color:#fff;text-align:center;font-family:var(--font-body);font-size:clamp(8.5px,.9vw,12px);line-height:1.5;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-wrap:balance;}
 #project .trackonomy-market-banner figcaption span{padding:0 clamp(6px,1.2vw,18px);text-shadow:0 1px 10px rgba(0,0,0,.35);}
 #project .trackonomy-market-banner.market-armed figcaption span{opacity:0;}
 #project .trackonomy-market-banner .market-veils{position:absolute;inset:0;z-index:1;pointer-events:none;}

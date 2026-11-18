@@ -569,16 +569,17 @@ function MarketBanner({src}:{src:string}) {
     // Play only once the whole strip is on screen and the visitor has scrolled to it, not while the hero is still arriving.
     let eligible=false;
     let scrolled=window.scrollY>60;
-    const attempt=()=>{
-      if(eligible && scrolled && !playing){playing=true;play();}
-      else if(!eligible && playing){playing=false;stop();}
-    };
+    const attempt=()=>{if(eligible && scrolled && !playing){playing=true;play();}};
     const onScroll=()=>{if(window.scrollY>60){scrolled=true;attempt();}};
     window.addEventListener('scroll',onScroll,{passive:true});
+    // Light up once most of the strip is on screen; go back to muted only after it has fully left.
     const observer=new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{eligible=entry.isIntersecting && entry.intersectionRatio>=.98;});
+      entries.forEach(entry=>{
+        if(entry.intersectionRatio>=.6)eligible=true;
+        else if(!entry.isIntersecting){eligible=false;if(playing){playing=false;stop();}}
+      });
       attempt();
-    },{threshold:[0,.98,1],rootMargin:'-8% 0px -15% 0px'});
+    },{threshold:[0,.6,1],rootMargin:'0px 0px -8% 0px'});
     observer.observe(root);
     return ()=>{window.removeEventListener('scroll',onScroll);observer.disconnect();stop();root.classList.remove('market-armed');};
   },[]);
