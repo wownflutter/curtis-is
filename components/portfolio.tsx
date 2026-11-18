@@ -559,16 +559,25 @@ function MarketBanner({src}:{src:string}) {
     const play=()=>{
       stop();
       veils.forEach((veil,index)=>{
-        animations.push(veil.animate([{opacity:1},{opacity:0}],{duration:900,delay:250+index*420,easing:'cubic-bezier(.22,1,.36,1)',fill:'both'}));
+        animations.push(veil.animate([{opacity:1},{opacity:0}],{duration:900,delay:500+index*450,easing:'cubic-bezier(.22,1,.36,1)',fill:'both'}));
       });
     };
     root.classList.add('market-armed');
-    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
-      if(entry.isIntersecting && entry.intersectionRatio>=.4 && !playing){playing=true;play();}
-      else if(!entry.isIntersecting && playing){playing=false;stop();}
-    }),{threshold:[0,.4]});
+    // Play only once the whole strip is on screen and the visitor has scrolled to it, not while the hero is still arriving.
+    let eligible=false;
+    let scrolled=window.scrollY>60;
+    const attempt=()=>{
+      if(eligible && scrolled && !playing){playing=true;play();}
+      else if(!eligible && playing){playing=false;stop();}
+    };
+    const onScroll=()=>{if(window.scrollY>60){scrolled=true;attempt();}};
+    window.addEventListener('scroll',onScroll,{passive:true});
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{eligible=entry.isIntersecting && entry.intersectionRatio>=.98;});
+      attempt();
+    },{threshold:[0,.98,1],rootMargin:'-8% 0px -15% 0px'});
     observer.observe(root);
-    return ()=>{observer.disconnect();stop();root.classList.remove('market-armed');};
+    return ()=>{window.removeEventListener('scroll',onScroll);observer.disconnect();stop();root.classList.remove('market-armed');};
   },[]);
   let left=0;
   return <figure ref={ref} className="trackonomy-market-banner">
