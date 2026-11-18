@@ -480,12 +480,18 @@ const jasperPersonas:PersonaSlide[] = [
   {label:'Operations Manager',src:'/case-studies/cj-analytics-persona-humphrey@2x.png',cutoff:2500,alt:'Discovery interview with an operations manager'},
 ];
 
-const personaSets:{id:string;theme:'dark'|'light';slides:PersonaSlide[];extra?:number}[] = [
-  {id:'contrast',theme:'dark',slides:contrastPersonas},
-  {id:'jasper',theme:'light',slides:jasperPersonas,extra:300},
+const openRavenDesignSystem:PersonaSlide[] = [
+  {label:'Components',src:'/case-studies/or-styleguide@2x.png',cutoff:2013,alt:'Open Raven design system components in Figma: form fields, search and messages'},
+  {label:'Symbols',src:'/case-studies/or-styleguide2@2x.png',cutoff:2023,alt:'Open Raven design system symbols in Figma: messages, status and page patterns'},
 ];
 
-function PersonaSlideshow({id,slides,theme,extra=0}:{id:string;slides:PersonaSlide[];theme:'dark'|'light';extra?:number}) {
+const personaSets:{id:string;theme:'dark'|'light';slides:PersonaSlide[];extra?:number;fullView?:boolean;label?:string}[] = [
+  {id:'contrast',theme:'dark',slides:contrastPersonas},
+  {id:'jasper',theme:'light',slides:jasperPersonas,extra:300},
+  {id:'openraven-ds',theme:'light',slides:openRavenDesignSystem,fullView:true,label:'Open Raven design system'},
+];
+
+function PersonaSlideshow({id,slides,theme,extra=0,fullView=false,label='Research personas'}:{id:string;slides:PersonaSlide[];theme:'dark'|'light';extra?:number;fullView?:boolean;label?:string}) {
   const [active,setActive]=useState(0);
   const [expanded,setExpanded]=useState<Record<number,boolean>>({});
   const sectionRef=useRef<HTMLElement>(null);
@@ -509,9 +515,9 @@ function PersonaSlideshow({id,slides,theme,extra=0}:{id:string;slides:PersonaSli
     setActive(next);
     requestAnimationFrame(()=>(choicesRef.current?.querySelectorAll('button')[next] as HTMLElement|undefined)?.focus());
   };
-  return <section ref={sectionRef} className={`persona-slideshow persona-slideshow-${theme}`} aria-label="Research personas" aria-roledescription="carousel">
+  return <section ref={sectionRef} className={`persona-slideshow persona-slideshow-${theme}`} aria-label={label} aria-roledescription="carousel">
     <div className="persona-controls">
-      <div className="persona-choices" ref={choicesRef} onKeyDown={onChoiceKey} aria-label="Choose a persona">
+      <div className="persona-choices" ref={choicesRef} onKeyDown={onChoiceKey} aria-label={fullView?'Choose a screen':'Choose a persona'}>
         {slides.map((persona,index)=><button key={persona.label} type="button"
           aria-pressed={active===index} aria-controls={`${id}-persona-slide-${index}`}
           onClick={()=>setActive(index)}>{persona.label}</button>)}
@@ -524,15 +530,15 @@ function PersonaSlideshow({id,slides,theme,extra=0}:{id:string;slides:PersonaSli
         style={expanded[index] ? {aspectRatio:'auto'} : extra
           ? {paddingBottom:`calc(${(persona.cutoff/imageSizes[persona.src].width*100).toFixed(4)}% + ${extra}px)`}
           : {aspectRatio:`${imageSizes[persona.src].width} / ${persona.cutoff}`}}>
-        <MediaImage attributes={{src:persona.src,alt:`${persona.alt ?? `${persona.label} research persona`}${expanded[index]?', full document':', preview'}`,decoding:'async'}} />
+        <MediaImage attributes={{src:persona.src,alt:fullView?(persona.alt ?? persona.label):`${persona.alt ?? `${persona.label} research persona`}${expanded[index]?', full document':', preview'}`,decoding:'async'}} />
       </div>
       <figcaption><span>{persona.label} {index+1} / {slides.length}</span>
-        <button className="persona-expand" type="button" aria-expanded={Boolean(expanded[index])}
+        {!fullView&&<button className="persona-expand" type="button" aria-expanded={Boolean(expanded[index])}
           aria-controls={`${id}-persona-document-${index}`} onClick={()=>{
             const collapsing=expanded[index];
             setExpanded(previous=>({...previous,[index]:!previous[index]}));
             if(collapsing)requestAnimationFrame(()=>sectionRef.current?.scrollIntoView({block:'start',behavior:'instant'}));
-          }}>{expanded[index]?'Show less ↑':'Show full persona ↓'}</button>
+          }}>{expanded[index]?'Show less ↑':'Show full persona ↓'}</button>}
       </figcaption>
     </figure>)}
   </section>;
@@ -550,7 +556,7 @@ function renderChildren(children:ContentNode[], key:string):ReactNode[] {
   return children.flatMap((child,index)=>{
     const personaGroup=personaGroups.find(group=>group.indices.includes(index));
     if(personaGroup) {
-      return index===personaGroup.indices[0] ? [<PersonaSlideshow key={`${key}.personas`} id={personaGroup.set.id} slides={personaGroup.set.slides} theme={personaGroup.set.theme} extra={personaGroup.set.extra} />] : [];
+      return index===personaGroup.indices[0] ? [<PersonaSlideshow key={`${key}.personas`} id={personaGroup.set.id} slides={personaGroup.set.slides} theme={personaGroup.set.theme} extra={personaGroup.set.extra} fullView={personaGroup.set.fullView} label={personaGroup.set.label} />] : [];
     }
     if(index===legacyStart)return [<LegacyBeforeSnapshot key={`${key}.legacy`} keyName={`${key}-legacy`} />];
     if(legacyStart>=0 && index>legacyStart && (legacyEnd<0 || index<legacyEnd))return [];
