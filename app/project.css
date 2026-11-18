@@ -364,6 +364,10 @@
   outline:2px solid #fff;
   outline-offset:1px;
 }
+#project-page.light-case-study .design-system-sequence-rail { background:rgba(255,255,255,.86); box-shadow:0 3px 14px rgba(29,42,47,.18); }
+#project-page.light-case-study .design-system-sequence-rail button::before { background:rgba(29,42,47,.18); }
+#project-page.light-case-study .design-system-sequence-rail button::after { background:#1b6b93; }
+#project-page.light-case-study .design-system-sequence-rail button:focus-visible { outline-color:#1b6b93; }
 #project .legacy-snapshot-heading {
   display:grid;
   grid-template-columns:minmax(0,1fr) minmax(280px,.72fr);

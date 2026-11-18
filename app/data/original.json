@@ -6544,46 +6544,44 @@
                     {
                       "tag": "div",
                       "props": {
-                        "id": "project-header",
                         "className": "toppadding"
                       },
                       "children": [
                         "\n\t",
                         {
-                          "tag": "img",
+                          "tag": "video",
                           "props": {
-                            "className": "fullimage",
-                            "src": "/case-studies/or-styleguide@2x.png",
-                            "alt": "Style Guide",
-                            "decoding": "async"
+                            "className": "img-responsive",
+                            "style": {
+                              "width": "100%",
+                              "height": "auto",
+                              "outline": "none",
+                              "border": "none"
+                            },
+                            "width": 1920,
+                            "height": 1080,
+                            "autoPlay": true,
+                            "muted": true,
+                            "loop": true,
+                            "playsInline": true,
+                            "preload": "metadata",
+                            "aria-label": "Open Raven design system samples: components and symbols"
                           },
-                          "children": []
+                          "children": [
+                            {
+                              "tag": "source",
+                              "props": {
+                                "src": "/case-studies/or-ds.mp4",
+                                "type": "video/mp4"
+                              },
+                              "children": []
+                            }
+                          ]
                         },
                         "\n"
                       ]
                     },
                     "\n                \n                                            ",
-                    {
-                      "tag": "div",
-                      "props": {
-                        "id": "project-header",
-                        "className": "toppadding"
-                      },
-                      "children": [
-                        "\n\t",
-                        {
-                          "tag": "img",
-                          "props": {
-                            "className": "fullimage",
-                            "src": "/case-studies/or-styleguide2@2x.png",
-                            "alt": "Style Guide",
-                            "decoding": "async"
-                          },
-                          "children": []
-                        },
-                        "\n"
-                      ]
-                    },
                     "\n\n\n",
                     {
                       "tag": "p",

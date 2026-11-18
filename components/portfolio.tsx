@@ -62,6 +62,7 @@ function videoSource(children:ContentNode[]):string {
 const designSystemSequences:Record<string,number[]>={
   '/case-studies/cont-ds.mp4':[0,1.48868,8.72201,15.9553],
   '/case-studies/tr-ds.mp4':[0,2.43893,5.53893,8.37227],
+  '/case-studies/or-ds.mp4':[0,6.1],
 };
 
 function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,unknown>;nodeChildren:ContentNode[];keyName:string}) {
