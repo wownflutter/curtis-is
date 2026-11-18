@@ -566,12 +566,11 @@ function MarketBanner({src}:{src:string}) {
       });
     };
     root.classList.add('market-armed');
-    // Play only once the whole strip is on screen and the visitor has scrolled to it, not while the hero is still arriving.
-    let eligible=false;
-    let scrolled=window.scrollY>60;
-    const attempt=()=>{if(eligible && scrolled && !playing){playing=true;play();}};
-    const onScroll=()=>{if(window.scrollY>60){scrolled=true;attempt();}};
-    window.addEventListener('scroll',onScroll,{passive:true});
+        let eligible=false;
+    let ready=false;
+    const attempt=()=>{if(eligible && ready && !playing){playing=true;play();}};
+    // A short beat after the page arrives, so the hero settles before the strip starts.
+    const readyTimer=window.setTimeout(()=>{ready=true;attempt();},1200);
     // Light up once most of the strip is on screen; go back to muted only after it has fully left.
     const observer=new IntersectionObserver(entries=>{
       entries.forEach(entry=>{
@@ -581,7 +580,7 @@ function MarketBanner({src}:{src:string}) {
       attempt();
     },{threshold:[0,.6,1],rootMargin:'0px 0px -8% 0px'});
     observer.observe(root);
-    return ()=>{window.removeEventListener('scroll',onScroll);observer.disconnect();stop();root.classList.remove('market-armed');};
+    return ()=>{window.clearTimeout(readyTimer);observer.disconnect();stop();root.classList.remove('market-armed');};
   },[]);
   let left=0;
   return <figure ref={ref} className="trackonomy-market-banner">
