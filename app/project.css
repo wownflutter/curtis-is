@@ -799,16 +799,16 @@
 #project .jasper-hero-caption-sub { font-weight:400; opacity:.88; }
 
 /* Persona switcher: quiet text tabs with a sliding indicator (both themes) */
-#project .persona-slideshow { --pt-ink:#ececf0; --pt-mute:#8c8c93; --pt-accent:#85bedb; --pt-line:rgba(255,255,255,.16); --pt-border:rgba(255,255,255,.1); }
-#project .persona-slideshow-light { --pt-ink:#1d2a2f; --pt-mute:#7b8a90; --pt-accent:#1b6b93; --pt-line:rgba(29,42,47,.14); --pt-border:rgba(29,42,47,.1); }
+#project .persona-slideshow { --pt-ink:#ececf0; --pt-mute:#77777e; --pt-accent:#85bedb; --pt-line:rgba(255,255,255,.16); --pt-border:rgba(255,255,255,.1); }
+#project .persona-slideshow-light { --pt-ink:#1d2a2f; --pt-mute:#8a989d; --pt-accent:#1b6b93; --pt-line:rgba(29,42,47,.14); --pt-border:rgba(29,42,47,.1); }
 #project .persona-slideshow .persona-controls { margin-bottom:18px; }
 #project .persona-slideshow .persona-choices { position:relative; display:flex; gap:28px; padding:0 0 12px; border-bottom:1px solid var(--pt-line); overflow-x:auto; scrollbar-width:none; }
 #project .persona-slideshow .persona-choices::-webkit-scrollbar { display:none; }
-#project .persona-slideshow .persona-choices button { border:0; border-radius:0; padding:2px 0; background:transparent; color:var(--pt-mute); font-family:Manrope,Inter,sans-serif; font-size:15px; font-weight:500; letter-spacing:-.01em; line-height:1.3; white-space:nowrap; transition:color .2s ease; }
+#project .persona-slideshow .persona-choices button { border:0; border-radius:0; padding:2px 0; background:transparent; color:var(--pt-mute); font-family:Manrope,Inter,sans-serif; font-size:16px; font-weight:500; letter-spacing:-.01em; line-height:1.3; white-space:nowrap; transition:color .2s ease; }
 #project .persona-slideshow .persona-choices button:hover { color:var(--pt-ink); }
-#project .persona-slideshow .persona-choices button[aria-pressed="true"] { background:transparent; color:var(--pt-ink); }
+#project .persona-slideshow .persona-choices button[aria-pressed="true"] { background:transparent; color:var(--pt-ink); font-weight:700; }
 #project .persona-slideshow .persona-choices button:focus-visible { outline:2px solid var(--pt-accent); outline-offset:4px; border-radius:2px; }
-#project .persona-slideshow .persona-indicator { position:absolute; left:0; bottom:-1px; height:2px; background:var(--pt-accent); border-radius:2px; transition:transform .35s cubic-bezier(.2,.8,.2,1),width .35s cubic-bezier(.2,.8,.2,1); pointer-events:none; }
+#project .persona-slideshow .persona-indicator { position:absolute; left:0; bottom:-1px; height:3px; background:var(--pt-accent); border-radius:3px; transition:transform .35s cubic-bezier(.2,.8,.2,1),width .35s cubic-bezier(.2,.8,.2,1); pointer-events:none; }
 #project .persona-slideshow figure:not([hidden]) { animation:persona-in .35s ease both; }
 @keyframes persona-in { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
 @media (prefers-reduced-motion:reduce) { #project .persona-slideshow figure:not([hidden]) { animation:none; } #project .persona-slideshow .persona-indicator { transition:none; } }
