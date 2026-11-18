@@ -553,13 +553,16 @@ function MarketBanner({src}:{src:string}) {
     const root=ref.current;
     if(!root || window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
     const veils=Array.from(root.querySelectorAll<HTMLElement>('.market-veil'));
+    const labels=Array.from(root.querySelectorAll<HTMLElement>('figcaption span'));
     let animations:Animation[]=[];
     let playing=false;
     const stop=()=>{animations.forEach(animation=>animation.cancel());animations=[];};
     const play=()=>{
       stop();
       veils.forEach((veil,index)=>{
-        animations.push(veil.animate([{opacity:1},{opacity:0}],{duration:900,delay:500+index*450,easing:'cubic-bezier(.22,1,.36,1)',fill:'both'}));
+        const delay=500+index*450;
+        animations.push(veil.animate([{opacity:1},{opacity:0}],{duration:900,delay,easing:'cubic-bezier(.22,1,.36,1)',fill:'both'}));
+        animations.push(labels[index].animate([{opacity:0,transform:'translateY(6px)'},{opacity:1,transform:'translateY(0)'}],{duration:900,delay:delay+250,easing:'cubic-bezier(.22,1,.36,1)',fill:'both'}));
       });
     };
     root.classList.add('market-armed');
