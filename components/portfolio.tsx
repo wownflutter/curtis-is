@@ -119,7 +119,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
     : isRemediation ? '/case-studies/cont-ai-review-poster.webp?v=sql-reviewed-1' : source==='/case-studies/or-ml-recommendation.mp4' ? '/case-studies/or-ml-recommendation-poster.webp' : undefined;
   const renderedChildren=(isRemediation || isExplorer || isTrackonomy || isDesignSystem || isMl) ? nodeChildren.map(child=>
     typeof child!=='string' && child.tag==='source'
-      ? {...child,props:{...child.props,src:`${source}?v=${isRemediation?'sql-reviewed-1':isExplorer?'7':source==='/case-studies/or-ds.mp4'?'7':'4'}`}}
+      ? {...child,props:{...child.props,src:`${source}?v=${isRemediation?'sql-reviewed-1':isExplorer?'7':source==='/case-studies/or-ds.mp4'?'8':'4'}`}}
       : child
   ) : nodeChildren;
 
@@ -219,7 +219,13 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
     {video}
     {playbackControls}
   </figure>;
+  const isOrDs=source==='/case-studies/or-ds.mp4';
   if(isDesignSystem)return <div>
+    {isOrDs&&<div className="motion-prototype-caption">
+      <span className="motion-caption-eyebrow"><Play aria-hidden="true" fill="currentColor" />Design system / Motion demo</span>
+      <strong className="motion-caption-title">Design system samples</strong>
+      <span className="motion-caption-description">Components and symbols from the Open Raven Figma library.</span>
+    </div>}
     <div className="design-system-video-stage">
     {video}
     <span ref={sequenceRef} className="design-system-sequence-rail" aria-label="Design system sequence navigation">
