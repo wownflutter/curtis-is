@@ -6693,7 +6693,7 @@
                     {
                       "tag": "div",
                       "props": {
-                        "className": "trackonomy-results-metrics",
+                        "className": "trackonomy-results-metrics trackonomy-results-metrics-triple",
                         "aria-label": "Measured results"
                       },
                       "children": [
@@ -6741,6 +6741,30 @@
                               },
                               "children": [
                                 "Pilot-to-paid conversion for activated accounts compared with accounts that did not activate"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "props": {},
+                          "children": [
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-number"
+                              },
+                              "children": [
+                                "36%"
+                              ]
+                            },
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-label"
+                              },
+                              "children": [
+                                "Reduction in onboarding support tickets per new account"
                               ]
                             }
                           ]
