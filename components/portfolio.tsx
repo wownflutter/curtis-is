@@ -299,7 +299,7 @@ function buildSignalHome(node:ContentNode,projectBase:''|'/signal'):ContentNode 
       {
         tag:'span',
         props:{className:'portfolio-summary-thought'},
-        children:['My work connects research, product strategy, and hands-on design to make complex systems easier to use.'],
+        children:['My work connects research, product strategy, and design to turn complex systems into products people adopt, trust, and pay for.'],
       },
     ]};
   }
