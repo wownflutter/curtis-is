@@ -473,8 +473,8 @@ const contrastPersonas:PersonaSlide[] = [
 
 const jasperPersonas:PersonaSlide[] = [
   {label:'Service Provider',src:'/case-studies/jasper-persona-cc-sp@2x.png',cutoff:1700,alt:'Service Provider persona: regional sales representative'},
-  {label:'Billing Analyst',src:'/case-studies/cj-analytics-persona-luu@2x.png',cutoff:2000,alt:'Discovery interview with a telecom billing analyst'},
-  {label:'Operations Manager',src:'/case-studies/cj-analytics-persona-humphrey@2x.png',cutoff:2000,alt:'Discovery interview with an operations manager'},
+  {label:'Billing Analyst',src:'/case-studies/cj-analytics-persona-luu@2x.png',cutoff:2500,alt:'Discovery interview with a telecom billing analyst'},
+  {label:'Operations Manager',src:'/case-studies/cj-analytics-persona-humphrey@2x.png',cutoff:2500,alt:'Discovery interview with an operations manager'},
 ];
 
 const personaSets:{id:string;theme:'dark'|'light';slides:PersonaSlide[];extra?:number}[] = [
