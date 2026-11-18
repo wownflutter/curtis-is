@@ -6691,6 +6691,14 @@
                     },
                     "\n            ",
                     {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "Three things drove the lift: the in-product tour, sales engineers who guided new accounts through setup, and a forward-deployed designer who worked directly with those accounts."
+                      ]
+                    },
+                    "\n            ",
+                    {
                       "tag": "div",
                       "props": {
                         "className": "trackonomy-results-metrics trackonomy-results-metrics-triple",
