@@ -1,7 +1,7 @@
 'use client';
 /* oxlint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/media-has-caption, next/no-img-element -- delegated events preserve the original nested markup; the embedded animation videos contain no audio track. */
 
-import { createElement, useEffect, useRef, useState, type ReactNode, type MouseEvent } from 'react';
+import { createElement, useEffect, useLayoutEffect, useRef, useState, type ReactNode, type MouseEvent } from 'react';
 import { flushSync } from 'react-dom';
 import { ScrambleHeading } from './scramble-heading';
 import { TelemetryUseCases } from './telemetry-use-cases';
@@ -486,12 +486,33 @@ function PersonaSlideshow({id,slides,theme,extra=0}:{id:string;slides:PersonaSli
   const [active,setActive]=useState(0);
   const [expanded,setExpanded]=useState<Record<number,boolean>>({});
   const sectionRef=useRef<HTMLElement>(null);
+  const choicesRef=useRef<HTMLDivElement>(null);
+  const [indicator,setIndicator]=useState({left:0,width:0});
+  useLayoutEffect(()=>{
+    const update=()=>{
+      const button=choicesRef.current?.querySelectorAll('button')[active] as HTMLElement|undefined;
+      if(button)setIndicator({left:button.offsetLeft,width:button.offsetWidth});
+    };
+    update();
+    window.addEventListener('resize',update);
+    document.fonts?.ready.then(update);
+    return ()=>window.removeEventListener('resize',update);
+  },[active]);
+  const onChoiceKey=(event:React.KeyboardEvent)=>{
+    const step=event.key==='ArrowRight' ? 1 : event.key==='ArrowLeft' ? -1 : 0;
+    if(!step)return;
+    event.preventDefault();
+    const next=(active+step+slides.length)%slides.length;
+    setActive(next);
+    requestAnimationFrame(()=>(choicesRef.current?.querySelectorAll('button')[next] as HTMLElement|undefined)?.focus());
+  };
   return <section ref={sectionRef} className={`persona-slideshow persona-slideshow-${theme}`} aria-label="Research personas" aria-roledescription="carousel">
     <div className="persona-controls">
-      <div className="persona-choices" aria-label="Choose a persona">
+      <div className="persona-choices" ref={choicesRef} onKeyDown={onChoiceKey} aria-label="Choose a persona">
         {slides.map((persona,index)=><button key={persona.label} type="button"
           aria-pressed={active===index} aria-controls={`${id}-persona-slide-${index}`}
           onClick={()=>setActive(index)}>{persona.label}</button>)}
+        <span className="persona-indicator" aria-hidden="true" style={{transform:`translateX(${indicator.left}px)`,width:indicator.width}} />
       </div>
     </div>
     {slides.map((persona,index)=><figure key={persona.src} id={`${id}-persona-slide-${index}`}
