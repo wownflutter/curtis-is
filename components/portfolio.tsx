@@ -72,13 +72,14 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
   const source=videoSource(nodeChildren);
   const isExplorer=source==='/case-studies/explorer-animation.mp4';
   const isRemediation=source==='/case-studies/cont-ai-review.mp4';
+  const isMl=source==='/case-studies/or-ml-recommendation.mp4';
   const showPlayback=(isRemediation || source.startsWith('/case-studies/tr-') || source==='/case-studies/uh-nlp.mp4' || source==='/case-studies/or-ml-recommendation.mp4') && source.endsWith('.mp4');
   const pausedByViewer=useRef(false);
-  const [playback,setPlayback]=useState({playing:false,waiting:false,time:0,duration:0});
+  const [playback,setPlayback]=useState({playing:false,waiting:false,ended:false,time:0,duration:0});
   useEffect(()=>{
     const player=ref.current;
     if(!player || !showPlayback)return;
-    const update=()=>setPlayback({playing:!player.paused,waiting:false,time:player.currentTime,duration:Number.isFinite(player.duration)?player.duration:0});
+    const update=()=>setPlayback({playing:!player.paused,waiting:false,ended:player.ended,time:player.currentTime,duration:Number.isFinite(player.duration)?player.duration:0});
     const waiting=()=>setPlayback(previous=>({...previous,waiting:true}));
     const events=['playing','pause','timeupdate','loadedmetadata','seeked','ended'];
     events.forEach(event=>player.addEventListener(event,update));
@@ -142,14 +143,14 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
       }
     },{rootMargin:(isRemediation || isTrackonomy || isDesignSystem)?'1800px 0px':'1000px 0px',threshold:0});
     const player=new IntersectionObserver(entries=>{
-      const visible=entries.some(entry=>entry.isIntersecting && (!isRemediation || entry.intersectionRatio>=.35));
+      const visible=entries.some(entry=>entry.isIntersecting && ((!isRemediation && !isMl) || entry.intersectionRatio>=(isMl?.5:.35)));
       if(visible && !pausedByViewer.current && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         warm();
         void video.play().catch(()=>{});
       } else {
         video.pause();
       }
-    },{threshold:isRemediation?[0,.35]:0.05});
+    },{threshold:isRemediation?[0,.35]:isMl?[0,.5]:0.05});
     preloader.observe(video);
     player.observe(video);
     const syncCursor=()=>{
@@ -203,7 +204,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
         if(!player)return;
         if(player.paused){pausedByViewer.current=false;if(player.ended)player.currentTime=0;void player.play().catch(()=>{});}
         else{pausedByViewer.current=true;player.pause();}
-      }}>{playback.playing?'Pause':'Play'}</button>
+      }}>{playback.playing?'Pause':playback.ended?'Replay':'Play'}</button>
       <span className="motion-playback-time">{formatTime(playback.time)} / {formatTime(playback.duration)}</span>
       {playback.waiting&&<span role="status">Buffering</span>}
     </div>
