@@ -4775,7 +4775,8 @@
         {
           "tag": "div",
           "props": {
-            "id": "project-header"
+            "id": "project-header",
+            "className": "jasper-hero"
           },
           "children": [
             "\n\t",
@@ -4787,6 +4788,37 @@
                 "decoding": "async"
               },
               "children": []
+            },
+            {
+              "tag": "div",
+              "props": {
+                "className": "jasper-hero-caption"
+              },
+              "children": [
+                {
+                  "tag": "span",
+                  "props": {},
+                  "children": [
+                    "Cisco Jasper’s 55+ Operators"
+                  ]
+                },
+                {
+                  "tag": "span",
+                  "props": {},
+                  "children": [
+                    "Acquired for $1.48 Billion"
+                  ]
+                },
+                {
+                  "tag": "span",
+                  "props": {
+                    "className": "jasper-hero-caption-sub"
+                  },
+                  "children": [
+                    "The catalyst for Cisco’s IoT emergence"
+                  ]
+                }
+              ]
             },
             "\n"
           ]
