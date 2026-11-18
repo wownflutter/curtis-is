@@ -6018,10 +6018,114 @@
                     },
                     "\n            ",
                     {
+                      "tag": "div",
+                      "props": {
+                        "className": "trackonomy-results-metrics"
+                      },
+                      "children": [
+                        {
+                          "tag": "div",
+                          "props": {},
+                          "children": [
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-number"
+                              },
+                              "children": [
+                                "$200M+"
+                              ]
+                            },
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-label"
+                              },
+                              "children": [
+                                "Annual recurring revenue as Jasper grew"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "props": {},
+                          "children": [
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-number"
+                              },
+                              "children": [
+                                "7,000+"
+                              ]
+                            },
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-label"
+                              },
+                              "children": [
+                                "Customers across 100+ countries"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "props": {},
+                          "children": [
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-number"
+                              },
+                              "children": [
+                                "55+"
+                              ]
+                            },
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-label"
+                              },
+                              "children": [
+                                "Mobile operators onboarded at Jasper"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "div",
+                          "props": {},
+                          "children": [
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-number"
+                              },
+                              "children": [
+                                "100M+"
+                              ]
+                            },
+                            {
+                              "tag": "span",
+                              "props": {
+                                "className": "trackonomy-result-label"
+                              },
+                              "children": [
+                                "Subscribers managed on the platform"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "The platform onboarded 55+ mobile operators and managed more than 100 million subscribers at Jasper, and 45 additional global carriers at Cisco."
+                        "After the acquisition, the platform onboarded 45 additional global carriers at Cisco."
                       ]
                     },
                     {
