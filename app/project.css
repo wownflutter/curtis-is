@@ -723,6 +723,9 @@
 #project .trackonomy-market-banner img{display:block;width:100%;height:auto;margin:0 0 -3.375%;clip-path:inset(0 0 12.3% 0);}
 #project .trackonomy-market-banner figcaption{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:center;min-height:44px;padding:12px 0;box-sizing:border-box;background:#404040;color:#fff;text-align:center;font-family:var(--font-body);font-size:clamp(10px,1.4vw,14px);line-height:1.4;font-weight:400;}
 #project .trackonomy-market-banner figcaption span{padding:0 4px;}
+#project .trackonomy-market-banner .market-veils{position:absolute;inset:0;z-index:1;pointer-events:none;}
+#project .trackonomy-market-banner .market-veil{position:absolute;top:0;bottom:0;opacity:0;background:rgba(18,20,24,.3);-webkit-backdrop-filter:grayscale(.9) brightness(.75);backdrop-filter:grayscale(.9) brightness(.75);}
+#project .trackonomy-market-banner.market-armed .market-veil{opacity:1;}
 
 #project .motion-video-controls{margin:8px 0 0;font-family:var(--font-body);color:#536568;font-size:13px;}
 #project .motion-video-controls .motion-playback-track{height:3px;background:#d8dfde;}

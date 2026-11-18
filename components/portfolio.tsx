@@ -545,6 +545,42 @@ function NextCaseStudy({project,position,total,routeBase}:{project:(typeof conte
   </aside>;
 }
 
+const marketVeilWidths=[26.07,24.69,24.77,24.47];
+/** The four environments brighten one after another, left to right, as the strip scrolls into view. */
+function MarketBanner({src}:{src:string}) {
+  const ref=useRef<HTMLElement>(null);
+  useEffect(()=>{
+    const root=ref.current;
+    if(!root || window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    const veils=Array.from(root.querySelectorAll<HTMLElement>('.market-veil'));
+    let animations:Animation[]=[];
+    let playing=false;
+    const stop=()=>{animations.forEach(animation=>animation.cancel());animations=[];};
+    const play=()=>{
+      stop();
+      veils.forEach((veil,index)=>{
+        animations.push(veil.animate([{opacity:1},{opacity:0}],{duration:900,delay:250+index*420,easing:'cubic-bezier(.22,1,.36,1)',fill:'both'}));
+      });
+    };
+    root.classList.add('market-armed');
+    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+      if(entry.isIntersecting && entry.intersectionRatio>=.4 && !playing){playing=true;play();}
+      else if(!entry.isIntersecting && playing){playing=false;stop();}
+    }),{threshold:[0,.4]});
+    observer.observe(root);
+    return ()=>{observer.disconnect();stop();root.classList.remove('market-armed');};
+  },[]);
+  let left=0;
+  return <figure ref={ref} className="trackonomy-market-banner">
+    <MediaImage attributes={{src,alt:'Sensor placement across air cargo, healthcare, industrial equipment, and supply chain environments',decoding:'async'}} />
+    <figcaption>{['Air cargo','Healthcare','Industrial equipment','Supply chain'].map(label=><span key={label}>{label}</span>)}</figcaption>
+    <span className="market-veils" aria-hidden="true">{marketVeilWidths.map((width,index)=>{
+      const style={left:`${left}%`,width:`${width}%`};left+=width;
+      return <span key={index} className="market-veil" style={style} />;
+    })}</span>
+  </figure>;
+}
+
 /** Build ordinary React elements, preserving the authored content hierarchy.
  * No injected HTML, legacy scripts, jQuery, or client-side Next router.
  */
@@ -600,10 +636,7 @@ function render(node:ContentNode, key:string):ReactNode {
   if (tag === 'a' && String(props.href).includes('twitter.com')) props['aria-label']='Twitter';
   if (tag === 'a' && String(props.href).includes('medium.com')) props['aria-label']='Medium';
   if (tag === 'textarea') { props.defaultValue=node.children.filter(x=>typeof x==='string').join(''); return createElement(tag,props); }
-  if (tag === 'img' && props.src === '/case-studies/tr-categories-3.png') return <figure key={key} className="trackonomy-market-banner">
-    <MediaImage attributes={{src:String(props.src),alt:'Sensor placement across air cargo, healthcare, industrial equipment, and supply chain environments',decoding:'async'}} />
-    <figcaption>{['Air cargo','Healthcare','Industrial equipment','Supply chain'].map(label=><span key={label}>{label}</span>)}</figcaption>
-  </figure>;
+  if (tag === 'img' && props.src === '/case-studies/tr-categories-3.png') return <MarketBanner key={key} src={String(props.src)} />;
   if (tag === 'img' && props.src === '/case-studies/cont-incident-detail.png') return <IncidentWalkthrough key={key} />;
   if (tag === 'img' && props.src === '/case-studies/jasper-legacy@2x.png') {
     return <JasperLegacySnapshot key={key} attributes={props} />;
