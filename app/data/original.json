@@ -3976,6 +3976,24 @@
                           ]
                         },
                         {
+                          "tag": "h3",
+                          "props": {
+                            "className": "class-one"
+                          },
+                          "children": [
+                            "Building trust in the posture score"
+                          ]
+                        },
+                        "\n",
+                        {
+                          "tag": "p",
+                          "props": {},
+                          "children": [
+                            "A posture score only helps if people believe it. To track that trust, we added instrumented in-product rating pop-ups that asked users how confident they were in the score, out of 5. Confidence rose from 2.3 to 4.4."
+                          ]
+                        },
+                        "\n",
+                        {
                           "tag": "div",
                           "props": {
                             "className": "case-results-metrics case-results-metrics-single",
@@ -4001,7 +4019,7 @@
                                     "className": "case-result-label"
                                   },
                                   "children": [
-                                    "User confidence in the posture score, up from 2.3, from in-product ratings"
+                                    "User confidence in the posture score, up from 2.3, from in-product ratings out of 5"
                                   ]
                                 }
                               ]
