@@ -4189,6 +4189,15 @@
                                   "children": [
                                     "Less time to assess a threat"
                                   ]
+                                },
+                                {
+                                  "tag": "span",
+                                  "props": {
+                                    "className": "case-result-detail"
+                                  },
+                                  "children": [
+                                    "Estimated monthly analyst effort fell from about 95 hours to about 32, with recommendations, related issues and blast radius in one Incident Detail view."
+                                  ]
                                 }
                               ]
                             }
