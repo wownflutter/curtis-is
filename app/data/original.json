@@ -6731,7 +6731,7 @@
                                 "className": "trackonomy-result-number"
                               },
                               "children": [
-                                "2×"
+                                "About 2×"
                               ]
                             },
                             {
@@ -6740,7 +6740,7 @@
                                 "className": "trackonomy-result-label"
                               },
                               "children": [
-                                "Pilot-to-paid conversion for activated accounts compared with accounts that did not activate"
+                                "Pilot-to-paid conversion within 90 days for activated accounts compared with accounts that did not activate"
                               ]
                             }
                           ]
@@ -6764,7 +6764,7 @@
                                 "className": "trackonomy-result-label"
                               },
                               "children": [
-                                "Reduction in onboarding support tickets per new account"
+                                "Reduction in onboarding support tickets per new account over the first 90 days"
                               ]
                             }
                           ]
