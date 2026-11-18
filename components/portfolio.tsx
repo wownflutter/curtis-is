@@ -62,7 +62,7 @@ function videoSource(children:ContentNode[]):string {
 const designSystemSequences:Record<string,number[]>={
   '/case-studies/cont-ds.mp4':[0,1.48868,8.72201,15.9553],
   '/case-studies/tr-ds.mp4':[0,2.43893,5.53893,8.37227],
-  '/case-studies/or-ds.mp4':[0,4.2],
+  '/case-studies/or-ds.mp4':[0,3],
 };
 
 function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,unknown>;nodeChildren:ContentNode[];keyName:string}) {
@@ -119,7 +119,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
     : isRemediation ? '/case-studies/cont-ai-review-poster.webp?v=sql-reviewed-1' : source==='/case-studies/or-ml-recommendation.mp4' ? '/case-studies/or-ml-recommendation-poster.webp' : undefined;
   const renderedChildren=(isRemediation || isExplorer || isTrackonomy || isDesignSystem || isMl) ? nodeChildren.map(child=>
     typeof child!=='string' && child.tag==='source'
-      ? {...child,props:{...child.props,src:`${source}?v=${isRemediation?'sql-reviewed-1':isExplorer?'7':source==='/case-studies/or-ds.mp4'?'6':'4'}`}}
+      ? {...child,props:{...child.props,src:`${source}?v=${isRemediation?'sql-reviewed-1':isExplorer?'7':source==='/case-studies/or-ds.mp4'?'7':'4'}`}}
       : child
   ) : nodeChildren;
 
