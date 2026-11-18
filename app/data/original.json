@@ -4196,7 +4196,16 @@
                                     "className": "case-result-detail"
                                   },
                                   "children": [
-                                    "Estimated monthly analyst effort fell from about 95 hours to about 32, with recommendations, related issues and blast radius in one Incident Detail view."
+                                    "Estimated monthly analyst effort fell from about 95 hours to about 32."
+                                  ]
+                                },
+                                {
+                                  "tag": "span",
+                                  "props": {
+                                    "className": "case-result-detail"
+                                  },
+                                  "children": [
+                                    "Recommendations, related issues and blast radius now sit in one Incident Detail view."
                                   ]
                                 }
                               ]
