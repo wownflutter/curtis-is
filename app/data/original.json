@@ -6943,6 +6943,46 @@
                     {
                       "tag": "div",
                       "props": {
+                        "className": "project-header toppadding"
+                      },
+                      "children": [
+                        "\n\t",
+                        {
+                          "tag": "video",
+                          "props": {
+                            "className": "img-responsive",
+                            "style": {
+                              "width": "100%",
+                              "height": "auto",
+                              "outline": "none",
+                              "border": "none"
+                            },
+                            "width": 1920,
+                            "height": 1080,
+                            "muted": true,
+                            "loop": false,
+                            "playsInline": true,
+                            "preload": "metadata",
+                            "aria-label": "Case management walkthrough: an ML recommendation is reviewed and accepted"
+                          },
+                          "children": [
+                            {
+                              "tag": "source",
+                              "props": {
+                                "src": "/case-studies/or-ml-recommendation.mp4",
+                                "type": "video/mp4"
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        "\n"
+                      ]
+                    },
+                    "\n            ",
+                    {
+                      "tag": "div",
+                      "props": {
                         "className": "trackonomy-results-metrics",
                         "aria-label": "Measured results"
                       },

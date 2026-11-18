@@ -72,7 +72,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
   const source=videoSource(nodeChildren);
   const isExplorer=source==='/case-studies/explorer-animation.mp4';
   const isRemediation=source==='/case-studies/cont-ai-review.mp4';
-  const showPlayback=(isRemediation || source.startsWith('/case-studies/tr-') || source==='/case-studies/uh-nlp.mp4') && source.endsWith('.mp4');
+  const showPlayback=(isRemediation || source.startsWith('/case-studies/tr-') || source==='/case-studies/uh-nlp.mp4' || source==='/case-studies/or-ml-recommendation.mp4') && source.endsWith('.mp4');
   const pausedByViewer=useRef(false);
   const [playback,setPlayback]=useState({playing:false,waiting:false,time:0,duration:0});
   useEffect(()=>{
@@ -97,6 +97,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
     '/case-studies/tr-activity-stream.mp4':'AI detects an anomaly, opens a support ticket, and drafts a message for the triage and support team.',
     '/case-studies/tr-fma-animation.mp4':'Location guidance narrows to a precise search, supported by sound and haptic feedback.',
     '/case-studies/tr-insights-animation.mp4':'A search scopes the shipment map to a hub, and a tooltip summarizes that hub’s shipments by risk level.',
+    '/case-studies/or-ml-recommendation.mp4':'The ML recommendation opens with the factors behind the ranking. The analyst accepts it, the case is assigned, and the next finding opens.',
     '/case-studies/uh-nlp.mp4':'A care professional’s spoken asset request connects to inventory location and tracking through an NLP/MCP context layer.',
   };
   const motionDescription=motionDescriptions[source];
@@ -105,6 +106,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
     '/case-studies/tr-activity-stream.mp4':{label:'Respond',title:'Turn an anomaly into coordinated action.'},
     '/case-studies/tr-fma-animation.mp4':{label:'Find',title:'From nearby to precisely located.'},
     '/case-studies/tr-insights-animation.mp4':{label:'Insights',title:'From a search to risk in context.'},
+    '/case-studies/or-ml-recommendation.mp4':{label:'Decide',title:'Accept a recommendation in one step.'},
     '/case-studies/uh-nlp.mp4':{label:'Ask',title:'Find an asset without typing.'},
   };
   const motionHeading=motionHeadings[source];
@@ -112,7 +114,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
   const isDesignSystem=Boolean(sequenceChapters);
   const poster=source==='/case-studies/explorer-animation.mp4'
     ? '/case-studies/explorer-animation-poster.webp'
-    : isRemediation ? '/case-studies/cont-ai-review-poster.webp?v=sql-reviewed-1' : undefined;
+    : isRemediation ? '/case-studies/cont-ai-review-poster.webp?v=sql-reviewed-1' : source==='/case-studies/or-ml-recommendation.mp4' ? '/case-studies/or-ml-recommendation-poster.webp' : undefined;
   const renderedChildren=(isRemediation || isExplorer || isTrackonomy || isDesignSystem) ? nodeChildren.map(child=>
     typeof child!=='string' && child.tag==='source'
       ? {...child,props:{...child.props,src:`${source}?v=${isRemediation?'sql-reviewed-1':isExplorer?'7':'4'}`}}
