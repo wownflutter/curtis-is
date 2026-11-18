@@ -2880,7 +2880,7 @@
                                 "className": "trackonomy-result-label"
                               },
                               "children": [
-                                "Less time to resolve support tickets"
+                                "Average reduction in time to resolve support tickets, year over year"
                               ]
                             }
                           ]
@@ -2909,6 +2909,14 @@
                       "props": {},
                       "children": [
                         "We combined Google Analytics with contextual interviews to understand adoption, completion, and the quality of the resulting workflows."
+                      ]
+                    },
+                    "\n            ",
+                    {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "Support tickets were resolved 39 percent faster on average, year over year, helped in part by contextual search powered by MCP and LLMs."
                       ]
                     },
                     "               \n                \n            ",
