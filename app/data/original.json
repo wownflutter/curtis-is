@@ -6716,7 +6716,7 @@
                                 "className": "trackonomy-result-label"
                               },
                               "children": [
-                                "Of new accounts reached a first classified finding within 60 days of connecting AWS, up from 31%"
+                                "Of new accounts reached a first classified finding within 60 days of connecting AWS, up from 31% (Amplitude and Google Analytics)"
                               ]
                             }
                           ]
@@ -6958,7 +6958,7 @@
                                 "className": "trackonomy-result-label"
                               },
                               "children": [
-                                "Reduction in time to remediation decision"
+                                "Reduction in time to remediation decision (Amplitude and Google Analytics)"
                               ]
                             }
                           ]
@@ -6982,7 +6982,7 @@
                                 "className": "trackonomy-result-label"
                               },
                               "children": [
-                                "Acceptance rate on ML-recommended actions"
+                                "Acceptance rate on ML-recommended actions (Amplitude and Google Analytics)"
                               ]
                             }
                           ]
