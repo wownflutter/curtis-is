@@ -4198,15 +4198,6 @@
                                   "children": [
                                     "Estimated monthly analyst effort fell from about 95 hours to about 32."
                                   ]
-                                },
-                                {
-                                  "tag": "span",
-                                  "props": {
-                                    "className": "case-result-detail"
-                                  },
-                                  "children": [
-                                    "Recommendations, related issues and blast radius now sit in one Incident Detail view."
-                                  ]
                                 }
                               ]
                             }
@@ -4373,7 +4364,7 @@
                                     "className": "case-result-detail"
                                   },
                                   "children": [
-                                    "About 10 days to about 6, within a quarter of rollout."
+                                    "About 10 days to about 6, within 90 days of rollout."
                                   ]
                                 }
                               ]
@@ -4705,10 +4696,9 @@
                                           "tag": "b",
                                           "props": {},
                                           "children": [
-                                            "Drop-off in key workflows decreased by 55%:"
+                                            "Drop-off in key workflows decreased by 55%"
                                           ]
-                                        },
-                                        " suggesting smoother navigation and better task completion"
+                                        }
                                       ]
                                     },
                                     {
@@ -4719,10 +4709,9 @@
                                           "tag": "b",
                                           "props": {},
                                           "children": [
-                                            "Adoption of high-value views (e.g. top risks) grew 3x:"
+                                            "Adoption of high-value views (e.g. top risks) grew 3×"
                                           ]
-                                        },
-                                        " highlighting improved discoverability of insights"
+                                        }
                                       ]
                                     },
                                     {
