@@ -463,33 +463,46 @@ function LegacyBeforeSnapshot({keyName}:{keyName:string}) {
   </section>;
 }
 
-const contrastPersonas = [
+type PersonaSlide={label:string;src:string;cutoff:number;alt?:string};
+
+const contrastPersonas:PersonaSlide[] = [
   {label:'CISO',src:'/case-studies/cont-persona-ciso.png',cutoff:1175},
   {label:'SOC',src:'/case-studies/cont-persona-soc.png',cutoff:1140},
   {label:'Developer',src:'/case-studies/cont-persona-deveng.png',cutoff:1115},
 ];
 
-function PersonaSlideshow() {
+const jasperPersonas:PersonaSlide[] = [
+  {label:'Service Provider',src:'/case-studies/jasper-persona-cc-sp@2x.png',cutoff:1700,alt:'Service Provider persona: regional sales representative'},
+  {label:'Billing Analyst',src:'/case-studies/cj-analytics-persona-luu@2x.png',cutoff:2000,alt:'Discovery interview with a telecom billing analyst'},
+  {label:'Operations Manager',src:'/case-studies/cj-analytics-persona-humphrey@2x.png',cutoff:2000,alt:'Discovery interview with an operations manager'},
+];
+
+const personaSets:{id:string;theme:'dark'|'light';slides:PersonaSlide[]}[] = [
+  {id:'contrast',theme:'dark',slides:contrastPersonas},
+  {id:'jasper',theme:'light',slides:jasperPersonas},
+];
+
+function PersonaSlideshow({id,slides,theme}:{id:string;slides:PersonaSlide[];theme:'dark'|'light'}) {
   const [active,setActive]=useState(0);
   const [expanded,setExpanded]=useState<Record<number,boolean>>({});
   const sectionRef=useRef<HTMLElement>(null);
-  return <section ref={sectionRef} className="persona-slideshow" aria-label="Research personas" aria-roledescription="carousel">
+  return <section ref={sectionRef} className={`persona-slideshow persona-slideshow-${theme}`} aria-label="Research personas" aria-roledescription="carousel">
     <div className="persona-controls">
       <div className="persona-choices" aria-label="Choose a persona">
-        {contrastPersonas.map((persona,index)=><button key={persona.label} type="button"
-          aria-pressed={active===index} aria-controls={`persona-slide-${index}`}
+        {slides.map((persona,index)=><button key={persona.label} type="button"
+          aria-pressed={active===index} aria-controls={`${id}-persona-slide-${index}`}
           onClick={()=>setActive(index)}>{persona.label}</button>)}
       </div>
     </div>
-    {contrastPersonas.map((persona,index)=><figure key={persona.src} id={`persona-slide-${index}`}
-      hidden={active!==index} role="group" aria-roledescription="slide" aria-label={`${index+1} of 3: ${persona.label}`}>
-      <div className="persona-preview" id={`persona-document-${index}`}
+    {slides.map((persona,index)=><figure key={persona.src} id={`${id}-persona-slide-${index}`}
+      hidden={active!==index} role="group" aria-roledescription="slide" aria-label={`${index+1} of ${slides.length}: ${persona.label}`}>
+      <div className="persona-preview" id={`${id}-persona-document-${index}`}
         style={{aspectRatio:expanded[index]?'auto':`${imageSizes[persona.src].width} / ${persona.cutoff}`}}>
-        <MediaImage attributes={{src:persona.src,alt:`${persona.label} research persona${expanded[index]?', full document':', preview including the full Key Insights section'}`,decoding:'async'}} />
+        <MediaImage attributes={{src:persona.src,alt:`${persona.alt ?? `${persona.label} research persona`}${expanded[index]?', full document':', preview'}`,decoding:'async'}} />
       </div>
-      <figcaption><span>{persona.label} {index+1} / 3</span>
+      <figcaption><span>{persona.label} {index+1} / {slides.length}</span>
         <button className="persona-expand" type="button" aria-expanded={Boolean(expanded[index])}
-          aria-controls={`persona-document-${index}`} onClick={()=>{
+          aria-controls={`${id}-persona-document-${index}`} onClick={()=>{
             const collapsing=expanded[index];
             setExpanded(previous=>({...previous,[index]:!previous[index]}));
             if(collapsing)requestAnimationFrame(()=>sectionRef.current?.scrollIntoView({block:'start',behavior:'instant'}));
@@ -503,11 +516,15 @@ function PersonaSlideshow() {
 function renderChildren(children:ContentNode[], key:string):ReactNode[] {
   const legacyStart=children.findIndex(child=>typeof child!=='string' && child.tag==='h3' && textContent(child).includes('platform experience I inherited'));
   const legacyEnd=legacyStart<0 ? -1 : children.findIndex((child,index)=>index>legacyStart && typeof child!=='string' && child.tag==='h3');
-  const personaIndices=children.flatMap((child,index)=>typeof child!=='string' && child.tag==='div' &&
-    child.children.some(node=>typeof node!=='string' && node.tag==='img' && contrastPersonas.some(persona=>persona.src===node.props.src)) ? [index] : []);
+  const personaGroups=personaSets.flatMap(set=>{
+    const indices=children.flatMap((child,index)=>typeof child!=='string' && child.tag==='div' &&
+      child.children.some(node=>typeof node!=='string' && node.tag==='img' && set.slides.some(slide=>slide.src===node.props.src)) ? [index] : []);
+    return indices.length===set.slides.length ? [{set,indices}] : [];
+  });
   return children.flatMap((child,index)=>{
-    if(personaIndices.length===3 && personaIndices.includes(index)) {
-      return index===personaIndices[0] ? [<PersonaSlideshow key={`${key}.personas`} />] : [];
+    const personaGroup=personaGroups.find(group=>group.indices.includes(index));
+    if(personaGroup) {
+      return index===personaGroup.indices[0] ? [<PersonaSlideshow key={`${key}.personas`} id={personaGroup.set.id} slides={personaGroup.set.slides} theme={personaGroup.set.theme} />] : [];
     }
     if(index===legacyStart)return [<LegacyBeforeSnapshot key={`${key}.legacy`} keyName={`${key}-legacy`} />];
     if(legacyStart>=0 && index>legacyStart && (legacyEnd<0 || index<legacyEnd))return [];

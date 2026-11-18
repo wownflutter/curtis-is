@@ -713,6 +713,12 @@
 #project .persona-slideshow figcaption { display:flex; justify-content:space-between; gap:16px; padding-top:12px; font-size:13px; line-height:1.5; }
 #project .persona-slideshow figcaption > span { color:#b5b5b5; }
 #project .persona-slideshow .persona-expand { border:0; padding:0; border-radius:0; color:#85bedb; font-size:13px; text-decoration:underline; text-underline-offset:4px; }
+#project .persona-slideshow-light button { border-color:#9aa7ac; color:#34464d; }
+#project .persona-slideshow-light button[aria-pressed="true"] { border-color:#1b6b93; color:#1b6b93; background:rgba(27,107,147,.08); }
+#project .persona-slideshow-light :is(button,a):focus-visible { outline-color:#1b6b93; }
+#project .persona-slideshow-light .persona-preview { background:#fff; border:1px solid #d9dede; }
+#project .persona-slideshow-light figcaption > span { color:#526269; }
+#project .persona-slideshow-light .persona-expand { border:0; color:#1b6b93; }
 @media(max-width:480px) {
   #project .persona-slideshow button { padding:9px 10px; font-size:12px; }
   #project .persona-choices { gap:5px; }
