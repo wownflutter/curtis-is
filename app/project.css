@@ -826,3 +826,15 @@
 #project .persona-slideshow .persona-expand { border:0; border-radius:0; padding:2px 0; background:transparent; color:var(--pt-accent); font-size:13px; font-weight:600; text-decoration:none; }
 #project .persona-slideshow .persona-expand:hover { text-decoration:underline; text-underline-offset:4px; }
 @media (max-width:640px) { #project .persona-slideshow .persona-choices { gap:20px; } #project .persona-slideshow .persona-choices button { font-size:13px; } }
+
+/* Open Raven operations overview: cursor glides to the February bar, then the tooltip appears. */
+#project .or-operations-demo { position:relative; margin:0; }
+#project .or-operations-demo > img:first-child { display:block; width:100%; height:auto; }
+#project .or-operations-demo .or-cursor,
+#project .or-operations-demo .or-tooltip { position:absolute; display:block; height:auto; pointer-events:none; opacity:0; }
+#project .or-operations-demo .or-cursor { z-index:3; left:80.83%; top:30.27%; width:1.111%; }
+#project .or-operations-demo .or-tooltip { z-index:2; left:81.32%; top:31.54%; width:17.92%; }
+@media (prefers-reduced-motion:reduce) {
+  #project .or-operations-demo .or-cursor,
+  #project .or-operations-demo .or-tooltip { opacity:1; }
+}

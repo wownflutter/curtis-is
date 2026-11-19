@@ -412,11 +412,11 @@ function useLegacyAnnotationAnimation() {
     const stage=stageRef.current;
     if(!stage || window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
     const animations=new Map<Element,Animation>();
-    stage.querySelectorAll<HTMLElement>('.legacy-annotation').forEach(annotation=>{
+    stage.querySelectorAll<HTMLElement>('.legacy-annotation').forEach((annotation,index)=>{
       const animation=annotation.animate([
         {transform:'translateY(30px)',opacity:0},
         {transform:'translateY(0)',opacity:1},
-      ],{duration:3000,easing:'cubic-bezier(.22,1,.36,1)',fill:'both'});
+      ],{duration:5000,delay:index*700,easing:'cubic-bezier(.45,.05,.25,1)',fill:'both'});
       animation.pause();
       animation.currentTime=0;
       animations.set(annotation,animation);
@@ -432,6 +432,43 @@ function useLegacyAnnotationAnimation() {
     return ()=>{observer.disconnect();animations.forEach(animation=>animation.cancel());};
   },[]);
   return stageRef;
+}
+
+function OpenRavenOperationsDemo({attributes}:{attributes:Record<string,unknown>}) {
+  const stageRef=useRef<HTMLElement>(null);
+  useEffect(()=>{
+    const stage=stageRef.current;
+    if(!stage || window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    const cursor=stage.querySelector<HTMLElement>('.or-cursor');
+    const tooltip=stage.querySelector<HTMLElement>('.or-tooltip');
+    if(!cursor || !tooltip)return;
+    const travel=3200,tooltipDelay=travel+250;
+    // The cursor drifts in from the table below, curves up, and settles on the February bar.
+    const move=cursor.animate([
+      {left:'60%',top:'74%',opacity:0,offset:0},
+      {opacity:1,offset:.12},
+      {left:'73%',top:'48%',offset:.62},
+      {left:'80.83%',top:'30.27%',opacity:1,offset:1},
+    ],{duration:travel,easing:'cubic-bezier(.45,.05,.25,1)',fill:'both'});
+    const reveal=tooltip.animate([
+      {opacity:0,transform:'translateY(10px)'},
+      {opacity:1,transform:'translateY(0)'},
+    ],{duration:900,delay:tooltipDelay,easing:'cubic-bezier(.25,.1,.25,1)',fill:'both'});
+    const animations=[move,reveal];
+    animations.forEach(animation=>{animation.pause();animation.currentTime=0;});
+    const observer=new IntersectionObserver(entries=>{
+      if(!entries.some(entry=>entry.isIntersecting))return;
+      animations.forEach(animation=>animation.play());
+      observer.disconnect();
+    },{threshold:.6});
+    observer.observe(stage);
+    return ()=>{observer.disconnect();animations.forEach(animation=>animation.cancel());};
+  },[]);
+  return <figure ref={stageRef} className="or-operations-demo" aria-label="Open Raven operations overview with an incident tooltip">
+    <MediaImage attributes={{...attributes,src:'/case-studies/or-operations-clean@2x.png'}} />
+    <img className="or-tooltip" src="/case-studies/or-operations-tooltip@2x.png" alt="1-7 Feb 2021: 512 closed, 114 in progress, 87 new" decoding="async" />
+    <img className="or-cursor" src="/case-studies/or-cursor@2x.png" alt="" aria-hidden="true" decoding="async" />
+  </figure>;
 }
 
 function JasperLegacySnapshot({attributes}:{attributes:Record<string,unknown>}) {
@@ -700,6 +737,7 @@ function render(node:ContentNode, key:string):ReactNode {
   if (tag === 'textarea') { props.defaultValue=node.children.filter(x=>typeof x==='string').join(''); return createElement(tag,props); }
   if (tag === 'img' && props.src === '/case-studies/tr-categories-3.png') return <MarketBanner key={key} src={String(props.src)} />;
   if (tag === 'img' && props.src === '/case-studies/cont-incident-detail.png') return <IncidentWalkthrough key={key} />;
+  if (tag === 'img' && props.src === '/case-studies/or-operations@2x.png') return <OpenRavenOperationsDemo key={key} attributes={props} />;
   if (tag === 'img' && props.src === '/case-studies/jasper-legacy@2x.png') {
     return <JasperLegacySnapshot key={key} attributes={props} />;
   }
