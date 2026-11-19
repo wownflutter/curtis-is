@@ -9031,7 +9031,7 @@
                         {
                           "tag": "img",
                           "props": {
-                            "src": "/case-studies/sh-felix-persona@2x.png",
+                            "src": "/case-studies/sh-felix-persona.webp",
                             "alt": "Persona",
                             "decoding": "async"
                           },
