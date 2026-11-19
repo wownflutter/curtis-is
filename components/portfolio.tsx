@@ -442,12 +442,12 @@ function OpenRavenOperationsDemo({attributes}:{attributes:Record<string,unknown>
     const cursor=stage.querySelector<HTMLElement>('.or-cursor');
     const tooltip=stage.querySelector<HTMLElement>('.or-tooltip');
     if(!cursor || !tooltip)return;
-    const travel=3200,tooltipDelay=travel+250;
-    // The cursor drifts in from the table below, curves up, and settles on the February bar.
+    const travel=1800,tooltipDelay=travel+150;
+    // The cursor slides in from the right edge and settles on the February bar.
     const move=cursor.animate([
-      {left:'60%',top:'74%',opacity:0,offset:0},
-      {opacity:1,offset:.12},
-      {left:'73%',top:'48%',offset:.62},
+      {left:'99%',top:'38%',opacity:0,offset:0},
+      {opacity:1,offset:.15},
+      {left:'88%',top:'34%',offset:.6},
       {left:'80.83%',top:'30.27%',opacity:1,offset:1},
     ],{duration:travel,easing:'cubic-bezier(.45,.05,.25,1)',fill:'both'});
     const reveal=tooltip.animate([
