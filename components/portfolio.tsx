@@ -456,11 +456,15 @@ function OpenRavenOperationsDemo({attributes}:{attributes:Record<string,unknown>
     ],{duration:900,delay:tooltipDelay,easing:'cubic-bezier(.25,.1,.25,1)',fill:'both'});
     const animations=[move,reveal];
     animations.forEach(animation=>{animation.pause();animation.currentTime=0;});
+    // Replays every time the screenshot scrolls back into view; resets once it has fully left.
     const observer=new IntersectionObserver(entries=>{
-      if(!entries.some(entry=>entry.isIntersecting))return;
-      animations.forEach(animation=>animation.play());
-      observer.disconnect();
-    },{threshold:.6});
+      const entry=entries[entries.length-1];
+      if(entry.intersectionRatio>=.6){
+        animations.forEach(animation=>{animation.currentTime=0;animation.play();});
+      }else if(entry.intersectionRatio===0){
+        animations.forEach(animation=>{animation.pause();animation.currentTime=0;});
+      }
+    },{threshold:[0,.6]});
     observer.observe(stage);
     return ()=>{observer.disconnect();animations.forEach(animation=>animation.cancel());};
   },[]);
