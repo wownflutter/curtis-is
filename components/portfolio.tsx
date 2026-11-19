@@ -434,104 +434,6 @@ function useLegacyAnnotationAnimation() {
   return stageRef;
 }
 
-const mapDemoCycle=11000;
-
-/** Open Raven 3D map: a cursor explores the two hotspots (asset, then filter) and the sequence loops. */
-function OpenRavenMapsDemo({attributes}:{attributes:Record<string,unknown>}) {
-  const stageRef=useRef<HTMLElement>(null);
-  const progressRef=useRef<HTMLSpanElement>(null);
-  const timeRef=useRef<HTMLSpanElement>(null);
-  const animationsRef=useRef<Animation[]>([]);
-  const pausedByViewer=useRef(false);
-  const [paused,setPaused]=useState(false);
-  const formatClock=(milliseconds:number)=>`${Math.floor(milliseconds/60000)}:${String(Math.floor(milliseconds/1000)%60).padStart(2,'0')}`;
-  useEffect(()=>{
-    const stage=stageRef.current;
-    if(!stage || window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-    const cursor=stage.querySelector<HTMLElement>('.or-map-cursor');
-    const asset=stage.querySelector<HTMLElement>('.or-map-panel-asset');
-    const filter=stage.querySelector<HTMLElement>('.or-map-panel-filter');
-    if(!cursor || !asset || !filter)return;
-    const at=(seconds:number)=>seconds*1000/mapDemoCycle;
-    const entry={left:'96%',top:'66%'};
-    const assetSpot={left:'39.2%',top:'48.5%'};
-    const filterSpot={left:'75.8%',top:'4.2%'};
-    const exit={left:'96%',top:'26%'};
-    const travel='cubic-bezier(.45,.05,.25,1)';
-    const timing:KeyframeAnimationOptions={duration:mapDemoCycle,iterations:Infinity,fill:'both'};
-    // Each panel rests at 40% and 10px low, then rises to full while the cursor hovers its hotspot.
-    const panelFrames=(riseStart:number,riseEnd:number,fallStart:number,fallEnd:number):Keyframe[]=>[
-      {opacity:.4,transform:'translateY(10px)',offset:0},
-      {opacity:.4,transform:'translateY(10px)',offset:at(riseStart),easing:'cubic-bezier(.2,.7,.2,1)'},
-      {opacity:1,transform:'translateY(0)',offset:at(riseEnd)},
-      {opacity:1,transform:'translateY(0)',offset:at(fallStart),easing:'ease-in-out'},
-      {opacity:.4,transform:'translateY(10px)',offset:at(fallEnd)},
-      {opacity:.4,transform:'translateY(10px)',offset:1},
-    ];
-    const cursorAnimation=cursor.animate([
-      {...entry,opacity:0,offset:0,easing:'ease-out'},
-      {...entry,opacity:1,offset:at(.5),easing:travel},
-      {...assetSpot,opacity:1,offset:at(2)},
-      {...assetSpot,opacity:1,offset:at(4.6),easing:travel},
-      {...filterSpot,opacity:1,offset:at(6.2)},
-      {...filterSpot,opacity:1,offset:at(9.2),easing:travel},
-      {...exit,opacity:0,offset:at(10.4)},
-      {...exit,opacity:0,offset:1},
-    ],timing);
-    const animations=[
-      cursorAnimation,
-      asset.animate(panelFrames(2,2.35,4.6,4.95),timing),
-      filter.animate(panelFrames(6.2,6.55,9.2,9.55),timing),
-    ];
-    animationsRef.current=animations;
-    animations.forEach(animation=>{animation.pause();animation.currentTime=0;});
-    let frame=0;
-    const tick=()=>{
-      const elapsed=(Number(cursorAnimation.currentTime)||0)%mapDemoCycle;
-      if(progressRef.current)progressRef.current.style.width=`${elapsed/mapDemoCycle*100}%`;
-      if(timeRef.current)timeRef.current.textContent=`${formatClock(elapsed)} / ${formatClock(mapDemoCycle)}`;
-      frame=requestAnimationFrame(tick);
-    };
-    tick();
-    // Plays while the map is on screen (unless the viewer paused it); resets once it has scrolled away.
-    const observer=new IntersectionObserver(entries=>{
-      const observed=entries[entries.length-1];
-      const rootHeight=observed.rootBounds?.height || window.innerHeight;
-      const visible=observed.intersectionRatio>=.4 || observed.intersectionRect.height>=rootHeight*.5;
-      if(visible){
-        if(!pausedByViewer.current)animations.forEach(animation=>animation.play());
-      }else if(observed.intersectionRatio<.05){
-        animations.forEach(animation=>{animation.pause();if(!pausedByViewer.current)animation.currentTime=0;});
-      }
-    },{threshold:Array.from({length:21},(_,index)=>index/20)});
-    observer.observe(stage);
-    return ()=>{observer.disconnect();cancelAnimationFrame(frame);animations.forEach(animation=>animation.cancel());animationsRef.current=[];};
-  },[]);
-  const toggle=()=>{
-    const next=!pausedByViewer.current;
-    pausedByViewer.current=next;
-    setPaused(next);
-    animationsRef.current.forEach(animation=>{if(next)animation.pause();else animation.play();});
-  };
-  return <div className="or-map-demo">
-    <figure ref={stageRef} className="or-map-demo-stage" aria-label="Open Raven 3D map: hovering an asset opens its details and hovering the filter icon opens Filter View">
-      <MediaImage attributes={{...attributes,src:'/case-studies/or-maps-clean@2x.png'}} />
-      <img className="or-map-panel or-map-panel-asset" src="/case-studies/or-map-asset-panel@2x.png" width={548} height={600} alt="Asset details: vpc-9412938740q9382, location US Oregon, encrypted, backed up, protected from public access" decoding="async" />
-      <img className="or-map-panel or-map-panel-filter" src="/case-studies/or-map-filter-panel@2x.png" width={678} height={600} alt="Filter View with VPC to VPC, Security Groups and Data Stores, plus Locations, Asset Types and Security Configurations" decoding="async" />
-      <img className="or-map-cursor" src="/case-studies/or-cursor@2x.png" alt="" aria-hidden="true" decoding="async" />
-    </figure>
-    <div className="motion-playback motion-video-controls" aria-label="Map demo playback controls">
-      <div className="motion-playback-track" role="progressbar" aria-label="Sequence progress" aria-valuemin={0} aria-valuemax={100}>
-        <span ref={progressRef} style={{width:'0%'}} />
-      </div>
-      <div className="motion-playback-meta">
-        <button type="button" aria-pressed={paused} onClick={toggle}>{paused?'Play':'Pause'}</button>
-        <span ref={timeRef} className="motion-playback-time">0:00 / {formatClock(mapDemoCycle)}</span>
-      </div>
-    </div>
-  </div>;
-}
-
 function OpenRavenOperationsDemo({attributes}:{attributes:Record<string,unknown>}) {
   const stageRef=useRef<HTMLElement>(null);
   useEffect(()=>{
@@ -852,7 +754,6 @@ function render(node:ContentNode, key:string):ReactNode {
   if (tag === 'textarea') { props.defaultValue=node.children.filter(x=>typeof x==='string').join(''); return createElement(tag,props); }
   if (tag === 'img' && props.src === '/case-studies/tr-categories-3.png') return <MarketBanner key={key} src={String(props.src)} />;
   if (tag === 'img' && props.src === '/case-studies/cont-incident-detail.png') return <IncidentWalkthrough key={key} />;
-  if (tag === 'img' && props.src === '/case-studies/or-maps@2x.png') return <OpenRavenMapsDemo key={key} attributes={props} />;
   if (tag === 'img' && props.src === '/case-studies/or-operations@2x.png') return <OpenRavenOperationsDemo key={key} attributes={props} />;
   if (tag === 'img' && props.src === '/case-studies/jasper-legacy@2x.png') {
     return <JasperLegacySnapshot key={key} attributes={props} />;
