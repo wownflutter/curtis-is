@@ -456,15 +456,21 @@ function OpenRavenOperationsDemo({attributes}:{attributes:Record<string,unknown>
     ],{duration:900,delay:tooltipDelay,easing:'cubic-bezier(.25,.1,.25,1)',fill:'both'});
     const animations=[move,reveal];
     animations.forEach(animation=>{animation.pause();animation.currentTime=0;});
-    // Replays every time the screenshot scrolls back into view; resets once it has fully left.
+    // Replays every time the screenshot scrolls back into view; resets once it is mostly out of view.
+    // "In view" = half the figure is visible, or it fills most of the window (for figures taller than the window).
+    let inView=false;
     const observer=new IntersectionObserver(entries=>{
       const entry=entries[entries.length-1];
-      if(entry.intersectionRatio>=.6){
+      const rootHeight=entry.rootBounds?.height || window.innerHeight;
+      const visible=entry.intersectionRatio>=.5 || entry.intersectionRect.height>=rootHeight*.6;
+      if(visible && !inView){
+        inView=true;
         animations.forEach(animation=>{animation.currentTime=0;animation.play();});
-      }else if(entry.intersectionRatio===0){
+      }else if(!visible && entry.intersectionRatio<.1 && inView){
+        inView=false;
         animations.forEach(animation=>{animation.pause();animation.currentTime=0;});
       }
-    },{threshold:[0,.6]});
+    },{threshold:Array.from({length:21},(_,index)=>index/20)});
     observer.observe(stage);
     return ()=>{observer.disconnect();animations.forEach(animation=>animation.cancel());};
   },[]);
