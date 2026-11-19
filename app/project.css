@@ -841,7 +841,7 @@
 #project .or-operations-demo .or-tooltip-stats { display:grid; grid-template-columns:auto auto; justify-content:start; column-gap:2.64cqw; margin:0; }
 #project .or-operations-demo .or-tooltip-stats > div { display:contents; }
 #project .or-operations-demo .or-tooltip-stats dt { display:flex; align-items:center; margin:0; color:#1b1d21; font-weight:400; }
-#project .or-operations-demo .or-tooltip-stats dt::before { content:''; flex:none; width:.79cqw; height:.79cqw; margin-right:.92cqw; border-radius:50%; background:var(--dot); box-shadow:var(--ring,none); }
+#project .or-operations-demo .or-tooltip-stats dt::before { content:''; flex:none; width:.79cqw; height:.79cqw; margin-right:.92cqw; border-radius:50%; background:var(--dot); box-shadow:0 0 0 .1cqw rgba(0,0,0,.28); }
 #project .or-operations-demo .or-tooltip-stats dd { margin:0; color:#000; font-weight:600; }
 @media (prefers-reduced-motion:reduce) {
   #project .or-operations-demo .or-cursor,
