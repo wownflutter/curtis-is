@@ -840,7 +840,8 @@
 #project .or-operations-demo .or-tooltip .or-tooltip-title { margin:0 0 .54cqw; color:#fff; font-family:inherit; font-size:inherit; font-weight:400; line-height:inherit; letter-spacing:inherit; text-transform:none; }
 #project .or-operations-demo .or-tooltip-stats { display:grid; grid-template-columns:auto auto; justify-content:start; column-gap:2.4cqw; margin:0; }
 #project .or-operations-demo .or-tooltip-stats > div { display:contents; }
-#project .or-operations-demo .or-tooltip-stats dt { margin:0; color:#fff; font-weight:400; }
+#project .or-operations-demo .or-tooltip-stats dt { display:flex; align-items:center; margin:0; color:#fff; font-weight:400; }
+#project .or-operations-demo .or-tooltip-stats dt::before { content:''; flex:none; width:.72cqw; height:.72cqw; margin-right:.84cqw; border-radius:50%; background:var(--dot); box-shadow:0 0 0 1px rgba(255,255,255,.32); }
 #project .or-operations-demo .or-tooltip-stats dd { margin:0; color:#fff; font-weight:600; }
 @media (prefers-reduced-motion:reduce) {
   #project .or-operations-demo .or-cursor,

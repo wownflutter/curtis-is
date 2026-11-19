@@ -1,7 +1,7 @@
 'use client';
 /* oxlint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/media-has-caption, next/no-img-element -- delegated events preserve the original nested markup; the embedded animation videos contain no audio track. */
 
-import { createElement, useEffect, useLayoutEffect, useRef, useState, type ReactNode, type MouseEvent } from 'react';
+import { createElement, useEffect, useLayoutEffect, useRef, useState, type ReactNode, type MouseEvent, type CSSProperties } from 'react';
 import { flushSync } from 'react-dom';
 import { ScrambleHeading } from './scramble-heading';
 import { TelemetryUseCases } from './telemetry-use-cases';
@@ -479,9 +479,9 @@ function OpenRavenOperationsDemo({attributes}:{attributes:Record<string,unknown>
     <div className="or-tooltip">
       <p className="or-tooltip-title">1-7 Feb</p>
       <dl className="or-tooltip-stats">
-        <div><dt>Closed</dt><dd>512</dd></div>
-        <div><dt>In Progress</dt><dd>114</dd></div>
-        <div><dt>New</dt><dd>87</dd></div>
+        <div style={{'--dot':'#333333'} as CSSProperties}><dt>Closed</dt><dd>512</dd></div>
+        <div style={{'--dot':'#b7debf'} as CSSProperties}><dt>In Progress</dt><dd>114</dd></div>
+        <div style={{'--dot':'#98dbf9'} as CSSProperties}><dt>New</dt><dd>87</dd></div>
       </dl>
     </div>
     <img className="or-cursor" src="/case-studies/or-cursor@2x.png" alt="" aria-hidden="true" decoding="async" />
