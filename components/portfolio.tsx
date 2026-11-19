@@ -479,7 +479,7 @@ function OpenRavenOperationsDemo({attributes}:{attributes:Record<string,unknown>
     <div className="or-tooltip">
       <p className="or-tooltip-title">1-7 Feb</p>
       <dl className="or-tooltip-stats">
-        <div style={{'--dot':'#333333'} as CSSProperties}><dt>Closed</dt><dd>512</dd></div>
+        <div style={{'--dot':'#333333','--ring':'0 0 0 .13cqw rgba(255,255,255,.8)'} as CSSProperties}><dt>Closed</dt><dd>512</dd></div>
         <div style={{'--dot':'#b7debf'} as CSSProperties}><dt>In Progress</dt><dd>114</dd></div>
         <div style={{'--dot':'#98dbf9'} as CSSProperties}><dt>New</dt><dd>87</dd></div>
       </dl>
