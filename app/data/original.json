@@ -6707,14 +6707,33 @@
                       "children": [
                         "\n\t",
                         {
-                          "tag": "img",
+                          "tag": "video",
                           "props": {
-                            "className": "fullimage",
-                            "src": "/case-studies/or-tour-glify.gif",
-                            "alt": "Tour",
-                            "decoding": "async"
+                            "className": "img-responsive",
+                            "style": {
+                              "width": "100%",
+                              "height": "auto",
+                              "outline": "none",
+                              "border": "none"
+                            },
+                            "width": 1450,
+                            "height": 974,
+                            "muted": true,
+                            "loop": true,
+                            "playsInline": true,
+                            "preload": "metadata",
+                            "aria-label": "Guided product tour: discover, classify, monitor and protect your data, then replay the tour from any page"
                           },
-                          "children": []
+                          "children": [
+                            {
+                              "tag": "source",
+                              "props": {
+                                "src": "/case-studies/or-tour.mp4",
+                                "type": "video/mp4"
+                              },
+                              "children": []
+                            }
+                          ]
                         },
                         "\n"
                       ]
