@@ -476,7 +476,14 @@ function OpenRavenOperationsDemo({attributes}:{attributes:Record<string,unknown>
   },[]);
   return <figure ref={stageRef} className="or-operations-demo" aria-label="Open Raven operations overview with an incident tooltip">
     <MediaImage attributes={{...attributes,src:'/case-studies/or-operations-clean@2x.png'}} />
-    <img className="or-tooltip" src="/case-studies/or-operations-tooltip@2x.png" alt="1-7 Feb 2021: 512 closed, 114 in progress, 87 new" decoding="async" />
+    <div className="or-tooltip">
+      <p className="or-tooltip-title">1-7 Feb</p>
+      <dl className="or-tooltip-stats">
+        <div><dt>Closed</dt><dd>512</dd></div>
+        <div><dt>In Progress</dt><dd>114</dd></div>
+        <div><dt>New</dt><dd>87</dd></div>
+      </dl>
+    </div>
     <img className="or-cursor" src="/case-studies/or-cursor@2x.png" alt="" aria-hidden="true" decoding="async" />
   </figure>;
 }

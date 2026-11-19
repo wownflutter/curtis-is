@@ -3,7 +3,7 @@
 @import url('/original/css/font-awesome.min.css');
 @import url('/original/css/styles.css');
 @import './project.css';
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Inter:wght@200;300;400;500;600&family=Manrope:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Inter:wght@200;300;400;500;600&family=Manrope:wght@600&family=Work+Sans:wght@400;600&display=swap');
 
 /* Shared font families; component sizing lives with each section. */
 .portfolio-root {

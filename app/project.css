@@ -828,12 +828,20 @@
 @media (max-width:640px) { #project .persona-slideshow .persona-choices { gap:20px; } #project .persona-slideshow .persona-choices button { font-size:13px; } }
 
 /* Open Raven operations overview: cursor glides to the February bar, then the tooltip appears. */
-#project .or-operations-demo { position:relative; margin:0; }
+#project .or-operations-demo { position:relative; margin:0; container-type:inline-size; }
 #project .or-operations-demo > img:first-child { display:block; width:100%; height:auto; }
 #project .or-operations-demo .or-cursor,
 #project .or-operations-demo .or-tooltip { position:absolute; display:block; height:auto; pointer-events:none; opacity:0; }
 #project .or-operations-demo .or-cursor { z-index:3; left:80.83%; top:30.27%; width:1.111%; }
-#project .or-operations-demo .or-tooltip { z-index:2; left:81.32%; top:31.54%; width:17.92%; }
+#project .or-operations-demo .or-tooltip {
+  z-index:2; left:81.32%; top:31.54%; box-sizing:border-box; padding:1.15cqw 1.4cqw 1.2cqw 1.9cqw;
+  background:#000; color:#fff; font-family:'Work Sans','Inter',sans-serif; font-size:.78cqw; line-height:1.55; letter-spacing:.05em;
+}
+#project .or-operations-demo .or-tooltip p { margin:0 0 .45cqw; font-weight:400; }
+#project .or-operations-demo .or-tooltip-stats { display:grid; grid-template-columns:auto auto; justify-content:start; column-gap:2cqw; margin:0; }
+#project .or-operations-demo .or-tooltip-stats > div { display:contents; }
+#project .or-operations-demo .or-tooltip-stats dt { margin:0; font-weight:400; }
+#project .or-operations-demo .or-tooltip-stats dd { margin:0; font-weight:600; }
 @media (prefers-reduced-motion:reduce) {
   #project .or-operations-demo .or-cursor,
   #project .or-operations-demo .or-tooltip { opacity:1; }
