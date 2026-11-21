@@ -2152,14 +2152,14 @@
                     },
                     "       \n                \n                \n                \n             ",
                     {
-                          "tag": "p",
-                          "props": {},
-                          "children": [
-                            "Our hypothesis ran against how the company had worked, one customer request at a time: a single asset and workflow model, configured by role and tenant, could serve logistics and healthcare alike."
-                          ]
-                        },
-                        "\n\n",
-                        {
+                      "tag": "p",
+                      "props": {},
+                      "children": [
+                        "Our hypothesis ran against how the company had worked, one customer request at a time: a single asset and workflow model, configured by role and tenant, could serve logistics and healthcare alike."
+                      ]
+                    },
+                    "\n\n",
+                    {
                       "tag": "h3",
                       "props": {
                         "className": "class-one"
@@ -8837,7 +8837,7 @@
             {
               "tag": "img",
               "props": {
-                "src": "/case-studies/sh-hero.webp",
+                "src": "/case-studies/sh-hero-photo.webp",
                 "alt": "Driver Financial Management App",
                 "decoding": "async"
               },
@@ -8845,6 +8845,13 @@
             },
             "\n"
           ]
+        },
+        {
+          "tag": "div",
+          "props": {
+            "className": "safehold-phones"
+          },
+          "children": []
         },
         "\n",
         {

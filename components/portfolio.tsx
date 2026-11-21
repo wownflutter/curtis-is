@@ -5,6 +5,7 @@ import { createElement, Fragment, useEffect, useLayoutEffect, useRef, useState, 
 import { flushSync } from 'react-dom';
 import { ScrambleHeading } from './scramble-heading';
 import { TelemetryUseCases } from './telemetry-use-cases';
+import { SafeholdPhones } from './safehold-phones';
 import { Globe2, Hammer, Handshake, Play } from 'lucide-react';
 import original from '@/app/data/original.json';
 import mediaSizes from '@/app/data/media-sizes.json';
@@ -725,6 +726,7 @@ function MarketBanner({src}:{src:string}) {
 function render(node:ContentNode, key:string):ReactNode {
   if (typeof node === 'string') return node;
   if(node.props.className==='trackonomy-system') return <TelemetryUseCases key={key} />;
+  if(node.props.className==='safehold-phones') return <SafeholdPhones key={key} />;
   if(node.props.className==='row rowbottom') return <CareerProofStrip keyName={key} />;
   if(node.props.className==='mission-statement') {
     return <h2 key={key} className="mission-statement">
