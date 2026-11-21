@@ -848,14 +848,14 @@
   #project .or-operations-demo .or-tooltip { opacity:1; }
 }
 
-/* Case-study tags: section labels that name what the page delivers. Each scrolls to its section and shows its result on hover.
+/* Case-study tags: section labels that name what the page delivers. Each scrolls to its section.
    Same small teal caps as the motion labels; settle in after the title; reduced motion shows them at rest. */
 #project .project-heading-group.has-tags { margin-bottom:56px; }
 #project .project-tags { position:relative; display:flex; flex-wrap:wrap; gap:6px 28px; margin:16px 0 0; }
 #project .project-tag {
   position:relative;
   margin:0;
-  padding:4px 0 7px;
+  padding:4px 0;
   border:0;
   border-radius:0;
   background:transparent;
@@ -871,33 +871,10 @@
   animation:project-tag-in .6s cubic-bezier(.2,.8,.2,1) both;
   animation-delay:calc(700ms + var(--tag-index,0) * 90ms);
 }
-#project .project-tag::after {
-  content:"";
-  position:absolute;
-  left:0; right:.14em; bottom:0;
-  height:1px;
-  background:currentColor;
-  transform:scaleX(0);
-  transform-origin:left;
-  transition:transform .35s cubic-bezier(.2,.8,.2,1);
-}
 #project .project-tag:hover,
 #project .project-tag:focus-visible { color:#fff; }
-#project .project-tag:hover::after,
-#project .project-tag:focus-visible::after { transform:scaleX(1); }
 #project .project-tag:focus-visible { outline:2px solid #8dc9c1; outline-offset:4px; border-radius:2px; }
-#project .project-tag-result {
-  position:absolute;
-  left:0;
-  top:100%;
-  margin-top:8px;
-  font-family:var(--font-body);
-  font-size:13px;
-  line-height:1.4;
-  color:rgba(236,236,240,.72);
-  pointer-events:none;
-}
 #project h3[id^="cs-"] { scroll-margin-top:72px; }
 @keyframes project-tag-in { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:none; } }
-@media (max-width:640px) { #project .project-tags { gap:2px 22px; } #project .project-tag-result { display:none; } }
-@media (prefers-reduced-motion:reduce) { #project .project-tag { animation:none; } #project .project-tag::after { transition:none; } }
+@media (max-width:640px) { #project .project-tags { gap:2px 22px; } }
+@media (prefers-reduced-motion:reduce) { #project .project-tag { animation:none; } }

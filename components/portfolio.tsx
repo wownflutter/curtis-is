@@ -602,30 +602,27 @@ function PersonaSlideshow({id,slides,theme,extra=0}:{id:string;slides:PersonaSli
 }
 
 /** Give label paragraphs preceding lists one shared style. */
-/** Capability tags under a case-study title. Each names a section further down, links to it, and shows its result on hover. */
-const projectTags: Record<string, {label:string;anchor:string;heading:string;result?:string}[]> = {
+/** Capability tags under a case-study title. Each names a section further down and scrolls to it. */
+const projectTags: Record<string, {label:string;anchor:string;heading:string}[]> = {
   'work-2': [
-    {label:'Posture scoring',anchor:'cs-posture-score',heading:'Building trust in the posture score',result:'Confidence in the score rose from 2.3 to 4.4 out of 5'},
+    {label:'Posture scoring',anchor:'cs-posture-score',heading:'Building trust in the posture score'},
     {label:'Natural-language search',anchor:'cs-search',heading:'Sitewide search in natural language and code'},
-    {label:'AI-guided remediation',anchor:'cs-remediation',heading:'Give developers control over suggested fixes.',result:'Median fix time fell from 10 days to 6'},
-    {label:'Attack trace graph',anchor:'cs-attack-graph',heading:'Making risk understandable in context',result:'Explorer engagement grew from 12% to 30% of weekly users'},
+    {label:'AI-guided remediation',anchor:'cs-remediation',heading:'Give developers control over suggested fixes.'},
+    {label:'Attack trace graph',anchor:'cs-attack-graph',heading:'Making risk understandable in context'},
   ],
 };
 
-function ProjectTags({ tags }: { tags: {label:string;anchor:string;result?:string}[] }) {
-  const [active,setActive]=useState<number|null>(null);
+function ProjectTags({ tags }: { tags: {label:string;anchor:string}[] }) {
   const go=(anchor:string)=>{
     const target=document.getElementById(anchor);
     if(!target)return;
     const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     target.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
   };
-  return <nav className="project-tags" aria-label="In this case study" onMouseLeave={()=>setActive(null)}>
-    {tags.map((tag,index)=><button key={tag.anchor} type="button" className="project-tag" style={{'--tag-index':index} as CSSProperties}
-      onClick={()=>go(tag.anchor)} onMouseEnter={()=>setActive(index)} onFocus={()=>setActive(index)} onBlur={()=>setActive(null)}>
+  return <nav className="project-tags" aria-label="In this case study">
+    {tags.map((tag,index)=><button key={tag.anchor} type="button" className="project-tag" style={{'--tag-index':index} as CSSProperties} onClick={()=>go(tag.anchor)}>
       <span>{tag.label}</span>
     </button>)}
-    <span className="project-tag-result" aria-live="polite">{active!==null?tags[active].result:''}</span>
   </nav>;
 }
 
