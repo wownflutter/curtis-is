@@ -3,43 +3,44 @@
 import { useEffect, useRef, useState } from 'react';
 
 /**
- * A restrained two-state preview of the existing Contrast work.
- * The original project card remains the default image; the actual
- * remediation design appears briefly on entry and on hover/focus.
+ * Contrast Security's real project imagery transitions from the existing
+ * finding-oriented cover to the issue remediation interface.
+ *
+ * Autoplays when visible (including on initial page load if above the fold)
+ * and pauses offscreen. The remediation screenshot must load before motion
+ * starts, and the static cover remains available for reduced-motion users.
  */
 export function ContrastFindingPreview() {
   const previewRef = useRef<HTMLDivElement>(null);
-  const [peeking, setPeeking] = useState(false);
+  const remediationRef = useRef<HTMLImageElement>(null);
+  const [visible, setVisible] = useState(false);
+  const [remediationReady, setRemediationReady] = useState(false);
 
   useEffect(() => {
-    const preview = previewRef.current;
-    if (!preview || typeof IntersectionObserver === 'undefined') return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (remediationRef.current?.complete && remediationRef.current.naturalWidth > 0) {
+      setRemediationReady(true);
+    }
 
-    let showTimer: number | undefined;
-    let hideTimer: number | undefined;
+    const preview = previewRef.current;
+    if (!preview) return;
+
+    if (typeof IntersectionObserver === 'undefined') {
+      setVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
-      (entries) => {
-        if (!entries.some((entry) => entry.isIntersecting && entry.intersectionRatio >= 0.55)) return;
-        observer.disconnect();
-        showTimer = window.setTimeout(() => setPeeking(true), 450);
-        hideTimer = window.setTimeout(() => setPeeking(false), 2400);
-      },
-      { threshold: [0, 0.55] },
+      ([entry]) => setVisible(entry.isIntersecting && entry.intersectionRatio >= 0.35),
+      { threshold: [0, 0.35, 0.55] },
     );
     observer.observe(preview);
-
-    return () => {
-      observer.disconnect();
-      window.clearTimeout(showTimer);
-      window.clearTimeout(hideTimer);
-    };
+    return () => observer.disconnect();
   }, []);
 
   return (
     <div
       ref={previewRef}
-      className={`contrast-finding-preview${peeking ? ' is-peeking' : ''}`}
+      className={`contrast-finding-preview${visible && remediationReady ? ' is-playing' : ''}`}
     >
       <img
         className="contrast-preview-finding"
@@ -50,6 +51,7 @@ export function ContrastFindingPreview() {
         decoding="async"
       />
       <img
+        ref={remediationRef}
         className="contrast-preview-remediation"
         src="/case-studies/cont-issue-remediation.png"
         alt=""
@@ -58,6 +60,7 @@ export function ContrastFindingPreview() {
         loading="lazy"
         decoding="async"
         aria-hidden="true"
+        onLoad={() => setRemediationReady(true)}
       />
       <div className="contrast-preview-sequence" aria-hidden="true">
         <span className="contrast-preview-step contrast-preview-step-first">Finding</span>
