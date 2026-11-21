@@ -575,7 +575,7 @@ section { scroll-margin-top:52px; }
 #work-container .contrast-laptop-device {
   position:absolute;
   left:50%;
-  top:43%;
+  top:50%;
   width:88%;
   transform-style:preserve-3d;
   transform:translate(-50%,-50%) perspective(1600px) rotateY(-5deg) rotateX(1deg) translateY(8px) scale(.987);
@@ -661,7 +661,7 @@ section { scroll-margin-top:52px; }
   transition:none!important;
 }
 @media(max-width:500px) {
-  #work-container .contrast-laptop-device { width:91%;top:43%; }
+  #work-container .contrast-laptop-device { width:91%;top:50%; }
   #work-container .contrast-laptop-deck { height:8cqw; }
 }
 @media(prefers-reduced-motion:reduce) {
