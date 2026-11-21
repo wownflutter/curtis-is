@@ -610,6 +610,9 @@ const projectTags: Record<string, string[]> = {
   'work-5': ['Computer vision','Portion estimation','Robotic data capture','Medical programs'],
   'work-6': ['Mobile KPI dashboard','Usage alerts','Actionable anomalies','Real-time data'],
   'work-7': ['In-product store','Add-on pricing','Click-through terms','30-day trials'],
+  'work-8': ['Tablet KPI dashboard','Anomaly alerts','Design-partner MVP','Real-time usage'],
+  'work-9': ['Driver income view','Tax-due estimate','Survey-led discovery','Large-target mobile UI'],
+  'work-10': ['Real-time GPS tracking','Proactive alerts','Over-the-air updates','Rule-based workflows'],
   'work-2': ['Posture scoring','Natural-language search','AI-guided remediation','Attack trace graph'],
 };
 

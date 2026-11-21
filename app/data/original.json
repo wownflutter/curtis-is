@@ -8731,7 +8731,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "Tablets are used by NOC customer, sales, support and the Enterprise to bring a larger mobile viewing space to the user. This demand was also confirmed in our google analytics for viewport sizes by user. But, how can we capitalize on the user interaction patterns and our complex platform user experience in a way that simplifies data and highlights anomalies?"
+                        "Tablets are used by NOC customer, sales, support and the Enterprise to bring a larger mobile viewing space to the user. This demand was also confirmed in our google analytics for viewport sizes by user. But, how can we capitalize on the user interaction patterns and our complex platform user experience in a way that simplifies data and highlights anomalies? Our hypothesis: a tablet layout that put anomalies first, rather than every KPI, would give NOC, sales and support users the overview they were asking for."
                       ]
                     },
                     "\n                \n                ",
@@ -8789,7 +8789,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "We collaborated with several design partners for our MVP testing, entrusting them with validating our product. Through ongoing feedback collection and selective A/B testing, we confirmed the effectiveness of user touchpoints in various workflows. We prioritized their management requests and restructured the Dashboard accordingly."
+                        "We collaborated with several design partners for our MVP testing, entrusting them with validating our product. Through ongoing feedback collection and selective A/B testing, we confirmed the effectiveness of user touchpoints in various workflows. We prioritized their management requests and restructured the Dashboard accordingly. The trade-off: a dashboard reordered around design partners' management requests, in exchange for a tablet view that fit how they worked."
                       ]
                     },
                     "\n\n                                        ",
@@ -8937,7 +8937,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "We sourced drivers of both Uber and Lyft and surveyed their opinions on their ability to predict and manage tax due from their driving income. And, subsequently, if an app providing quick calculations of taxes due would be adopted into their routine. Lastly, what value they would place on such an application service (0 to 10). This would help us determine potential routes to monetization."
+                        "We sourced drivers of both Uber and Lyft and surveyed their opinions on their ability to predict and manage tax due from their driving income. And, subsequently, if an app providing quick calculations of taxes due would be adopted into their routine. Lastly, what value they would place on such an application service (0 to 10). This would help us determine potential routes to monetization. Our hypothesis: drivers who could already see their income would adopt an app that showed the tax they owed, if it took almost no effort to set up."
                       ]
                     },
                     "\n                \n                                ",
@@ -9070,7 +9070,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "\n                The demand was validated. The UX had to provide very simple onboarding to the user, simple financial taxonomy, limited scope, visual presentation of income and tax due. Big hit areas since the driver may be at a stop light and tap to view status. Visibility of each element, text, buttons, data tested to be easy at arms length. This was a \"driver's app.\""
+                        "\n                The demand was validated. The UX had to provide very simple onboarding to the user, simple financial taxonomy, limited scope, visual presentation of income and tax due. Big hit areas since the driver may be at a stop light and tap to view status. Visibility of each element, text, buttons, data tested to be easy at arms length. This was a \"driver's app.\" The trade-off: limited scope and a simple financial taxonomy, in exchange for a screen a driver could read at a stop light."
                       ]
                     },
                     "\n                \n                ",
@@ -9122,7 +9122,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "Rideshare companies do not look favorably on the financial transparency apps like Safehold provide. The driver can now see how little they earn from the total income received, often 30 to 40 percent. So, getting the cooperation of the rideshare companies has been complex. The drivers find out within their near future, regardless. So, the rideshare companies should examine worker policy and embrace transparency. This builds trust."
+                        "Rideshare companies do not look favorably on the financial transparency apps like Safehold provide. The driver can now see how little they earn from the total income received, often 30 to 40 percent. So, getting the cooperation of the rideshare companies has been complex. The drivers find out within their near future, regardless. So, the rideshare companies should examine worker policy and embrace transparency. This builds trust. The trade-off: the same transparency drivers valued made rideshare companies reluctant partners."
                       ]
                     },
                     "\n            ",
@@ -9269,7 +9269,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "Through interviews with dispatchers and drivers, we identified common friction points: unreliable tracking, lack of fuel usage transparency, and poor support for remote diagnostics. These insights shaped our approach to develop a modular, mobile-friendly fleet tracking experience optimized for fast deployment and day-to-day use."
+                        "Through interviews with dispatchers and drivers, we identified common friction points: unreliable tracking, lack of fuel usage transparency, and poor support for remote diagnostics. These insights shaped our approach to develop a modular, mobile-friendly fleet tracking experience optimized for fast deployment and day-to-day use. Our hypothesis: leaner fleets would adopt telematics if setup meant plugging in a tracker and opening a dashboard, not running a rollout."
                       ]
                     },
                     "\n               \n         ",
@@ -9393,7 +9393,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "To simplify adoption, we partnered with hardware vendors offering pre-installed GPS tracking units. This meant customers could plug in, connect, and get started immediately—reducing the barriers often associated with telematics rollouts. For resource-constrained operators, this plug-and-play model was a game changer."
+                        "To simplify adoption, we partnered with hardware vendors offering pre-installed GPS tracking units. This meant customers could plug in, connect, and get started immediately—reducing the barriers often associated with telematics rollouts. For resource-constrained operators, this plug-and-play model was a game changer. The trade-off: starting with partner-supplied trackers, in exchange for customers who could plug in and get going immediately."
                       ]
                     },
                     "\n                \n                ",
@@ -9497,7 +9497,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "This focus on clarity, responsiveness, and minimal training overhead helped operators stay ahead of problems—and supported smarter, faster decision-making across the board."
+                        "This focus on clarity, responsiveness, and minimal training overhead helped operators stay ahead of problems—and supported smarter, faster decision-making across the board. The trade-off: a summary dashboard with drill-down rather than every metric up front, in exchange for clarity at a glance."
                       ]
                     },
                     "\n                \n                \n\n                ",
