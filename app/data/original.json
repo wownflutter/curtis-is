@@ -3764,6 +3764,14 @@
                           "tag": "p",
                           "props": {},
                           "children": [
+                            "Our hypothesis was simple to state and hard to build: if every agent recommendation arrived with its evidence and left the final call to a person, security teams would trust the product enough to act on it faster."
+                          ]
+                        },
+                        "\n\n",
+                        {
+                          "tag": "p",
+                          "props": {},
+                          "children": [
                             "\nWe began with storyboarding to align stakeholders. These boards illustrated moments like a CISO seeing risk drop over time, a DevOps engineer triaging an exploit in the Trace Graph, or a program manager tracking remediation progress."
                           ]
                         },
@@ -3873,7 +3881,7 @@
                           "tag": "p",
                           "props": {},
                           "children": [
-                            "The core of the NorthStar UX became a dashboard that brought together real-time insights, fix velocity, exploitability context, and system signals in one unified view. Unlike traditional dashboards that emphasize breadth, NorthStar focused on signal over noise, pushing only what matters for each role."
+                            "The core of the NorthStar UX became a dashboard that brought together real-time insights, fix velocity, exploitability context, and system signals in one unified view. Unlike traditional dashboards that emphasize breadth, NorthStar focused on signal over noise, pushing only what matters for each role. The trade-off: a CISO gives up the comfort of seeing everything and gets the clarity of seeing what matters."
                           ]
                         },
                         "\n\n",
@@ -4286,7 +4294,7 @@
                           "tag": "p",
                           "props": {},
                           "children": [
-                            "The approval record captures the reviewer, proposal version, and supporting evidence. Testing, merge, and deployment remain separate steps, and the issue stays open until the fix is verified."
+                            "The approval record captures the reviewer, proposal version, and supporting evidence. Testing, merge, and deployment remain separate steps, and the issue stays open until the fix is verified. The trade-off: developers take one extra step, and in return every fix carries a record of who approved what, and on what evidence."
                           ]
                         },
                         "\n\n",
@@ -4491,7 +4499,7 @@
                           "tag": "p",
                           "props": {},
                           "children": [
-                            "A reactive table view was added to complement the graph, giving users the ability to toggle between AI inferences and raw telemetry while reinforcing transparency and trust."
+                            "A reactive table view was added to complement the graph, giving users the ability to toggle between AI inferences and raw telemetry while reinforcing transparency and trust. The trade-off: a graph alone would have been cleaner, but user testing showed people wanted to check the AI's inferences against raw telemetry."
                           ]
                         },
                         "\n\n",
