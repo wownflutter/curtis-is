@@ -517,13 +517,15 @@ section { scroll-margin-top:52px; }
 
 
 
-/* Contrast homepage scene: gauge → entity graph → graph + details.
-   This is a one-shot camera move across the real incident screenshot.
-   ?contrast-motion=off, missing image, and reduced-motion use the old cover. */
+
+/* Contrast homepage: a cinematic, one-time attack-path trace on the genuine
+   incident screen. The measured route nodes are on a 1077x1800 screenshot:
+   337 -> 475 -> 601 -> 729 -> 854, all near y=790.
+   The original project cover is the visible fallback whenever animation is
+   disabled by ?contrast-motion=off, reduced motion, or image load failure. */
 #work-container .contrast-finding-preview {
   position:relative;
   isolation:isolate;
-  container-type:inline-size;
   width:100%;
   aspect-ratio:4 / 3;
   overflow:hidden;
@@ -536,149 +538,177 @@ section { scroll-margin-top:52px; }
   display:block;
   width:100%;
   height:100%;
-  object-fit:cover;
   border-radius:0;
+  object-fit:cover;
 }
-#work-container .contrast-pan-world {
+#work-container .contrast-real-screen {
   position:absolute;
   z-index:1;
   top:0;
   left:0;
   width:100%;
+  height:auto;
   opacity:0;
   transform-origin:0 0;
+  transform:translate(-35%,-52%) scale(1.65);
   pointer-events:none;
+  will-change:transform,opacity;
 }
-#work-container .contrast-finding-preview .contrast-pan-image {
-  position:relative;
+#work-container .contrast-finding-preview .contrast-real-screen-image {
   display:block;
-  top:auto;
   width:100%;
   height:auto;
   max-width:none;
-  opacity:1;
+  top:auto;
   border-radius:0;
+  opacity:1;
   transform:none!important;
   transition:none!important;
 }
-@keyframes contrast-pan-camera {
-  0% { opacity:0; transform:translate(2%,-20%) scale(1.65); }
-  6%,27% { opacity:1; transform:translate(2%,-20%) scale(1.65); }
-  68%,100% { opacity:1; transform:translate(-23%,-77%) scale(1.65); }
-}
-#work-container .contrast-finding-preview.is-playing .contrast-pan-world {
-  animation:contrast-pan-camera 8.5s ease-in-out 1 both;
-}
-#work-container .contrast-entity-sheet {
+#work-container .contrast-trace-overlay {
   position:absolute;
-  z-index:2;
   top:0;
-  right:0;
-  bottom:0;
-  display:flex;
-  flex-direction:column;
-  width:44%;
-  min-width:0;
-  padding:clamp(12px,2.8cqw,28px);
-  background:#1d202e;
-  border-left:1px solid #4b5062;
-  color:#e1e4ee;
-  box-shadow:-16px 0 40px #0008;
+  left:0;
+  display:block;
+  width:100%;
+  height:100%;
+  overflow:visible;
+  pointer-events:none;
+}
+#work-container .contrast-trace-overlay path {
+  fill:none;
+  stroke-linecap:round;
+  stroke-linejoin:round;
   opacity:0;
-  transform:translateX(105%);
-  pointer-events:none;
-  font-family:'Manrope','Inter',sans-serif;
-  text-align:left;
 }
-#work-container .contrast-sheet-head {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-  margin:0 0 clamp(13px,3cqw,27px);
-  padding:0 0 clamp(10px,2cqw,18px);
-  border-bottom:1px solid #444959;
-  color:#aeb9c7;
-  font-size:clamp(8px,1.35cqw,13px);
-  letter-spacing:.06em;
-  text-transform:uppercase;
+#work-container .contrast-trace-hot-trail {
+  stroke:#ff975c;
+  stroke-width:3.3;
+  stroke-dasharray:100 100;
+  stroke-dashoffset:100;
+  filter:drop-shadow(0 0 3px #ff8148) drop-shadow(0 0 8px #ff682a);
 }
-#work-container .contrast-sheet-close { color:#7c899a; font-size:clamp(14px,2.4cqw,22px); line-height:1; }
-#work-container .contrast-entity-name {
-  margin-bottom:6px;
-  color:#edf3fb;
-  font-size:clamp(10px,2cqw,19px);
-  font-weight:650;
-  line-height:1.3;
-  overflow-wrap:anywhere;
+#work-container .contrast-trace-hot-head {
+  stroke:#ffdec0;
+  stroke-width:4.6;
+  stroke-dasharray:10 90;
+  stroke-dashoffset:0;
+  filter:drop-shadow(0 0 4px #ff9656) drop-shadow(0 0 9px #ff6b3a);
 }
-#work-container .contrast-entity-type {
-  color:#9da9bb;
-  font-size:clamp(8px,1.4cqw,13px);
-  margin-bottom:clamp(10px,3cqw,30px);
+#work-container .contrast-trace-cool-trail {
+  stroke:#58bce7;
+  stroke-width:2.8;
+  stroke-dasharray:100 100;
+  stroke-dashoffset:100;
+  filter:drop-shadow(0 0 4px #47bbfc);
 }
-#work-container .contrast-sheet-row {
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  gap:6px;
-  padding:clamp(5px,1.4cqw,14px) 0;
-  border-top:1px solid #353a49;
-  font-size:clamp(8px,1.35cqw,13px);
-  line-height:1.35;
+#work-container .contrast-trace-cool-head {
+  stroke:#b7eeff;
+  stroke-width:4.4;
+  stroke-dasharray:10 90;
+  stroke-dashoffset:0;
+  filter:drop-shadow(0 0 5px #51c9ff) drop-shadow(0 0 10px #3798e5);
 }
-#work-container .contrast-sheet-row span { color:#9da9bb; }
-#work-container .contrast-sheet-row b { font-weight:550; text-align:right; max-width:55%; }
-#work-container .contrast-sheet-row .contrast-critical { color:#ff7899; }
-@keyframes contrast-sheet-enter {
-  0%,73% { transform:translateX(105%);opacity:0; }
-  89%,100% { transform:translateX(0);opacity:1; }
+#work-container .contrast-trace-overlay .contrast-entity-impact {
+  fill:none;
+  stroke:#ffad73;
+  stroke-width:2.6;
+  opacity:0;
+  transform-box:fill-box;
+  transform-origin:center;
+  filter:drop-shadow(0 0 5px #ff9957) drop-shadow(0 0 12px #e75a35);
 }
-#work-container .contrast-finding-preview.is-playing .contrast-entity-sheet {
-  animation:contrast-sheet-enter 8.5s ease-in-out 1 both;
+#work-container .contrast-trace-overlay .contrast-end-glow {
+  fill:none;
+  stroke:#76d5f4;
+  stroke-width:1.8;
+  opacity:0;
+  transform-box:fill-box;
+  transform-origin:center;
+  filter:drop-shadow(0 0 6px #62c6ff);
 }
-#work-container .contrast-pan-status {
-  position:absolute;
-  z-index:3;
-  left:12px;
-  bottom:12px;
-  width:clamp(100px,24%,180px);
-  height:29px;
-  padding:7px 10px;
-  border:1px solid #ffffff2b;
-  border-radius:3px;
-  background:#090f19e6;
-  backdrop-filter:blur(7px);
-  color:#d5e4e9;
-  font-family:'Manrope','Inter',sans-serif;
-  font-size:clamp(9px,1.5cqw,12px);
-  font-weight:600;
-  line-height:14px;
-  text-align:left;
-  pointer-events:none;
+
+/* First hold tight on the graph. Zoom out only after the signal dissipates.
+   The end crop shows actual screen context (posture panel + route), not a
+   separate illustration, and never snaps back to the original cover. */
+@keyframes contrast-attack-camera {
+  0% { opacity:0;transform:translate(-35%,-52%) scale(1.65); }
+  7%,64% { opacity:1;transform:translate(-35%,-52%) scale(1.65); }
+  89%,100% { opacity:1;transform:translate(-4%,-17%) scale(1.05); }
 }
-#work-container .contrast-pan-status > span { position:absolute;inset:7px 10px;white-space:nowrap;opacity:0; }
-@keyframes contrast-label-risk { 0%,24%{opacity:1} 34%,100%{opacity:0} }
-@keyframes contrast-label-graph { 0%,35%{opacity:0} 48%,72%{opacity:1} 84%,100%{opacity:0} }
-@keyframes contrast-label-entity { 0%,78%{opacity:0} 90%,100%{opacity:1} }
-#work-container .contrast-finding-preview.is-playing .contrast-status-gauge { animation:contrast-label-risk 8.5s linear both; }
-#work-container .contrast-finding-preview.is-playing .contrast-status-graph { animation:contrast-label-graph 8.5s linear both; }
-#work-container .contrast-finding-preview.is-playing .contrast-status-detail { animation:contrast-label-entity 8.5s linear both; }
-@media(max-width:420px) {
-  #work-container .contrast-entity-sheet { width:49%;padding:9px; }
-  #work-container .contrast-sheet-head { margin-bottom:8px; }
-  #work-container .contrast-sheet-row { padding:5px 0; }
-  #work-container .contrast-entity-type { margin-bottom:8px; }
-  #work-container .contrast-pan-status { left:7px;bottom:7px; }
+@keyframes contrast-attack-hot-trail {
+  0%,13% { opacity:0;stroke-dashoffset:100; }
+  17% { opacity:1;stroke-dashoffset:93; }
+  34% { opacity:1;stroke-dashoffset:0; }
+  44% { opacity:.8;stroke-dashoffset:0; }
+  57%,100% { opacity:0;stroke-dashoffset:0; }
+}
+@keyframes contrast-attack-hot-head {
+  0%,13% { opacity:0;stroke-dashoffset:0; }
+  17% { opacity:1;stroke-dashoffset:-10; }
+  33% { opacity:1;stroke-dashoffset:-90; }
+  38%,100% { opacity:0;stroke-dashoffset:-90; }
+}
+@keyframes contrast-attack-impact {
+  0%,29% { opacity:0;transform:scale(.78); }
+  34% { opacity:1;transform:scale(1.15); }
+  40% { opacity:.95;transform:scale(1); }
+  51% { opacity:.25;transform:scale(1.24); }
+  65%,100% { opacity:0;transform:scale(1.3); }
+}
+@keyframes contrast-attack-cool-trail {
+  0%,38% { opacity:0;stroke-dashoffset:100; }
+  43% { opacity:.9;stroke-dashoffset:94; }
+  67% { opacity:.75;stroke-dashoffset:0; }
+  79%,100% { opacity:0;stroke-dashoffset:0; }
+}
+@keyframes contrast-attack-cool-head {
+  0%,40% { opacity:0;stroke-dashoffset:0; }
+  44% { opacity:1;stroke-dashoffset:-12; }
+  66% { opacity:1;stroke-dashoffset:-90; }
+  72%,100% { opacity:0;stroke-dashoffset:-90; }
+}
+@keyframes contrast-attack-terminal {
+  0%,60% { opacity:0;transform:scale(.8); }
+  68% { opacity:.95;transform:scale(1.13); }
+  80%,100% { opacity:0;transform:scale(1.3); }
+}
+#work-container .contrast-finding-preview.is-playing .contrast-real-screen {
+  animation:contrast-attack-camera 6.8s cubic-bezier(.2,.65,.24,1) 1 both;
+}
+#work-container .contrast-finding-preview.is-playing .contrast-trace-hot-trail {
+  animation:contrast-attack-hot-trail 6.8s ease-in-out 1 both;
+}
+#work-container .contrast-finding-preview.is-playing .contrast-trace-hot-head {
+  animation:contrast-attack-hot-head 6.8s linear 1 both;
+}
+#work-container .contrast-finding-preview.is-playing .contrast-entity-impact {
+  animation:contrast-attack-impact 6.8s ease-in-out 1 both;
+}
+#work-container .contrast-finding-preview.is-playing .contrast-trace-cool-trail {
+  animation:contrast-attack-cool-trail 6.8s ease-in-out 1 both;
+}
+#work-container .contrast-finding-preview.is-playing .contrast-trace-cool-head {
+  animation:contrast-attack-cool-head 6.8s linear 1 both;
+}
+#work-container .contrast-finding-preview.is-playing .contrast-end-glow {
+  animation:contrast-attack-terminal 6.8s ease-in-out 1 both;
+}
+/* No hover substitution: the finished genuine UI stays on screen.
+   Ignore the site's generic project thumbnail zoom inside the moving scene. */
+#work-container a.captioned-work:hover .contrast-finding-preview .contrast-real-screen-image {
+  transform:none!important;
+}
+#work-container .contrast-finding-preview.is-static .contrast-real-screen {
+  opacity:0!important;
+  animation:none!important;
+  transition:none!important;
 }
 @media(prefers-reduced-motion:reduce) {
-  #work-container .contrast-finding-preview .contrast-pan-world,
-  #work-container .contrast-finding-preview .contrast-entity-sheet,
-  #work-container .contrast-finding-preview .contrast-pan-status > span {
+  #work-container .contrast-finding-preview .contrast-real-screen,
+  #work-container .contrast-finding-preview .contrast-trace-overlay :is(path,circle) {
     animation:none!important;
     transition:none!important;
   }
-  #work-container .contrast-finding-preview .contrast-pan-world,
-  #work-container .contrast-finding-preview .contrast-entity-sheet { opacity:0!important; }
-  #work-container .contrast-finding-preview .contrast-pan-status { display:none!important; }
+  #work-container .contrast-finding-preview .contrast-real-screen { opacity:0!important; }
 }
