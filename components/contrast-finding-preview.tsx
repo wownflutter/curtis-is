@@ -93,7 +93,6 @@ export function ContrastFindingPreview() {
             </div>
             <div className="contrast-laptop-trackpad" />
           </div>
-          <div className="contrast-laptop-lip" />
         </div>
       </div>
     </div>
