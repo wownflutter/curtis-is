@@ -5,7 +5,6 @@ import { createElement, useEffect, useLayoutEffect, useRef, useState, type React
 import { flushSync } from 'react-dom';
 import { ScrambleHeading } from './scramble-heading';
 import { TelemetryUseCases } from './telemetry-use-cases';
-import { ContrastFindingPreview } from './contrast-finding-preview';
 import { Globe2, Hammer, Handshake, Play } from 'lucide-react';
 import original from '@/app/data/original.json';
 import mediaSizes from '@/app/data/media-sizes.json';
@@ -737,7 +736,7 @@ function render(node:ContentNode, key:string):ReactNode {
     const caption=projectCaptions[id];
     if(caption) {
       return <a key={key} id={id} className="work captioned-work" href={`${projectBase}/${id}`}>
-        <div className="project-card-image">{id==='work-2' ? <ContrastFindingPreview /> : renderChildren(node.children.filter(child=>typeof child!=='string' && child.tag==='img'),`${key}-image`)}</div>
+        <div className="project-card-image">{renderChildren(node.children.filter(child=>typeof child!=='string' && child.tag==='img'),`${key}-image`)}</div>
         <div className="project-card-caption">
           <span className="project-card-domain">{caption.domain}</span>
           <h3><span>{caption.name}</span><svg className="project-card-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg></h3>
