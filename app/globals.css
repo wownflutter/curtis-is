@@ -610,6 +610,14 @@ section { scroll-margin-top:52px; }
 @media(max-width:540px) {
   #work-container .contrast-preview-sequence { right:10px; bottom:10px; padding:7px 9px; font-size:10px; }
 }
+/* A completely static cover, available through ?contrast-motion=off or
+   whenever the remediation image fails to load. */
+#work-container .contrast-finding-preview.is-static .contrast-preview-remediation {
+  opacity:0!important;
+  animation:none!important;
+  transition:none!important;
+}
+#work-container .contrast-finding-preview.is-static .contrast-preview-sequence { display:none; }
 @media(prefers-reduced-motion:reduce) {
   #work-container .contrast-finding-preview .contrast-preview-remediation,
   #work-container .contrast-finding-preview .contrast-preview-step {
