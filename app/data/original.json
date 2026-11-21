@@ -5061,7 +5061,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "As I was assigned the task of providing the next major version, expectations for vastly improved UX design grew. A direct sync with our marketing efforts and sales was imperative."
+                        "As I was assigned the task of providing the next major version, expectations for vastly improved UX design grew. A direct sync with our marketing efforts and sales was imperative. Our hypothesis: if navigation and the homepage followed each role's critical path, drawn from what customers told us rather than what the company assumed, adoption and sales would follow."
                       ]
                     },
                     "\n                \n            ",
@@ -5351,7 +5351,7 @@
                             "card sorting"
                           ]
                         },
-                        ", subjects determined which category titles and actions made sense in their routines. We assessed which categories were relevant to their new user journey and which should be eliminated, merged or reconfigured. This exercise proved interesting, as many PMs felt the features they championed deserved promotion above others, even though these categories often confused the user or were unimportant to their business."
+                        ", subjects determined which category titles and actions made sense in their routines. We assessed which categories were relevant to their new user journey and which should be eliminated, merged or reconfigured. This exercise proved interesting, as many PMs felt the features they championed deserved promotion above others, even though these categories often confused the user or were unimportant to their business. The trade-off: some championed features lost prominence, in exchange for a navigation customers could actually find their way through."
                       ]
                     },
                     "\n                \n                ",
@@ -5526,7 +5526,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "Our Jasper customers had now lived years with their current platform experience and we were about to introduce a new way to consume data synthesis and IoT management. Legacy functionality was being replaced by a contemporary, mission-guided, user experience. Old habits of navigation were now rethought and presented in clean, direct Material Design patterns which would require minimal, if any, training."
+                        "Our Jasper customers had now lived years with their current platform experience and we were about to introduce a new way to consume data synthesis and IoT management. Legacy functionality was being replaced by a contemporary, mission-guided, user experience. Old habits of navigation were now rethought and presented in clean, direct Material Design patterns which would require minimal, if any, training. The trade-off: six months of previews, betas and tours, in exchange for changing a critical console without surprising the customers who relied on it."
                       ]
                     },
                     "\n\n                ",
@@ -5738,7 +5738,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "We further provide our users with the opportunity to see a predictive graph demonstrating how the \"recommendation\" would avoid substantial overage costs. This builds confidence in our application and protects our users with a proactive solution."
+                        "We further provide our users with the opportunity to see a predictive graph demonstrating how the \"recommendation\" would avoid substantial overage costs. This builds confidence in our application and protects our users with a proactive solution. The trade-off: a banner at the top of the homepage competes for attention, in exchange for catching a costly overage before it happens."
                       ]
                     },
                     "\n\n",
@@ -6548,7 +6548,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "These user interviews are ongoing and, as a startup, are conducted simultaneously with the design of other platform features. Initial iterative wireframes are generated based on educated assumptions of user behavior. However, patterns emerged early, and the user journey began to manifest itself, informing our designs. During the interview sessions, we delved deeper into participants' actual platform interactions. We presented strategically designed UI/UX comps, assigned tasks, and gathered feedback. We then prompted participants to share their innovative ideas for improvements."
+                        "These user interviews are ongoing and, as a startup, are conducted simultaneously with the design of other platform features. Initial iterative wireframes are generated based on educated assumptions of user behavior. However, patterns emerged early, and the user journey began to manifest itself, informing our designs. Our hypothesis: if an analyst or CISO could move from discovering sensitive data to acting on a violation in one place, with the complexity of AWS translated for them, they would adopt the product faster. During the interview sessions, we delved deeper into participants' actual platform interactions. We presented strategically designed UI/UX comps, assigned tasks, and gathered feedback. We then prompted participants to share their innovative ideas for improvements."
                       ]
                     },
                     "\n                \n                ",
@@ -6654,7 +6654,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "While the Virtual 3D Map provides a unique and captivating network perspective, all filtered results are intelligently translated for easy analysis and management within the SaaS platform. For example, while exploring the map view, you can identify a violation and seamlessly address it using the Case Management feature with just one click. This interconnected ecosystem ensures streamlined data security, offering unparalleled visibility and transparency."
+                        "While the Virtual 3D Map provides a unique and captivating network perspective, all filtered results are intelligently translated for easy analysis and management within the SaaS platform. For example, while exploring the map view, you can identify a violation and seamlessly address it using the Case Management feature with just one click. This interconnected ecosystem ensures streamlined data security, offering unparalleled visibility and transparency. The trade-off: a second, spatial view to design and learn, in exchange for seeing asset relationships and violations in context."
                       ]
                     },
                     "\n\n",
@@ -6770,7 +6770,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "Three things drove the lift: the in-product tour, sales engineers who guided new accounts through setup, and a forward-deployed designer who worked directly with those accounts."
+                        "Three things drove the lift: the in-product tour, sales engineers who guided new accounts through setup, and a forward-deployed designer who worked directly with those accounts. The trade-off: hands-on setup help does not scale the way a tour does, in exchange for getting new accounts to their first finding."
                       ]
                     },
                     "\n            ",
@@ -7002,7 +7002,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "Machine learning ranked findings by risk and recommended a remediation action for each one, which analysts could accept, edit or override in Case Management."
+                        "Machine learning ranked findings by risk and recommended a remediation action for each one, which analysts could accept, edit or override in Case Management. The trade-off: analysts keep one more decision in the loop, in exchange for recommendations they can trust and correct."
                       ]
                     },
                     "\n            ",

@@ -605,6 +605,8 @@ function PersonaSlideshow({id,slides,theme,extra=0}:{id:string;slides:PersonaSli
 /** Capability tags under a case-study title. Plain labels naming what the page delivers; not links or filters. */
 const projectTags: Record<string, string[]> = {
   'work-1': ['Multi-tenant platform','AI-assisted triage','Natural-language search','Voice input'],
+  'work-3': ['Multi-tenant SaaS platform','Role-based navigation','Predictive recommendations','Design system'],
+  'work-4': ['Cloud data security','3D asset map','ML-ranked remediation','Guided onboarding'],
   'work-2': ['Posture scoring','Natural-language search','AI-guided remediation','Attack trace graph'],
 };
 
