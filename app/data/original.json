@@ -9054,9 +9054,10 @@
                         {
                           "tag": "img",
                           "props": {
-                            "src": "/case-studies/sh-felix-persona.webp",
+                            "src": "/case-studies/sh-felix-persona-v2.webp",
                             "alt": "Persona",
-                            "decoding": "async"
+                            "decoding": "async",
+                            "className": "persona-shot"
                           },
                           "children": []
                         },
