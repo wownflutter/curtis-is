@@ -1,23 +1,23 @@
 'use client';
-/* oxlint-disable next/no-img-element -- The preview pans an existing local case-study image; no remote images. */
+/* oxlint-disable next/no-img-element -- A real local product screenshot with a precisely aligned SVG motion overlay. */
 
 import { useEffect, useRef, useState } from 'react';
 
 /**
- * Gauge → connected-entity graph → graph with entity side sheet.
+ * A restrained, one-shot attack-path moment on the real Contrast incident UI.
  *
- * Uses a screenshot already present in the Contrast incident walkthrough.
- * The sheet reuses the sample entity's metadata in that walkthrough.
- * Autoplays once when visible, holds the graph/details, and falls back to
- * the original static card on image error, reduced motion, or
- * /?contrast-motion=off.
+ * Story: close graph → hot signal → entity impact → cooling blue continuation
+ * → camera settles on the actual screen. The final screen remains visible.
+ *
+ * Fallback: /?contrast-motion=off, prefers-reduced-motion, or image load failure
+ * shows the original project thumbnail without any artificial overlay.
  */
 export function ContrastFindingPreview() {
-  const previewRef = useRef<HTMLDivElement>(null);
-  const sceneRef = useRef<HTMLImageElement>(null);
-  const [started, setStarted] = useState(false);
-  const [sceneReady, setSceneReady] = useState(false);
-  const [sceneFailed, setSceneFailed] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const sceneImageRef = useRef<HTMLImageElement>(null);
+  const [enteredView, setEnteredView] = useState(false);
+  const [imageReady, setImageReady] = useState(false);
+  const [imageFailed, setImageFailed] = useState(false);
   const [staticMode, setStaticMode] = useState(false);
 
   useEffect(() => {
@@ -29,21 +29,23 @@ export function ContrastFindingPreview() {
       return;
     }
 
-    if (sceneRef.current?.complete && sceneRef.current.naturalWidth > 0) {
-      setSceneReady(true);
+    if (sceneImageRef.current?.complete && sceneImageRef.current.naturalWidth > 0) {
+      setImageReady(true);
     }
-    const card = previewRef.current;
-    if (!card) return;
-    if (typeof IntersectionObserver === 'undefined') {
-      setStarted(true);
+
+    const card = cardRef.current;
+    if (!card || typeof IntersectionObserver === 'undefined') {
+      setEnteredView(true);
       return;
     }
 
     const observer = new IntersectionObserver(
       entries => {
-        if (!entries.some(entry => entry.isIntersecting && entry.intersectionRatio >= 0.35)) return;
-        observer.disconnect();
-        setStarted(true);
+        // Never finish the one-shot animation before the visitor gets here.
+        if (entries.some(entry => entry.isIntersecting && entry.intersectionRatio >= 0.35)) {
+          observer.disconnect();
+          setEnteredView(true);
+        }
       },
       { threshold: [0, 0.35] },
     );
@@ -51,12 +53,20 @@ export function ContrastFindingPreview() {
     return () => observer.disconnect();
   }, []);
 
-  const ready = !staticMode && !sceneFailed && sceneReady;
+  const animate = !staticMode && !imageFailed && imageReady;
+  const playing = animate && enteredView;
+
+  // These curves follow the visible incident route in the 1077 × 1800 screenshot:
+  // source application (337, 790) → GET/customer_info (475, 790) →
+  // outbound call (601, 790) → file operation (729, 790) →
+  // storage query (854, 790).
+  const hotPath = 'M 351 790 C 372 780, 391 784, 414 785 S 446 788, 462 790';
+  const coolPath = 'M 489 790 C 518 784, 555 786, 589 790 S 675 788, 716 790 S 801 788, 840 790';
 
   return (
     <div
-      ref={previewRef}
-      className={`contrast-finding-preview${ready && started ? ' is-playing' : ' is-static'}`}
+      ref={cardRef}
+      className={`contrast-finding-preview${animate ? ' is-ready' : ' is-static'}${playing ? ' is-playing' : ''}`}
     >
       <img
         className="contrast-preview-finding"
@@ -66,40 +76,34 @@ export function ContrastFindingPreview() {
         height={1080}
         decoding="async"
       />
-      <div className="contrast-pan-world" aria-hidden="true">
+
+      <div className="contrast-real-screen" aria-hidden="true">
         <img
-          ref={sceneRef}
-          className="contrast-pan-image"
+          ref={sceneImageRef}
+          className="contrast-real-screen-image"
           src="/case-studies/incident-tour-screen-final.jpg"
           alt=""
           width={1077}
           height={1800}
           loading="lazy"
           decoding="async"
-          onLoad={() => setSceneReady(true)}
-          onError={() => setSceneFailed(true)}
+          onLoad={() => setImageReady(true)}
+          onError={() => setImageFailed(true)}
         />
+        <svg
+          className="contrast-trace-overlay"
+          viewBox="0 0 1077 1800"
+          preserveAspectRatio="xMinYMin meet"
+          aria-hidden="true"
+        >
+          <path className="contrast-trace-hot-trail" d={hotPath} pathLength={100} />
+          <path className="contrast-trace-hot-head" d={hotPath} pathLength={100} />
+          <circle className="contrast-entity-impact" cx="475" cy="790" r="16" />
+          <path className="contrast-trace-cool-trail" d={coolPath} pathLength={100} />
+          <path className="contrast-trace-cool-head" d={coolPath} pathLength={100} />
+          <circle className="contrast-end-glow" cx="854" cy="790" r="15" />
+        </svg>
       </div>
-      <div className="contrast-entity-sheet" aria-hidden="true">
-        <div className="contrast-sheet-head">
-          <span>Entity details</span>
-          <span className="contrast-sheet-close">×</span>
-        </div>
-        <strong className="contrast-entity-name">petclinic-demo-2.5-ss3</strong>
-        <span className="contrast-entity-type">Application · Production</span>
-        <div className="contrast-sheet-row"><span>Severity</span><b className="contrast-critical">Critical</b></div>
-        <div className="contrast-sheet-row"><span>Open incidents</span><b>3</b></div>
-        <div className="contrast-sheet-row"><span>Related issues</span><b>14</b></div>
-        <div className="contrast-sheet-row"><span>Affected endpoints</span><b>4</b></div>
-        <div className="contrast-sheet-row"><span>Owner</span><b>Platform Engineering</b></div>
-      </div>
-      {ready && (
-        <div className="contrast-pan-status" aria-hidden="true">
-          <span className="contrast-status-gauge">Risk posture</span>
-          <span className="contrast-status-graph">Entity graph</span>
-          <span className="contrast-status-detail">Entity details</span>
-        </div>
-      )}
     </div>
   );
 }
