@@ -602,20 +602,31 @@ function PersonaSlideshow({id,slides,theme,extra=0}:{id:string;slides:PersonaSli
 }
 
 /** Give label paragraphs preceding lists one shared style. */
-/** A short hook under a case-study title. Words arrive in sequence like captions; *marked* words carry the emphasis. */
-const projectDecks: Record<string, string> = {
-  'work-2': 'One platform for CISOs, SOC analysts, and developers, with AI that *shows its work.*',
+/** Capability tags under a case-study title. Each names a section further down, links to it, and shows its result on hover. */
+const projectTags: Record<string, {label:string;anchor:string;heading:string;result?:string}[]> = {
+  'work-2': [
+    {label:'Posture scoring',anchor:'cs-posture-score',heading:'Building trust in the posture score',result:'Confidence in the score rose from 2.3 to 4.4 out of 5'},
+    {label:'Natural-language search',anchor:'cs-search',heading:'Sitewide search in natural language and code'},
+    {label:'AI-guided remediation',anchor:'cs-remediation',heading:'Give developers control over suggested fixes.',result:'Median fix time fell from 10 days to 6'},
+    {label:'Attack trace graph',anchor:'cs-attack-graph',heading:'Making risk understandable in context',result:'Explorer engagement grew from 12% to 30% of weekly users'},
+  ],
 };
 
-function ProjectDeck({ text }: { text: string }) {
-  let index = 0;
-  const words = text.split(/(\*[^*]+\*)/).flatMap(part => {
-    const emphasis = part.startsWith('*') && part.endsWith('*');
-    return (emphasis ? part.slice(1, -1) : part).split(/\s+/).filter(Boolean).map(word => ({ word, emphasis }));
-  });
-  return <p className="project-hook" aria-label={text.replace(/\*/g, '')}>
-    {words.map(({ word, emphasis }) => <span key={index} aria-hidden="true" className={emphasis ? 'hook-word hook-emphasis' : 'hook-word'} style={{ '--hook-index': index++ } as CSSProperties}>{word}</span>)}
-  </p>;
+function ProjectTags({ tags }: { tags: {label:string;anchor:string;result?:string}[] }) {
+  const [active,setActive]=useState<number|null>(null);
+  const go=(anchor:string)=>{
+    const target=document.getElementById(anchor);
+    if(!target)return;
+    const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    target.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+  };
+  return <nav className="project-tags" aria-label="In this case study" onMouseLeave={()=>setActive(null)}>
+    {tags.map((tag,index)=><button key={tag.anchor} type="button" className="project-tag" style={{'--tag-index':index} as CSSProperties}
+      onClick={()=>go(tag.anchor)} onMouseEnter={()=>setActive(index)} onFocus={()=>setActive(index)} onBlur={()=>setActive(null)}>
+      <span>{tag.label}</span>
+    </button>)}
+    <span className="project-tag-result" aria-live="polite">{active!==null?tags[active].result:''}</span>
+  </nav>;
 }
 
 function renderChildren(children:ContentNode[], key:string):ReactNode[] {
@@ -736,6 +747,11 @@ function render(node:ContentNode, key:string):ReactNode {
     </div>;
   }
   const props: Record<string,unknown> = {...node.props, key};
+  if(/^h[3-4]$/.test(node.tag) && key.startsWith('work-2.')) {
+    const headingText=textContent(node).trim();
+    const match=projectTags['work-2'].find(tag=>tag.heading===headingText);
+    if(match) props.id=match.anchor;
+  }
   const id=typeof props.id==='string'?props.id:'';
   if(node.tag==='ul')props.role='list';
   if(node.children.some(child=>typeof child!=='string' && child.props.className==='mission-statement')) {
@@ -780,9 +796,9 @@ function render(node:ContentNode, key:string):ReactNode {
   if (tag === 'video') { const {key:_unusedKey,...attributes}=props; return <MediaVideo key={key} keyName={key} attributes={attributes} nodeChildren={node.children} />; }
   if (id==='project-title' && /^h[1-6]$/.test(tag)) {
     const {key:_headingKey,...attributes}=props;
-    const hook=projectDecks[key.split('.')[0]];
+    const tags=projectTags[key.split('.')[0]];
     const heading=<ScrambleHeading key={key} tag={tag} attributes={attributes}>{renderChildren(node.children,key)}</ScrambleHeading>;
-    return hook ? <div key={key} className="project-heading-group has-hook">{heading}<ProjectDeck text={hook} /></div> : heading;
+    return tags ? <div key={key} className="project-heading-group has-tags">{heading}<ProjectTags tags={tags} /></div> : heading;
   }
   return voidTags.has(tag) ? createElement(tag, props) : createElement(tag, props, renderChildren(node.children,key));
 }

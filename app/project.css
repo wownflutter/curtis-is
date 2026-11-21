@@ -848,28 +848,56 @@
   #project .or-operations-demo .or-tooltip { opacity:1; }
 }
 
-/* Case-study hook: one confident sentence, revealed word by word after the title settles.
-   Emphasis uses the existing teal; reduced motion shows the sentence at rest. */
-#project .project-heading-group.has-hook { margin-bottom:56px; }
-#project .project-heading-group.has-hook #project-title { margin-bottom:18px; }
-#project .project-hook {
-  max-width:24em;
+/* Case-study tags: section labels that name what the page delivers. Each scrolls to its section and shows its result on hover.
+   Same small teal caps as the motion labels; settle in after the title; reduced motion shows them at rest. */
+#project .project-heading-group.has-tags { margin-bottom:56px; }
+#project .project-tags { position:relative; display:flex; flex-wrap:wrap; gap:6px 28px; margin:16px 0 0; }
+#project .project-tag {
+  position:relative;
   margin:0;
-  padding:0;
-  font-family:var(--font-heading);
-  font-size:clamp(24px,3.4vw,40px);
-  font-weight:500;
-  line-height:1.18;
-  letter-spacing:-.02em;
-  text-wrap:balance;
-  color:rgba(236,236,240,.9);
+  padding:4px 0 7px;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  color:#8dc9c1;
+  font-family:var(--font-body);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.14em;
+  line-height:1.5;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:color .2s ease;
+  animation:project-tag-in .6s cubic-bezier(.2,.8,.2,1) both;
+  animation-delay:calc(700ms + var(--tag-index,0) * 90ms);
 }
-#project .project-hook .hook-word {
-  display:inline-block;
-  margin-right:.26em;
-  animation:hook-word-in .7s cubic-bezier(.2,.8,.2,1) both;
-  animation-delay:calc(800ms + var(--hook-index,0) * 70ms);
+#project .project-tag::after {
+  content:"";
+  position:absolute;
+  left:0; right:.14em; bottom:0;
+  height:1px;
+  background:currentColor;
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1);
 }
-#project .project-hook .hook-emphasis { color:#8dc9c1; }
-@keyframes hook-word-in { from { opacity:0; transform:translateY(.28em); } to { opacity:1; transform:none; } }
-@media (prefers-reduced-motion:reduce) { #project .project-hook .hook-word { animation:none; } }
+#project .project-tag:hover,
+#project .project-tag:focus-visible { color:#fff; }
+#project .project-tag:hover::after,
+#project .project-tag:focus-visible::after { transform:scaleX(1); }
+#project .project-tag:focus-visible { outline:2px solid #8dc9c1; outline-offset:4px; border-radius:2px; }
+#project .project-tag-result {
+  position:absolute;
+  left:0;
+  top:100%;
+  margin-top:8px;
+  font-family:var(--font-body);
+  font-size:13px;
+  line-height:1.4;
+  color:rgba(236,236,240,.72);
+  pointer-events:none;
+}
+#project h3[id^="cs-"] { scroll-margin-top:72px; }
+@keyframes project-tag-in { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:none; } }
+@media (max-width:640px) { #project .project-tags { gap:2px 22px; } #project .project-tag-result { display:none; } }
+@media (prefers-reduced-motion:reduce) { #project .project-tag { animation:none; } #project .project-tag::after { transition:none; } }
