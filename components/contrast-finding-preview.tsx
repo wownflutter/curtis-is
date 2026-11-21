@@ -1,18 +1,17 @@
 'use client';
-/* oxlint-disable next/no-img-element -- This card uses existing local product images with a CSS-only device reveal. */
+/* oxlint-disable next/no-img-element -- These are real local case-study assets rendered inside a small motion study. */
 
 import { useEffect, useRef, useState } from 'react';
 
 /**
- * A short, restrained laptop reveal for the Contrast project thumbnail.
+ * Contrast homepage: a restrained presentation of the real NorthStar screen.
  *
- * The dashboard displayed in the laptop is a real Contrast case-study image.
- * The lid moves the last few degrees of opening while the device turns
- * slightly toward the viewer, then holds without looping.
+ * A thin, minimally rendered laptop makes a very small perspective turn
+ * when its project card enters view. The device is deliberately not a
+ * photorealistic reconstruction: no fake keyboard keys, highlights or props.
  *
- * Fallback: the original card image stays visible if the dashboard
- * screenshot fails, JS is unavailable, reduced motion is preferred,
- * or the page is opened with ?contrast-motion=off.
+ * The original project thumbnail remains the fallback for JS disabled,
+ * missing assets, prefers-reduced-motion and ?contrast-motion=off.
  */
 export function ContrastFindingPreview() {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -63,16 +62,14 @@ export function ContrastFindingPreview() {
       <img
         className="contrast-preview-finding"
         src="/portfolio/cards-cont@2x.png"
-        alt="Contrast Security NorthStar dashboard shown on a laptop"
+        alt="Contrast Security NorthStar dashboard displayed on a laptop"
         width={1440}
         height={1080}
         decoding="async"
       />
-
       <div className="contrast-laptop-scene" aria-hidden="true">
         <div className="contrast-laptop-device">
           <div className="contrast-laptop-lid">
-            <div className="contrast-laptop-camera" />
             <div className="contrast-laptop-screen">
               <img
                 ref={screenRef}
@@ -87,12 +84,7 @@ export function ContrastFindingPreview() {
               />
             </div>
           </div>
-          <div className="contrast-laptop-deck">
-            <div className="contrast-laptop-keys">
-              {Array.from({ length: 52 }, (_, index) => <span key={index} />)}
-            </div>
-            <div className="contrast-laptop-trackpad" />
-          </div>
+          <div className="contrast-laptop-deck" />
         </div>
       </div>
     </div>
