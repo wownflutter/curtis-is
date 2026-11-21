@@ -1,7 +1,7 @@
 'use client';
 /* oxlint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/media-has-caption, next/no-img-element -- delegated events preserve the original nested markup; the embedded animation videos contain no audio track. */
 
-import { createElement, useEffect, useLayoutEffect, useRef, useState, type ReactNode, type MouseEvent, type CSSProperties } from 'react';
+import { createElement, Fragment, useEffect, useLayoutEffect, useRef, useState, type ReactNode, type MouseEvent, type CSSProperties } from 'react';
 import { flushSync } from 'react-dom';
 import { ScrambleHeading } from './scramble-heading';
 import { TelemetryUseCases } from './telemetry-use-cases';
@@ -602,6 +602,17 @@ function PersonaSlideshow({id,slides,theme,extra=0}:{id:string;slides:PersonaSli
 }
 
 /** Give label paragraphs preceding lists one shared style. */
+/** Plain-text capability signals under a case-study title. Quiet metadata, never a filter. */
+const projectCapabilities: Record<string, string[]> = {
+  'work-2': ['Agentic security workflows','AI-guided remediation','Attack trace graph','Natural-language and code search'],
+};
+
+function CapabilityLine({ items }: { items: string[] }) {
+  return <ul className="capability-line" role="list" aria-label="Capabilities in this case study">
+    {items.map((item, index) => <li key={item} style={{ '--capability-index': index } as CSSProperties}>{item}</li>)}
+  </ul>;
+}
+
 function renderChildren(children:ContentNode[], key:string):ReactNode[] {
   const legacyStart=children.findIndex(child=>typeof child!=='string' && child.tag==='h3' && textContent(child).includes('platform experience I inherited'));
   const legacyEnd=legacyStart<0 ? -1 : children.findIndex((child,index)=>index>legacyStart && typeof child!=='string' && child.tag==='h3');
@@ -762,7 +773,12 @@ function render(node:ContentNode, key:string):ReactNode {
   }
   if (tag === 'img') { const {key:_unusedKey,...attributes}=props; return <MediaImage key={key} attributes={attributes} />; }
   if (tag === 'video') { const {key:_unusedKey,...attributes}=props; return <MediaVideo key={key} keyName={key} attributes={attributes} nodeChildren={node.children} />; }
-  if (id==='project-title' && /^h[1-6]$/.test(tag)) { const {key:_headingKey,...attributes}=props; return <ScrambleHeading key={key} tag={tag} attributes={attributes}>{renderChildren(node.children,key)}</ScrambleHeading>; }
+  if (id==='project-title' && /^h[1-6]$/.test(tag)) {
+    const {key:_headingKey,...attributes}=props;
+    const capabilities=projectCapabilities[key.split('.')[0]];
+    const heading=<ScrambleHeading key={key} tag={tag} attributes={attributes}>{renderChildren(node.children,key)}</ScrambleHeading>;
+    return capabilities ? <Fragment key={key}>{heading}<CapabilityLine items={capabilities} /></Fragment> : heading;
+  }
   return voidTags.has(tag) ? createElement(tag, props) : createElement(tag, props, renderChildren(node.children,key));
 }
 

@@ -847,3 +847,39 @@
   #project .or-operations-demo .or-cursor,
   #project .or-operations-demo .or-tooltip { opacity:1; }
 }
+
+/* Capability line: quiet plain-text metadata under a case-study title. No pills, borders or icons.
+   Items settle in after the heading finishes; reduced motion shows them at rest. */
+#project ul.capability-line,
+#project .dark-mode-usecase ul.capability-line {
+  display:flex;
+  flex-wrap:wrap;
+  gap:2px 28px;
+  margin:10px 0 26px;
+  padding:0;
+  list-style:none;
+  font-family:var(--font-body);
+  font-size:14px;
+  font-weight:500;
+  letter-spacing:.01em;
+  line-height:1.6;
+  color:#536568;
+}
+#project ul.capability-line li,
+#project .dark-mode-usecase ul.capability-line li {
+  display:block;
+  margin:0;
+  padding:0;
+  list-style:none;
+  color:inherit;
+  animation:capability-settle .6s cubic-bezier(.2,.8,.2,1) both;
+  animation-delay:calc(700ms + var(--capability-index,0) * 90ms);
+}
+#project ul.capability-line li::marker { content:""; }
+#project ul.capability-line > li::before { content:none; display:none; }
+#project .dark-mode-usecase ul.capability-line { color:#a9a9b2; }
+@keyframes capability-settle { from { opacity:0; transform:translateY(3px); } to { opacity:1; transform:none; } }
+@media (max-width:640px) {
+  #project ul.capability-line { flex-direction:column; gap:1px; }
+}
+@media (prefers-reduced-motion:reduce) { #project ul.capability-line li { animation:none; } }
