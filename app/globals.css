@@ -516,7 +516,9 @@ section { scroll-margin-top:52px; }
 @media(max-width:600px) { .signal-concept #team .rowbottom { margin-bottom:33.6px; } }
 
 
-/* Contrast Security: finding-to-remediation preview experiment. */
+/* Contrast Security: automatically demonstrate finding → remediation.
+   Play once when the image enters view; keep the original card as its
+   initial and final image. Hover/focus optionally holds the fix view. */
 #work-container .contrast-finding-preview {
   position:relative;
   isolation:isolate;
@@ -528,21 +530,19 @@ section { scroll-margin-top:52px; }
 #work-container .contrast-finding-preview > img {
   position:absolute;
   inset:0;
+  display:block;
   width:100%;
   height:100%;
-  display:block;
   border-radius:0;
-  transition:opacity .9s cubic-bezier(.2,.7,.2,1), transform 1.2s cubic-bezier(.2,.7,.2,1);
+  transform:none;
 }
 #work-container .contrast-finding-preview .contrast-preview-finding {
   object-fit:cover;
-  opacity:1;
 }
 #work-container .contrast-finding-preview .contrast-preview-remediation {
   object-fit:contain;
   background:#101d28;
   opacity:0;
-  transform:scale(1.025);
 }
 #work-container .contrast-preview-sequence {
   position:absolute;
@@ -566,22 +566,56 @@ section { scroll-margin-top:52px; }
   backdrop-filter:blur(8px);
 }
 #work-container .contrast-preview-direction { color:#81c6c9; }
-#work-container .contrast-preview-step { transition:color .5s ease; }
 #work-container .contrast-preview-step-first { color:#fff; }
-#work-container .contrast-finding-preview:is(.is-peeking) .contrast-preview-finding,
-#work-container a.captioned-work:is(:hover,:focus-visible) .contrast-preview-finding { opacity:0; transform:scale(1.015); }
-#work-container .contrast-finding-preview:is(.is-peeking) .contrast-preview-remediation,
-#work-container a.captioned-work:is(:hover,:focus-visible) .contrast-preview-remediation { opacity:1; transform:scale(1); }
-#work-container .contrast-finding-preview:is(.is-peeking) .contrast-preview-step-first,
-#work-container a.captioned-work:is(:hover,:focus-visible) .contrast-preview-step-first { color:#b1bdc7; }
-#work-container .contrast-finding-preview:is(.is-peeking) .contrast-preview-step-second,
-#work-container a.captioned-work:is(:hover,:focus-visible) .contrast-preview-step-second { color:#fff; }
+#work-container .contrast-preview-step-second { color:#b1bdc7; }
+@keyframes contrast-preview-reveal {
+  0%,12%,100% { opacity:0; }
+  34%,72% { opacity:1; }
+}
+@keyframes contrast-preview-finding-label {
+  0%,12%,84%,100% { color:#fff; }
+  34%,72% { color:#b1bdc7; }
+}
+@keyframes contrast-preview-fix-label {
+  0%,12%,84%,100% { color:#b1bdc7; }
+  34%,72% { color:#fff; }
+}
+#work-container .contrast-finding-preview.is-playing .contrast-preview-remediation {
+  animation:contrast-preview-reveal 4.4s ease-in-out 300ms 1 both;
+}
+#work-container .contrast-finding-preview.is-playing .contrast-preview-step-first {
+  animation:contrast-preview-finding-label 4.4s ease-in-out 300ms 1 both;
+}
+#work-container .contrast-finding-preview.is-playing .contrast-preview-step-second {
+  animation:contrast-preview-fix-label 4.4s ease-in-out 300ms 1 both;
+}
+/* Specificity beats the site's generic hover zoom. The hover preview
+   is a secondary interaction, not a requirement to see the motion. */
+@media(hover:hover) and (pointer:fine) {
+  #work-container a.captioned-work:hover .contrast-finding-preview > img { transform:none; }
+  #work-container a.captioned-work:hover .contrast-finding-preview .contrast-preview-remediation {
+    animation:none;
+    opacity:1;
+    transition:opacity .65s ease;
+  }
+  #work-container a.captioned-work:hover .contrast-preview-step-first { animation:none; color:#b1bdc7; }
+  #work-container a.captioned-work:hover .contrast-preview-step-second { animation:none; color:#fff; }
+}
+#work-container a.captioned-work:focus-visible .contrast-finding-preview .contrast-preview-remediation {
+  animation:none;
+  opacity:1;
+}
+#work-container a.captioned-work:focus-visible .contrast-preview-step-first { animation:none; color:#b1bdc7; }
+#work-container a.captioned-work:focus-visible .contrast-preview-step-second { animation:none; color:#fff; }
 @media(max-width:540px) {
   #work-container .contrast-preview-sequence { right:10px; bottom:10px; padding:7px 9px; font-size:10px; }
 }
 @media(prefers-reduced-motion:reduce) {
-  #work-container .contrast-finding-preview > img,
-  #work-container .contrast-preview-step { transition:none!important; transform:none!important; }
+  #work-container .contrast-finding-preview .contrast-preview-remediation,
+  #work-container .contrast-finding-preview .contrast-preview-step {
+    animation:none!important;
+    transition:none!important;
+  }
   #work-container .contrast-finding-preview .contrast-preview-remediation { opacity:0; }
-  #work-container a.captioned-work:is(:hover,:focus-visible) .contrast-preview-remediation { opacity:1; }
+  #work-container a.captioned-work:is(:hover,:focus-visible) .contrast-finding-preview .contrast-preview-remediation { opacity:1; }
 }
