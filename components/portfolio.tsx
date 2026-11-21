@@ -607,6 +607,9 @@ const projectTags: Record<string, string[]> = {
   'work-1': ['Multi-tenant platform','AI-assisted triage','Natural-language search','Voice input'],
   'work-3': ['Multi-tenant SaaS platform','Role-based navigation','Predictive recommendations','Design system'],
   'work-4': ['Cloud data security','3D asset map','ML-ranked remediation','Guided onboarding'],
+  'work-5': ['Computer vision','Portion estimation','Robotic data capture','Medical programs'],
+  'work-6': ['Mobile KPI dashboard','Usage alerts','Actionable anomalies','Real-time data'],
+  'work-7': ['In-product store','Add-on pricing','Click-through terms','30-day trials'],
   'work-2': ['Posture scoring','Natural-language search','AI-guided remediation','Attack trace graph'],
 };
 
