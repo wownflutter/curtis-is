@@ -1,7 +1,7 @@
 'use client';
 /* oxlint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/media-has-caption, next/no-img-element -- delegated events preserve the original nested markup; the embedded animation videos contain no audio track. */
 
-import { createElement, Fragment, useEffect, useLayoutEffect, useRef, useState, type ReactNode, type MouseEvent, type CSSProperties } from 'react';
+import { createElement, useEffect, useLayoutEffect, useRef, useState, type ReactNode, type MouseEvent, type CSSProperties } from 'react';
 import { flushSync } from 'react-dom';
 import { ScrambleHeading } from './scramble-heading';
 import { TelemetryUseCases } from './telemetry-use-cases';
@@ -602,15 +602,20 @@ function PersonaSlideshow({id,slides,theme,extra=0}:{id:string;slides:PersonaSli
 }
 
 /** Give label paragraphs preceding lists one shared style. */
-/** Plain-text capability signals under a case-study title. Quiet metadata, never a filter. */
-const projectCapabilities: Record<string, string[]> = {
-  'work-2': ['Agentic security workflows','AI-guided remediation','Attack trace graph','Natural-language and code search'],
+/** A short hook under a case-study title. Words arrive in sequence like captions; *marked* words carry the emphasis. */
+const projectDecks: Record<string, string> = {
+  'work-2': 'One platform for CISOs, SOC analysts, and developers, with AI that *shows its work.*',
 };
 
-function CapabilityLine({ items }: { items: string[] }) {
-  return <ul className="capability-line" role="list" aria-label="Capabilities in this case study">
-    {items.map((item, index) => <li key={item} style={{ '--capability-index': index } as CSSProperties}>{item}</li>)}
-  </ul>;
+function ProjectDeck({ text }: { text: string }) {
+  let index = 0;
+  const words = text.split(/(\*[^*]+\*)/).flatMap(part => {
+    const emphasis = part.startsWith('*') && part.endsWith('*');
+    return (emphasis ? part.slice(1, -1) : part).split(/\s+/).filter(Boolean).map(word => ({ word, emphasis }));
+  });
+  return <p className="project-hook" aria-label={text.replace(/\*/g, '')}>
+    {words.map(({ word, emphasis }) => <span key={index} aria-hidden="true" className={emphasis ? 'hook-word hook-emphasis' : 'hook-word'} style={{ '--hook-index': index++ } as CSSProperties}>{word}</span>)}
+  </p>;
 }
 
 function renderChildren(children:ContentNode[], key:string):ReactNode[] {
@@ -775,9 +780,9 @@ function render(node:ContentNode, key:string):ReactNode {
   if (tag === 'video') { const {key:_unusedKey,...attributes}=props; return <MediaVideo key={key} keyName={key} attributes={attributes} nodeChildren={node.children} />; }
   if (id==='project-title' && /^h[1-6]$/.test(tag)) {
     const {key:_headingKey,...attributes}=props;
-    const capabilities=projectCapabilities[key.split('.')[0]];
+    const hook=projectDecks[key.split('.')[0]];
     const heading=<ScrambleHeading key={key} tag={tag} attributes={attributes}>{renderChildren(node.children,key)}</ScrambleHeading>;
-    return capabilities ? <Fragment key={key}>{heading}<CapabilityLine items={capabilities} /></Fragment> : heading;
+    return hook ? <div key={key} className="project-heading-group has-hook">{heading}<ProjectDeck text={hook} /></div> : heading;
   }
   return voidTags.has(tag) ? createElement(tag, props) : createElement(tag, props, renderChildren(node.children,key));
 }
