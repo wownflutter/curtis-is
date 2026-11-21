@@ -1,4 +1,5 @@
 'use client';
+/* oxlint-disable next/no-img-element -- The card uses existing static portfolio images and CSS crossfades. */
 
 import { useEffect, useRef, useState } from 'react';
 
