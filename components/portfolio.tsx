@@ -602,28 +602,15 @@ function PersonaSlideshow({id,slides,theme,extra=0}:{id:string;slides:PersonaSli
 }
 
 /** Give label paragraphs preceding lists one shared style. */
-/** Capability tags under a case-study title. Each names a section further down and scrolls to it. */
-const projectTags: Record<string, {label:string;anchor:string;heading:string}[]> = {
-  'work-2': [
-    {label:'Posture scoring',anchor:'cs-posture-score',heading:'Building trust in the posture score'},
-    {label:'Natural-language search',anchor:'cs-search',heading:'Sitewide search in natural language and code'},
-    {label:'AI-guided remediation',anchor:'cs-remediation',heading:'Give developers control over suggested fixes.'},
-    {label:'Attack trace graph',anchor:'cs-attack-graph',heading:'Making risk understandable in context'},
-  ],
+/** Capability tags under a case-study title. Plain labels naming what the page delivers; not links or filters. */
+const projectTags: Record<string, string[]> = {
+  'work-2': ['Posture scoring','Natural-language search','AI-guided remediation','Attack trace graph'],
 };
 
-function ProjectTags({ tags }: { tags: {label:string;anchor:string}[] }) {
-  const go=(anchor:string)=>{
-    const target=document.getElementById(anchor);
-    if(!target)return;
-    const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    target.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
-  };
-  return <nav className="project-tags" aria-label="In this case study">
-    {tags.map((tag,index)=><button key={tag.anchor} type="button" className="project-tag" style={{'--tag-index':index} as CSSProperties} onClick={()=>go(tag.anchor)}>
-      <span>{tag.label}</span>
-    </button>)}
-  </nav>;
+function ProjectTags({ tags }: { tags: string[] }) {
+  return <ul className="project-tags" role="list" aria-label="In this case study">
+    {tags.map((tag,index)=><li key={tag} className="project-tag" style={{'--tag-index':index} as CSSProperties}>{tag}</li>)}
+  </ul>;
 }
 
 function renderChildren(children:ContentNode[], key:string):ReactNode[] {
@@ -744,11 +731,6 @@ function render(node:ContentNode, key:string):ReactNode {
     </div>;
   }
   const props: Record<string,unknown> = {...node.props, key};
-  if(/^h[3-4]$/.test(node.tag) && key.startsWith('work-2.')) {
-    const headingText=textContent(node).trim();
-    const match=projectTags['work-2'].find(tag=>tag.heading===headingText);
-    if(match) props.id=match.anchor;
-  }
   const id=typeof props.id==='string'?props.id:'';
   if(node.tag==='ul')props.role='list';
   if(node.children.some(child=>typeof child!=='string' && child.props.className==='mission-statement')) {
