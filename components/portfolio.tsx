@@ -1,7 +1,7 @@
 'use client';
 /* oxlint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/media-has-caption, next/no-img-element -- delegated events preserve the original nested markup; the embedded animation videos contain no audio track. */
 
-import { createElement, useEffect, useLayoutEffect, useRef, useState, type ReactNode, type MouseEvent, type CSSProperties } from 'react';
+import { createElement, Fragment, useEffect, useLayoutEffect, useRef, useState, type ReactNode, type MouseEvent, type CSSProperties } from 'react';
 import { flushSync } from 'react-dom';
 import { ScrambleHeading } from './scramble-heading';
 import { TelemetryUseCases } from './telemetry-use-cases';
@@ -604,6 +604,7 @@ function PersonaSlideshow({id,slides,theme,extra=0}:{id:string;slides:PersonaSli
 /** Give label paragraphs preceding lists one shared style. */
 /** Capability tags under a case-study title. Plain labels naming what the page delivers; not links or filters. */
 const projectTags: Record<string, string[]> = {
+  'work-1': ['Multi-tenant platform','AI-assisted triage','Natural-language search','Voice input'],
   'work-2': ['Posture scoring','Natural-language search','AI-guided remediation','Attack trace graph'],
 };
 
@@ -777,7 +778,7 @@ function render(node:ContentNode, key:string):ReactNode {
     const {key:_headingKey,...attributes}=props;
     const tags=projectTags[key.split('.')[0]];
     const heading=<ScrambleHeading key={key} tag={tag} attributes={attributes}>{renderChildren(node.children,key)}</ScrambleHeading>;
-    return tags ? <div key={key} className="project-heading-group has-tags">{heading}<ProjectTags tags={tags} /></div> : heading;
+    return tags ? <Fragment key={key}>{heading}<ProjectTags tags={tags} /></Fragment> : heading;
   }
   return voidTags.has(tag) ? createElement(tag, props) : createElement(tag, props, renderChildren(node.children,key));
 }

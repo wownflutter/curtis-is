@@ -2152,6 +2152,14 @@
                     },
                     "       \n                \n                \n                \n             ",
                     {
+                          "tag": "p",
+                          "props": {},
+                          "children": [
+                            "Our hypothesis ran against how the company had worked, one customer request at a time: a single asset and workflow model, configured by role and tenant, could serve logistics and healthcare alike."
+                          ]
+                        },
+                        "\n\n",
+                        {
                       "tag": "h3",
                       "props": {
                         "className": "class-one"
@@ -2410,7 +2418,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "The system needed to be modular enough for tenant configuration, clear enough for industrial users, and durable enough for rapid engineering delivery. Shared components, predictable taxonomy, and role-based views helped each customer see what mattered without creating a different interface for every market."
+                        "The system needed to be modular enough for tenant configuration, clear enough for industrial users, and durable enough for rapid engineering delivery. Shared components, predictable taxonomy, and role-based views helped each customer see what mattered without creating a different interface for every market. The trade-off: no bespoke interface for any single industry, in exchange for components that engineering could reuse at startup speed."
                       ]
                     },
                     "  \n\n             ",
@@ -2709,7 +2717,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "We prototyped and tested alert language, ownership, follow-up actions, and activity history. Machine learning suggested a response inside the real-time activity stream, while the interface showed that the recommendation was being generated. Users could review and commit the response, which automatically carried the support ticket, asset identifier, and intended recipients into the case record."
+                        "We prototyped and tested alert language, ownership, follow-up actions, and activity history. Machine learning suggested a response inside the real-time activity stream, while the interface showed that the recommendation was being generated. Users could review and commit the response, which automatically carried the support ticket, asset identifier, and intended recipients into the case record. The trade-off: one extra confirmation for every response, in exchange for people staying in control of what the system sent."
                       ]
                     },
                     "\n               \n\n\n",
@@ -3034,7 +3042,7 @@
                       "tag": "p",
                       "props": {},
                       "children": [
-                        "We continued measuring usage and improving the healthcare taxonomy, then extended the same interaction model to industrial customers. The interface remained explicit about what the system understood and what action it would take."
+                        "We continued measuring usage and improving the healthcare taxonomy, then extended the same interaction model to industrial customers. The interface remained explicit about what the system understood and what action it would take. The trade-off: a little more on screen during a hands-busy task, in exchange for knowing what the system understood before it acted."
                       ]
                     },
                     "\n\n ",
