@@ -42,11 +42,11 @@ export function ContrastFindingPreview() {
 
     const observer = new IntersectionObserver(
       entries => {
-        if (!entries.some(entry => entry.isIntersecting && entry.intersectionRatio >= 0.4)) return;
+        if (!entries.some(entry => entry.isIntersecting && entry.intersectionRatio >= 0.2)) return;
         observer.disconnect();
         setEnteredView(true);
       },
-      { threshold: [0, 0.4] },
+      { threshold: [0, 0.2] },
     );
     observer.observe(card);
     return () => observer.disconnect();
