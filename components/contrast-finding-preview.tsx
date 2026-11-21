@@ -20,7 +20,10 @@ export function ContrastFindingPreview() {
 
   useEffect(() => {
     // Keep the original thumbnail entirely static when testing or recovering.
-    if (new URLSearchParams(window.location.search).get('contrast-motion') === 'off') {
+    if (
+      new URLSearchParams(window.location.search).get('contrast-motion') === 'off' ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) {
       setStaticMode(true);
       return;
     }
