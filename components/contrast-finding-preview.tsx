@@ -1,26 +1,26 @@
 'use client';
-/* oxlint-disable next/no-img-element -- The card uses existing static portfolio images and CSS crossfades. */
+/* oxlint-disable next/no-img-element -- The preview pans an existing local case-study image; no remote images. */
 
 import { useEffect, useRef, useState } from 'react';
 
 /**
- * A finding → remediation preview using existing Contrast project images.
- * Automatically plays once when visible; never obscures the original cover
- * if the second image does not load.
+ * Gauge → connected-entity graph → graph with entity side sheet.
  *
- * Emergency per-page static fallback: /?contrast-motion=off
- * A pre-deployment backup branch also preserves the entire original site.
+ * Uses a screenshot already present in the Contrast incident walkthrough.
+ * The sheet reuses the sample entity's metadata in that walkthrough.
+ * Autoplays once when visible, holds the graph/details, and falls back to
+ * the original static card on image error, reduced motion, or
+ * /?contrast-motion=off.
  */
 export function ContrastFindingPreview() {
   const previewRef = useRef<HTMLDivElement>(null);
-  const remediationRef = useRef<HTMLImageElement>(null);
+  const sceneRef = useRef<HTMLImageElement>(null);
   const [started, setStarted] = useState(false);
-  const [remediationReady, setRemediationReady] = useState(false);
-  const [remediationFailed, setRemediationFailed] = useState(false);
+  const [sceneReady, setSceneReady] = useState(false);
+  const [sceneFailed, setSceneFailed] = useState(false);
   const [staticMode, setStaticMode] = useState(false);
 
   useEffect(() => {
-    // Keep the original thumbnail entirely static when testing or recovering.
     if (
       new URLSearchParams(window.location.search).get('contrast-motion') === 'off' ||
       window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -29,37 +29,34 @@ export function ContrastFindingPreview() {
       return;
     }
 
-    if (remediationRef.current?.complete && remediationRef.current.naturalWidth > 0) {
-      setRemediationReady(true);
+    if (sceneRef.current?.complete && sceneRef.current.naturalWidth > 0) {
+      setSceneReady(true);
     }
-
-    const preview = previewRef.current;
-    if (!preview) return;
-
+    const card = previewRef.current;
+    if (!card) return;
     if (typeof IntersectionObserver === 'undefined') {
       setStarted(true);
       return;
     }
 
-    // Play once, and only when there is enough of the card in view to notice.
     const observer = new IntersectionObserver(
-      (entries) => {
+      entries => {
         if (!entries.some(entry => entry.isIntersecting && entry.intersectionRatio >= 0.35)) return;
         observer.disconnect();
         setStarted(true);
       },
       { threshold: [0, 0.35] },
     );
-    observer.observe(preview);
+    observer.observe(card);
     return () => observer.disconnect();
   }, []);
 
-  const canAnimate = !staticMode && !remediationFailed && remediationReady;
+  const ready = !staticMode && !sceneFailed && sceneReady;
 
   return (
     <div
       ref={previewRef}
-      className={`contrast-finding-preview${canAnimate ? ' is-ready' : ' is-static'}${canAnimate && started ? ' is-playing' : ''}`}
+      className={`contrast-finding-preview${ready && started ? ' is-playing' : ' is-static'}`}
     >
       <img
         className="contrast-preview-finding"
@@ -69,24 +66,38 @@ export function ContrastFindingPreview() {
         height={1080}
         decoding="async"
       />
-      <img
-        ref={remediationRef}
-        className="contrast-preview-remediation"
-        src="/case-studies/cont-issue-remediation.png"
-        alt=""
-        width={1920}
-        height={1834}
-        loading="lazy"
-        decoding="async"
-        aria-hidden="true"
-        onLoad={() => setRemediationReady(true)}
-        onError={() => setRemediationFailed(true)}
-      />
-      {canAnimate && (
-        <div className="contrast-preview-sequence" aria-hidden="true">
-          <span className="contrast-preview-step contrast-preview-step-first">Finding</span>
-          <span className="contrast-preview-direction">→</span>
-          <span className="contrast-preview-step contrast-preview-step-second">Remediation</span>
+      <div className="contrast-pan-world" aria-hidden="true">
+        <img
+          ref={sceneRef}
+          className="contrast-pan-image"
+          src="/case-studies/incident-tour-screen-final.jpg"
+          alt=""
+          width={1077}
+          height={1800}
+          loading="lazy"
+          decoding="async"
+          onLoad={() => setSceneReady(true)}
+          onError={() => setSceneFailed(true)}
+        />
+      </div>
+      <div className="contrast-entity-sheet" aria-hidden="true">
+        <div className="contrast-sheet-head">
+          <span>Entity details</span>
+          <span className="contrast-sheet-close">×</span>
+        </div>
+        <strong className="contrast-entity-name">petclinic-demo-2.5-ss3</strong>
+        <span className="contrast-entity-type">Application · Production</span>
+        <div className="contrast-sheet-row"><span>Severity</span><b className="contrast-critical">Critical</b></div>
+        <div className="contrast-sheet-row"><span>Open incidents</span><b>3</b></div>
+        <div className="contrast-sheet-row"><span>Related issues</span><b>14</b></div>
+        <div className="contrast-sheet-row"><span>Affected endpoints</span><b>4</b></div>
+        <div className="contrast-sheet-row"><span>Owner</span><b>Platform Engineering</b></div>
+      </div>
+      {ready && (
+        <div className="contrast-pan-status" aria-hidden="true">
+          <span className="contrast-status-gauge">Risk posture</span>
+          <span className="contrast-status-graph">Entity graph</span>
+          <span className="contrast-status-detail">Entity details</span>
         </div>
       )}
     </div>
