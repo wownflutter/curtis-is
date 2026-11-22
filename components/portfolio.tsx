@@ -627,7 +627,7 @@ type AtAGlanceContent={intro:string;role:string;challenge:string;outcome:string}
 
 const atAGlance:Record<string,AtAGlanceContent> = {
   'work-1': {
-    intro:'Sensor telemetry became asset intelligence for logistics and healthcare operators on the multi-tenant platform I led design for.',
+    intro:'I designed the multi-tenant platform that turned raw sensor data into operational intelligence for logistics and healthcare teams.',
     role:'First product designer, later scaling the design team. Led discovery across roles, a multi-tenant design system, and the web, mobile, and voice experiences.',
     challenge:'Design had been led by engineering, with little customer data. Operators dealt with siloed visibility, error-filled APIs, and heavy triage work across very different categories.',
     outcome:'ML-suggested triage messages increased operator engagement. Healthcare floor nurses adopted voice and natural-language search, and Find My Asset gave field teams direct access to the platform.'
