@@ -776,7 +776,7 @@
 #project .dark-mode-usecase .motion-caption-eyebrow,
 #project .motion-prototype-dark .motion-caption-eyebrow{color:#8dc9c1;}
 
-/* Shared light case-study canvas; Contrast retains its existing theme. */
+/* Shared light case-study canvas (clean white); Contrast retains its existing theme. */
 #project-page.light-case-study,
 #project-page.light-case-study #project,
 #project-page.light-case-study #project-header.toppadding,
@@ -786,7 +786,7 @@
 #project-page.light-case-study .screen-story-media,
 #project-page.light-case-study .motion-prototype-stage,
 #project-page.light-case-study .design-system-video-stage {
-  background-color: #F5F5F5;
+  background-color: #FFFFFF;
 }
 
 /* Jasper's inherited experience uses the same annotation treatment as Contrast. */
@@ -879,15 +879,14 @@
 #project #project-header.toppadding:has(> img.persona-shot) { padding-bottom:28px; }
 
 /* Case-study executive summary (Contrast, Jasper) sits beneath the existing capability tags. */
-#project .case-at-a-glance { margin:0 0 48px; padding:28px 0 30px; border-top:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18); text-align:left; }
+#project .case-at-a-glance { margin:0 0 64px; padding:8px 0 0; text-align:left; }
 #project .case-at-a-glance h3 { margin:0 0 14px; padding:0; color:#f3f3f3; font-family:var(--font-heading); font-size:22px; font-weight:600; line-height:1.3; letter-spacing:normal; }
-#project .case-at-a-glance .case-glance-intro { max-width:75ch; margin:0 0 26px; padding:0; color:#e0e0e0; }
-#project .case-at-a-glance dl { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; margin:0; }
-#project .case-at-a-glance dt { margin:0 0 8px; color:#f3f3f3; font-family:var(--font-heading); font-size:18px; font-weight:500; line-height:1.35; letter-spacing:normal; }
-#project .case-at-a-glance dd { margin:0; color:#c4c4c4; font-family:var(--font-body); font-size:15px; font-weight:400; line-height:1.65; }
-#project-page.light-case-study .case-at-a-glance { border-top-color:rgba(29,42,47,.18); border-bottom-color:rgba(29,42,47,.18); }
-#project-page.light-case-study .case-at-a-glance h3 { color:#1d2a2f; }
-#project-page.light-case-study .case-at-a-glance .case-glance-intro { color:#2b3a40; }
-#project-page.light-case-study .case-at-a-glance dt { color:#1d2a2f; }
-#project-page.light-case-study .case-at-a-glance dd { color:#3d4d54; }
-@media(max-width:700px) { #project .case-at-a-glance dl { grid-template-columns:minmax(0,1fr); gap:22px; } #project .case-at-a-glance { padding:24px 0; margin-bottom:32px; } }
+#project .case-at-a-glance .case-glance-intro { max-width:48ch; margin:0 0 36px; padding:0; color:#e8e8e8; font-size:22px; line-height:1.5; }
+#project .case-at-a-glance dl { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:40px; margin:0; }
+#project .case-at-a-glance dt { margin:0 0 10px; color:#f3f3f3; font-family:var(--font-heading); font-size:18px; font-weight:600; line-height:1.35; letter-spacing:normal; }
+#project .case-at-a-glance dd { margin:0; color:#c4c4c4; font-family:var(--font-body); font-size:17px; font-weight:400; line-height:1.7; }
+#project-page.light-case-study .case-at-a-glance h3 { color:#1a1a1a; }
+#project-page.light-case-study .case-at-a-glance .case-glance-intro { color:#1a1a1a; }
+#project-page.light-case-study .case-at-a-glance dt { color:#1a1a1a; }
+#project-page.light-case-study .case-at-a-glance dd { color:#666666; }
+@media(max-width:700px) { #project .case-at-a-glance dl { grid-template-columns:minmax(0,1fr); gap:26px; } #project .case-at-a-glance { padding:0; margin-bottom:44px; } #project .case-at-a-glance .case-glance-intro { font-size:19px; margin-bottom:28px; } }
