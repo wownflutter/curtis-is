@@ -623,14 +623,31 @@ function ProjectTags({ tags }: { tags: string[] }) {
   </ul>;
 }
 
-function ContrastAtAGlance() {
-  return <section className="contrast-at-a-glance" aria-labelledby="contrast-at-a-glance-title">
-    <h3 id="contrast-at-a-glance-title">At a glance</h3>
-    <p className="case-glance-intro">I led NorthStar’s experience strategy to help security teams move from fragmented risk signals to coordinated investigation and response.</p>
+type AtAGlanceContent={intro:string;role:string;challenge:string;outcome:string};
+
+const atAGlance:Record<string,AtAGlanceContent> = {
+  'work-2': {
+    intro:'I led NorthStar’s experience strategy to help security teams move from fragmented risk signals to coordinated investigation and response.',
+    role:'UX director leading discovery, experience strategy, and design direction, with a shared design system built in code and documented in Storybook.',
+    challenge:'Disconnected product workflows made risk difficult to understand and act on. AI recommendations needed clear evidence and human control.',
+    outcome:'Field sales adopted NorthStar for enterprise demonstrations. Program managers reported faster remediation tracking, while a shared UX foundation gave engineering a consistent direction across the platform.'
+  },
+  'work-3': {
+    intro:'I led the redesign of the Jasper IoT Control Center, from discovery through the RefreshUI launch, so telecom operators and their enterprise customers could manage connected devices at scale.',
+    role:'Founding product designer (employee #89), then design lead for the IoT platform through the Cisco acquisition. Led discovery, navigation architecture, a shared design system, and a phased rollout.',
+    challenge:'The CEO was hearing from the field, sales, and customers that the experience was holding back sales and adoption. Earlier UX decisions had come from internal hypotheses, not research.',
+    outcome:'Sales embraced the new experience and brought back customer satisfaction stories. The Cisco acquisition focused on the Control Center, and its features became the benchmark for IoT at Cisco.'
+  }
+};
+
+function CaseAtAGlance({content}:{content:AtAGlanceContent}) {
+  return <section className="case-at-a-glance" aria-label="At a glance">
+    <h3>At a glance</h3>
+    <p className="case-glance-intro">{content.intro}</p>
     <dl>
-      <div><dt>My role</dt><dd>UX director leading discovery, experience strategy, and design direction, with a shared design system delivered through Figma and Storybook.</dd></div>
-      <div><dt>The challenge</dt><dd>Disconnected product workflows made risk difficult to understand and act on. AI recommendations needed clear evidence and human control.</dd></div>
-      <div><dt>Outcome</dt><dd>Field sales adopted NorthStar for enterprise demonstrations. Program managers reported faster remediation tracking, while a shared UX foundation gave engineering a consistent direction across the platform.</dd></div>
+      <div><dt>My role</dt><dd>{content.role}</dd></div>
+      <div><dt>The challenge</dt><dd>{content.challenge}</dd></div>
+      <div><dt>Outcome</dt><dd>{content.outcome}</dd></div>
     </dl>
   </section>;
 }
@@ -800,7 +817,7 @@ function render(node:ContentNode, key:string):ReactNode {
     const {key:_headingKey,...attributes}=props;
     const tags=projectTags[key.split('.')[0]];
     const heading=<ScrambleHeading key={key} tag={tag} attributes={attributes}>{renderChildren(node.children,key)}</ScrambleHeading>;
-    return tags ? <Fragment key={key}>{heading}<ProjectTags tags={tags} />{key.split('.')[0]==='work-2' && <ContrastAtAGlance />}</Fragment> : heading;
+    return tags ? <Fragment key={key}>{heading}<ProjectTags tags={tags} />{atAGlance[key.split('.')[0]] && <CaseAtAGlance content={atAGlance[key.split('.')[0]]} />}</Fragment> : heading;
   }
   return voidTags.has(tag) ? createElement(tag, props) : createElement(tag, props, renderChildren(node.children,key));
 }
