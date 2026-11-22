@@ -848,26 +848,27 @@
   #project .or-operations-demo .or-tooltip { opacity:1; }
 }
 
-/* Case-study tags: plain section labels naming what the page delivers. Quiet sentence-case text in the heading font, no caps or accent color;
+/* Case-study tags: plain section labels naming what the page delivers. Same small teal caps as the motion labels;
    they settle in after the title; reduced motion shows them at rest. */
 #project ul.project-tags,
-#project .dark-mode-usecase ul.project-tags { display:flex; flex-wrap:wrap; gap:4px 32px; margin:14px 0 56px; padding:0; list-style:none; }
+#project .dark-mode-usecase ul.project-tags { display:flex; flex-wrap:wrap; gap:6px 28px; margin:16px 0 56px; padding:0; list-style:none; }
 #project ul.project-tags > li.project-tag {
   display:block;
   margin:0;
   padding:4px 0;
   list-style:none;
-  color:#b9b9b9;
-  font-family:var(--font-heading);
-  font-size:19px;
-  font-weight:400;
-  letter-spacing:-.005em;
-  line-height:1.4;
+  color:#8dc9c1;
+  font-family:var(--font-body);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.14em;
+  line-height:1.5;
+  text-transform:uppercase;
   animation:project-tag-in .6s cubic-bezier(.2,.8,.2,1) both;
   animation-delay:calc(700ms + var(--tag-index,0) * 90ms);
 }
 #project ul.project-tags > li.project-tag::before { content:none; display:none; }
-#project-page.light-case-study ul.project-tags > li.project-tag { color:#56666c; }
+#project-page.light-case-study ul.project-tags > li.project-tag { color:#185f63; }
 #project .trackonomy-heading ul.project-tags { margin-bottom:32px; }
 @keyframes project-tag-in { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:none; } }
 @media (max-width:640px) { #project ul.project-tags { gap:2px 22px; } }
