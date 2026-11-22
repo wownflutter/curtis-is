@@ -1729,8 +1729,8 @@
   "projects": [
     {
       "slug": "work-1",
-      "title": "Turning sensor telemetry into asset intelligence",
-      "browserTitle": "Trackonomy sensor telemetry and asset intelligence",
+      "title": "One platform designed for three industries",
+      "browserTitle": "Trackonomy — one platform designed for three industries",
       "tree": [
         "\n",
         {
@@ -1789,7 +1789,7 @@
                             "data-scramble-delay": "220"
                           },
                           "children": [
-                            "Turning sensor telemetry into asset intelligence"
+                            "One platform designed for three industries"
                           ]
                         }
                       ]
