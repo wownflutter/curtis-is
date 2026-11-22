@@ -691,7 +691,6 @@ const atAGlance:Record<string,AtAGlanceContent> = {
 function CaseAtAGlance({content}:{content:AtAGlanceContent}) {
   return <section className="case-at-a-glance" aria-label="At a glance">
     <h3>At a glance</h3>
-    <p className="case-glance-intro">{content.intro}</p>
     <dl>
       <div><dt>My role</dt><dd>{content.role}</dd></div>
       <div><dt>The challenge</dt><dd>{content.challenge}</dd></div>
