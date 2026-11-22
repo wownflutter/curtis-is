@@ -626,11 +626,11 @@ function ProjectTags({ tags }: { tags: string[] }) {
 function ContrastAtAGlance() {
   return <section className="contrast-at-a-glance" aria-labelledby="contrast-at-a-glance-title">
     <h3 id="contrast-at-a-glance-title">At a glance</h3>
-    <p className="case-glance-intro">I led the NorthStar experience strategy to connect security risk, investigation, and remediation across CISOs, SOC analysts, and developers.</p>
+    <p className="case-glance-intro">I led NorthStar’s experience strategy to help security teams move from fragmented risk signals to coordinated investigation and response.</p>
     <dl>
       <div><dt>My role</dt><dd>UX director leading discovery, experience strategy, and design direction, with a shared design system delivered through Figma and Storybook.</dd></div>
       <div><dt>The challenge</dt><dd>Disconnected product workflows made risk difficult to understand and act on. AI recommendations needed clear evidence and human control.</dd></div>
-      <div><dt>Outcome</dt><dd>A shared UX foundation across the platform. Field sales adopted the dashboard for enterprise demos, and engineering teams aligned around a common design language.</dd></div>
+      <div><dt>Outcome</dt><dd>Field sales adopted NorthStar for enterprise demonstrations. Program managers reported faster remediation tracking, while a shared UX foundation gave engineering a consistent direction across the platform.</dd></div>
     </dl>
   </section>;
 }
