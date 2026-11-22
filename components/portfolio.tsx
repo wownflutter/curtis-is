@@ -628,7 +628,7 @@ type AtAGlanceContent={intro:string;role:string;challenge:string;outcome:string}
 const atAGlance:Record<string,AtAGlanceContent> = {
   'work-2': {
     intro:'I led NorthStar’s experience strategy to help security teams move from fragmented risk signals to coordinated investigation and response.',
-    role:'UX director leading discovery, experience strategy, and design direction, with a shared design system built in code and documented in Storybook.',
+    role:'Head of UX leading discovery, experience strategy, and design direction, with a shared design system built in code and documented in Storybook.',
     challenge:'Disconnected product workflows made risk difficult to understand and act on. AI recommendations needed clear evidence and human control.',
     outcome:'Field sales adopted NorthStar for enterprise demonstrations. Program managers reported faster remediation tracking, while a shared UX foundation gave engineering a consistent direction across the platform.'
   },
