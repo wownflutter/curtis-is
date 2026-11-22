@@ -1729,8 +1729,8 @@
   "projects": [
     {
       "slug": "work-1",
-      "title": "One platform designed for three industries",
-      "browserTitle": "Trackonomy — one platform designed for three industries",
+      "title": "One platform for logistics and healthcare",
+      "browserTitle": "Trackonomy — one platform for logistics and healthcare",
       "tree": [
         "\n",
         {
@@ -1789,7 +1789,7 @@
                             "data-scramble-delay": "220"
                           },
                           "children": [
-                            "One platform designed for three industries"
+                            "One platform for logistics and healthcare"
                           ]
                         }
                       ]
