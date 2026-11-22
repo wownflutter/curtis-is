@@ -626,6 +626,12 @@ function ProjectTags({ tags }: { tags: string[] }) {
 type AtAGlanceContent={intro:string;role:string;challenge:string;outcome:string};
 
 const atAGlance:Record<string,AtAGlanceContent> = {
+  'work-1': {
+    intro:'I designed Trackonomy’s multi-tenant platform for sensor-tape asset tracking, so logistics and healthcare teams could see what was happening to their assets and act on it.',
+    role:'First product designer, later scaling the design team. Led discovery across roles, a multi-tenant design system, and the web, mobile, and voice experiences.',
+    challenge:'Design had been led by engineering, with little customer data. Operators dealt with siloed visibility, error-filled APIs, and heavy triage work across very different categories.',
+    outcome:'Users engaged more with ML-suggested triage messages. Healthcare floor nurses adopted voice and natural-language search, and the Find My Asset apps put the platform in the hands of people searching on the ground.'
+  },
   'work-2': {
     intro:'I led NorthStar’s experience strategy to help security teams move from fragmented risk signals to coordinated investigation and response.',
     role:'Head of UX leading discovery, experience strategy, and design direction, with a shared design system built in code and documented in Storybook.',
