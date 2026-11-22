@@ -884,7 +884,7 @@
 #project .case-at-a-glance .case-glance-intro { max-width:48ch; margin:0 0 36px; padding:0; color:#e8e8e8; font-size:22px; line-height:1.5; }
 #project .case-at-a-glance dl { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:40px; margin:0; }
 #project .case-at-a-glance dt { margin:0 0 10px; color:#f3f3f3; font-family:var(--font-heading); font-size:18px; font-weight:600; line-height:1.35; letter-spacing:normal; }
-#project .case-at-a-glance dd { margin:0; color:#c4c4c4; font-family:var(--font-body); font-size:17px; font-weight:400; line-height:1.7; }
+#project .case-at-a-glance dd { margin:0; color:#c4c4c4; font-family:var(--font-body); font-size:15px; font-weight:400; line-height:1.65; }
 #project-page.light-case-study .case-at-a-glance h3 { color:#1a1a1a; }
 #project-page.light-case-study .case-at-a-glance .case-glance-intro { color:#1a1a1a; font-weight:500; }
 #project-page.light-case-study .case-at-a-glance dt { color:#1a1a1a; font-weight:700; }
