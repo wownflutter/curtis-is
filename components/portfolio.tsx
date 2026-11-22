@@ -623,6 +623,18 @@ function ProjectTags({ tags }: { tags: string[] }) {
   </ul>;
 }
 
+function ContrastAtAGlance() {
+  return <section className="contrast-at-a-glance" aria-labelledby="contrast-at-a-glance-title">
+    <h3 id="contrast-at-a-glance-title">At a glance</h3>
+    <p className="case-glance-intro">I led the NorthStar experience strategy to connect security risk, investigation, and remediation across CISOs, SOC analysts, and developers.</p>
+    <dl>
+      <div><dt>My role</dt><dd>UX director leading discovery, experience strategy, and design direction, with a shared design system delivered through Figma and Storybook.</dd></div>
+      <div><dt>The challenge</dt><dd>Disconnected product workflows made risk difficult to understand and act on. AI recommendations needed clear evidence and human control.</dd></div>
+      <div><dt>Outcome</dt><dd>A shared UX foundation across the platform. Field sales adopted the dashboard for enterprise demos, and engineering teams aligned around a common design language.</dd></div>
+    </dl>
+  </section>;
+}
+
 function renderChildren(children:ContentNode[], key:string):ReactNode[] {
   const legacyStart=children.findIndex(child=>typeof child!=='string' && child.tag==='h3' && textContent(child).includes('platform experience I inherited'));
   const legacyEnd=legacyStart<0 ? -1 : children.findIndex((child,index)=>index>legacyStart && typeof child!=='string' && child.tag==='h3');
@@ -788,7 +800,7 @@ function render(node:ContentNode, key:string):ReactNode {
     const {key:_headingKey,...attributes}=props;
     const tags=projectTags[key.split('.')[0]];
     const heading=<ScrambleHeading key={key} tag={tag} attributes={attributes}>{renderChildren(node.children,key)}</ScrambleHeading>;
-    return tags ? <Fragment key={key}>{heading}<ProjectTags tags={tags} /></Fragment> : heading;
+    return tags ? <Fragment key={key}>{heading}<ProjectTags tags={tags} />{key.split('.')[0]==='work-2' && <ContrastAtAGlance />}</Fragment> : heading;
   }
   return voidTags.has(tag) ? createElement(tag, props) : createElement(tag, props, renderChildren(node.children,key));
 }
