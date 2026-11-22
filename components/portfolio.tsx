@@ -627,7 +627,7 @@ type AtAGlanceContent={intro:string;role:string;challenge:string;outcome:string}
 
 const atAGlance:Record<string,AtAGlanceContent> = {
   'work-1': {
-    intro:'I led design of Trackonomy’s multi-tenant platform, turning sensor telemetry into asset intelligence for logistics and healthcare operators.',
+    intro:'Sensor telemetry became asset intelligence for logistics and healthcare operators on the multi-tenant platform I led design for.',
     role:'First product designer, later scaling the design team. Led discovery across roles, a multi-tenant design system, and the web, mobile, and voice experiences.',
     challenge:'Design had been led by engineering, with little customer data. Operators dealt with siloed visibility, error-filled APIs, and heavy triage work across very different categories.',
     outcome:'Users engaged more with ML-suggested triage messages. Healthcare floor nurses adopted voice and natural-language search, and the Find My Asset apps put the platform in the hands of people searching on the ground.'
@@ -639,13 +639,13 @@ const atAGlance:Record<string,AtAGlanceContent> = {
     outcome:'Field sales adopted NorthStar for enterprise demonstrations. Program managers reported faster remediation tracking, while a shared UX foundation gave engineering a consistent direction across the platform.'
   },
   'work-4': {
-    intro:'I led UX for Open Raven’s cloud data security platform, from CISO and analyst discovery through the Pro 1.0 release.',
+    intro:'I directed UX for Open Raven’s cloud data security platform, from CISO and analyst discovery through the Pro 1.0 release.',
     role:'Head of UX leading discovery with CISOs and data security analysts, a design system modeled on Material Design, and design-to-development handoff through Storybook.',
     challenge:'AWS environments are vast and often misconfigured, leaving sensitive data exposed. Teams needed to see asset relationships and act on violations without losing precision.',
     outcome:'The Pro 1.0 public release brought a shared design system, a guided product tour, and a 3D map that links each violation to one-click case management.'
   },
   'work-5': {
-    intro:'I led product design for an AI food-scanning app and its capture robot, aimed at precise portion and nutrition data for consumers and medical programs.',
+    intro:'I shaped an AI food-scanning app and its capture robot, aimed at precise portion and nutrition data for consumers and medical programs.',
     role:'Product design lead across user research, the app, and the robot’s industrial design with Acorn, a Bay Area design firm.',
     challenge:'Competing apps gave rough estimates, and a public user base was too small to train accurate models quickly. Medical programs needed precise portion data.',
     outcome:'Robot-captured food data trained the recognition models. Feedback from participants who borrowed the devices shaped the roadmap for later versions.'
@@ -657,19 +657,19 @@ const atAGlance:Record<string,AtAGlanceContent> = {
     outcome:'Anomalies trigger notifications on mobile and desktop so users can act on overages. The app was tested through analytics and verified for successful adoption.'
   },
   'work-7': {
-    intro:'I led design of the Control Center Marketplace, where enterprise customers buy performance add-ons and service providers earn new revenue.',
+    intro:'I drove the design of the Control Center Marketplace, where enterprise customers buy performance add-ons and service providers earn new revenue.',
     role:'Design lead for discovery, persona-based journeys, site architecture, and the purchase flow, working with Sales, Support, and Marketing.',
     challenge:'Valuable add-ons were not being sold in the platform, and buying them took paperwork and signatures. Service providers wanted a new revenue stream, and customers had slim margins.',
     outcome:'Click-through terms replaced signed paperwork, and 30-day trials eased commitment concerns for customers and service providers. An MVP launched in select service provider markets and shaped later changes.'
   },
   'work-8': {
-    intro:'I led the tablet expansion of Jasper’s analytics dashboard, giving NOC, sales, and support teams a larger-screen view of usage and anomalies.',
+    intro:'I took Jasper’s analytics dashboard to tablets, giving NOC, sales, and support teams a larger-screen view of usage and anomalies.',
     role:'Product design lead working with design partners to test the MVP and restructure the dashboard around their management requests.',
     challenge:'Analytics showed demand for tablets. The platform’s complexity had to be simplified so anomalies stood out.',
     outcome:'Alerts appear on the tablet app icon so users can address issues quickly. The Jasper sales team championed the app, and it became a benchmark for user behavior within the operator platform.'
   },
   'work-9': {
-    intro:'I led research and design for SafeHold, a mobile app that shows rideshare drivers their income and estimated taxes due.',
+    intro:'I took SafeHold from driver survey to a field-tested app that shows rideshare drivers their income and estimated taxes due.',
     role:'Owned discovery research, including a driver survey, and the workflow and large-target mobile interface.',
     challenge:'Drivers could see their income but could not predict the federal and state taxes they owed. Rideshare companies were wary of this kind of transparency.',
     outcome:'The survey validated driver demand. The app has been field tested and is in production.'
@@ -681,7 +681,7 @@ const atAGlance:Record<string,AtAGlanceContent> = {
     outcome:'Pre-installed GPS units from hardware partners let customers plug in and start. Strong adoption and positive feedback led to adding the tools to the Control Center Marketplace.'
   },
   'work-3': {
-    intro:'I led the redesign of Jasper’s IoT Control Center, from discovery through the RefreshUI launch, for telecom operators managing connected devices at scale.',
+    intro:'From discovery through the RefreshUI launch, I redesigned Jasper’s IoT Control Center for telecom operators managing connected devices at scale.',
     role:'Founding product designer (employee #89), then design lead for the IoT platform through the Cisco acquisition. Led discovery, navigation architecture, a shared design system, and a phased rollout.',
     challenge:'The CEO was hearing from the field, sales, and customers that the experience was holding back sales and adoption. Earlier UX decisions had come from internal hypotheses, not research.',
     outcome:'Sales embraced the new experience and brought back customer satisfaction stories. The Cisco acquisition focused on the Control Center, and its features became the benchmark for IoT at Cisco.'
