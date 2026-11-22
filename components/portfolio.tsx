@@ -639,20 +639,20 @@ const atAGlance:Record<string,AtAGlanceContent> = {
     outcome:'Field sales adopted NorthStar for enterprise demonstrations. Program managers reported faster remediation tracking, while a shared UX foundation gave engineering a consistent direction across the platform.'
   },
   'work-4': {
-    intro:'I led UX for Open Raven’s cloud data security platform, helping security teams find, classify, and act on sensitive data across AWS.',
+    intro:'I led UX for Open Raven’s cloud data security platform, from CISO and analyst discovery through the Pro 1.0 release.',
     role:'Head of UX leading discovery with CISOs and data security analysts, a design system modeled on Material Design, and design-to-development handoff through Storybook.',
     challenge:'AWS environments are vast and often misconfigured, leaving sensitive data exposed. Teams needed to see asset relationships and act on violations without losing precision.',
     outcome:'The Pro 1.0 public release brought a shared design system, a guided product tour, and a 3D map that links each violation to one-click case management.'
   },
   'work-5': {
-    intro:'I led product design for an AI food-scanning app and its capture robot, built to give users and medical programs precise portion and nutrition data.',
+    intro:'I led product design for an AI food-scanning app and its capture robot, aimed at precise portion and nutrition data for consumers and medical programs.',
     role:'Product design lead across user research, the app, and the robot’s industrial design with Acorn, a Bay Area design firm.',
     challenge:'Competing apps gave rough estimates, and a public user base was too small to train accurate models quickly. Medical programs needed precise portion data.',
     outcome:'Robot-captured food data trained the recognition models. Feedback from participants who borrowed the devices shaped the roadmap for later versions.'
   },
   'work-6': {
-    intro:'I designed a mobile and web dashboard that gives telecom operators’ customers on-demand device analytics and usage alerts.',
-    role:'Product designer for the mobile and web app, from customer interviews through the alert experience that connects to the desktop console.',
+    intro:'I designed Jasper’s mobile and web analytics dashboard, giving operator customers on-demand device insight and actionable usage alerts.',
+    role:'Owned the design from customer interviews through the alert experience that connects to the desktop console.',
     challenge:'Telecom service providers asked for a simpler mobile view of device performance, outages, and usage, so they could respond without opening the full platform.',
     outcome:'Anomalies trigger notifications on mobile and desktop so users can act on overages. The app was tested through analytics and verified for successful adoption.'
   },
@@ -663,14 +663,14 @@ const atAGlance:Record<string,AtAGlanceContent> = {
     outcome:'Click-through terms replaced signed paperwork, and 30-day trials eased commitment concerns for customers and service providers. An MVP launched in select service provider markets and shaped later changes.'
   },
   'work-8': {
-    intro:'I extended the mobile analytics dashboard to tablets, so operators’ NOC, sales, and support users can see usage and anomalies on a larger screen.',
+    intro:'I led the tablet expansion of Jasper’s analytics dashboard, giving NOC, sales, and support teams a larger-screen view of usage and anomalies.',
     role:'Product design lead working with design partners to test the MVP and restructure the dashboard around their management requests.',
     challenge:'Analytics showed demand for tablets. The platform’s complexity had to be simplified so anomalies stood out.',
     outcome:'Alerts appear on the tablet app icon so users can address issues quickly. The Jasper sales team championed the app, and it became a benchmark for user behavior within the operator platform.'
   },
   'work-9': {
-    intro:'I designed and researched SafeHold, an app that shows rideshare drivers their income and estimated taxes due.',
-    role:'Designed and ran discovery research, including a driver survey, then designed the workflow and large-target mobile interface.',
+    intro:'I led research and design for SafeHold, a mobile app that shows rideshare drivers their income and estimated taxes due.',
+    role:'Owned discovery research, including a driver survey, and the workflow and large-target mobile interface.',
     challenge:'Drivers could see their income but could not predict the federal and state taxes they owed. Rideshare companies were wary of this kind of transparency.',
     outcome:'The survey validated driver demand. The app has been field tested and is in production.'
   },
@@ -681,7 +681,7 @@ const atAGlance:Record<string,AtAGlanceContent> = {
     outcome:'Pre-installed GPS units from hardware partners let customers plug in and start. Strong adoption and positive feedback led to adding the tools to the Control Center Marketplace.'
   },
   'work-3': {
-    intro:'I led the redesign of the Jasper IoT Control Center, from discovery through the RefreshUI launch, so telecom operators and their enterprise customers could manage connected devices at scale.',
+    intro:'I led the redesign of Jasper’s IoT Control Center, from discovery through the RefreshUI launch, for telecom operators managing connected devices at scale.',
     role:'Founding product designer (employee #89), then design lead for the IoT platform through the Cisco acquisition. Led discovery, navigation architecture, a shared design system, and a phased rollout.',
     challenge:'The CEO was hearing from the field, sales, and customers that the experience was holding back sales and adoption. Earlier UX decisions had come from internal hypotheses, not research.',
     outcome:'Sales embraced the new experience and brought back customer satisfaction stories. The Cisco acquisition focused on the Control Center, and its features became the benchmark for IoT at Cisco.'
