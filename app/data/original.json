@@ -1729,8 +1729,8 @@
   "projects": [
     {
       "slug": "work-1",
-      "title": "One platform for logistics and healthcare",
-      "browserTitle": "Trackonomy — one platform for logistics and healthcare",
+      "title": "AI-powered operations across logistics and healthcare",
+      "browserTitle": "Trackonomy — AI-powered operations across logistics and healthcare",
       "tree": [
         "\n",
         {
@@ -1789,7 +1789,7 @@
                             "data-scramble-delay": "220"
                           },
                           "children": [
-                            "One platform for logistics and healthcare"
+                            "AI-powered operations across logistics and healthcare"
                           ]
                         }
                       ]
