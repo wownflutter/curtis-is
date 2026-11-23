@@ -636,7 +636,7 @@ const atAGlance:Record<string,AtAGlanceContent> = {
     intro:'I led NorthStar’s experience strategy to help security teams move from fragmented risk signals to coordinated investigation and response.',
     role:'Head of UX leading discovery, experience strategy, and design direction, with a shared design system built in code and documented in Storybook.',
     challenge:'Disconnected product workflows made risk difficult to understand and act on. AI recommendations needed clear evidence and human control.',
-    outcome:'Field sales adopted NorthStar for enterprise demonstrations. Program managers reported faster remediation tracking, while a shared UX foundation gave engineering a consistent direction across the platform.'
+    outcome:'Analysts discovered and acted on threats in real time, supported by AI remediation with full attack-path evidence. A unified UX foundation gave engineering consistent direction across the platform.'
   },
   'work-4': {
     intro:'I directed UX for Open Raven’s cloud data security platform, from CISO and analyst discovery through the Pro 1.0 release.',
