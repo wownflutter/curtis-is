@@ -684,7 +684,7 @@ const atAGlance:Record<string,AtAGlanceContent> = {
     intro:'From discovery through the RefreshUI launch, I redesigned Jasper’s IoT Control Center for telecom operators managing connected devices at scale.',
     role:'Founding product designer (employee #89), then design lead for the IoT platform through the Cisco acquisition. Led discovery, navigation architecture, a shared design system, and a phased rollout.',
     challenge:'The CEO was hearing from the field, sales, and customers that the experience was holding back sales and adoption. Earlier UX decisions had come from internal hypotheses, not research.',
-    outcome:'Sales embraced the new experience and brought back customer satisfaction stories. The Cisco acquisition focused on the Control Center, and its features became the benchmark for IoT at Cisco.'
+    outcome:'The platform reorganization gave telecom operators a faster path from device oversight to action, based on field research that replaced years of internal assumptions. Jasper grew to 7,000+ customers across 100+ countries, and the Control Center became the benchmark for IoT at Cisco.'
   }
 };
 
