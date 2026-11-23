@@ -642,19 +642,19 @@ const atAGlance:Record<string,AtAGlanceContent> = {
     intro:'I directed UX for Open Raven’s cloud data security platform, from CISO and analyst discovery through the Pro 1.0 release.',
     role:'Head of UX leading discovery with CISOs and data security analysts, a design system modeled on Material Design, and design-to-development handoff through Storybook.',
     challenge:'AWS environments are vast and often misconfigured, leaving sensitive data exposed. Teams needed to see asset relationships and act on violations without losing precision.',
-    outcome:'Pro 1.0 shipped with a design system, a guided product tour, and a 3D asset map connecting each violation to one-click case management.'
+    outcome:'Security teams mapped exposed assets across AWS environments and resolved violations through guided, one-click case management. Pro 1.0 shipped as the platform’s first complete release.'
   },
   'work-5': {
     intro:'I shaped an AI food-scanning app and its capture robot, aimed at precise portion and nutrition data for consumers and medical programs.',
     role:'Product design lead across user research, the app, and the robot’s industrial design with Acorn, a Bay Area design firm.',
     challenge:'Competing apps gave rough estimates, and a public user base was too small to train accurate models quickly. Medical programs needed precise portion data.',
-    outcome:'Robot-captured food data trained the recognition models, and the design work helped land the Series A. Feedback from participants who borrowed devices informed the product roadmap.'
+    outcome:'Robot-captured food data trained the recognition models to clinical-grade accuracy. The design work helped land the Series A.'
   },
   'work-6': {
     intro:'I designed Jasper’s mobile and web analytics dashboard, giving operator customers on-demand device insight and actionable usage alerts.',
     role:'Owned the design from customer interviews through the alert experience that connects to the desktop console.',
     challenge:'Telecom service providers asked for a simpler mobile view of device performance, outages, and usage, so they could respond without opening the full platform.',
-    outcome:'Anomaly alerts on mobile and desktop let operators act on overages without opening the full console. Analytics confirmed adoption across service provider accounts.'
+    outcome:'Operators caught anomalies and acted on overages from mobile, without opening the full console. Service providers adopted the dashboard across their accounts.'
   },
   'work-7': {
     intro:'I drove the design of the Control Center Marketplace, where enterprise customers buy performance add-ons and service providers earn new revenue.',
@@ -672,7 +672,7 @@ const atAGlance:Record<string,AtAGlanceContent> = {
     intro:'I took SafeHold from driver survey to a field-tested app that shows rideshare drivers their income and estimated taxes due.',
     role:'Owned discovery research, including a driver survey, and the workflow and large-target mobile interface.',
     challenge:'Drivers could see their income but could not predict the federal and state taxes they owed. Rideshare companies were wary of this kind of transparency.',
-    outcome:'The survey confirmed driver demand. The app has been field tested with rideshare drivers and is running in production.'
+    outcome:'Rideshare drivers tracked their income and estimated taxes owed in real time. The app was field tested and is running in production.'
   },
   'work-10': {
     intro:'I led design of IoT fleet tracking tools that give operators real-time visibility into vehicles and drivers.',
