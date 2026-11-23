@@ -627,10 +627,10 @@ type AtAGlanceContent={intro:string;role:string;challenge:string;outcome:string}
 
 const atAGlance:Record<string,AtAGlanceContent> = {
   'work-1': {
-    intro:'I designed the multi-tenant platform that turned raw sensor data into operational intelligence for logistics and healthcare teams.',
-    role:'First product designer, later scaling the design team. Led discovery across roles, a multi-tenant design system, and the web, mobile, and voice experiences.',
-    challenge:'Design had been led by engineering, with little customer data. Operators dealt with siloed visibility, error-filled APIs, and heavy triage work across very different categories.',
-    outcome:'ML-suggested triage messages increased operator engagement. Healthcare floor nurses adopted voice and natural-language search, and Find My Asset gave field teams direct access to the platform.'
+    intro:'I designed the multi-tenant platform that gave logistics and healthcare operators real-time intelligence from raw sensor data.',
+    role:'First product designer, leading discovery, design system, and the web, mobile, and voice experiences across logistics and healthcare operators.',
+    challenge:'Operators had no unified view across sensor categories, and AI-generated triage needed to be accurate enough for high-stakes field decisions.',
+    outcome:'Operators triaged alerts across categories in real time, supported by ML-generated messages and voice search. A unified platform replaced siloed tools across logistics and healthcare deployments.'
   },
   'work-2': {
     intro:'I led NorthStar’s experience strategy to help security teams move from fragmented risk signals to coordinated investigation and response.',
