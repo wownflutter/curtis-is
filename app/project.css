@@ -70,6 +70,8 @@
 @media(max-width:560px) { #project .trackonomy-results-metrics-triple { grid-template-columns:minmax(0,1fr); } }
 #project .trackonomy-result-number { color:#34464d; font-family:Inter,sans-serif; font-size:clamp(36px,5vw,52px); font-weight:400; letter-spacing:-.05em; line-height:1.05; }
 #project .trackonomy-result-label { color:#526269; font-size:14px; line-height:1.5; max-width:250px; }
+#project .trackonomy-refresh .trackonomy-results-metrics { grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); }
+#project .trackonomy-refresh .trackonomy-result-label { max-width:none; text-wrap:pretty; }
 @media(max-width:560px) {
   #project .trackonomy-results-metrics { gap:15px; }
   #project .trackonomy-result-number { font-size:35px; }
