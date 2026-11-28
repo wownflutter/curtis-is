@@ -121,7 +121,7 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
     : isRemediation ? '/case-studies/cont-ai-review-poster.webp?v=sql-reviewed-1' : source==='/case-studies/or-ml-recommendation.mp4' ? '/case-studies/or-ml-recommendation-poster.webp' : source==='/case-studies/or-tour.mp4' ? '/case-studies/or-tour-poster.webp' : undefined;
   const renderedChildren=(isRemediation || isExplorer || isTrackonomy || isDesignSystem || isMl) ? nodeChildren.map(child=>
     typeof child!=='string' && child.tag==='source'
-      ? {...child,props:{...child.props,src:`${source}?v=${isRemediation?'sql-reviewed-1':isExplorer?'9':source==='/case-studies/or-ds.mp4'?'8':'4'}`}}
+      ? {...child,props:{...child.props,src:`${source}?v=${isRemediation?'sql-reviewed-1':isExplorer?'10':source==='/case-studies/or-ds.mp4'?'8':'4'}`}}
       : child
   ) : nodeChildren;
 
