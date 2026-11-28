@@ -68,7 +68,6 @@ const designSystemSequences:Record<string,number[]>={
 
 function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,unknown>;nodeChildren:ContentNode[];keyName:string}) {
   const ref=useRef<HTMLVideoElement>(null);
-  const cursorRef=useRef<HTMLSpanElement>(null);
   const glanceRef=useRef<HTMLSpanElement>(null);
   const sequenceRef=useRef<HTMLSpanElement>(null);
   const source=videoSource(nodeChildren);
@@ -122,14 +121,13 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
     : isRemediation ? '/case-studies/cont-ai-review-poster.webp?v=sql-reviewed-1' : source==='/case-studies/or-ml-recommendation.mp4' ? '/case-studies/or-ml-recommendation-poster.webp' : source==='/case-studies/or-tour.mp4' ? '/case-studies/or-tour-poster.webp' : undefined;
   const renderedChildren=(isRemediation || isExplorer || isTrackonomy || isDesignSystem || isMl) ? nodeChildren.map(child=>
     typeof child!=='string' && child.tag==='source'
-      ? {...child,props:{...child.props,src:`${source}?v=${isRemediation?'sql-reviewed-1':isExplorer?'7':source==='/case-studies/or-ds.mp4'?'8':'4'}`}}
+      ? {...child,props:{...child.props,src:`${source}?v=${isRemediation?'sql-reviewed-1':isExplorer?'9':source==='/case-studies/or-ds.mp4'?'8':'4'}`}}
       : child
   ) : nodeChildren;
 
   useEffect(()=>{
     const video=ref.current;
     if(!video)return;
-    const cursor=cursorRef.current;
     const glance=glanceRef.current;
     const sequence=sequenceRef.current;
     let syncFrame=0;
@@ -157,12 +155,11 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
     },{threshold:isRemediation?[0,.35]:isMl?[0,.5]:0.05});
     preloader.observe(video);
     player.observe(video);
-    const syncCursor=()=>{
-      [cursor,glance].forEach(element=>{
-        if(!element)return;
-        element.style.animationDelay=`-${video.currentTime}s`;
-        element.style.animationPlayState='paused';
-      });
+    const syncPlayback=()=>{
+      if(glance) {
+        glance.style.animationDelay=`-${video.currentTime}s`;
+        glance.style.animationPlayState='paused';
+      }
       if(sequence) {
         const duration=Number.isFinite(video.duration) ? video.duration : 17.51;
         const active=Math.max(0,sequenceChapters.findLastIndex(time=>video.currentTime>=time));
@@ -174,22 +171,22 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
           segment.setAttribute('aria-pressed',String(index===active));
         });
       }
-      if(!video.paused)syncFrame=requestAnimationFrame(syncCursor);
+      if(!video.paused)syncFrame=requestAnimationFrame(syncPlayback);
     };
-    const startCursorSync=()=>{
+    const startPlaybackSync=()=>{
       cancelAnimationFrame(syncFrame);
-      syncCursor();
+      syncPlayback();
     };
-    video.addEventListener('play',startCursorSync);
-    video.addEventListener('seeked',syncCursor);
-    video.addEventListener('pause',syncCursor);
-    syncCursor();
+    video.addEventListener('play',startPlaybackSync);
+    video.addEventListener('seeked',syncPlayback);
+    video.addEventListener('pause',syncPlayback);
+    syncPlayback();
     return ()=>{
       preloader.disconnect();
       player.disconnect();
-      video.removeEventListener('play',startCursorSync);
-      video.removeEventListener('seeked',syncCursor);
-      video.removeEventListener('pause',syncCursor);
+      video.removeEventListener('play',startPlaybackSync);
+      video.removeEventListener('seeked',syncPlayback);
+      video.removeEventListener('pause',syncPlayback);
       cancelAnimationFrame(syncFrame);
       video.pause();
     };
@@ -257,11 +254,6 @@ function MediaVideo({attributes,nodeChildren,keyName}:{attributes:Record<string,
     </figcaption>
     <span className="explorer-video-stage">
     {video}
-    <span ref={cursorRef} className="explorer-demo-cursor" aria-hidden="true">
-      <svg viewBox="0 0 24 28" focusable="false">
-        <path d="M2 1.5v21.4l5.7-5.4 4.1 8.8 4-1.9-4.1-8.5h8.1L2 1.5Z" />
-      </svg>
-    </span>
     <span ref={glanceRef} className="explorer-at-a-glance" aria-hidden="true">
       <span className="explorer-at-a-glance-title">
         <svg viewBox="0 0 28 28" focusable="false">
